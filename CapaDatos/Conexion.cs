@@ -1,17 +1,28 @@
-﻿using System.Net;
-using System.Data.SqlClient;
-using System.Data;
+﻿using System.Data.SqlClient;
+using System.Net;
 
 namespace CapaDatos
 {
-    public class Conexion
+    public abstract class Conexion
     {
         static string nombre_servidor = Dns.GetHostName();
-        public static string cadena = "Data Source=" + nombre_servidor + "\\DATASERVER;Initial Catalog=DBColegMart;Persist Security Info=True;User ID=sa;Password=soporte";
+        //public static string cadena = "Data Source=" + nombre_servidor + "\\DATASERVER;Initial Catalog=DBColegMart;Persist Security Info=True;User ID=sa;Password=soporte";
+
+        private readonly string connectionString;
+
+        public Conexion()
+        {
+            connectionString = "Data Source=" + nombre_servidor + "\\DATASERVER;Initial Catalog=DBColegMart;Persist Security Info=True;User ID=sa;Password=soporte";
+        }
+
+        protected SqlConnection GetConnection()
+        {
+            return new SqlConnection(connectionString);
+        }
 
         //static string nombre_servidor = Dns.GetHostName();
         //static private string cadena = "Data Source=" + nombre_servidor + "\\DATASERVER;Initial Catalog=DBColegMart;Persist Security Info=True;User ID=sa;Password=soporte";
-        //private SqlConnection conexion = new SqlConnection(cadena);
+        //public SqlConnection conexion = new SqlConnection(cadena);
 
         //public SqlConnection AbrirConexion()
         //{

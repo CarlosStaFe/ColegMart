@@ -1,38 +1,38 @@
-﻿using CapaPresentacion.Formularios;
+﻿using CapaEntidad;
+using CapaNegocio;
+using CapaPresentacion.Formularios;
 using ColegMart.Formularios;
 using FontAwesome.Sharp;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Color = System.Drawing.Color;
-using System.Collections.Generic;
-using CapaNegocio;
-using CapaEntidad;
-using System.Linq;
-using CapaPresentacion;
 
 namespace ColegMart
 {
     public partial class frmMenuPpal : Form
     {
-        private static CE_Usuarios UserLogin;
         private IconButton btnActual;
         private Panel pnlBorde;
         private Form activoForm = null;
         private Control formu;
+        private int idUsuario;
 
-        public frmMenuPpal(CE_Usuarios cEUsuarios = null)
+        public frmMenuPpal()
         {
-            if (cEUsuarios == null)
-                UserLogin =  new CE_Usuarios() { Usuario = "ADMIN PRUEBA", id_Usuario = 1};
-            else
-                UserLogin = cEUsuarios;
-           
+            //if (cEUsuarios == null)
+            //    UserLogin = new CE_Usuarios() { Usuario = "ADMIN PRUEBA", id_Usuario = 1 };
+            //else
+            //    UserLogin = cEUsuarios;
+
             InitializeComponent();
             pnlBorde = new Panel();
             pnlBorde.Size = new Size(111, 7);
             pnlMenu.Controls.Add(pnlBorde);
             Personalizar();
+
             //***** CAJA DEL FORMULARIO *****
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -41,14 +41,22 @@ namespace ColegMart
         }
         private void frmMenuPpal_Load(object sender, System.EventArgs e)
         {
-            List<CE_Botones> ListaBotones = new CN_Botones().Listardor(UserLogin.id_Usuario);
-            foreach (CE_Botones bot in ListaBotones)
+            LoadUsuario();
+
+            List<CE_Botones> BuscaBotones = new CN_Botones().BuscaBotones(idUsuario);
+
+            foreach (CE_Botones bot in BuscaBotones)
             {
                 formu = Controls.Find(bot.Nombre, true).FirstOrDefault();
                 formu.Visible = true;
             }
-            lblUsuario.Text = UserLogin.Usuario;
-            VarGlobales.NombreUsuario = UserLogin.Usuario;
+        }
+
+        //***** MUESTRO USUARIO Y FUNCIÓN EN MENÚ *****
+        private void LoadUsuario()
+        {
+            lblUsuario.Text = CE_UserLogin.Usuario + " - " + CE_UserLogin.Funcion;
+            idUsuario = CE_UserLogin.id_Usuario;
         }
 
         //***** PROCESO PARA MOVER PANTALLA *****
@@ -70,7 +78,7 @@ namespace ColegMart
         #region BOTONES BARRA TÍTULO
         private void btnCerrar_Click(object sender, System.EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void btnMaximizar_Click(object sender, System.EventArgs e)
@@ -256,8 +264,7 @@ namespace ColegMart
 
         private void btnActualizaSoc_Click(object sender, System.EventArgs e)
         {
-            AbrirFormHijo(new frmColegiados());
-            OcultarSubmenu();
+
         }
 
         private void btnDebitosSoc_Click(object sender, System.EventArgs e)
@@ -353,6 +360,11 @@ namespace ColegMart
         private void btnPermisos_Click(object sender, System.EventArgs e)
         {
             AbrirFormHijo(new frmPermisos());
+            OcultarSubmenu();
+        }
+        private void btnCodPostales_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmCodPostales());
             OcultarSubmenu();
         }
 

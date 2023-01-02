@@ -4,20 +4,21 @@ using System.Collections.Generic;
 
 namespace CapaNegocio
 {
+    //***** BUSQUEDA DEL BOTÓN DEL USUARIO *****
     public class CN_Botones
     {
-        private CD_Botones cDBotones = new CD_Botones();
+        CD_Botones cD_Botones = new CD_Botones();
 
-        //***** LLAMO AL METODO PARA LISTAR LOS USUARIOS *****
-        public List<CE_Botones> Listardor(int idUsuario)
+        //***** LLAMO AL METODO PARA LISTAR LOS USUARIOS Y SUS BOTONES *****
+        public List<CE_Botones> BuscaBotones(int idUsuario)
         {
-            return cDBotones.Listador(idUsuario);
+            return cD_Botones.BuscaBotones(idUsuario);
         }
 
         //***** LLAMO AL METODO PARA LISTAR LOS BOTONES *****
-        public List<CE_Botones> Listar()
+        public List<CE_Botones> ListaBoton()
         {
-            return cDBotones.Listar();
+            return cD_Botones.ListaBoton();
         }
 
         //***** LLAMO AL METODO PARA REGISTRAR UN USUARIO *****
@@ -41,7 +42,7 @@ namespace CapaNegocio
             }
             else
             {
-                return cDBotones.Registrar(obj, out Mensaje);
+                return cD_Botones.Registrar(obj, out Mensaje);
             }
         }
 
@@ -66,14 +67,14 @@ namespace CapaNegocio
             }
             else
             {
-                return cDBotones.Editar(obj, out Mensaje);
+                return cD_Botones.Editar(obj, out Mensaje);
             }
         }
 
         //***** LLAMO AL METODO PARA ELIMINAR UN BOTÓN *****
         public bool Eliminar(CE_Botones obj, out string Mensaje)
         {
-            return cDBotones.Eliminar(obj, out Mensaje);
+            return cD_Botones.Eliminar(obj, out Mensaje);
         }
 
     }

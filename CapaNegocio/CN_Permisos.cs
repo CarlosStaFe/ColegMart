@@ -6,6 +6,38 @@ namespace CapaNegocio
 {
     public class CN_Permisos
     {
+        CD_Permisos cD_Permisos = new CD_Permisos();
 
+        //***** BUSQUEDA DE LOS PERMISOS POR USUARIO *****
+        public List<CE_Permisos> ListaPermisos(int idUsuario)
+        {
+            return cD_Permisos.ListaPermisos(idUsuario);
+        }
+    }
+
+    public class CN_PermisosNew
+    {
+        CD_PermisosNew cD_PermisosNew = new CD_PermisosNew();
+
+        //***** REGISTRA UN NUEVO PERMISO *****
+        public int Registrar(CE_PermisosNew obj, out string Mensaje)
+        {
+            Mensaje = string.Empty;
+
+            if (Mensaje != string.Empty)
+            {
+                return 0;
+            }
+            else
+            {
+                return cD_PermisosNew.Registrar(obj, out Mensaje);
+            }
+        }
+
+        //***** LLAMO AL METODO PARA ELIMINAR UN PERMISO *****
+        public bool Eliminar(CE_PermisosNew obj, out string Mensaje)
+        {
+            return cD_PermisosNew.Eliminar(obj, out Mensaje);
+        }
     }
 }

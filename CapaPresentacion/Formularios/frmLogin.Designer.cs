@@ -120,9 +120,9 @@
             this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.Share;
             this.btnSalir.IconColor = System.Drawing.Color.Red;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSalir.Location = new System.Drawing.Point(381, 194);
+            this.btnSalir.Location = new System.Drawing.Point(387, 201);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(117, 46);
+            this.btnSalir.Size = new System.Drawing.Size(114, 46);
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,9 +141,9 @@
             this.btnIngresar.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.btnIngresar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnIngresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnIngresar.Location = new System.Drawing.Point(236, 194);
+            this.btnIngresar.Location = new System.Drawing.Point(242, 201);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(117, 46);
+            this.btnIngresar.Size = new System.Drawing.Size(114, 46);
             this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

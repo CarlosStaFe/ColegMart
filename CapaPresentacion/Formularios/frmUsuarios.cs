@@ -9,7 +9,7 @@ namespace CapaPresentacion.Formularios
 {
     public partial class frmUsuarios : Form
     {
-        CN_Usuarios cNUsuarios = new CN_Usuarios();
+        CN_Usuarios cN_Usuarios = new CN_Usuarios();
         private string respuesta;
 
         public frmUsuarios()
@@ -19,14 +19,14 @@ namespace CapaPresentacion.Formularios
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-             List<CE_Usuarios> ListaUsuario = new CN_Usuarios().Listar();
+            txtUserRegistro.Text = CE_UserLogin.Usuario;
 
-            txtUserRegistro.Text = VarGlobales.NombreUsuario;
+            List<CE_Usuarios> ListaUser = new CN_Usuarios().ListaUser();
 
-            //***** CARGO EL DGV *****
-            foreach (CE_Usuarios item in ListaUsuario)
+            //*****CARGO EL DGV *****
+            foreach (CE_Usuarios item in ListaUser)
             {
-                dgvUsuarios.Rows.Add(new object[] {"",item.id_Usuario,item.Apellido,item.Nombres,item.Nivel,item.Funcion,item.Usuario,item.Clave,item.Activo,item.UserRegistro});
+                dgvUsuarios.Rows.Add(new object[] { "", item.id_Usuario, item.Apellido, item.Nombres, item.Nivel, item.Funcion, item.Usuario, item.Clave, item.Activo, item.UserRegistro });
             }
 
             //***** CARGO EL COMBO DE BUSQUEDA *****
@@ -53,7 +53,7 @@ namespace CapaPresentacion.Formularios
 
             if (respuesta == "OK")
             {
-                CE_Usuarios cEUsuarios = new CE_Usuarios()
+                CE_Usuarios cE_Usuarios = new CE_Usuarios()
                 {
                     id_Usuario = Convert.ToInt32(txtId.Text),
                     Apellido = txtApellido.Text,
@@ -63,13 +63,13 @@ namespace CapaPresentacion.Formularios
                     Usuario = txtUsuario.Text,
                     Clave = txtClave.Text,
                     Activo = chbActivo.Checked,
-                    UserRegistro = VarGlobales.NombreUsuario
+                    UserRegistro = CE_UserLogin.Usuario
                 };
 
-                //***** SI EL ID DEL USUARIO = 0 REGISTRA, SINO EDITA *****
-                if (cEUsuarios.id_Usuario == 0)
+                //*****SI EL ID DEL USUARIO = 0 REGISTRA, SINO EDITA *****
+                if (cE_Usuarios.id_Usuario == 0)
                 {
-                    int idUsuario = new CN_Usuarios().Registrar(cEUsuarios, out Mensaje);
+                    int idUsuario = new CN_Usuarios().Registrar(cE_Usuarios, out Mensaje);
 
                     if (idUsuario != 0)
                     {
@@ -86,7 +86,7 @@ namespace CapaPresentacion.Formularios
                 }
                 else
                 {
-                    bool resultado = new CN_Usuarios().Editar(cEUsuarios, out Mensaje);
+                    bool resultado = new CN_Usuarios().Editar(cE_Usuarios, out Mensaje);
 
                     if (resultado)
                     {
@@ -235,6 +235,7 @@ namespace CapaPresentacion.Formularios
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtFiltro.Text = string.Empty;
+            cboBusqueda.Text = string.Empty;
             foreach (DataGridViewRow row in dgvUsuarios.Rows)
             {
                 row.Visible = true;

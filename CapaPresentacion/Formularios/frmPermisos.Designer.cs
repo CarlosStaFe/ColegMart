@@ -46,18 +46,17 @@
             this.cboBotones = new System.Windows.Forms.ComboBox();
             this.cboUsuarios = new System.Windows.Forms.ComboBox();
             this.dgvPermisos = new System.Windows.Forms.DataGridView();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Boton = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Funcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_Permiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fk_Usuarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fk_Botones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).BeginInit();
@@ -72,8 +71,8 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1078, 40);
-            this.pnlTitulo.TabIndex = 11;
+            this.pnlTitulo.Size = new System.Drawing.Size(1099, 40);
+            this.pnlTitulo.TabIndex = 12;
             // 
             // label1
             // 
@@ -102,15 +101,15 @@
             this.pnlDeck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDeck.Location = new System.Drawing.Point(0, 40);
             this.pnlDeck.Name = "pnlDeck";
-            this.pnlDeck.Size = new System.Drawing.Size(1078, 553);
-            this.pnlDeck.TabIndex = 12;
+            this.pnlDeck.Size = new System.Drawing.Size(1099, 526);
+            this.pnlDeck.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(407, 15);
+            this.label8.Location = new System.Drawing.Point(469, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(159, 22);
             this.label8.TabIndex = 81;
@@ -119,7 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 40);
+            this.label3.Location = new System.Drawing.Point(22, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 80;
@@ -128,7 +127,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 114);
+            this.label2.Location = new System.Drawing.Point(170, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 17);
             this.label2.TabIndex = 79;
@@ -140,7 +139,7 @@
             this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIndice.Enabled = false;
             this.txtIndice.ForeColor = System.Drawing.Color.White;
-            this.txtIndice.Location = new System.Drawing.Point(173, 165);
+            this.txtIndice.Location = new System.Drawing.Point(321, 71);
             this.txtIndice.Name = "txtIndice";
             this.txtIndice.Size = new System.Drawing.Size(65, 16);
             this.txtIndice.TabIndex = 78;
@@ -152,7 +151,7 @@
             this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserRegistro.Enabled = false;
             this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtUserRegistro.Location = new System.Drawing.Point(99, 165);
+            this.txtUserRegistro.Location = new System.Drawing.Point(247, 71);
             this.txtUserRegistro.Name = "txtUserRegistro";
             this.txtUserRegistro.Size = new System.Drawing.Size(68, 16);
             this.txtUserRegistro.TabIndex = 77;
@@ -164,7 +163,7 @@
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtId.Enabled = false;
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(44, 165);
+            this.txtId.Location = new System.Drawing.Point(192, 71);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(49, 16);
             this.txtId.TabIndex = 76;
@@ -178,9 +177,9 @@
             this.cboBotones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboBotones.ForeColor = System.Drawing.Color.White;
             this.cboBotones.FormattingEnabled = true;
-            this.cboBotones.Location = new System.Drawing.Point(25, 134);
+            this.cboBotones.Location = new System.Drawing.Point(173, 40);
             this.cboBotones.Name = "cboBotones";
-            this.cboBotones.Size = new System.Drawing.Size(260, 25);
+            this.cboBotones.Size = new System.Drawing.Size(278, 25);
             this.cboBotones.TabIndex = 55;
             // 
             // cboUsuarios
@@ -190,10 +189,11 @@
             this.cboUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboUsuarios.ForeColor = System.Drawing.Color.White;
             this.cboUsuarios.FormattingEnabled = true;
-            this.cboUsuarios.Location = new System.Drawing.Point(25, 60);
+            this.cboUsuarios.Location = new System.Drawing.Point(25, 40);
             this.cboUsuarios.Name = "cboUsuarios";
-            this.cboUsuarios.Size = new System.Drawing.Size(260, 25);
+            this.cboUsuarios.Size = new System.Drawing.Size(142, 25);
             this.cboUsuarios.TabIndex = 54;
+            this.cboUsuarios.SelectionChangeCommitted += new System.EventHandler(this.cboUsuarios_SelectionChangeCommitted);
             // 
             // dgvPermisos
             // 
@@ -219,12 +219,11 @@
             this.dgvPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPermisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar,
-            this.id_Usuario,
-            this.Usuario,
-            this.Boton,
-            this.Funcion,
-            this.Clave,
-            this.UserRegistro});
+            this.id_Permiso,
+            this.fk_Usuarios,
+            this.fk_Botones,
+            this.Nombre,
+            this.Detalle});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,7 +234,7 @@
             this.dgvPermisos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPermisos.EnableHeadersVisualStyles = false;
             this.dgvPermisos.GridColor = System.Drawing.Color.White;
-            this.dgvPermisos.Location = new System.Drawing.Point(411, 40);
+            this.dgvPermisos.Location = new System.Drawing.Point(473, 40);
             this.dgvPermisos.MultiSelect = false;
             this.dgvPermisos.Name = "dgvPermisos";
             this.dgvPermisos.ReadOnly = true;
@@ -252,57 +251,10 @@
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
             this.dgvPermisos.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvPermisos.Size = new System.Drawing.Size(554, 385);
+            this.dgvPermisos.Size = new System.Drawing.Size(480, 459);
             this.dgvPermisos.TabIndex = 53;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
-            this.Seleccionar.Width = 25;
-            // 
-            // id_Usuario
-            // 
-            this.id_Usuario.HeaderText = "id";
-            this.id_Usuario.Name = "id_Usuario";
-            this.id_Usuario.ReadOnly = true;
-            this.id_Usuario.Visible = false;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "USUARIO";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 150;
-            // 
-            // Boton
-            // 
-            this.Boton.HeaderText = "BOTON";
-            this.Boton.Name = "Boton";
-            this.Boton.ReadOnly = true;
-            this.Boton.Width = 200;
-            // 
-            // Funcion
-            // 
-            this.Funcion.HeaderText = "NOMBRE";
-            this.Funcion.Name = "Funcion";
-            this.Funcion.ReadOnly = true;
-            this.Funcion.Width = 130;
-            // 
-            // Clave
-            // 
-            this.Clave.HeaderText = "CLAVE";
-            this.Clave.Name = "Clave";
-            this.Clave.ReadOnly = true;
-            this.Clave.Visible = false;
-            // 
-            // UserRegistro
-            // 
-            this.UserRegistro.HeaderText = "UserRegistro";
-            this.UserRegistro.Name = "UserRegistro";
-            this.UserRegistro.ReadOnly = true;
-            this.UserRegistro.Visible = false;
+            this.dgvPermisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPermisos_CellContentClick);
+            this.dgvPermisos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvPermisos_CellPainting);
             // 
             // groupBox1
             // 
@@ -311,9 +263,9 @@
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(25, 339);
+            this.groupBox1.Location = new System.Drawing.Point(25, 413);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 86);
+            this.groupBox1.Size = new System.Drawing.Size(426, 86);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controles";
@@ -351,13 +303,14 @@
             this.btnEliminar.IconColor = System.Drawing.Color.Aqua;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 30;
-            this.btnEliminar.Location = new System.Drawing.Point(101, 22);
+            this.btnEliminar.Location = new System.Drawing.Point(121, 22);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(70, 53);
             this.btnEliminar.TabIndex = 32;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnClear
             // 
@@ -371,13 +324,14 @@
             this.btnClear.IconColor = System.Drawing.Color.Aqua;
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClear.IconSize = 30;
-            this.btnClear.Location = new System.Drawing.Point(193, 22);
+            this.btnClear.Location = new System.Drawing.Point(232, 22);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(70, 53);
             this.btnClear.TabIndex = 37;
             this.btnClear.Text = "Limpiar";
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSalir
             // 
@@ -391,20 +345,64 @@
             this.btnSalir.IconColor = System.Drawing.Color.Aqua;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
-            this.btnSalir.Location = new System.Drawing.Point(285, 22);
+            this.btnSalir.Location = new System.Drawing.Point(342, 22);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(70, 53);
             this.btnSalir.TabIndex = 35;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
+            this.Seleccionar.Width = 25;
+            // 
+            // id_Permiso
+            // 
+            this.id_Permiso.HeaderText = "id";
+            this.id_Permiso.Name = "id_Permiso";
+            this.id_Permiso.ReadOnly = true;
+            this.id_Permiso.Visible = false;
+            // 
+            // fk_Usuarios
+            // 
+            this.fk_Usuarios.HeaderText = "fk_Usuarios";
+            this.fk_Usuarios.Name = "fk_Usuarios";
+            this.fk_Usuarios.ReadOnly = true;
+            this.fk_Usuarios.Visible = false;
+            this.fk_Usuarios.Width = 150;
+            // 
+            // fk_Botones
+            // 
+            this.fk_Botones.HeaderText = "fk_Botones";
+            this.fk_Botones.Name = "fk_Botones";
+            this.fk_Botones.ReadOnly = true;
+            this.fk_Botones.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "NOMBRE";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 200;
+            // 
+            // Detalle
+            // 
+            this.Detalle.HeaderText = "DETALLE";
+            this.Detalle.Name = "Detalle";
+            this.Detalle.ReadOnly = true;
+            this.Detalle.Width = 200;
             // 
             // frmPermisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1078, 593);
+            this.ClientSize = new System.Drawing.Size(1099, 566);
             this.Controls.Add(this.pnlDeck);
             this.Controls.Add(this.pnlTitulo);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -429,26 +427,25 @@
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlDeck;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtIndice;
+        private System.Windows.Forms.TextBox txtUserRegistro;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.ComboBox cboBotones;
+        private System.Windows.Forms.ComboBox cboUsuarios;
+        private System.Windows.Forms.DataGridView dgvPermisos;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnClear;
         private FontAwesome.Sharp.IconButton btnSalir;
-        private System.Windows.Forms.DataGridView dgvPermisos;
-        private System.Windows.Forms.ComboBox cboBotones;
-        private System.Windows.Forms.ComboBox cboUsuarios;
         private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Boton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Funcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserRegistro;
-        private System.Windows.Forms.TextBox txtIndice;
-        private System.Windows.Forms.TextBox txtUserRegistro;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Permiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fk_Usuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fk_Botones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;
     }
 }

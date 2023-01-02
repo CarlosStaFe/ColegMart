@@ -1,4 +1,4 @@
-﻿namespace ColegMart.Formularios
+﻿namespace CapaPresentacion.Formularios
 {
     partial class frmColegiados
     {
@@ -30,73 +30,113 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmColegiados));
             this.label1 = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.txtFechaRegistro = new System.Windows.Forms.TextBox();
+            this.btnFoto = new FontAwesome.Sharp.IconButton();
+            this.picFoto = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgvColegiados = new System.Windows.Forms.DataGridView();
             this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_Coleg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoyNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApelMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LugarNacim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Juramento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tomo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DomParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLocalParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDeptoParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProvParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FijoParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CeluParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DomLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLocalLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDeptoLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProvLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FijoLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CeluLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fianza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.txtProvLabo = new System.Windows.Forms.TextBox();
-            this.txtDptoLabo = new System.Windows.Forms.TextBox();
-            this.txtLocalLabo = new System.Windows.Forms.TextBox();
-            this.txtProvPart = new System.Windows.Forms.TextBox();
-            this.txtDptoPart = new System.Windows.Forms.TextBox();
-            this.txtLocalPart = new System.Windows.Forms.TextBox();
-            this.dtpVenceFianza = new CapaPresentacion.DatePicker();
+            this.txtProvLabor = new System.Windows.Forms.TextBox();
+            this.txtDeptoLabor = new System.Windows.Forms.TextBox();
+            this.txtLocalLabor = new System.Windows.Forms.TextBox();
+            this.txtProvParti = new System.Windows.Forms.TextBox();
+            this.txtDeptoParti = new System.Windows.Forms.TextBox();
+            this.txtLocalParti = new System.Windows.Forms.TextBox();
+            this.dtpFecVenceFianza = new CapaPresentacion.DatePicker();
             this.lblVenceFianza = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.lblDetLocalLabo = new System.Windows.Forms.Label();
             this.lblDetLocalPart = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.txtCeluLabo = new System.Windows.Forms.TextBox();
+            this.txtCeluLabor = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.txtCodPosLabo = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.txtFijoLabo = new System.Windows.Forms.TextBox();
+            this.txtFijoLabor = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.txtDomiLabo = new System.Windows.Forms.TextBox();
+            this.txtDomLabor = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.txtCeluPart = new System.Windows.Forms.TextBox();
+            this.txtCeluParti = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtCodPosPart = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.txtFijoPart = new System.Windows.Forms.TextBox();
+            this.txtFijoParti = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.txtDomiPart = new System.Windows.Forms.TextBox();
+            this.txtDomParti = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtFolio = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtTomo = new System.Windows.Forms.TextBox();
-            this.dtpFechaEstado = new CapaPresentacion.DatePicker();
+            this.dtpFecEstado = new CapaPresentacion.DatePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.dtpFechaJuram = new CapaPresentacion.DatePicker();
+            this.dtpJuramento = new CapaPresentacion.DatePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.dtpFechaNacim = new CapaPresentacion.DatePicker();
             this.txtCuit = new System.Windows.Forms.TextBox();
@@ -107,7 +147,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
-            this.txtNroDocumento = new System.Windows.Forms.TextBox();
+            this.txtNumeroDoc = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -126,8 +166,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColegiados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -149,62 +190,66 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1158, 40);
-            this.pnlTitulo.TabIndex = 10;
+            this.pnlTitulo.Size = new System.Drawing.Size(1160, 40);
+            this.pnlTitulo.TabIndex = 11;
             // 
             // pnlDeck
             // 
+            this.pnlDeck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlDeck.Controls.Add(this.txtFechaRegistro);
+            this.pnlDeck.Controls.Add(this.btnFoto);
+            this.pnlDeck.Controls.Add(this.picFoto);
             this.pnlDeck.Controls.Add(this.groupBox1);
-            this.pnlDeck.Controls.Add(this.dgvUsuarios);
+            this.pnlDeck.Controls.Add(this.dgvColegiados);
             this.pnlDeck.Controls.Add(this.btnLimpiar);
             this.pnlDeck.Controls.Add(this.btnBuscar);
             this.pnlDeck.Controls.Add(this.txtFiltro);
             this.pnlDeck.Controls.Add(this.cboBusqueda);
             this.pnlDeck.Controls.Add(this.label33);
             this.pnlDeck.Controls.Add(this.label34);
-            this.pnlDeck.Controls.Add(this.txtProvLabo);
-            this.pnlDeck.Controls.Add(this.txtDptoLabo);
-            this.pnlDeck.Controls.Add(this.txtLocalLabo);
-            this.pnlDeck.Controls.Add(this.txtProvPart);
-            this.pnlDeck.Controls.Add(this.txtDptoPart);
-            this.pnlDeck.Controls.Add(this.txtLocalPart);
-            this.pnlDeck.Controls.Add(this.dtpVenceFianza);
+            this.pnlDeck.Controls.Add(this.txtProvLabor);
+            this.pnlDeck.Controls.Add(this.txtDeptoLabor);
+            this.pnlDeck.Controls.Add(this.txtLocalLabor);
+            this.pnlDeck.Controls.Add(this.txtProvParti);
+            this.pnlDeck.Controls.Add(this.txtDeptoParti);
+            this.pnlDeck.Controls.Add(this.txtLocalParti);
+            this.pnlDeck.Controls.Add(this.dtpFecVenceFianza);
             this.pnlDeck.Controls.Add(this.lblVenceFianza);
             this.pnlDeck.Controls.Add(this.label31);
             this.pnlDeck.Controls.Add(this.txtObs);
             this.pnlDeck.Controls.Add(this.lblDetLocalLabo);
             this.pnlDeck.Controls.Add(this.lblDetLocalPart);
             this.pnlDeck.Controls.Add(this.label24);
-            this.pnlDeck.Controls.Add(this.txtCeluLabo);
+            this.pnlDeck.Controls.Add(this.txtCeluLabor);
             this.pnlDeck.Controls.Add(this.label25);
             this.pnlDeck.Controls.Add(this.label28);
             this.pnlDeck.Controls.Add(this.txtCodPosLabo);
             this.pnlDeck.Controls.Add(this.label29);
-            this.pnlDeck.Controls.Add(this.txtFijoLabo);
+            this.pnlDeck.Controls.Add(this.txtFijoLabor);
             this.pnlDeck.Controls.Add(this.label30);
-            this.pnlDeck.Controls.Add(this.txtDomiLabo);
+            this.pnlDeck.Controls.Add(this.txtDomLabor);
             this.pnlDeck.Controls.Add(this.label27);
-            this.pnlDeck.Controls.Add(this.txtCeluPart);
+            this.pnlDeck.Controls.Add(this.txtCeluParti);
             this.pnlDeck.Controls.Add(this.label26);
             this.pnlDeck.Controls.Add(this.label23);
             this.pnlDeck.Controls.Add(this.txtCodPosPart);
             this.pnlDeck.Controls.Add(this.label22);
-            this.pnlDeck.Controls.Add(this.txtFijoPart);
+            this.pnlDeck.Controls.Add(this.txtFijoParti);
             this.pnlDeck.Controls.Add(this.label21);
-            this.pnlDeck.Controls.Add(this.txtDomiPart);
+            this.pnlDeck.Controls.Add(this.txtDomParti);
             this.pnlDeck.Controls.Add(this.label20);
             this.pnlDeck.Controls.Add(this.txtEmail);
             this.pnlDeck.Controls.Add(this.label19);
             this.pnlDeck.Controls.Add(this.txtFolio);
             this.pnlDeck.Controls.Add(this.label18);
             this.pnlDeck.Controls.Add(this.txtTomo);
-            this.pnlDeck.Controls.Add(this.dtpFechaEstado);
+            this.pnlDeck.Controls.Add(this.dtpFecEstado);
             this.pnlDeck.Controls.Add(this.label17);
             this.pnlDeck.Controls.Add(this.cboEstado);
             this.pnlDeck.Controls.Add(this.label16);
             this.pnlDeck.Controls.Add(this.cboCategoria);
             this.pnlDeck.Controls.Add(this.label15);
-            this.pnlDeck.Controls.Add(this.dtpFechaJuram);
+            this.pnlDeck.Controls.Add(this.dtpJuramento);
             this.pnlDeck.Controls.Add(this.label14);
             this.pnlDeck.Controls.Add(this.dtpFechaNacim);
             this.pnlDeck.Controls.Add(this.txtCuit);
@@ -215,7 +260,7 @@
             this.pnlDeck.Controls.Add(this.label11);
             this.pnlDeck.Controls.Add(this.label10);
             this.pnlDeck.Controls.Add(this.cboTipoDoc);
-            this.pnlDeck.Controls.Add(this.txtNroDocumento);
+            this.pnlDeck.Controls.Add(this.txtNumeroDoc);
             this.pnlDeck.Controls.Add(this.label8);
             this.pnlDeck.Controls.Add(this.label7);
             this.pnlDeck.Controls.Add(this.label6);
@@ -235,8 +280,55 @@
             this.pnlDeck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDeck.Location = new System.Drawing.Point(0, 40);
             this.pnlDeck.Name = "pnlDeck";
-            this.pnlDeck.Size = new System.Drawing.Size(1158, 602);
-            this.pnlDeck.TabIndex = 11;
+            this.pnlDeck.Size = new System.Drawing.Size(1160, 609);
+            this.pnlDeck.TabIndex = 12;
+            // 
+            // txtFechaRegistro
+            // 
+            this.txtFechaRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtFechaRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFechaRegistro.Enabled = false;
+            this.txtFechaRegistro.ForeColor = System.Drawing.Color.White;
+            this.txtFechaRegistro.Location = new System.Drawing.Point(609, 17);
+            this.txtFechaRegistro.Name = "txtFechaRegistro";
+            this.txtFechaRegistro.Size = new System.Drawing.Size(68, 16);
+            this.txtFechaRegistro.TabIndex = 132;
+            this.txtFechaRegistro.Visible = false;
+            // 
+            // btnFoto
+            // 
+            this.btnFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFoto.FlatAppearance.BorderSize = 0;
+            this.btnFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFoto.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.btnFoto.IconColor = System.Drawing.Color.Yellow;
+            this.btnFoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFoto.IconSize = 20;
+            this.btnFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFoto.Location = new System.Drawing.Point(913, 562);
+            this.btnFoto.Name = "btnFoto";
+            this.btnFoto.Size = new System.Drawing.Size(66, 23);
+            this.btnFoto.TabIndex = 27;
+            this.btnFoto.Text = "Foto";
+            this.btnFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFoto.UseVisualStyleBackColor = false;
+            this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
+            // 
+            // picFoto
+            // 
+            this.picFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.picFoto.ErrorImage = global::CapaPresentacion.Properties.Resources.FotoVacia;
+            this.picFoto.Image = global::CapaPresentacion.Properties.Resources.FotoVacia;
+            this.picFoto.InitialImage = global::CapaPresentacion.Properties.Resources.FotoVacia;
+            this.picFoto.Location = new System.Drawing.Point(882, 414);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(120, 131);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFoto.TabIndex = 131;
+            this.picFoto.TabStop = false;
             // 
             // groupBox1
             // 
@@ -245,9 +337,9 @@
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1021, 12);
+            this.groupBox1.Location = new System.Drawing.Point(1026, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(106, 417);
+            this.groupBox1.Size = new System.Drawing.Size(106, 552);
             this.groupBox1.TabIndex = 130;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controles";
@@ -264,13 +356,14 @@
             this.btnSalir.IconColor = System.Drawing.Color.Aqua;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
-            this.btnSalir.Location = new System.Drawing.Point(17, 353);
+            this.btnSalir.Location = new System.Drawing.Point(17, 482);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(70, 53);
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnClear
             // 
@@ -284,13 +377,14 @@
             this.btnClear.IconColor = System.Drawing.Color.Aqua;
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClear.IconSize = 30;
-            this.btnClear.Location = new System.Drawing.Point(17, 247);
+            this.btnClear.Location = new System.Drawing.Point(17, 335);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(70, 53);
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Limpiar";
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnEliminar
             // 
@@ -304,7 +398,7 @@
             this.btnEliminar.IconColor = System.Drawing.Color.Aqua;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 30;
-            this.btnEliminar.Location = new System.Drawing.Point(17, 141);
+            this.btnEliminar.Location = new System.Drawing.Point(17, 183);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(70, 53);
             this.btnEliminar.TabIndex = 1;
@@ -324,26 +418,27 @@
             this.btnGuardar.IconColor = System.Drawing.Color.Aqua;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 30;
-            this.btnGuardar.Location = new System.Drawing.Point(17, 35);
+            this.btnGuardar.Location = new System.Drawing.Point(17, 30);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(70, 53);
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // dgvUsuarios
+            // dgvColegiados
             // 
-            this.dgvUsuarios.AllowUserToAddRows = false;
-            this.dgvUsuarios.AllowUserToDeleteRows = false;
-            this.dgvUsuarios.AllowUserToOrderColumns = true;
+            this.dgvColegiados.AllowUserToAddRows = false;
+            this.dgvColegiados.AllowUserToDeleteRows = false;
+            this.dgvColegiados.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvColegiados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvColegiados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dgvColegiados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -351,44 +446,77 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvUsuarios.ColumnHeadersHeight = 30;
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvColegiados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvColegiados.ColumnHeadersHeight = 30;
+            this.dgvColegiados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvColegiados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar,
-            this.id_Usuario,
-            this.Nombres,
-            this.Apellido,
-            this.UserRegistro});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvUsuarios.EnableHeadersVisualStyles = false;
-            this.dgvUsuarios.GridColor = System.Drawing.Color.White;
-            this.dgvUsuarios.Location = new System.Drawing.Point(21, 434);
-            this.dgvUsuarios.MultiSelect = false;
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvUsuarios.Size = new System.Drawing.Size(1106, 164);
-            this.dgvUsuarios.TabIndex = 129;
+            this.id_Coleg,
+            this.Matri,
+            this.ApellidoyNombres,
+            this.ApelMaterno,
+            this.FechaNacim,
+            this.LugarNacim,
+            this.Nacionalidad,
+            this.TipoDoc,
+            this.NumeroDoc,
+            this.Cuit,
+            this.Sexo,
+            this.EstadoCivil,
+            this.Juramento,
+            this.Tomo,
+            this.Folio,
+            this.Categ,
+            this.Email,
+            this.Estado,
+            this.FechaEstado,
+            this.DomParti,
+            this.idLocalParti,
+            this.idDeptoParti,
+            this.idProvParti,
+            this.FijoParti,
+            this.CeluParti,
+            this.DomLabor,
+            this.idLocalLabor,
+            this.idDeptoLabor,
+            this.idProvLabor,
+            this.FijoLabor,
+            this.CeluLabor,
+            this.Fianza,
+            this.Obs,
+            this.UserRegistro,
+            this.FechaRegistro});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvColegiados.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvColegiados.EnableHeadersVisualStyles = false;
+            this.dgvColegiados.GridColor = System.Drawing.Color.White;
+            this.dgvColegiados.Location = new System.Drawing.Point(21, 434);
+            this.dgvColegiados.MultiSelect = false;
+            this.dgvColegiados.Name = "dgvColegiados";
+            this.dgvColegiados.ReadOnly = true;
+            this.dgvColegiados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvColegiados.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvColegiados.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvColegiados.Size = new System.Drawing.Size(845, 164);
+            this.dgvColegiados.TabIndex = 129;
+            this.dgvColegiados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColegiados_CellContentClick);
+            this.dgvColegiados.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvColegiados_CellPainting);
             // 
             // Seleccionar
             // 
@@ -397,25 +525,251 @@
             this.Seleccionar.ReadOnly = true;
             this.Seleccionar.Width = 25;
             // 
-            // id_Usuario
+            // id_Coleg
             // 
-            this.id_Usuario.HeaderText = "id";
-            this.id_Usuario.Name = "id_Usuario";
-            this.id_Usuario.ReadOnly = true;
-            this.id_Usuario.Visible = false;
+            this.id_Coleg.HeaderText = "id";
+            this.id_Coleg.Name = "id_Coleg";
+            this.id_Coleg.ReadOnly = true;
+            this.id_Coleg.Visible = false;
             // 
-            // Nombres
+            // Matri
             // 
-            this.Nombres.HeaderText = "MATRICULA";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Matri.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Matri.HeaderText = "MATRI";
+            this.Matri.Name = "Matri";
+            this.Matri.ReadOnly = true;
+            this.Matri.Width = 55;
             // 
-            // Apellido
+            // ApellidoyNombres
             // 
-            this.Apellido.HeaderText = "APELLIDO Y NOMBRES";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            this.Apellido.Width = 200;
+            this.ApellidoyNombres.HeaderText = "APELLIDO Y NOMBRES";
+            this.ApellidoyNombres.Name = "ApellidoyNombres";
+            this.ApellidoyNombres.ReadOnly = true;
+            this.ApellidoyNombres.Width = 250;
+            // 
+            // ApelMaterno
+            // 
+            this.ApelMaterno.HeaderText = "ApelMaterno";
+            this.ApelMaterno.Name = "ApelMaterno";
+            this.ApelMaterno.ReadOnly = true;
+            this.ApelMaterno.Visible = false;
+            // 
+            // FechaNacim
+            // 
+            this.FechaNacim.HeaderText = "FechaNacim";
+            this.FechaNacim.Name = "FechaNacim";
+            this.FechaNacim.ReadOnly = true;
+            this.FechaNacim.Visible = false;
+            // 
+            // LugarNacim
+            // 
+            this.LugarNacim.HeaderText = "LugarNacim";
+            this.LugarNacim.Name = "LugarNacim";
+            this.LugarNacim.ReadOnly = true;
+            this.LugarNacim.Visible = false;
+            // 
+            // Nacionalidad
+            // 
+            this.Nacionalidad.HeaderText = "Nacionalidad";
+            this.Nacionalidad.Name = "Nacionalidad";
+            this.Nacionalidad.ReadOnly = true;
+            this.Nacionalidad.Visible = false;
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.HeaderText = "TipoDoc";
+            this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.ReadOnly = true;
+            this.TipoDoc.Visible = false;
+            // 
+            // NumeroDoc
+            // 
+            this.NumeroDoc.HeaderText = "NumeroDoc";
+            this.NumeroDoc.Name = "NumeroDoc";
+            this.NumeroDoc.ReadOnly = true;
+            this.NumeroDoc.Visible = false;
+            // 
+            // Cuit
+            // 
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.Name = "Cuit";
+            this.Cuit.ReadOnly = true;
+            this.Cuit.Visible = false;
+            // 
+            // Sexo
+            // 
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
+            this.Sexo.Visible = false;
+            // 
+            // EstadoCivil
+            // 
+            this.EstadoCivil.HeaderText = "EstadoCivil";
+            this.EstadoCivil.Name = "EstadoCivil";
+            this.EstadoCivil.ReadOnly = true;
+            this.EstadoCivil.Visible = false;
+            // 
+            // Juramento
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Juramento.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Juramento.HeaderText = "JURAMENTO";
+            this.Juramento.Name = "Juramento";
+            this.Juramento.ReadOnly = true;
+            // 
+            // Tomo
+            // 
+            this.Tomo.HeaderText = "Tomo";
+            this.Tomo.Name = "Tomo";
+            this.Tomo.ReadOnly = true;
+            this.Tomo.Visible = false;
+            // 
+            // Folio
+            // 
+            this.Folio.HeaderText = "Folio";
+            this.Folio.Name = "Folio";
+            this.Folio.ReadOnly = true;
+            this.Folio.Visible = false;
+            // 
+            // Categ
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Categ.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Categ.HeaderText = "CATEG";
+            this.Categ.Name = "Categ";
+            this.Categ.ReadOnly = true;
+            this.Categ.Width = 55;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Visible = false;
+            // 
+            // Estado
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Estado.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Estado.HeaderText = "ESTADO";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // FechaEstado
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Format = "d";
+            dataGridViewCellStyle7.NullValue = null;
+            this.FechaEstado.DefaultCellStyle = dataGridViewCellStyle7;
+            this.FechaEstado.HeaderText = "FECHA ESTADO";
+            this.FechaEstado.Name = "FechaEstado";
+            this.FechaEstado.ReadOnly = true;
+            this.FechaEstado.Width = 110;
+            // 
+            // DomParti
+            // 
+            this.DomParti.HeaderText = "DomParti";
+            this.DomParti.Name = "DomParti";
+            this.DomParti.ReadOnly = true;
+            this.DomParti.Visible = false;
+            // 
+            // idLocalParti
+            // 
+            this.idLocalParti.HeaderText = "idLocalParti";
+            this.idLocalParti.Name = "idLocalParti";
+            this.idLocalParti.ReadOnly = true;
+            this.idLocalParti.Visible = false;
+            // 
+            // idDeptoParti
+            // 
+            this.idDeptoParti.HeaderText = "idDeptoParti";
+            this.idDeptoParti.Name = "idDeptoParti";
+            this.idDeptoParti.ReadOnly = true;
+            this.idDeptoParti.Visible = false;
+            // 
+            // idProvParti
+            // 
+            this.idProvParti.HeaderText = "idProvParti";
+            this.idProvParti.Name = "idProvParti";
+            this.idProvParti.ReadOnly = true;
+            this.idProvParti.Visible = false;
+            // 
+            // FijoParti
+            // 
+            this.FijoParti.HeaderText = "FijoParti";
+            this.FijoParti.Name = "FijoParti";
+            this.FijoParti.ReadOnly = true;
+            this.FijoParti.Visible = false;
+            // 
+            // CeluParti
+            // 
+            this.CeluParti.HeaderText = "CeluParti";
+            this.CeluParti.Name = "CeluParti";
+            this.CeluParti.ReadOnly = true;
+            this.CeluParti.Visible = false;
+            // 
+            // DomLabor
+            // 
+            this.DomLabor.HeaderText = "DomLabor";
+            this.DomLabor.Name = "DomLabor";
+            this.DomLabor.ReadOnly = true;
+            this.DomLabor.Visible = false;
+            // 
+            // idLocalLabor
+            // 
+            this.idLocalLabor.HeaderText = "idLocalLabor";
+            this.idLocalLabor.Name = "idLocalLabor";
+            this.idLocalLabor.ReadOnly = true;
+            this.idLocalLabor.Visible = false;
+            // 
+            // idDeptoLabor
+            // 
+            this.idDeptoLabor.HeaderText = "idDeptoLabor";
+            this.idDeptoLabor.Name = "idDeptoLabor";
+            this.idDeptoLabor.ReadOnly = true;
+            this.idDeptoLabor.Visible = false;
+            // 
+            // idProvLabor
+            // 
+            this.idProvLabor.HeaderText = "idProvLabor";
+            this.idProvLabor.Name = "idProvLabor";
+            this.idProvLabor.ReadOnly = true;
+            this.idProvLabor.Visible = false;
+            // 
+            // FijoLabor
+            // 
+            this.FijoLabor.HeaderText = "FijoLabor";
+            this.FijoLabor.Name = "FijoLabor";
+            this.FijoLabor.ReadOnly = true;
+            this.FijoLabor.Visible = false;
+            // 
+            // CeluLabor
+            // 
+            this.CeluLabor.HeaderText = "CeluLabor";
+            this.CeluLabor.Name = "CeluLabor";
+            this.CeluLabor.ReadOnly = true;
+            this.CeluLabor.Visible = false;
+            // 
+            // Fianza
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Format = "d";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Fianza.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Fianza.HeaderText = "FIANZA";
+            this.Fianza.Name = "Fianza";
+            this.Fianza.ReadOnly = true;
+            // 
+            // Obs
+            // 
+            this.Obs.HeaderText = "Obs";
+            this.Obs.Name = "Obs";
+            this.Obs.ReadOnly = true;
+            this.Obs.Visible = false;
             // 
             // UserRegistro
             // 
@@ -423,6 +777,13 @@
             this.UserRegistro.Name = "UserRegistro";
             this.UserRegistro.ReadOnly = true;
             this.UserRegistro.Visible = false;
+            // 
+            // FechaRegistro
+            // 
+            this.FechaRegistro.HeaderText = "FechaRegistro";
+            this.FechaRegistro.Name = "FechaRegistro";
+            this.FechaRegistro.ReadOnly = true;
+            this.FechaRegistro.Visible = false;
             // 
             // btnLimpiar
             // 
@@ -441,6 +802,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(28, 28);
             this.btnLimpiar.TabIndex = 38;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnBuscar
             // 
@@ -459,6 +821,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(28, 28);
             this.btnBuscar.TabIndex = 37;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtFiltro
             // 
@@ -466,10 +829,10 @@
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro.ForeColor = System.Drawing.Color.White;
-            this.txtFiltro.Location = new System.Drawing.Point(508, 400);
+            this.txtFiltro.Location = new System.Drawing.Point(535, 400);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(220, 23);
-            this.txtFiltro.TabIndex = 36;
+            this.txtFiltro.Size = new System.Drawing.Size(193, 23);
+            this.txtFiltro.TabIndex = 29;
             // 
             // cboBusqueda
             // 
@@ -478,15 +841,15 @@
             this.cboBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboBusqueda.ForeColor = System.Drawing.Color.White;
             this.cboBusqueda.FormattingEnabled = true;
-            this.cboBusqueda.Location = new System.Drawing.Point(362, 399);
+            this.cboBusqueda.Location = new System.Drawing.Point(310, 399);
             this.cboBusqueda.Name = "cboBusqueda";
-            this.cboBusqueda.Size = new System.Drawing.Size(140, 25);
-            this.cboBusqueda.TabIndex = 35;
+            this.cboBusqueda.Size = new System.Drawing.Size(219, 25);
+            this.cboBusqueda.TabIndex = 28;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(277, 402);
+            this.label33.Location = new System.Drawing.Point(225, 402);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(79, 17);
             this.label33.TabIndex = 128;
@@ -503,96 +866,102 @@
             this.label34.TabIndex = 123;
             this.label34.Text = "Lista de Usuarios";
             // 
-            // txtProvLabo
+            // txtProvLabor
             // 
-            this.txtProvLabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtProvLabo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtProvLabo.Enabled = false;
-            this.txtProvLabo.ForeColor = System.Drawing.Color.White;
-            this.txtProvLabo.Location = new System.Drawing.Point(929, 361);
-            this.txtProvLabo.Name = "txtProvLabo";
-            this.txtProvLabo.Size = new System.Drawing.Size(68, 16);
-            this.txtProvLabo.TabIndex = 34;
-            this.txtProvLabo.Visible = false;
+            this.txtProvLabor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtProvLabor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProvLabor.Enabled = false;
+            this.txtProvLabor.ForeColor = System.Drawing.Color.White;
+            this.txtProvLabor.Location = new System.Drawing.Point(929, 361);
+            this.txtProvLabor.Name = "txtProvLabor";
+            this.txtProvLabor.Size = new System.Drawing.Size(68, 16);
+            this.txtProvLabor.TabIndex = 34;
+            this.txtProvLabor.Text = "1";
+            this.txtProvLabor.Visible = false;
             // 
-            // txtDptoLabo
+            // txtDeptoLabor
             // 
-            this.txtDptoLabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtDptoLabo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDptoLabo.Enabled = false;
-            this.txtDptoLabo.ForeColor = System.Drawing.Color.White;
-            this.txtDptoLabo.Location = new System.Drawing.Point(856, 361);
-            this.txtDptoLabo.Name = "txtDptoLabo";
-            this.txtDptoLabo.Size = new System.Drawing.Size(68, 16);
-            this.txtDptoLabo.TabIndex = 33;
-            this.txtDptoLabo.Visible = false;
+            this.txtDeptoLabor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtDeptoLabor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDeptoLabor.Enabled = false;
+            this.txtDeptoLabor.ForeColor = System.Drawing.Color.White;
+            this.txtDeptoLabor.Location = new System.Drawing.Point(856, 361);
+            this.txtDeptoLabor.Name = "txtDeptoLabor";
+            this.txtDeptoLabor.Size = new System.Drawing.Size(68, 16);
+            this.txtDeptoLabor.TabIndex = 33;
+            this.txtDeptoLabor.Text = "1";
+            this.txtDeptoLabor.Visible = false;
             // 
-            // txtLocalLabo
+            // txtLocalLabor
             // 
-            this.txtLocalLabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtLocalLabo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLocalLabo.Enabled = false;
-            this.txtLocalLabo.ForeColor = System.Drawing.Color.White;
-            this.txtLocalLabo.Location = new System.Drawing.Point(783, 361);
-            this.txtLocalLabo.Name = "txtLocalLabo";
-            this.txtLocalLabo.Size = new System.Drawing.Size(68, 16);
-            this.txtLocalLabo.TabIndex = 32;
-            this.txtLocalLabo.Visible = false;
+            this.txtLocalLabor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtLocalLabor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLocalLabor.Enabled = false;
+            this.txtLocalLabor.ForeColor = System.Drawing.Color.White;
+            this.txtLocalLabor.Location = new System.Drawing.Point(783, 361);
+            this.txtLocalLabor.Name = "txtLocalLabor";
+            this.txtLocalLabor.Size = new System.Drawing.Size(68, 16);
+            this.txtLocalLabor.TabIndex = 32;
+            this.txtLocalLabor.Text = "1";
+            this.txtLocalLabor.Visible = false;
             // 
-            // txtProvPart
+            // txtProvParti
             // 
-            this.txtProvPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtProvPart.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtProvPart.Enabled = false;
-            this.txtProvPart.ForeColor = System.Drawing.Color.White;
-            this.txtProvPart.Location = new System.Drawing.Point(929, 278);
-            this.txtProvPart.Name = "txtProvPart";
-            this.txtProvPart.Size = new System.Drawing.Size(68, 16);
-            this.txtProvPart.TabIndex = 26;
-            this.txtProvPart.Visible = false;
+            this.txtProvParti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtProvParti.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProvParti.Enabled = false;
+            this.txtProvParti.ForeColor = System.Drawing.Color.White;
+            this.txtProvParti.Location = new System.Drawing.Point(929, 278);
+            this.txtProvParti.Name = "txtProvParti";
+            this.txtProvParti.Size = new System.Drawing.Size(68, 16);
+            this.txtProvParti.TabIndex = 26;
+            this.txtProvParti.Text = "1";
+            this.txtProvParti.Visible = false;
             // 
-            // txtDptoPart
+            // txtDeptoParti
             // 
-            this.txtDptoPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtDptoPart.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDptoPart.Enabled = false;
-            this.txtDptoPart.ForeColor = System.Drawing.Color.White;
-            this.txtDptoPart.Location = new System.Drawing.Point(856, 278);
-            this.txtDptoPart.Name = "txtDptoPart";
-            this.txtDptoPart.Size = new System.Drawing.Size(68, 16);
-            this.txtDptoPart.TabIndex = 25;
-            this.txtDptoPart.Visible = false;
+            this.txtDeptoParti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtDeptoParti.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDeptoParti.Enabled = false;
+            this.txtDeptoParti.ForeColor = System.Drawing.Color.White;
+            this.txtDeptoParti.Location = new System.Drawing.Point(856, 278);
+            this.txtDeptoParti.Name = "txtDeptoParti";
+            this.txtDeptoParti.Size = new System.Drawing.Size(68, 16);
+            this.txtDeptoParti.TabIndex = 25;
+            this.txtDeptoParti.Text = "1";
+            this.txtDeptoParti.Visible = false;
             // 
-            // txtLocalPart
+            // txtLocalParti
             // 
-            this.txtLocalPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtLocalPart.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLocalPart.Enabled = false;
-            this.txtLocalPart.ForeColor = System.Drawing.Color.White;
-            this.txtLocalPart.Location = new System.Drawing.Point(783, 278);
-            this.txtLocalPart.Name = "txtLocalPart";
-            this.txtLocalPart.Size = new System.Drawing.Size(68, 16);
-            this.txtLocalPart.TabIndex = 24;
-            this.txtLocalPart.Visible = false;
+            this.txtLocalParti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtLocalParti.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLocalParti.Enabled = false;
+            this.txtLocalParti.ForeColor = System.Drawing.Color.White;
+            this.txtLocalParti.Location = new System.Drawing.Point(783, 278);
+            this.txtLocalParti.Name = "txtLocalParti";
+            this.txtLocalParti.Size = new System.Drawing.Size(68, 16);
+            this.txtLocalParti.TabIndex = 24;
+            this.txtLocalParti.Text = "1";
+            this.txtLocalParti.Visible = false;
             // 
-            // dtpVenceFianza
+            // dtpFecVenceFianza
             // 
-            this.dtpVenceFianza.BorderColor = System.Drawing.Color.Gray;
-            this.dtpVenceFianza.BorderSize = 1;
-            this.dtpVenceFianza.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpVenceFianza.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpVenceFianza.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.dtpVenceFianza.Enabled = false;
-            this.dtpVenceFianza.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpVenceFianza.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVenceFianza.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpVenceFianza.Location = new System.Drawing.Point(837, 17);
-            this.dtpVenceFianza.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpVenceFianza.Name = "dtpVenceFianza";
-            this.dtpVenceFianza.Size = new System.Drawing.Size(108, 23);
-            this.dtpVenceFianza.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpVenceFianza.TabIndex = 116;
-            this.dtpVenceFianza.TextColor = System.Drawing.Color.White;
+            this.dtpFecVenceFianza.BorderColor = System.Drawing.Color.Gray;
+            this.dtpFecVenceFianza.BorderSize = 1;
+            this.dtpFecVenceFianza.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecVenceFianza.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dtpFecVenceFianza.CalendarTitleBackColor = System.Drawing.Color.Silver;
+            this.dtpFecVenceFianza.Enabled = false;
+            this.dtpFecVenceFianza.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecVenceFianza.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecVenceFianza.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtpFecVenceFianza.Location = new System.Drawing.Point(837, 17);
+            this.dtpFecVenceFianza.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpFecVenceFianza.Name = "dtpFecVenceFianza";
+            this.dtpFecVenceFianza.Size = new System.Drawing.Size(108, 23);
+            this.dtpFecVenceFianza.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dtpFecVenceFianza.TabIndex = 116;
+            this.dtpFecVenceFianza.TextColor = System.Drawing.Color.White;
             // 
             // lblVenceFianza
             // 
@@ -616,7 +985,6 @@
             // 
             this.txtObs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtObs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtObs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObs.ForeColor = System.Drawing.Color.White;
             this.txtObs.Location = new System.Drawing.Point(155, 191);
             this.txtObs.Name = "txtObs";
@@ -654,16 +1022,16 @@
             this.label24.TabIndex = 110;
             this.label24.Text = "Celular:";
             // 
-            // txtCeluLabo
+            // txtCeluLabor
             // 
-            this.txtCeluLabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtCeluLabo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCeluLabo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCeluLabo.ForeColor = System.Drawing.Color.White;
-            this.txtCeluLabo.Location = new System.Drawing.Point(818, 330);
-            this.txtCeluLabo.Name = "txtCeluLabo";
-            this.txtCeluLabo.Size = new System.Drawing.Size(181, 23);
-            this.txtCeluLabo.TabIndex = 29;
+            this.txtCeluLabor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtCeluLabor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCeluLabor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCeluLabor.ForeColor = System.Drawing.Color.White;
+            this.txtCeluLabor.Location = new System.Drawing.Point(818, 330);
+            this.txtCeluLabor.Name = "txtCeluLabor";
+            this.txtCeluLabor.Size = new System.Drawing.Size(181, 23);
+            this.txtCeluLabor.TabIndex = 25;
             // 
             // label25
             // 
@@ -694,7 +1062,7 @@
             this.txtCodPosLabo.Location = new System.Drawing.Point(155, 359);
             this.txtCodPosLabo.Name = "txtCodPosLabo";
             this.txtCodPosLabo.Size = new System.Drawing.Size(52, 23);
-            this.txtCodPosLabo.TabIndex = 30;
+            this.txtCodPosLabo.TabIndex = 26;
             // 
             // label29
             // 
@@ -705,16 +1073,16 @@
             this.label29.TabIndex = 105;
             this.label29.Text = "Tel. Fijo:";
             // 
-            // txtFijoLabo
+            // txtFijoLabor
             // 
-            this.txtFijoLabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtFijoLabo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFijoLabo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFijoLabo.ForeColor = System.Drawing.Color.White;
-            this.txtFijoLabo.Location = new System.Drawing.Point(567, 330);
-            this.txtFijoLabo.Name = "txtFijoLabo";
-            this.txtFijoLabo.Size = new System.Drawing.Size(181, 23);
-            this.txtFijoLabo.TabIndex = 28;
+            this.txtFijoLabor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtFijoLabor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFijoLabor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFijoLabor.ForeColor = System.Drawing.Color.White;
+            this.txtFijoLabor.Location = new System.Drawing.Point(567, 330);
+            this.txtFijoLabor.Name = "txtFijoLabor";
+            this.txtFijoLabor.Size = new System.Drawing.Size(181, 23);
+            this.txtFijoLabor.TabIndex = 24;
             // 
             // label30
             // 
@@ -725,16 +1093,16 @@
             this.label30.TabIndex = 103;
             this.label30.Text = "Domicilio Laboral:";
             // 
-            // txtDomiLabo
+            // txtDomLabor
             // 
-            this.txtDomiLabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtDomiLabo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDomiLabo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDomiLabo.ForeColor = System.Drawing.Color.White;
-            this.txtDomiLabo.Location = new System.Drawing.Point(155, 330);
-            this.txtDomiLabo.Name = "txtDomiLabo";
-            this.txtDomiLabo.Size = new System.Drawing.Size(343, 23);
-            this.txtDomiLabo.TabIndex = 27;
+            this.txtDomLabor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtDomLabor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDomLabor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDomLabor.ForeColor = System.Drawing.Color.White;
+            this.txtDomLabor.Location = new System.Drawing.Point(155, 330);
+            this.txtDomLabor.Name = "txtDomLabor";
+            this.txtDomLabor.Size = new System.Drawing.Size(343, 23);
+            this.txtDomLabor.TabIndex = 23;
             // 
             // label27
             // 
@@ -745,16 +1113,16 @@
             this.label27.TabIndex = 101;
             this.label27.Text = "Celular:";
             // 
-            // txtCeluPart
+            // txtCeluParti
             // 
-            this.txtCeluPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtCeluPart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCeluPart.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCeluPart.ForeColor = System.Drawing.Color.White;
-            this.txtCeluPart.Location = new System.Drawing.Point(818, 247);
-            this.txtCeluPart.Name = "txtCeluPart";
-            this.txtCeluPart.Size = new System.Drawing.Size(181, 23);
-            this.txtCeluPart.TabIndex = 21;
+            this.txtCeluParti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtCeluParti.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCeluParti.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCeluParti.ForeColor = System.Drawing.Color.White;
+            this.txtCeluParti.Location = new System.Drawing.Point(818, 247);
+            this.txtCeluParti.Name = "txtCeluParti";
+            this.txtCeluParti.Size = new System.Drawing.Size(181, 23);
+            this.txtCeluParti.TabIndex = 21;
             // 
             // label26
             // 
@@ -796,16 +1164,16 @@
             this.label22.TabIndex = 92;
             this.label22.Text = "Tel. Fijo:";
             // 
-            // txtFijoPart
+            // txtFijoParti
             // 
-            this.txtFijoPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtFijoPart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFijoPart.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFijoPart.ForeColor = System.Drawing.Color.White;
-            this.txtFijoPart.Location = new System.Drawing.Point(567, 247);
-            this.txtFijoPart.Name = "txtFijoPart";
-            this.txtFijoPart.Size = new System.Drawing.Size(181, 23);
-            this.txtFijoPart.TabIndex = 20;
+            this.txtFijoParti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtFijoParti.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFijoParti.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFijoParti.ForeColor = System.Drawing.Color.White;
+            this.txtFijoParti.Location = new System.Drawing.Point(567, 247);
+            this.txtFijoParti.Name = "txtFijoParti";
+            this.txtFijoParti.Size = new System.Drawing.Size(181, 23);
+            this.txtFijoParti.TabIndex = 20;
             // 
             // label21
             // 
@@ -816,16 +1184,16 @@
             this.label21.TabIndex = 90;
             this.label21.Text = "Domicilio Partic.:";
             // 
-            // txtDomiPart
+            // txtDomParti
             // 
-            this.txtDomiPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtDomiPart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDomiPart.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDomiPart.ForeColor = System.Drawing.Color.White;
-            this.txtDomiPart.Location = new System.Drawing.Point(155, 247);
-            this.txtDomiPart.Name = "txtDomiPart";
-            this.txtDomiPart.Size = new System.Drawing.Size(343, 23);
-            this.txtDomiPart.TabIndex = 19;
+            this.txtDomParti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtDomParti.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDomParti.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDomParti.ForeColor = System.Drawing.Color.White;
+            this.txtDomParti.Location = new System.Drawing.Point(155, 247);
+            this.txtDomParti.Name = "txtDomParti";
+            this.txtDomParti.Size = new System.Drawing.Size(343, 23);
+            this.txtDomParti.TabIndex = 19;
             // 
             // label20
             // 
@@ -840,7 +1208,7 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtEmail.ForeColor = System.Drawing.Color.White;
             this.txtEmail.Location = new System.Drawing.Point(155, 162);
             this.txtEmail.Name = "txtEmail";
@@ -887,24 +1255,24 @@
             this.txtTomo.Size = new System.Drawing.Size(32, 23);
             this.txtTomo.TabIndex = 12;
             // 
-            // dtpFechaEstado
+            // dtpFecEstado
             // 
-            this.dtpFechaEstado.BorderColor = System.Drawing.Color.Gray;
-            this.dtpFechaEstado.BorderSize = 1;
-            this.dtpFechaEstado.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaEstado.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpFechaEstado.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.dtpFechaEstado.Enabled = false;
-            this.dtpFechaEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaEstado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEstado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpFechaEstado.Location = new System.Drawing.Point(890, 159);
-            this.dtpFechaEstado.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpFechaEstado.Name = "dtpFechaEstado";
-            this.dtpFechaEstado.Size = new System.Drawing.Size(108, 23);
-            this.dtpFechaEstado.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpFechaEstado.TabIndex = 17;
-            this.dtpFechaEstado.TextColor = System.Drawing.Color.White;
+            this.dtpFecEstado.BorderColor = System.Drawing.Color.Gray;
+            this.dtpFecEstado.BorderSize = 1;
+            this.dtpFecEstado.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecEstado.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dtpFecEstado.CalendarTitleBackColor = System.Drawing.Color.Silver;
+            this.dtpFecEstado.Enabled = false;
+            this.dtpFecEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecEstado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecEstado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtpFecEstado.Location = new System.Drawing.Point(890, 159);
+            this.dtpFecEstado.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpFecEstado.Name = "dtpFecEstado";
+            this.dtpFecEstado.Size = new System.Drawing.Size(108, 23);
+            this.dtpFecEstado.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dtpFecEstado.TabIndex = 17;
+            this.dtpFecEstado.TextColor = System.Drawing.Color.White;
             // 
             // label17
             // 
@@ -964,23 +1332,23 @@
             this.label15.TabIndex = 77;
             this.label15.Text = "Categ. Aporte:";
             // 
-            // dtpFechaJuram
+            // dtpJuramento
             // 
-            this.dtpFechaJuram.BorderColor = System.Drawing.Color.Gray;
-            this.dtpFechaJuram.BorderSize = 1;
-            this.dtpFechaJuram.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaJuram.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpFechaJuram.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.dtpFechaJuram.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaJuram.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaJuram.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpFechaJuram.Location = new System.Drawing.Point(155, 132);
-            this.dtpFechaJuram.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpFechaJuram.Name = "dtpFechaJuram";
-            this.dtpFechaJuram.Size = new System.Drawing.Size(108, 23);
-            this.dtpFechaJuram.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpFechaJuram.TabIndex = 11;
-            this.dtpFechaJuram.TextColor = System.Drawing.Color.White;
+            this.dtpJuramento.BorderColor = System.Drawing.Color.Gray;
+            this.dtpJuramento.BorderSize = 1;
+            this.dtpJuramento.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpJuramento.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dtpJuramento.CalendarTitleBackColor = System.Drawing.Color.Silver;
+            this.dtpJuramento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpJuramento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpJuramento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dtpJuramento.Location = new System.Drawing.Point(155, 132);
+            this.dtpJuramento.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpJuramento.Name = "dtpJuramento";
+            this.dtpJuramento.Size = new System.Drawing.Size(108, 23);
+            this.dtpJuramento.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dtpJuramento.TabIndex = 11;
+            this.dtpJuramento.TextColor = System.Drawing.Color.White;
             // 
             // label14
             // 
@@ -1103,16 +1471,16 @@
             this.cboTipoDoc.Size = new System.Drawing.Size(67, 25);
             this.cboTipoDoc.TabIndex = 6;
             // 
-            // txtNroDocumento
+            // txtNumeroDoc
             // 
-            this.txtNroDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtNroDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNroDocumento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNroDocumento.ForeColor = System.Drawing.Color.White;
-            this.txtNroDocumento.Location = new System.Drawing.Point(313, 104);
-            this.txtNroDocumento.Name = "txtNroDocumento";
-            this.txtNroDocumento.Size = new System.Drawing.Size(101, 23);
-            this.txtNroDocumento.TabIndex = 7;
+            this.txtNumeroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtNumeroDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumeroDoc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNumeroDoc.ForeColor = System.Drawing.Color.White;
+            this.txtNumeroDoc.Location = new System.Drawing.Point(313, 104);
+            this.txtNumeroDoc.Name = "txtNumeroDoc";
+            this.txtNumeroDoc.Size = new System.Drawing.Size(101, 23);
+            this.txtNumeroDoc.TabIndex = 7;
             // 
             // label8
             // 
@@ -1218,7 +1586,7 @@
             this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIndice.Enabled = false;
             this.txtIndice.ForeColor = System.Drawing.Color.White;
-            this.txtIndice.Location = new System.Drawing.Point(535, 18);
+            this.txtIndice.Location = new System.Drawing.Point(461, 18);
             this.txtIndice.Name = "txtIndice";
             this.txtIndice.Size = new System.Drawing.Size(68, 16);
             this.txtIndice.TabIndex = 53;
@@ -1230,7 +1598,7 @@
             this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserRegistro.Enabled = false;
             this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtUserRegistro.Location = new System.Drawing.Point(461, 18);
+            this.txtUserRegistro.Location = new System.Drawing.Point(535, 17);
             this.txtUserRegistro.Name = "txtUserRegistro";
             this.txtUserRegistro.Size = new System.Drawing.Size(68, 16);
             this.txtUserRegistro.TabIndex = 52;
@@ -1284,8 +1652,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1158, 642);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(1160, 649);
             this.Controls.Add(this.pnlDeck);
             this.Controls.Add(this.pnlTitulo);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1294,12 +1662,14 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmColegiados";
             this.Text = "ACTUALIZACIÓN DE COLEGIADOS";
+            this.Load += new System.EventHandler(this.frmColegiados_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlDeck.ResumeLayout(false);
             this.pnlDeck.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColegiados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1309,8 +1679,76 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Panel pnlDeck;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtApelNombres;
+        private System.Windows.Forms.TextBox txtFechaRegistro;
+        private FontAwesome.Sharp.IconButton btnFoto;
+        private System.Windows.Forms.PictureBox picFoto;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private FontAwesome.Sharp.IconButton btnSalir;
+        private FontAwesome.Sharp.IconButton btnClear;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private System.Windows.Forms.DataGridView dgvColegiados;
+        private FontAwesome.Sharp.IconButton btnLimpiar;
+        private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.ComboBox cboBusqueda;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtProvLabor;
+        private System.Windows.Forms.TextBox txtDeptoLabor;
+        private System.Windows.Forms.TextBox txtLocalLabor;
+        private System.Windows.Forms.TextBox txtProvParti;
+        private System.Windows.Forms.TextBox txtDeptoParti;
+        private System.Windows.Forms.TextBox txtLocalParti;
+        private DatePicker dtpFecVenceFianza;
+        private System.Windows.Forms.Label lblVenceFianza;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txtObs;
+        private System.Windows.Forms.Label lblDetLocalLabo;
+        private System.Windows.Forms.Label lblDetLocalPart;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtCeluLabor;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txtCodPosLabo;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txtFijoLabor;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtDomLabor;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtCeluParti;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtCodPosPart;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtFijoParti;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtDomParti;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtFolio;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtTomo;
+        private DatePicker dtpFecEstado;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cboEstado;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.Label label15;
+        private DatePicker dtpJuramento;
+        private System.Windows.Forms.Label label14;
+        private DatePicker dtpFechaNacim;
+        private System.Windows.Forms.TextBox txtCuit;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cboEstadoCivil;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cboSexo;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboTipoDoc;
+        private System.Windows.Forms.TextBox txtNumeroDoc;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNacionalidad;
@@ -1323,78 +1761,44 @@
         private System.Windows.Forms.TextBox txtIndice;
         private System.Windows.Forms.TextBox txtUserRegistro;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.ComboBox cboEstadoCivil;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cboSexo;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cboTipoDoc;
-        private System.Windows.Forms.TextBox txtNroDocumento;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtCuit;
-        private System.Windows.Forms.Label label13;
-        private CapaPresentacion.DatePicker dtpFechaNacim;
-        private System.Windows.Forms.Label lblDetLocalLabo;
-        private System.Windows.Forms.Label lblDetLocalPart;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txtCeluLabo;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtCodPosLabo;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox txtFijoLabo;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txtDomiLabo;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox txtCeluPart;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtCodPosPart;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtFijoPart;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtDomiPart;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtFolio;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtTomo;
-        private CapaPresentacion.DatePicker dtpFechaEstado;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cboEstado;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cboCategoria;
-        private System.Windows.Forms.Label label15;
-        private CapaPresentacion.DatePicker dtpFechaJuram;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtApelNombres;
         private System.Windows.Forms.Label label9;
-        private CapaPresentacion.DatePicker dtpVenceFianza;
-        private System.Windows.Forms.Label lblVenceFianza;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox txtObs;
-        private System.Windows.Forms.TextBox txtProvLabo;
-        private System.Windows.Forms.TextBox txtDptoLabo;
-        private System.Windows.Forms.TextBox txtLocalLabo;
-        private System.Windows.Forms.TextBox txtProvPart;
-        private System.Windows.Forms.TextBox txtDptoPart;
-        private System.Windows.Forms.TextBox txtLocalPart;
-        private FontAwesome.Sharp.IconButton btnSalir;
-        private FontAwesome.Sharp.IconButton btnGuardar;
-        private FontAwesome.Sharp.IconButton btnEliminar;
-        private FontAwesome.Sharp.IconButton btnClear;
-        private FontAwesome.Sharp.IconButton btnLimpiar;
-        private FontAwesome.Sharp.IconButton btnBuscar;
-        private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cboBusqueda;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Coleg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Matri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoyNombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ApelMaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LugarNacim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nacionalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Juramento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tomo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Folio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DomParti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLocalParti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDeptoParti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProvParti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FijoParti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CeluParti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DomLabor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLocalLabor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDeptoLabor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProvLabor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FijoLabor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CeluLabor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fianza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
     }
 }

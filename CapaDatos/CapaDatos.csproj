@@ -81,7 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Botones.cs" />
+    <Compile Include="CD_Colegiados.cs" />
+    <Compile Include="CD_Departamentos.cs" />
+    <Compile Include="CD_Localidades.cs" />
     <Compile Include="CD_Permisos.cs" />
+    <Compile Include="CD_Provincias.cs" />
     <Compile Include="CD_Usuarios.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

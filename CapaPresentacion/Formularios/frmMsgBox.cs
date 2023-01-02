@@ -23,7 +23,7 @@ namespace CapaPresentacion.Formularios
                 iconInformacion.Visible = true;
                 iconCorrecto.Visible = false;
                 iconAdvertencia.Visible = false;
-                lblTitulo.Text = "TENCIÓN Información...!!!";
+                lblTitulo.Text = "ATENCIÓN Información...!!!";
                 lblTitulo.ForeColor = Color.FromArgb(255, 255, 0);
             }
 

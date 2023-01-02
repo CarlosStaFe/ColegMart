@@ -51,6 +51,7 @@
             this.btnColegiados = new FontAwesome.Sharp.IconButton();
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pnlSubmenuSistema = new System.Windows.Forms.Panel();
+            this.btnPermisos = new FontAwesome.Sharp.IconButton();
             this.btnBotones = new FontAwesome.Sharp.IconButton();
             this.btnUsuarios = new FontAwesome.Sharp.IconButton();
             this.btnBackupRestore = new FontAwesome.Sharp.IconButton();
@@ -114,7 +115,7 @@
             this.btnDebitosCol = new FontAwesome.Sharp.IconButton();
             this.btnActualizarCol = new FontAwesome.Sharp.IconButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnPermisos = new FontAwesome.Sharp.IconButton();
+            this.btnCodPostales = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTitulo.SuspendLayout();
@@ -241,7 +242,7 @@
             this.iconUser.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
             this.iconUser.IconColor = System.Drawing.Color.Fuchsia;
             this.iconUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconUser.Location = new System.Drawing.Point(785, 6);
+            this.iconUser.Location = new System.Drawing.Point(733, 6);
             this.iconUser.Name = "iconUser";
             this.iconUser.Size = new System.Drawing.Size(32, 32);
             this.iconUser.TabIndex = 14;
@@ -252,7 +253,7 @@
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Italic);
             this.Label2.ForeColor = System.Drawing.Color.Red;
-            this.Label2.Location = new System.Drawing.Point(135, 9);
+            this.Label2.Location = new System.Drawing.Point(106, 9);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(580, 22);
             this.Label2.TabIndex = 5;
@@ -263,7 +264,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.Fuchsia;
-            this.lblUsuario.Location = new System.Drawing.Point(820, 12);
+            this.lblUsuario.Location = new System.Drawing.Point(768, 12);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(64, 18);
             this.lblUsuario.TabIndex = 7;
@@ -512,6 +513,7 @@
             // pnlSubmenuSistema
             // 
             this.pnlSubmenuSistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlSubmenuSistema.Controls.Add(this.btnCodPostales);
             this.pnlSubmenuSistema.Controls.Add(this.btnPermisos);
             this.pnlSubmenuSistema.Controls.Add(this.btnBotones);
             this.pnlSubmenuSistema.Controls.Add(this.btnUsuarios);
@@ -521,6 +523,30 @@
             this.pnlSubmenuSistema.Name = "pnlSubmenuSistema";
             this.pnlSubmenuSistema.Size = new System.Drawing.Size(160, 283);
             this.pnlSubmenuSistema.TabIndex = 19;
+            // 
+            // btnPermisos
+            // 
+            this.btnPermisos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPermisos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPermisos.FlatAppearance.BorderSize = 0;
+            this.btnPermisos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnPermisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPermisos.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnPermisos.ForeColor = System.Drawing.Color.Aqua;
+            this.btnPermisos.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnPermisos.IconColor = System.Drawing.Color.White;
+            this.btnPermisos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPermisos.IconSize = 15;
+            this.btnPermisos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPermisos.Location = new System.Drawing.Point(0, 99);
+            this.btnPermisos.Name = "btnPermisos";
+            this.btnPermisos.Size = new System.Drawing.Size(160, 33);
+            this.btnPermisos.TabIndex = 10;
+            this.btnPermisos.Text = "Permisos";
+            this.btnPermisos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPermisos.UseVisualStyleBackColor = true;
+            this.btnPermisos.Click += new System.EventHandler(this.btnPermisos_Click);
             // 
             // btnBotones
             // 
@@ -1916,29 +1942,29 @@
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
-            // btnPermisos
+            // btnCodPostales
             // 
-            this.btnPermisos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPermisos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPermisos.FlatAppearance.BorderSize = 0;
-            this.btnPermisos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnPermisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPermisos.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnPermisos.ForeColor = System.Drawing.Color.Aqua;
-            this.btnPermisos.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnPermisos.IconColor = System.Drawing.Color.White;
-            this.btnPermisos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPermisos.IconSize = 15;
-            this.btnPermisos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPermisos.Location = new System.Drawing.Point(0, 99);
-            this.btnPermisos.Name = "btnPermisos";
-            this.btnPermisos.Size = new System.Drawing.Size(160, 33);
-            this.btnPermisos.TabIndex = 10;
-            this.btnPermisos.Text = "Permisos";
-            this.btnPermisos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPermisos.UseVisualStyleBackColor = true;
-            this.btnPermisos.Click += new System.EventHandler(this.btnPermisos_Click);
+            this.btnCodPostales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCodPostales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCodPostales.FlatAppearance.BorderSize = 0;
+            this.btnCodPostales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnCodPostales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCodPostales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCodPostales.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnCodPostales.ForeColor = System.Drawing.Color.Aqua;
+            this.btnCodPostales.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnCodPostales.IconColor = System.Drawing.Color.White;
+            this.btnCodPostales.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCodPostales.IconSize = 15;
+            this.btnCodPostales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCodPostales.Location = new System.Drawing.Point(0, 132);
+            this.btnCodPostales.Name = "btnCodPostales";
+            this.btnCodPostales.Size = new System.Drawing.Size(160, 33);
+            this.btnCodPostales.TabIndex = 11;
+            this.btnCodPostales.Text = "Códigos Postales";
+            this.btnCodPostales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCodPostales.UseVisualStyleBackColor = true;
+            this.btnCodPostales.Click += new System.EventHandler(this.btnCodPostales_Click);
             // 
             // frmMenuPpal
             // 
@@ -2066,6 +2092,7 @@
         internal System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnBotones;
         private FontAwesome.Sharp.IconButton btnPermisos;
+        private FontAwesome.Sharp.IconButton btnCodPostales;
     }
 }
 

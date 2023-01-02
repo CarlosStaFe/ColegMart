@@ -6,12 +6,12 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    public class CD_Permisos:Conexion
+    public class CD_Localidades:Conexion
     {
-        //***** METODO PARA LISTAR LOS PERMISOS DE CADA USUARIO *****
-        public List<CE_Permisos> ListaPermisos(int idUsuario)
+        //***** METODO PARA LISTAR LAS LOCALIDADES *****
+        public List<CE_Localidades> ListaCodPos()
         {
-            List<CE_Permisos> lista = new List<CE_Permisos>();
+            List<CE_Localidades> lista = new List<CE_Localidades>();
 
             using (var connection = GetConnection())
             {
@@ -20,9 +20,8 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@idUsuario", idUsuario);
                         command.Connection = connection;
-                        command.CommandText = "SP_ListaPermisos";
+                        command.CommandText = "SP_ListaLocalidades";
                         command.CommandType = CommandType.StoredProcedure;
                         SqlDataReader dr = command.ExecuteReader();
 
@@ -30,66 +29,65 @@ namespace CapaDatos
                         {
                             while (dr.Read())
                             {
-                                lista.Add(new CE_Permisos()
+                                lista.Add(new CE_Localidades()
                                 {
-                                    id_Permiso = Convert.ToInt32(dr["id_Permiso"]),
-                                    fk_Usuarios = Convert.ToInt32(dr["fk_Usuarios"]),
-                                    fk_Botones = Convert.ToInt32(dr["fk_Botones"]),
-                                    Nombre = dr["Nombre"].ToString(),
-                                    Detalle = dr["Detalle"].ToString()
+                                    id_Local = Convert.ToInt32(dr["id_Local"]),
+                                    fk_Deptos = Convert.ToInt32(dr["fk_Deptos"]),
+                                    fk_Prov = Convert.ToInt32(dr["fk_Prov"]),
+                                    CodigoPostal = Convert.ToInt32(dr["CodigoPostal"]),
+                                    Localidad = dr["Localidad"].ToString(),
+                                    Departamento = dr["Departamento"].ToString(),
+                                    Provincia = dr["Provincia"].ToString()
                                 });
                             }
                         }
                     }
                     catch (Exception)
                     {
-                        lista = new List<CE_Permisos>();
+                        lista = new List<CE_Localidades>();
                     }
                 }
             }
             return lista;
         }
-    }
 
-    //***** METODO PARA ACTUALIZAR LOS PERMISOS DE CADA USUARIO *****
-    public class CD_PermisosNew : Conexion
-    {
-        //***** METODO PARA REGISTRAR UN PERMISO *****
-        public int Registrar(CE_PermisosNew obj, out string Mensaje)
+        //***** METODO PARA REGISTRAR UNA LOCALIDAD *****
+        public int Registrar(CE_Localidades obj, out string Mensaje)
         {
-            int idUsuario = 0;
+            int idBoton = 0;
             Mensaje = string.Empty;
 
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new SqlCommand("SP_RegistrarPermiso", connection))
+                using (var command = new SqlCommand("SP_RegistrarLocalidad", connection))
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("fk_Usuarios", obj.fk_Usuarios);
-                        command.Parameters.AddWithValue("fk_Botones", obj.fk_Botones);
-                        command.Parameters.AddWithValue("UserRegistro", obj.UserRegistro);
+                        command.Parameters.AddWithValue("fk_Deptos", obj.fk_Deptos);
+                        command.Parameters.AddWithValue("fk_Prov", obj.fk_Prov);
+                        command.Parameters.AddWithValue("Localidad", obj.Localidad);
+                        command.Parameters.AddWithValue("UserRegistro", CE_UserLogin.UserRegistro);
                         command.Parameters.Add("idResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                         command.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        idUsuario = Convert.ToInt32(command.Parameters["idResultado"].Value);
+                        idBoton = Convert.ToInt32(command.Parameters["idResultado"].Value);
                         Mensaje = command.Parameters["Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
-                        idUsuario = 0;
+                        idBoton = 0;
                         Mensaje = ex.Message;
                     }
                 }
             }
-            return idUsuario;
+            return idBoton;
         }
 
-        //***** METODO PARA ELIMINAR UN PERMISO *****
-        public bool Eliminar(CE_PermisosNew obj, out string Mensaje)
+        //***** METODO PARA EDITAR UNA LOCALIDAD *****
+        public bool Editar(CE_Localidades obj, out string Mensaje)
         {
             bool Resultado = false;
             Mensaje = string.Empty;
@@ -97,11 +95,16 @@ namespace CapaDatos
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new SqlCommand("SP_EliminarPermiso", connection))
+                using (var command = new SqlCommand("SP_EditarLocalidad", connection))
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("id_Permiso", obj.id_Permiso);
+                        command.Parameters.AddWithValue("id_Local", obj.id_Local);
+                        command.Parameters.AddWithValue("fk_Deptos", obj.fk_Deptos);
+                        command.Parameters.AddWithValue("fk_Prov", obj.fk_Prov);
+                        command.Parameters.AddWithValue("Localidad", obj.Localidad);
+                        command.Parameters.AddWithValue("UserRegistro", CE_UserLogin.UserRegistro);
+                        command.Parameters.AddWithValue("FechaRegistro", DateTime.Now);
                         command.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                         command.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;

@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-using CapaEntidad;
+﻿using CapaEntidad;
 using CapaNegocio;
 using System;
 using System.Collections.Generic;
@@ -10,9 +9,6 @@ namespace CapaPresentacion.Formularios
 {
     public partial class frmPermisos : Form
     {
-        CN_Permisos cNPermisos = new CN_Permisos();
-        CN_Usuarios cNUsuarios = new CN_Usuarios();
-        CN_Botones cNBotones = new CN_Botones();
         private string respuesta;
 
         public frmPermisos()
@@ -22,17 +18,17 @@ namespace CapaPresentacion.Formularios
 
         private void frmPermisos_Load(object sender, EventArgs e)
         {
-            txtUserRegistro.Text = VarGlobales.NombreUsuario;
+            txtUserRegistro.Text = CE_UserLogin.Usuario;
 
-            ListarBotones();
-            ListarUsuarios();
-
+            CargoCboBotones();
+            CargoCboUsuarios();
+            Limpiar();
         }
 
         //***** CARGO EL COMBO DE BOTONES *****
-        private void ListarBotones()
+        private void CargoCboBotones()
         {
-            List<CE_Botones> ListaBoton = new CN_Botones().Listar();
+            List<CE_Botones> ListaBoton = new CN_Botones().ListaBoton();
 
             cboBotones.Items.Clear();
             cboBotones.DataSource = ListaBoton;
@@ -41,9 +37,9 @@ namespace CapaPresentacion.Formularios
         }
 
         //***** CARGO EL COMBO DE USUARIOS *****
-        private void ListarUsuarios()
+        private void CargoCboUsuarios()
         {
-            List<CE_Usuarios> ListaUser = new CN_Usuarios().Listar();
+            List<CE_Usuarios> ListaUser = new CN_Usuarios().ListaUser();
 
             cboUsuarios.Items.Clear();
             cboUsuarios.DataSource = ListaUser;
@@ -51,7 +47,23 @@ namespace CapaPresentacion.Formularios
             cboUsuarios.ValueMember = "id_Usuario";
         }
 
-        //***** METODO PARA REGISTRAR LOS PERMISOS *****
+        //***** CARGO EL DGV SEGÚN LA SELECCIÓN DEL COMBO DE USUARIOS *****
+        private void cboUsuarios_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int idUsuario = Convert.ToInt32(cboUsuarios.SelectedValue);
+
+            dgvPermisos.Rows.Clear();
+
+            List<CE_Permisos> ListaPermisos = new CN_Permisos().ListaPermisos(idUsuario);
+
+            //***** CARGO EL DGV *****
+            foreach (CE_Permisos item in ListaPermisos)
+            {
+                dgvPermisos.Rows.Add(new object[] { "", item.id_Permiso, item.fk_Usuarios, item.fk_Botones, item.Nombre, item.Detalle, item.UserRegistro });
+            }
+        }
+
+        //***** PROCEDIMIENTO BOTON GUARDAR/EDITAR *****
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string Mensaje = string.Empty;
@@ -63,22 +75,21 @@ namespace CapaPresentacion.Formularios
 
             if (respuesta == "OK")
             {
-                CE_Permisos cEPermisos = new CE_Permisos()
+                CE_PermisosNew cE_PermisosNew = new CE_PermisosNew()
                 {
                     id_Permiso = Convert.ToInt32(txtId.Text),
-                    OUsuario = cboUsuarios.ValueMember,
-                    OBoton = cboBotones.ValueMember,
-                    UserRegistro = VarGlobales.NombreUsuario
+                    fk_Usuarios = Convert.ToInt32(cboUsuarios.SelectedValue),
+                    fk_Botones = Convert.ToInt32(cboBotones.SelectedValue),
+                    UserRegistro = CE_UserLogin.Usuario
                 };
 
-                //***** SI EL ID DEL PERMISO = 0 REGISTRA, SINO EDITA *****
-                if (cEPermisos.id_Permiso == 0)
+                //*****SI EL ID DEL PERMISO = 0 REGISTRA, SINO EDITA *****
+                if (cE_PermisosNew.id_Permiso == 0)
                 {
-                    int idPermiso = new CN_Permisos().Registrar(cEPermisos, out Mensaje);
-
+                    int idPermiso = new CN_PermisosNew().Registrar(cE_PermisosNew, out Mensaje);
                     if (idPermiso != 0)
                     {
-                        dgvPermisos.Rows.Add(new object[] { "", idPermiso, cboUsuarios.ValueMember, cboBotones.ValueMember, txtUserRegistro.Text });
+                        dgvPermisos.Rows.Add(new object[] { "", idPermiso, Convert.ToInt32(cboUsuarios.SelectedValue), Convert.ToInt32(cboBotones.SelectedValue), txtUserRegistro.Text });
                         Limpiar();
                     }
                     else
@@ -88,26 +99,96 @@ namespace CapaPresentacion.Formularios
                         msg1.ShowDialog();
                     }
                 }
-                else
+            }
+        }
+
+        //***** PROCEDIMIENTO DEL BOTON ELIMINAR *****
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            string Mensaje = string.Empty;
+
+            if (Convert.ToInt32(txtId.Text) != 0)
+            {
+                Mensaje += "DESEA ELIMINAR ESTE PERMISO...???";
+                frmMsgBox msg = new frmMsgBox(Mensaje, "question", 2);
+                DialogResult dr = msg.ShowDialog();
+                respuesta = dr.ToString();
+
+                if (respuesta == "OK")
                 {
-                    bool resultado = new CN_Permisos().Editar(cEPermisos, out Mensaje);
+                    CE_PermisosNew cEPermisosNew = new CE_PermisosNew()
+                    {
+                        id_Permiso = Convert.ToInt32(txtId.Text),
+                    };
+
+                    bool resultado = new CN_PermisosNew().Eliminar(cEPermisosNew, out Mensaje);
 
                     if (resultado)
                     {
-                        DataGridViewRow row = dgvPermisos.Rows[Convert.ToInt32(txtIndice.Text)];
-                        row.Cells["id_Boton"].Value = txtIndice.Text;
-                        row.Cells["Nombre"].Value = cboUsuarios.ValueMember;
-                        row.Cells["Detalle"].Value = cboBotones.ValueMember;
-                        row.Cells["UserRegistro"].Value = txtUserRegistro.Text;
-
-                        Limpiar();
+                        dgvPermisos.Rows.RemoveAt(Convert.ToInt32(txtIndice.Text));
                     }
                     else
                     {
-                        Mensaje += "VERIFIQUE...!!!";
-                        frmMsgBox msg1 = new frmMsgBox(Mensaje, "info", 1);
-                        msg1.ShowDialog();
+                        MessageBox.Show(Mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
+                }
+                Limpiar();
+            }
+        }
+
+        //***** PROCEDIMIENTO DEL BOTON CLEAR DE DATOS *****
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        //***** PROCEDIMIENTO DEL BOTON SALIR *****
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        //***** LIMPIO LOS DATOS DE INGRESO *****
+        private void Limpiar()
+        {
+            dgvPermisos.Rows.Clear();
+
+            txtId.Text = "0";
+            cboUsuarios.Text = string.Empty;
+            cboBotones.Text = string.Empty;
+            txtUserRegistro.Text = string.Empty;
+            cboUsuarios.Select();
+        }
+
+        //***** COLOCO EL ÍCONO EN CADA RENGLÓN DEL DGV *****
+        private void dgvPermisos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.check.Width;
+                var h = Properties.Resources.check.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                e.Graphics.DrawImage(Properties.Resources.check, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        //***** MUEVO LO SELECCIONADO DEL DGV A LOS CAMPOS PARA MODIFICAR *****
+        private void dgvPermisos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvPermisos.Columns[e.ColumnIndex].Name == "Seleccionar")
+            {
+                int indice = e.RowIndex;
+                if (indice >= 0)
+                {
+                    txtIndice.Text = indice.ToString();
+                    txtId.Text = dgvPermisos.Rows[indice].Cells["id_Permiso"].Value.ToString();
+                    cboBotones.Text = dgvPermisos.Rows[indice].Cells["Detalle"].Value.ToString();
                 }
             }
         }

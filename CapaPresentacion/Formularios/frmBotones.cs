@@ -9,7 +9,7 @@ namespace CapaPresentacion.Formularios
 {
     public partial class frmBotones : Form
     {
-        CN_Botones cNBotones = new CN_Botones();
+        CN_Botones cN_Botones = new CN_Botones();
         private string respuesta;
 
         public frmBotones()
@@ -19,9 +19,7 @@ namespace CapaPresentacion.Formularios
 
         private void frmBotones_Load(object sender, EventArgs e)
         {
-            List<CE_Botones> ListaBoton = new CN_Botones().Listar();
-
-            txtUserRegistro.Text = VarGlobales.NombreUsuario;
+            List<CE_Botones> ListaBoton = new CN_Botones().ListaBoton();
 
             //***** CARGO EL DGV *****
             foreach (CE_Botones item in ListaBoton)
@@ -42,7 +40,7 @@ namespace CapaPresentacion.Formularios
         }
 
         //***** PROCEDIMIENTO BOTON GUARDAR/EDITAR *****
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             string Mensaje = string.Empty;
 
@@ -103,7 +101,7 @@ namespace CapaPresentacion.Formularios
         }
 
         //***** PROCEDIMIENTO DEL BOTON ELIMINAR *****
-        private void btnEliminar_Click_1(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             string Mensaje = string.Empty;
 
@@ -137,13 +135,13 @@ namespace CapaPresentacion.Formularios
         }
 
         //***** PROCEDIMIENTO DEL BOTON CLEAR DE DATOS *****
-        private void btnClear_Click_1(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
         //***** PROCEDIMIENTO DEL BOTON SALIR *****
-        private void btnSalir_Click_1(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -159,7 +157,7 @@ namespace CapaPresentacion.Formularios
         }
 
         //***** COLOCO EL ÍCONO EN CADA RENGLÓN DEL DGV *****
-        private void dgvBotones_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void dgvBotones_CellPainting_1(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
@@ -177,7 +175,7 @@ namespace CapaPresentacion.Formularios
         }
 
         //***** MUEVO LO SELECCIONADO DEL DGV A LOS CAMPOS PARA MODIFICAR *****
-        private void dgvBotones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvBotones_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvBotones.Columns[e.ColumnIndex].Name == "Seleccionar")
             {
@@ -194,7 +192,7 @@ namespace CapaPresentacion.Formularios
         }
 
         //***** PROCEDIMIENTO DEL BOTON BUSCAR *****
-        private void btnBuscar_Click_1(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             string columnaFiltro = cboBusqueda.SelectedItem.ToString();
 
@@ -211,13 +209,15 @@ namespace CapaPresentacion.Formularios
         }
 
         //***** PROCEDIMIENTO DEL BOTON LIMPIAR BUSQUEDA *****
-        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtFiltro.Text = string.Empty;
+            cboBusqueda.Text = string.Empty;
             foreach (DataGridViewRow row in dgvBotones.Rows)
             {
                 row.Visible = true;
             }
         }
+
     }
 }

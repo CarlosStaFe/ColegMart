@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion.Formularios
 {
-    partial class frmBotones
+    partial class frmCodPostales
     {
         /// <summary>
         /// Required designer variable.
@@ -30,31 +30,33 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBotones));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCodPostales));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.cboDepartamento = new System.Windows.Forms.ComboBox();
+            this.cboProvincia = new System.Windows.Forms.ComboBox();
+            this.txtFkProv = new System.Windows.Forms.TextBox();
+            this.txtFkDepto = new System.Windows.Forms.TextBox();
+            this.txtIdLocal = new System.Windows.Forms.TextBox();
+            this.txtLocalidad = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
-            this.dgvBotones = new System.Windows.Forms.DataGridView();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Boton = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCodPostales = new System.Windows.Forms.DataGridView();
             this.txtIndice = new System.Windows.Forms.TextBox();
             this.txtUserRegistro = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.txtDetalle = new System.Windows.Forms.TextBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,10 +64,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_Local = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fk_Deptos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fk_Prov = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBotones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCodPostales)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -76,8 +86,8 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1107, 40);
-            this.pnlTitulo.TabIndex = 10;
+            this.pnlTitulo.Size = new System.Drawing.Size(1103, 40);
+            this.pnlTitulo.TabIndex = 11;
             // 
             // label1
             // 
@@ -86,22 +96,29 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(11, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 30);
+            this.label1.Size = new System.Drawing.Size(415, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Actualización de Botones";
+            this.label1.Text = "Actualización de Código Postales";
             // 
             // pnlDeck
             // 
             this.pnlDeck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlDeck.Controls.Add(this.cboDepartamento);
+            this.pnlDeck.Controls.Add(this.cboProvincia);
+            this.pnlDeck.Controls.Add(this.txtFkProv);
+            this.pnlDeck.Controls.Add(this.txtFkDepto);
+            this.pnlDeck.Controls.Add(this.txtIdLocal);
+            this.pnlDeck.Controls.Add(this.txtLocalidad);
+            this.pnlDeck.Controls.Add(this.label5);
+            this.pnlDeck.Controls.Add(this.label4);
             this.pnlDeck.Controls.Add(this.groupBox1);
-            this.pnlDeck.Controls.Add(this.dgvBotones);
+            this.pnlDeck.Controls.Add(this.dgvCodPostales);
             this.pnlDeck.Controls.Add(this.txtIndice);
             this.pnlDeck.Controls.Add(this.txtUserRegistro);
             this.pnlDeck.Controls.Add(this.txtId);
             this.pnlDeck.Controls.Add(this.btnLimpiar);
-            this.pnlDeck.Controls.Add(this.txtNombre);
+            this.pnlDeck.Controls.Add(this.txtCodigo);
             this.pnlDeck.Controls.Add(this.btnBuscar);
-            this.pnlDeck.Controls.Add(this.txtDetalle);
             this.pnlDeck.Controls.Add(this.txtFiltro);
             this.pnlDeck.Controls.Add(this.cboBusqueda);
             this.pnlDeck.Controls.Add(this.label10);
@@ -112,17 +129,105 @@
             this.pnlDeck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDeck.Location = new System.Drawing.Point(0, 40);
             this.pnlDeck.Name = "pnlDeck";
-            this.pnlDeck.Size = new System.Drawing.Size(1107, 467);
-            this.pnlDeck.TabIndex = 11;
+            this.pnlDeck.Size = new System.Drawing.Size(1103, 463);
+            this.pnlDeck.TabIndex = 12;
+            // 
+            // cboDepartamento
+            // 
+            this.cboDepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cboDepartamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboDepartamento.ForeColor = System.Drawing.Color.White;
+            this.cboDepartamento.FormattingEnabled = true;
+            this.cboDepartamento.Location = new System.Drawing.Point(125, 110);
+            this.cboDepartamento.Name = "cboDepartamento";
+            this.cboDepartamento.Size = new System.Drawing.Size(264, 25);
+            this.cboDepartamento.TabIndex = 2;
+            // 
+            // cboProvincia
+            // 
+            this.cboProvincia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cboProvincia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboProvincia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboProvincia.ForeColor = System.Drawing.Color.White;
+            this.cboProvincia.FormattingEnabled = true;
+            this.cboProvincia.Location = new System.Drawing.Point(125, 139);
+            this.cboProvincia.Name = "cboProvincia";
+            this.cboProvincia.Size = new System.Drawing.Size(264, 25);
+            this.cboProvincia.TabIndex = 3;
+            // 
+            // txtFkProv
+            // 
+            this.txtFkProv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtFkProv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFkProv.Enabled = false;
+            this.txtFkProv.ForeColor = System.Drawing.Color.White;
+            this.txtFkProv.Location = new System.Drawing.Point(282, 191);
+            this.txtFkProv.Name = "txtFkProv";
+            this.txtFkProv.Size = new System.Drawing.Size(35, 16);
+            this.txtFkProv.TabIndex = 83;
+            this.txtFkProv.Visible = false;
+            // 
+            // txtFkDepto
+            // 
+            this.txtFkDepto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtFkDepto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFkDepto.Enabled = false;
+            this.txtFkDepto.ForeColor = System.Drawing.Color.White;
+            this.txtFkDepto.Location = new System.Drawing.Point(211, 191);
+            this.txtFkDepto.Name = "txtFkDepto";
+            this.txtFkDepto.Size = new System.Drawing.Size(35, 16);
+            this.txtFkDepto.TabIndex = 82;
+            this.txtFkDepto.Visible = false;
+            // 
+            // txtIdLocal
+            // 
+            this.txtIdLocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtIdLocal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdLocal.Enabled = false;
+            this.txtIdLocal.ForeColor = System.Drawing.Color.White;
+            this.txtIdLocal.Location = new System.Drawing.Point(140, 191);
+            this.txtIdLocal.Name = "txtIdLocal";
+            this.txtIdLocal.Size = new System.Drawing.Size(35, 16);
+            this.txtIdLocal.TabIndex = 81;
+            this.txtIdLocal.Visible = false;
+            // 
+            // txtLocalidad
+            // 
+            this.txtLocalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLocalidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLocalidad.ForeColor = System.Drawing.Color.White;
+            this.txtLocalidad.Location = new System.Drawing.Point(125, 82);
+            this.txtLocalidad.Name = "txtLocalidad";
+            this.txtLocalidad.Size = new System.Drawing.Size(264, 23);
+            this.txtLocalidad.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 17);
+            this.label5.TabIndex = 80;
+            this.label5.Text = "Localidad:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(44, 142);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "Provincia:";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(15, 352);
+            this.groupBox1.Location = new System.Drawing.Point(28, 352);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(361, 86);
             this.groupBox1.TabIndex = 76;
@@ -144,32 +249,11 @@
             this.btnGuardar.Location = new System.Drawing.Point(9, 22);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(70, 53);
-            this.btnGuardar.TabIndex = 31;
+            this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnEliminar.IconColor = System.Drawing.Color.Aqua;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 30;
-            this.btnEliminar.Location = new System.Drawing.Point(101, 22);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 53);
-            this.btnEliminar.TabIndex = 32;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnClear
             // 
@@ -183,10 +267,10 @@
             this.btnClear.IconColor = System.Drawing.Color.Aqua;
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClear.IconSize = 30;
-            this.btnClear.Location = new System.Drawing.Point(193, 22);
+            this.btnClear.Location = new System.Drawing.Point(149, 22);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(70, 53);
-            this.btnClear.TabIndex = 37;
+            this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Limpiar";
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnClear.UseVisualStyleBackColor = false;
@@ -207,24 +291,24 @@
             this.btnSalir.Location = new System.Drawing.Point(285, 22);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(70, 53);
-            this.btnSalir.TabIndex = 35;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dgvBotones
+            // dgvCodPostales
             // 
-            this.dgvBotones.AllowUserToAddRows = false;
-            this.dgvBotones.AllowUserToDeleteRows = false;
-            this.dgvBotones.AllowUserToOrderColumns = true;
+            this.dgvCodPostales.AllowUserToAddRows = false;
+            this.dgvCodPostales.AllowUserToDeleteRows = false;
+            this.dgvCodPostales.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvBotones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvBotones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dgvBotones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCodPostales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCodPostales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dgvCodPostales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,81 +316,49 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBotones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvBotones.ColumnHeadersHeight = 30;
-            this.dgvBotones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvBotones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCodPostales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCodPostales.ColumnHeadersHeight = 30;
+            this.dgvCodPostales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCodPostales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar,
-            this.id_Boton,
-            this.Nombre,
-            this.Detalle,
-            this.UserRegistro});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBotones.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvBotones.EnableHeadersVisualStyles = false;
-            this.dgvBotones.GridColor = System.Drawing.Color.White;
-            this.dgvBotones.Location = new System.Drawing.Point(401, 53);
-            this.dgvBotones.MultiSelect = false;
-            this.dgvBotones.Name = "dgvBotones";
-            this.dgvBotones.ReadOnly = true;
-            this.dgvBotones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.id_Local,
+            this.fk_Deptos,
+            this.fk_Prov,
+            this.Codigo,
+            this.Localidad,
+            this.Departamento,
+            this.Provincia});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBotones.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvBotones.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvBotones.Size = new System.Drawing.Size(678, 385);
-            this.dgvBotones.TabIndex = 71;
-            this.dgvBotones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBotones_CellContentClick_1);
-            this.dgvBotones.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvBotones_CellPainting_1);
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
-            this.Seleccionar.Width = 25;
-            // 
-            // id_Boton
-            // 
-            this.id_Boton.HeaderText = "id";
-            this.id_Boton.Name = "id_Boton";
-            this.id_Boton.ReadOnly = true;
-            this.id_Boton.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "NOMBRE";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 300;
-            // 
-            // Detalle
-            // 
-            this.Detalle.HeaderText = "DETALLE";
-            this.Detalle.Name = "Detalle";
-            this.Detalle.ReadOnly = true;
-            this.Detalle.Width = 300;
-            // 
-            // UserRegistro
-            // 
-            this.UserRegistro.HeaderText = "UserRegistro";
-            this.UserRegistro.Name = "UserRegistro";
-            this.UserRegistro.ReadOnly = true;
-            this.UserRegistro.Visible = false;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCodPostales.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCodPostales.EnableHeadersVisualStyles = false;
+            this.dgvCodPostales.GridColor = System.Drawing.Color.White;
+            this.dgvCodPostales.Location = new System.Drawing.Point(404, 53);
+            this.dgvCodPostales.MultiSelect = false;
+            this.dgvCodPostales.Name = "dgvCodPostales";
+            this.dgvCodPostales.ReadOnly = true;
+            this.dgvCodPostales.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCodPostales.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvCodPostales.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvCodPostales.Size = new System.Drawing.Size(678, 385);
+            this.dgvCodPostales.TabIndex = 71;
+            this.dgvCodPostales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCodPostales_CellContentClick);
+            this.dgvCodPostales.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvCodPostales_CellPainting);
             // 
             // txtIndice
             // 
@@ -314,7 +366,7 @@
             this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIndice.Enabled = false;
             this.txtIndice.ForeColor = System.Drawing.Color.White;
-            this.txtIndice.Location = new System.Drawing.Point(221, 111);
+            this.txtIndice.Location = new System.Drawing.Point(252, 169);
             this.txtIndice.Name = "txtIndice";
             this.txtIndice.Size = new System.Drawing.Size(65, 16);
             this.txtIndice.TabIndex = 75;
@@ -326,9 +378,9 @@
             this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserRegistro.Enabled = false;
             this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtUserRegistro.Location = new System.Drawing.Point(147, 111);
+            this.txtUserRegistro.Location = new System.Drawing.Point(181, 169);
             this.txtUserRegistro.Name = "txtUserRegistro";
-            this.txtUserRegistro.Size = new System.Drawing.Size(68, 16);
+            this.txtUserRegistro.Size = new System.Drawing.Size(65, 16);
             this.txtUserRegistro.TabIndex = 74;
             this.txtUserRegistro.Visible = false;
             // 
@@ -338,7 +390,7 @@
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtId.Enabled = false;
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(92, 111);
+            this.txtId.Location = new System.Drawing.Point(126, 169);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(49, 16);
             this.txtId.TabIndex = 60;
@@ -357,22 +409,22 @@
             this.btnLimpiar.IconColor = System.Drawing.Color.Aqua;
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiar.IconSize = 25;
-            this.btnLimpiar.Location = new System.Drawing.Point(1051, 16);
+            this.btnLimpiar.Location = new System.Drawing.Point(1054, 16);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(28, 28);
-            this.btnLimpiar.TabIndex = 70;
+            this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // txtNombre
+            // txtCodigo
             // 
-            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNombre.Location = new System.Drawing.Point(93, 53);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(283, 23);
-            this.txtNombre.TabIndex = 52;
+            this.txtCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigo.ForeColor = System.Drawing.Color.White;
+            this.txtCodigo.Location = new System.Drawing.Point(125, 53);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(60, 23);
+            this.txtCodigo.TabIndex = 0;
             // 
             // btnBuscar
             // 
@@ -386,32 +438,23 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Aqua;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 25;
-            this.btnBuscar.Location = new System.Drawing.Point(1004, 16);
+            this.btnBuscar.Location = new System.Drawing.Point(1007, 16);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(28, 28);
-            this.btnBuscar.TabIndex = 68;
+            this.btnBuscar.TabIndex = 6;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txtDetalle
-            // 
-            this.txtDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtDetalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetalle.ForeColor = System.Drawing.Color.White;
-            this.txtDetalle.Location = new System.Drawing.Point(93, 82);
-            this.txtDetalle.Name = "txtDetalle";
-            this.txtDetalle.Size = new System.Drawing.Size(283, 23);
-            this.txtDetalle.TabIndex = 53;
             // 
             // txtFiltro
             // 
             this.txtFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro.ForeColor = System.Drawing.Color.White;
-            this.txtFiltro.Location = new System.Drawing.Point(795, 19);
+            this.txtFiltro.Location = new System.Drawing.Point(798, 19);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(199, 23);
-            this.txtFiltro.TabIndex = 66;
+            this.txtFiltro.TabIndex = 5;
             // 
             // cboBusqueda
             // 
@@ -420,15 +463,15 @@
             this.cboBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboBusqueda.ForeColor = System.Drawing.Color.White;
             this.cboBusqueda.FormattingEnabled = true;
-            this.cboBusqueda.Location = new System.Drawing.Point(649, 18);
+            this.cboBusqueda.Location = new System.Drawing.Point(652, 18);
             this.cboBusqueda.Name = "cboBusqueda";
             this.cboBusqueda.Size = new System.Drawing.Size(140, 25);
-            this.cboBusqueda.TabIndex = 64;
+            this.cboBusqueda.TabIndex = 4;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(564, 21);
+            this.label10.Location = new System.Drawing.Point(567, 21);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 17);
             this.label10.TabIndex = 73;
@@ -439,62 +482,120 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(89, 16);
+            this.label9.Location = new System.Drawing.Point(13, 16);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(166, 22);
+            this.label9.Size = new System.Drawing.Size(238, 22);
             this.label9.TabIndex = 72;
-            this.label9.Text = "Detalle del Botón";
+            this.label9.Text = "Detalle del Código Postal";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 57);
+            this.label2.Location = new System.Drawing.Point(54, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.Size = new System.Drawing.Size(62, 17);
             this.label2.TabIndex = 61;
-            this.label2.Text = "Nombre:";
+            this.label2.Text = "Código:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(397, 16);
+            this.label8.Location = new System.Drawing.Point(400, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(157, 22);
+            this.label8.Size = new System.Drawing.Size(159, 22);
             this.label8.TabIndex = 54;
-            this.label8.Text = "Lista de Botones";
+            this.label8.Text = "Lista de Códigos";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 84);
+            this.label3.Location = new System.Drawing.Point(7, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
+            this.label3.Size = new System.Drawing.Size(109, 17);
             this.label3.TabIndex = 62;
-            this.label3.Text = "Detalle:";
+            this.label3.Text = "Departamento:";
             // 
-            // frmBotones
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
+            this.Seleccionar.Width = 25;
+            // 
+            // id_Local
+            // 
+            this.id_Local.HeaderText = "id";
+            this.id_Local.Name = "id_Local";
+            this.id_Local.ReadOnly = true;
+            this.id_Local.Visible = false;
+            // 
+            // fk_Deptos
+            // 
+            this.fk_Deptos.HeaderText = "fk_Deptos";
+            this.fk_Deptos.Name = "fk_Deptos";
+            this.fk_Deptos.ReadOnly = true;
+            this.fk_Deptos.Visible = false;
+            // 
+            // fk_Prov
+            // 
+            this.fk_Prov.HeaderText = "fk_Prov";
+            this.fk_Prov.Name = "fk_Prov";
+            this.fk_Prov.ReadOnly = true;
+            this.fk_Prov.Visible = false;
+            // 
+            // Codigo
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Codigo.HeaderText = "CODIGO";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 80;
+            // 
+            // Localidad
+            // 
+            this.Localidad.HeaderText = "LOCALIDAD";
+            this.Localidad.Name = "Localidad";
+            this.Localidad.ReadOnly = true;
+            this.Localidad.Width = 180;
+            // 
+            // Departamento
+            // 
+            this.Departamento.HeaderText = "DEPARTAMENTO";
+            this.Departamento.Name = "Departamento";
+            this.Departamento.ReadOnly = true;
+            this.Departamento.Width = 180;
+            // 
+            // Provincia
+            // 
+            this.Provincia.HeaderText = "PROVINCIA";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.ReadOnly = true;
+            this.Provincia.Width = 150;
+            // 
+            // frmCodPostales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1107, 507);
+            this.ClientSize = new System.Drawing.Size(1103, 503);
             this.Controls.Add(this.pnlDeck);
             this.Controls.Add(this.pnlTitulo);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmBotones";
-            this.Text = "ACTUALIZACIÓN DE BOTONES";
-            this.Load += new System.EventHandler(this.frmBotones_Load);
+            this.Name = "frmCodPostales";
+            this.Text = "ACTUALIZACIÓN DE CÓDIGOS POSTALES";
+            this.Load += new System.EventHandler(this.frmCodPostales_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlDeck.ResumeLayout(false);
             this.pnlDeck.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBotones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCodPostales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -504,30 +605,39 @@
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlDeck;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnClear;
         private FontAwesome.Sharp.IconButton btnSalir;
+        private System.Windows.Forms.DataGridView dgvCodPostales;
         private System.Windows.Forms.TextBox txtIndice;
         private System.Windows.Forms.TextBox txtUserRegistro;
+        private System.Windows.Forms.TextBox txtId;
         private FontAwesome.Sharp.IconButton btnLimpiar;
+        private System.Windows.Forms.TextBox txtCodigo;
         private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.ComboBox cboBusqueda;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dgvBotones;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDetalle;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtLocalidad;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtFkProv;
+        private System.Windows.Forms.TextBox txtFkDepto;
+        private System.Windows.Forms.TextBox txtIdLocal;
+        private System.Windows.Forms.ComboBox cboProvincia;
+        private System.Windows.Forms.ComboBox cboDepartamento;
         private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Boton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Local;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fk_Deptos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fk_Prov;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
     }
 }

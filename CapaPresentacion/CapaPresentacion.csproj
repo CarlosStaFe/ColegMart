@@ -62,6 +62,12 @@
     <Compile Include="Formularios\frmBotones.Designer.cs">
       <DependentUpon>frmBotones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmCodPostales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCodPostales.Designer.cs">
+      <DependentUpon>frmCodPostales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmColegiados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="VarGlobales.cs" />
     <EmbeddedResource Include="Formularios\frmBotones.resx">
       <DependentUpon>frmBotones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCodPostales.resx">
+      <DependentUpon>frmCodPostales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmColegiados.resx">
       <DependentUpon>frmColegiados.cs</DependentUpon>
@@ -167,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendario16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FotoVacia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

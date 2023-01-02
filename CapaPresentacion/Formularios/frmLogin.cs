@@ -1,10 +1,7 @@
-﻿using CapaEntidad;
-using CapaNegocio;
+﻿using CapaNegocio;
 using CapaPresentacion.Formularios;
 using System;
-using System.Linq;
 using System.Windows.Forms;
-using System.Windows.Interop;
 
 namespace ColegMart.Formularios
 {
@@ -20,19 +17,39 @@ namespace ColegMart.Formularios
         //***** PROCEDIMIENTO PARA EL BOTON INGRESAR *****
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            //List<CE_Usuarios> Test = new CN_Usuarios().Listar();
-            CE_Usuarios cEUsuarios = new CN_Usuarios().Listar().Where(u => u.Usuario == txtUsuario.Text && u.Clave == txtPassword.Text).FirstOrDefault();
-
-            if (cEUsuarios != null)
+            if (txtUsuario.Text != "")
             {
-                frmMenuPpal form = new frmMenuPpal(cEUsuarios);
-                form.Show();
-                Hide();
-                form.FormClosing += CerrarForm;
+                if (txtPassword.Text != "")
+                {
+                    CN_Usuarios usuario = new CN_Usuarios();
+                    var validarLogin = usuario.LoginUser(txtUsuario.Text, txtPassword.Text);
+
+                    if (validarLogin == true)
+                    {
+                        frmMenuPpal form = new frmMenuPpal();
+                        form.Show();
+                        Hide();
+                        form.FormClosing += CerrarForm;
+                    }
+                    else
+                    {
+                        frmMsgBox msg = new frmMsgBox("USUARIO Y CONTRASEÑA ERRÓNEO...!!! VERIFIQUE", "info", 1);
+                        msg.ShowDialog();
+                        txtUsuario.Clear();
+                        txtPassword.Clear();
+                        Show();
+                        txtUsuario.Select();
+                    }
+                }
+                else
+                {
+                    frmMsgBox msg = new frmMsgBox("DEBE INGRESAR UNA CONTRASEÑA...!!! VERIFIQUE", "info", 1);
+                    msg.ShowDialog();
+                }
             }
             else
             {
-                frmMsgBox msg = new frmMsgBox("USUARIO Y/O CLAVE NO EXISTENTE...!!! VERIFIQUE", "info", 1);
+                frmMsgBox msg = new frmMsgBox("DEBE INGRESAR UN USUARIO EXISTENTE...!!! VERIFIQUE", "info", 1);
                 msg.ShowDialog();
             }
         }
@@ -48,6 +65,7 @@ namespace ColegMart.Formularios
         {
             txtUsuario.Text = string.Empty;
             txtPassword.Text = string.Empty;
+            txtUsuario.Select();
             Show();
         }
     }
