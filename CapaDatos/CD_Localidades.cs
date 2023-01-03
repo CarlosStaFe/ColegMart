@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -121,6 +122,37 @@ namespace CapaDatos
                 }
             }
             return Resultado;
+        }
+
+        //***** METODO PARA BUSCAR LA LOCALIDAD COMPLETA *****
+        public string BuscaCodPos(int local)
+        {
+            string localidad = string.Empty;
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Parameters.AddWithValue("@local", local);
+                    command.Connection = connection;
+                    command.CommandText = "SELECT Localidades.CodigoPostal,Localidades.Localidad,Departamentos.Departamento,Provincias.Provincia FROM Localidades " +
+                                          "INNER JOIN Departamentos ON id_Depto = Localidades.fk_Deptos " +
+                                          "INNER JOIN Provincias    ON id_Prov  = Localidades.fk_Prov " +
+                                          "WHERE id_Local = @local";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader dr = command.ExecuteReader();
+
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            localidad = Convert.ToInt32(dr[0].ToString()) + " - " + dr[1].ToString() + " - " + dr[2].ToString() + " - " + dr[3].ToString();
+                        };
+                    }
+                }
+            }
+            return localidad;
         }
     }
 }

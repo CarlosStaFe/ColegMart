@@ -43,13 +43,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.lblFechaVence = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtNewMatricula = new System.Windows.Forms.TextBox();
+            this.btnMatricula = new FontAwesome.Sharp.IconButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnNuevo = new FontAwesome.Sharp.IconButton();
+            this.lblMatricula = new System.Windows.Forms.Label();
+            this.btnLocal2 = new FontAwesome.Sharp.IconButton();
+            this.btnLocal1 = new FontAwesome.Sharp.IconButton();
             this.txtFechaRegistro = new System.Windows.Forms.TextBox();
             this.btnFoto = new FontAwesome.Sharp.IconButton();
             this.picFoto = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.dgvColegiados = new System.Windows.Forms.DataGridView();
             this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -104,13 +112,12 @@
             this.lblVenceFianza = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
-            this.lblDetLocalLabo = new System.Windows.Forms.Label();
-            this.lblDetLocalPart = new System.Windows.Forms.Label();
+            this.lblDetLocalLabor = new System.Windows.Forms.Label();
+            this.lblDetLocalParti = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txtCeluLabor = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.txtCodPosLabo = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txtFijoLabor = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -119,7 +126,6 @@
             this.txtCeluParti = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.txtCodPosPart = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtFijoParti = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -166,6 +172,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColegiados)).BeginInit();
@@ -196,6 +204,12 @@
             // pnlDeck
             // 
             this.pnlDeck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlDeck.Controls.Add(this.lblFechaVence);
+            this.pnlDeck.Controls.Add(this.groupBox3);
+            this.pnlDeck.Controls.Add(this.groupBox2);
+            this.pnlDeck.Controls.Add(this.lblMatricula);
+            this.pnlDeck.Controls.Add(this.btnLocal2);
+            this.pnlDeck.Controls.Add(this.btnLocal1);
             this.pnlDeck.Controls.Add(this.txtFechaRegistro);
             this.pnlDeck.Controls.Add(this.btnFoto);
             this.pnlDeck.Controls.Add(this.picFoto);
@@ -217,13 +231,12 @@
             this.pnlDeck.Controls.Add(this.lblVenceFianza);
             this.pnlDeck.Controls.Add(this.label31);
             this.pnlDeck.Controls.Add(this.txtObs);
-            this.pnlDeck.Controls.Add(this.lblDetLocalLabo);
-            this.pnlDeck.Controls.Add(this.lblDetLocalPart);
+            this.pnlDeck.Controls.Add(this.lblDetLocalLabor);
+            this.pnlDeck.Controls.Add(this.lblDetLocalParti);
             this.pnlDeck.Controls.Add(this.label24);
             this.pnlDeck.Controls.Add(this.txtCeluLabor);
             this.pnlDeck.Controls.Add(this.label25);
             this.pnlDeck.Controls.Add(this.label28);
-            this.pnlDeck.Controls.Add(this.txtCodPosLabo);
             this.pnlDeck.Controls.Add(this.label29);
             this.pnlDeck.Controls.Add(this.txtFijoLabor);
             this.pnlDeck.Controls.Add(this.label30);
@@ -232,7 +245,6 @@
             this.pnlDeck.Controls.Add(this.txtCeluParti);
             this.pnlDeck.Controls.Add(this.label26);
             this.pnlDeck.Controls.Add(this.label23);
-            this.pnlDeck.Controls.Add(this.txtCodPosPart);
             this.pnlDeck.Controls.Add(this.label22);
             this.pnlDeck.Controls.Add(this.txtFijoParti);
             this.pnlDeck.Controls.Add(this.label21);
@@ -283,15 +295,144 @@
             this.pnlDeck.Size = new System.Drawing.Size(1160, 609);
             this.pnlDeck.TabIndex = 12;
             // 
+            // lblFechaVence
+            // 
+            this.lblFechaVence.AutoSize = true;
+            this.lblFechaVence.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaVence.ForeColor = System.Drawing.Color.Lime;
+            this.lblFechaVence.Location = new System.Drawing.Point(570, 15);
+            this.lblFechaVence.Name = "lblFechaVence";
+            this.lblFechaVence.Size = new System.Drawing.Size(16, 19);
+            this.lblFechaVence.TabIndex = 136;
+            this.lblFechaVence.Text = "-";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtNewMatricula);
+            this.groupBox3.Controls.Add(this.btnMatricula);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(1026, 447);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(106, 151);
+            this.groupBox3.TabIndex = 132;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Controles";
+            // 
+            // txtNewMatricula
+            // 
+            this.txtNewMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtNewMatricula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNewMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNewMatricula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewMatricula.ForeColor = System.Drawing.Color.Yellow;
+            this.txtNewMatricula.Location = new System.Drawing.Point(10, 105);
+            this.txtNewMatricula.Name = "txtNewMatricula";
+            this.txtNewMatricula.Size = new System.Drawing.Size(86, 27);
+            this.txtNewMatricula.TabIndex = 136;
+            // 
+            // btnMatricula
+            // 
+            this.btnMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMatricula.FlatAppearance.BorderSize = 0;
+            this.btnMatricula.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnMatricula.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMatricula.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnMatricula.IconColor = System.Drawing.Color.Red;
+            this.btnMatricula.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMatricula.IconSize = 40;
+            this.btnMatricula.Location = new System.Drawing.Point(12, 23);
+            this.btnMatricula.Name = "btnMatricula";
+            this.btnMatricula.Size = new System.Drawing.Size(81, 76);
+            this.btnMatricula.TabIndex = 5;
+            this.btnMatricula.Text = "Asignar Matrícula";
+            this.btnMatricula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnMatricula.UseVisualStyleBackColor = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnNuevo);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(1026, 326);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(106, 99);
+            this.groupBox2.TabIndex = 131;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Controles";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.Vcard;
+            this.btnNuevo.IconColor = System.Drawing.Color.Lime;
+            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevo.IconSize = 40;
+            this.btnNuevo.Location = new System.Drawing.Point(18, 25);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(70, 60);
+            this.btnNuevo.TabIndex = 4;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // lblMatricula
+            // 
+            this.lblMatricula.AutoSize = true;
+            this.lblMatricula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatricula.ForeColor = System.Drawing.Color.Yellow;
+            this.lblMatricula.Location = new System.Drawing.Point(155, 45);
+            this.lblMatricula.Name = "lblMatricula";
+            this.lblMatricula.Size = new System.Drawing.Size(16, 19);
+            this.lblMatricula.TabIndex = 135;
+            this.lblMatricula.Text = "-";
+            // 
+            // btnLocal2
+            // 
+            this.btnLocal2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnLocal2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLocal2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocal2.IconChar = FontAwesome.Sharp.IconChar.LocationCrosshairs;
+            this.btnLocal2.IconColor = System.Drawing.Color.Aqua;
+            this.btnLocal2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLocal2.IconSize = 20;
+            this.btnLocal2.Location = new System.Drawing.Point(155, 357);
+            this.btnLocal2.Name = "btnLocal2";
+            this.btnLocal2.Size = new System.Drawing.Size(27, 24);
+            this.btnLocal2.TabIndex = 134;
+            this.btnLocal2.UseVisualStyleBackColor = false;
+            this.btnLocal2.Click += new System.EventHandler(this.btnLocal2_Click);
+            // 
+            // btnLocal1
+            // 
+            this.btnLocal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnLocal1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLocal1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocal1.IconChar = FontAwesome.Sharp.IconChar.LocationCrosshairs;
+            this.btnLocal1.IconColor = System.Drawing.Color.Aqua;
+            this.btnLocal1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLocal1.IconSize = 20;
+            this.btnLocal1.Location = new System.Drawing.Point(155, 274);
+            this.btnLocal1.Name = "btnLocal1";
+            this.btnLocal1.Size = new System.Drawing.Size(27, 24);
+            this.btnLocal1.TabIndex = 133;
+            this.btnLocal1.UseVisualStyleBackColor = false;
+            this.btnLocal1.Click += new System.EventHandler(this.btnLocal1_Click);
+            // 
             // txtFechaRegistro
             // 
             this.txtFechaRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtFechaRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFechaRegistro.Enabled = false;
             this.txtFechaRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtFechaRegistro.Location = new System.Drawing.Point(609, 17);
+            this.txtFechaRegistro.Location = new System.Drawing.Point(931, 3);
             this.txtFechaRegistro.Name = "txtFechaRegistro";
-            this.txtFechaRegistro.Size = new System.Drawing.Size(68, 16);
+            this.txtFechaRegistro.Size = new System.Drawing.Size(53, 16);
             this.txtFechaRegistro.TabIndex = 132;
             this.txtFechaRegistro.Visible = false;
             // 
@@ -334,12 +475,11 @@
             // 
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.btnClear);
-            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(1026, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(106, 552);
+            this.groupBox1.Size = new System.Drawing.Size(106, 265);
             this.groupBox1.TabIndex = 130;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controles";
@@ -356,7 +496,7 @@
             this.btnSalir.IconColor = System.Drawing.Color.Aqua;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
-            this.btnSalir.Location = new System.Drawing.Point(17, 482);
+            this.btnSalir.Location = new System.Drawing.Point(18, 184);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(70, 53);
             this.btnSalir.TabIndex = 3;
@@ -377,7 +517,7 @@
             this.btnClear.IconColor = System.Drawing.Color.Aqua;
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClear.IconSize = 30;
-            this.btnClear.Location = new System.Drawing.Point(17, 335);
+            this.btnClear.Location = new System.Drawing.Point(18, 106);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(70, 53);
             this.btnClear.TabIndex = 2;
@@ -385,26 +525,6 @@
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnEliminar.IconColor = System.Drawing.Color.Aqua;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 30;
-            this.btnEliminar.Location = new System.Drawing.Point(17, 183);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 53);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
@@ -418,7 +538,7 @@
             this.btnGuardar.IconColor = System.Drawing.Color.Aqua;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 30;
-            this.btnGuardar.Location = new System.Drawing.Point(17, 30);
+            this.btnGuardar.Location = new System.Drawing.Point(18, 28);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(70, 53);
             this.btnGuardar.TabIndex = 0;
@@ -872,9 +992,9 @@
             this.txtProvLabor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProvLabor.Enabled = false;
             this.txtProvLabor.ForeColor = System.Drawing.Color.White;
-            this.txtProvLabor.Location = new System.Drawing.Point(929, 361);
+            this.txtProvLabor.Location = new System.Drawing.Point(958, 361);
             this.txtProvLabor.Name = "txtProvLabor";
-            this.txtProvLabor.Size = new System.Drawing.Size(68, 16);
+            this.txtProvLabor.Size = new System.Drawing.Size(40, 16);
             this.txtProvLabor.TabIndex = 34;
             this.txtProvLabor.Text = "1";
             this.txtProvLabor.Visible = false;
@@ -885,9 +1005,9 @@
             this.txtDeptoLabor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDeptoLabor.Enabled = false;
             this.txtDeptoLabor.ForeColor = System.Drawing.Color.White;
-            this.txtDeptoLabor.Location = new System.Drawing.Point(856, 361);
+            this.txtDeptoLabor.Location = new System.Drawing.Point(916, 361);
             this.txtDeptoLabor.Name = "txtDeptoLabor";
-            this.txtDeptoLabor.Size = new System.Drawing.Size(68, 16);
+            this.txtDeptoLabor.Size = new System.Drawing.Size(40, 16);
             this.txtDeptoLabor.TabIndex = 33;
             this.txtDeptoLabor.Text = "1";
             this.txtDeptoLabor.Visible = false;
@@ -898,9 +1018,9 @@
             this.txtLocalLabor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLocalLabor.Enabled = false;
             this.txtLocalLabor.ForeColor = System.Drawing.Color.White;
-            this.txtLocalLabor.Location = new System.Drawing.Point(783, 361);
+            this.txtLocalLabor.Location = new System.Drawing.Point(874, 361);
             this.txtLocalLabor.Name = "txtLocalLabor";
-            this.txtLocalLabor.Size = new System.Drawing.Size(68, 16);
+            this.txtLocalLabor.Size = new System.Drawing.Size(40, 16);
             this.txtLocalLabor.TabIndex = 32;
             this.txtLocalLabor.Text = "1";
             this.txtLocalLabor.Visible = false;
@@ -911,9 +1031,9 @@
             this.txtProvParti.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProvParti.Enabled = false;
             this.txtProvParti.ForeColor = System.Drawing.Color.White;
-            this.txtProvParti.Location = new System.Drawing.Point(929, 278);
+            this.txtProvParti.Location = new System.Drawing.Point(958, 278);
             this.txtProvParti.Name = "txtProvParti";
-            this.txtProvParti.Size = new System.Drawing.Size(68, 16);
+            this.txtProvParti.Size = new System.Drawing.Size(40, 16);
             this.txtProvParti.TabIndex = 26;
             this.txtProvParti.Text = "1";
             this.txtProvParti.Visible = false;
@@ -924,9 +1044,9 @@
             this.txtDeptoParti.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDeptoParti.Enabled = false;
             this.txtDeptoParti.ForeColor = System.Drawing.Color.White;
-            this.txtDeptoParti.Location = new System.Drawing.Point(856, 278);
+            this.txtDeptoParti.Location = new System.Drawing.Point(916, 278);
             this.txtDeptoParti.Name = "txtDeptoParti";
-            this.txtDeptoParti.Size = new System.Drawing.Size(68, 16);
+            this.txtDeptoParti.Size = new System.Drawing.Size(40, 16);
             this.txtDeptoParti.TabIndex = 25;
             this.txtDeptoParti.Text = "1";
             this.txtDeptoParti.Visible = false;
@@ -937,9 +1057,9 @@
             this.txtLocalParti.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLocalParti.Enabled = false;
             this.txtLocalParti.ForeColor = System.Drawing.Color.White;
-            this.txtLocalParti.Location = new System.Drawing.Point(783, 278);
+            this.txtLocalParti.Location = new System.Drawing.Point(874, 278);
             this.txtLocalParti.Name = "txtLocalParti";
-            this.txtLocalParti.Size = new System.Drawing.Size(68, 16);
+            this.txtLocalParti.Size = new System.Drawing.Size(40, 16);
             this.txtLocalParti.TabIndex = 24;
             this.txtLocalParti.Text = "1";
             this.txtLocalParti.Visible = false;
@@ -955,20 +1075,23 @@
             this.dtpFecVenceFianza.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecVenceFianza.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecVenceFianza.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpFecVenceFianza.Location = new System.Drawing.Point(837, 17);
+            this.dtpFecVenceFianza.Location = new System.Drawing.Point(1045, 3);
             this.dtpFecVenceFianza.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpFecVenceFianza.Name = "dtpFecVenceFianza";
             this.dtpFecVenceFianza.Size = new System.Drawing.Size(108, 23);
             this.dtpFecVenceFianza.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dtpFecVenceFianza.TabIndex = 116;
             this.dtpFecVenceFianza.TextColor = System.Drawing.Color.White;
+            this.dtpFecVenceFianza.Visible = false;
             // 
             // lblVenceFianza
             // 
             this.lblVenceFianza.AutoSize = true;
-            this.lblVenceFianza.Location = new System.Drawing.Point(692, 22);
+            this.lblVenceFianza.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVenceFianza.ForeColor = System.Drawing.Color.Lime;
+            this.lblVenceFianza.Location = new System.Drawing.Point(401, 15);
             this.lblVenceFianza.Name = "lblVenceFianza";
-            this.lblVenceFianza.Size = new System.Drawing.Size(139, 17);
+            this.lblVenceFianza.Size = new System.Drawing.Size(167, 19);
             this.lblVenceFianza.TabIndex = 115;
             this.lblVenceFianza.Text = "Vencimiento Fianza:";
             // 
@@ -991,27 +1114,27 @@
             this.txtObs.Size = new System.Drawing.Size(844, 23);
             this.txtObs.TabIndex = 18;
             // 
-            // lblDetLocalLabo
+            // lblDetLocalLabor
             // 
-            this.lblDetLocalLabo.AutoSize = true;
-            this.lblDetLocalLabo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetLocalLabo.ForeColor = System.Drawing.Color.White;
-            this.lblDetLocalLabo.Location = new System.Drawing.Point(213, 361);
-            this.lblDetLocalLabo.Name = "lblDetLocalLabo";
-            this.lblDetLocalLabo.Size = new System.Drawing.Size(77, 17);
-            this.lblDetLocalLabo.TabIndex = 31;
-            this.lblDetLocalLabo.Text = "localidad2";
+            this.lblDetLocalLabor.AutoSize = true;
+            this.lblDetLocalLabor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetLocalLabor.ForeColor = System.Drawing.Color.Aqua;
+            this.lblDetLocalLabor.Location = new System.Drawing.Point(198, 358);
+            this.lblDetLocalLabor.Name = "lblDetLocalLabor";
+            this.lblDetLocalLabor.Size = new System.Drawing.Size(92, 21);
+            this.lblDetLocalLabor.TabIndex = 31;
+            this.lblDetLocalLabor.Text = "localidad2";
             // 
-            // lblDetLocalPart
+            // lblDetLocalParti
             // 
-            this.lblDetLocalPart.AutoSize = true;
-            this.lblDetLocalPart.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetLocalPart.ForeColor = System.Drawing.Color.White;
-            this.lblDetLocalPart.Location = new System.Drawing.Point(213, 278);
-            this.lblDetLocalPart.Name = "lblDetLocalPart";
-            this.lblDetLocalPart.Size = new System.Drawing.Size(77, 17);
-            this.lblDetLocalPart.TabIndex = 23;
-            this.lblDetLocalPart.Text = "localidad1";
+            this.lblDetLocalParti.AutoSize = true;
+            this.lblDetLocalParti.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetLocalParti.ForeColor = System.Drawing.Color.Aqua;
+            this.lblDetLocalParti.Location = new System.Drawing.Point(198, 275);
+            this.lblDetLocalParti.Name = "lblDetLocalParti";
+            this.lblDetLocalParti.Size = new System.Drawing.Size(92, 21);
+            this.lblDetLocalParti.TabIndex = 23;
+            this.lblDetLocalParti.Text = "localidad1";
             // 
             // label24
             // 
@@ -1052,17 +1175,6 @@
             this.label28.Size = new System.Drawing.Size(88, 17);
             this.label28.TabIndex = 107;
             this.label28.Text = "Cód. Postal:";
-            // 
-            // txtCodPosLabo
-            // 
-            this.txtCodPosLabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtCodPosLabo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodPosLabo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodPosLabo.ForeColor = System.Drawing.Color.White;
-            this.txtCodPosLabo.Location = new System.Drawing.Point(155, 359);
-            this.txtCodPosLabo.Name = "txtCodPosLabo";
-            this.txtCodPosLabo.Size = new System.Drawing.Size(52, 23);
-            this.txtCodPosLabo.TabIndex = 26;
             // 
             // label29
             // 
@@ -1143,17 +1255,6 @@
             this.label23.Size = new System.Drawing.Size(88, 17);
             this.label23.TabIndex = 94;
             this.label23.Text = "Cód. Postal:";
-            // 
-            // txtCodPosPart
-            // 
-            this.txtCodPosPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtCodPosPart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodPosPart.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodPosPart.ForeColor = System.Drawing.Color.White;
-            this.txtCodPosPart.Location = new System.Drawing.Point(155, 276);
-            this.txtCodPosPart.Name = "txtCodPosPart";
-            this.txtCodPosPart.Size = new System.Drawing.Size(52, 23);
-            this.txtCodPosPart.TabIndex = 22;
             // 
             // label22
             // 
@@ -1572,12 +1673,13 @@
             // txtMatricula
             // 
             this.txtMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtMatricula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMatricula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMatricula.Enabled = false;
             this.txtMatricula.ForeColor = System.Drawing.Color.White;
-            this.txtMatricula.Location = new System.Drawing.Point(155, 46);
+            this.txtMatricula.Location = new System.Drawing.Point(990, 3);
             this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(52, 23);
+            this.txtMatricula.Size = new System.Drawing.Size(52, 16);
             this.txtMatricula.TabIndex = 0;
             // 
             // txtIndice
@@ -1586,9 +1688,9 @@
             this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIndice.Enabled = false;
             this.txtIndice.ForeColor = System.Drawing.Color.White;
-            this.txtIndice.Location = new System.Drawing.Point(461, 18);
+            this.txtIndice.Location = new System.Drawing.Point(813, 3);
             this.txtIndice.Name = "txtIndice";
-            this.txtIndice.Size = new System.Drawing.Size(68, 16);
+            this.txtIndice.Size = new System.Drawing.Size(53, 16);
             this.txtIndice.TabIndex = 53;
             this.txtIndice.Visible = false;
             // 
@@ -1598,9 +1700,9 @@
             this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserRegistro.Enabled = false;
             this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtUserRegistro.Location = new System.Drawing.Point(535, 17);
+            this.txtUserRegistro.Location = new System.Drawing.Point(872, 3);
             this.txtUserRegistro.Name = "txtUserRegistro";
-            this.txtUserRegistro.Size = new System.Drawing.Size(68, 16);
+            this.txtUserRegistro.Size = new System.Drawing.Size(53, 16);
             this.txtUserRegistro.TabIndex = 52;
             this.txtUserRegistro.Visible = false;
             // 
@@ -1610,9 +1712,9 @@
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtId.Enabled = false;
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(406, 18);
+            this.txtId.Location = new System.Drawing.Point(773, 3);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(49, 16);
+            this.txtId.Size = new System.Drawing.Size(34, 16);
             this.txtId.TabIndex = 51;
             this.txtId.Text = "0";
             this.txtId.Visible = false;
@@ -1667,6 +1769,9 @@
             this.pnlTitulo.PerformLayout();
             this.pnlDeck.ResumeLayout(false);
             this.pnlDeck.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvColegiados)).EndInit();
@@ -1685,7 +1790,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnSalir;
         private FontAwesome.Sharp.IconButton btnClear;
-        private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.DataGridView dgvColegiados;
         private FontAwesome.Sharp.IconButton btnLimpiar;
@@ -1694,23 +1798,14 @@
         private System.Windows.Forms.ComboBox cboBusqueda;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox txtProvLabor;
-        private System.Windows.Forms.TextBox txtDeptoLabor;
-        private System.Windows.Forms.TextBox txtLocalLabor;
-        private System.Windows.Forms.TextBox txtProvParti;
-        private System.Windows.Forms.TextBox txtDeptoParti;
-        private System.Windows.Forms.TextBox txtLocalParti;
         private DatePicker dtpFecVenceFianza;
         private System.Windows.Forms.Label lblVenceFianza;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtObs;
-        private System.Windows.Forms.Label lblDetLocalLabo;
-        private System.Windows.Forms.Label lblDetLocalPart;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtCeluLabor;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtCodPosLabo;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtFijoLabor;
         private System.Windows.Forms.Label label30;
@@ -1719,7 +1814,6 @@
         private System.Windows.Forms.TextBox txtCeluParti;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtCodPosPart;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtFijoParti;
         private System.Windows.Forms.Label label21;
@@ -1800,5 +1894,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
+        private FontAwesome.Sharp.IconButton btnLocal2;
+        private FontAwesome.Sharp.IconButton btnLocal1;
+        public System.Windows.Forms.Label lblDetLocalLabor;
+        public System.Windows.Forms.Label lblDetLocalParti;
+        public System.Windows.Forms.TextBox txtProvLabor;
+        public System.Windows.Forms.TextBox txtDeptoLabor;
+        public System.Windows.Forms.TextBox txtLocalLabor;
+        public System.Windows.Forms.TextBox txtProvParti;
+        public System.Windows.Forms.TextBox txtDeptoParti;
+        public System.Windows.Forms.TextBox txtLocalParti;
+        public System.Windows.Forms.Label lblMatricula;
+        public System.Windows.Forms.Label lblFechaVence;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtNewMatricula;
+        private FontAwesome.Sharp.IconButton btnMatricula;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private FontAwesome.Sharp.IconButton btnNuevo;
     }
 }

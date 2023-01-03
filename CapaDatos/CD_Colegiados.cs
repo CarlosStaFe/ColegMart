@@ -33,17 +33,6 @@ namespace CapaDatos
                         {
                             while (dr.Read())
                             {
-                                //if (!DBNull.Value.Equals((byte[])dr["Foto"]))
-                                //{
-                                //    byte[] FotoByte = (byte[])dr["Foto"];
-                                //    MemoryStream ms = new MemoryStream(img);
-                                //    FotoByte= ms.ToArray();
-                                //}
-                                //else
-                                //{
-                                //    FotoByte = null;
-                                //}
-
                                 lista.Add(new CE_Colegiados()
                                 {
                                     id_Coleg = Convert.ToInt32(dr["id_Coleg"]),
@@ -58,13 +47,13 @@ namespace CapaDatos
                                     Cuit = dr["Cuit"].ToString(),
                                     Sexo = dr["Sexo"].ToString(),
                                     EstadoCivil = dr["EstadoCivil"].ToString(),
-                                    Juramento = Convert.ToDateTime(dr["FechaNacim"]),
+                                    Juramento = Convert.ToDateTime(dr["Juramento"]),
                                     Tomo = dr["Tomo"].ToString(),
                                     Folio = dr["Folio"].ToString(),
                                     Categoria = dr["Categoria"].ToString(),
                                     Email = dr["Email"].ToString(),
                                     Estado = dr["Estado"].ToString(),
-                                    FecEstado = Convert.ToDateTime(dr["FechaNacim"]),
+                                    FecEstado = Convert.ToDateTime(dr["FecEstado"]),
                                     DomParti = dr["DomParti"].ToString(),
                                     idLocalParti = Convert.ToInt32(dr["idLocalParti"] is DBNull ? 1 : dr["idLocalParti"]),
                                     idDeptoParti = Convert.ToInt32(dr["idDeptoParti"] is DBNull ? 1 : dr["idDeptoParti"]),
@@ -77,10 +66,10 @@ namespace CapaDatos
                                     idProvLabor = Convert.ToInt32(dr["idProvLabor"] is DBNull ? 1 : dr["idProvLabor"]),
                                     FijoLabor = dr["FijoLabor"].ToString(),
                                     CeluLabor = dr["CeluLabor"].ToString(),
-                                    FecVenceFianza = Convert.ToDateTime(dr["FechaNacim"]),
+                                    FecVenceFianza = Convert.ToDateTime(dr["FecVenceFianza"]),
                                     Obs = dr["Obs"].ToString(),
                                     UserRegistro = dr["UserRegistro"].ToString(),
-                                    FechaRegistro = Convert.ToDateTime(dr["FechaNacim"])
+                                    FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"])
                                 });
                             }
                         }

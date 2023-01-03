@@ -53,5 +53,12 @@ namespace CapaNegocio
                 return cD_Localidades.Editar(obj, out Mensaje);
             }
         }
+
+        //***** BUSQUEDA DE LA LOCALIDAD DEL COLEGIADO *****
+        public string BuscaCodPos(int local)
+        {
+            return cD_Localidades.BuscaCodPos(local);
+        }
+
     }
 }

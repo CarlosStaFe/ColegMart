@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace CapaPresentacion.Formularios
@@ -12,11 +13,14 @@ namespace CapaPresentacion.Formularios
     public partial class frmColegiados : Form
     {
         CN_Colegiados cN_Colegiados = new CN_Colegiados();
+        CN_Localidades cN_Localidades = new CN_Localidades();
 
+        public string localidad;
         private string respuesta;
         bool obtenido = true;
         private byte[] imagenByte;
         public string id;
+        int local = 0;
 
         //MemoryStream ms = new MemoryStream();
 
@@ -40,6 +44,8 @@ namespace CapaPresentacion.Formularios
                                                 item.CeluParti, item.DomLabor, item.idLocalLabor, item.idDeptoLabor, item.idProvLabor, item.FijoLabor, item.CeluLabor,
                                                 item.FecVenceFianza, item.Obs, item.UserRegistro, item.FechaRegistro });
             }
+
+            Colorear();
 
             //***** CARGO EL COMBO DE BUSQUEDA *****
             foreach (DataGridViewColumn columna in dgvColegiados.Columns)
@@ -65,9 +71,6 @@ namespace CapaPresentacion.Formularios
 
             if (respuesta == "OK")
             {
-                MemoryStream ms = new MemoryStream();
-                picFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-
                 CE_Colegiados cE_Colegiados = new CE_Colegiados()
                 {
                     id_Coleg = Convert.ToInt32(txtId.Text),
@@ -200,6 +203,7 @@ namespace CapaPresentacion.Formularios
         {
             txtId.Text = "0";
             txtMatricula.Text = String.Empty;
+            lblMatricula.Text = String.Empty;
             txtApelNombres.Text = String.Empty;
             txtApelMaterno.Text = String.Empty;
             txtLugarNacim.Text = String.Empty;
@@ -215,18 +219,28 @@ namespace CapaPresentacion.Formularios
             txtEmail.Text = String.Empty;
             cboEstado.Text = String.Empty;
             txtDomParti.Text = String.Empty;
+            lblDetLocalParti.Text = String.Empty;
             txtLocalParti.Text = String.Empty;
             txtDeptoParti.Text = String.Empty;
             txtProvParti.Text = String.Empty;
             txtFijoParti.Text = String.Empty;
             txtCeluParti.Text = String.Empty;
             txtDomLabor.Text = String.Empty;
+            lblDetLocalLabor.Text = String.Empty;
             txtLocalLabor.Text = String.Empty;
             txtDeptoLabor.Text = String.Empty;
             txtProvLabor.Text = String.Empty;
             txtFijoLabor.Text = String.Empty;
             txtCeluLabor.Text = String.Empty;
             txtObs.Text = String.Empty;
+            picFoto.Image= Image.FromFile("E:\\DBColegMart/Fotos/FotoVacia.png");
+            dtpFecEstado.Value = DateTime.Now;
+            dtpFechaNacim.Value = DateTime.Now;
+            dtpFecVenceFianza.Value = DateTime.Now;
+            dtpJuramento.Value = DateTime.Now;
+            lblFechaVence.Text = "-";
+            lblFechaVence.ForeColor = Color.Lime;
+            lblVenceFianza.ForeColor = Color.Lime;
 
             txtApelNombres.Select();
         }
@@ -261,6 +275,7 @@ namespace CapaPresentacion.Formularios
                     txtIndice.Text = indice.ToString();
                     txtId.Text = dgvColegiados.Rows[indice].Cells["id_Coleg"].Value.ToString();
                     txtMatricula.Text = dgvColegiados.Rows[indice].Cells["Matri"].Value.ToString();
+                    lblMatricula.Text = txtMatricula.Text;
                     txtApelNombres.Text = dgvColegiados.Rows[indice].Cells["ApellidoyNombres"].Value.ToString();
                     txtApelMaterno.Text = dgvColegiados.Rows[indice].Cells["ApelMaterno"].Value.ToString();
                     dtpFechaNacim.Value = Convert.ToDateTime(dgvColegiados.Rows[indice].Cells["FechaNacim"].Value.ToString());
@@ -282,19 +297,47 @@ namespace CapaPresentacion.Formularios
                     txtLocalParti.Text = dgvColegiados.Rows[indice].Cells["idLocalParti"].Value.ToString();
                     txtDeptoParti.Text = dgvColegiados.Rows[indice].Cells["idDeptoParti"].Value.ToString();
                     txtProvParti.Text = dgvColegiados.Rows[indice].Cells["idProvParti"].Value.ToString();
+
+                    //***** BUSCO LA LOCALIDAD PARTICULAR *****
+                    local = Convert.ToInt32(txtLocalParti.Text);
+                    localidad = new CN_Localidades().BuscaCodPos(local);
+                    lblDetLocalParti.Text = localidad.ToString();
+
                     txtFijoParti.Text = dgvColegiados.Rows[indice].Cells["FijoParti"].Value.ToString();
                     txtCeluParti.Text = dgvColegiados.Rows[indice].Cells["CeluParti"].Value.ToString();
                     txtDomLabor.Text = dgvColegiados.Rows[indice].Cells["DomLabor"].Value.ToString();
                     txtLocalLabor.Text = dgvColegiados.Rows[indice].Cells["idLocalLabor"].Value.ToString();
                     txtDeptoLabor.Text = dgvColegiados.Rows[indice].Cells["idDeptoLabor"].Value.ToString();
                     txtProvLabor.Text = dgvColegiados.Rows[indice].Cells["idProvLabor"].Value.ToString();
+
+                    //***** BUSCO LA LOCALIDAD LABORAL *****
+                    local = Convert.ToInt32(txtLocalLabor.Text);
+                    localidad = new CN_Localidades().BuscaCodPos(local);
+                    lblDetLocalLabor.Text = localidad.ToString();
+
                     txtFijoLabor.Text = dgvColegiados.Rows[indice].Cells["FijoLabor"].Value.ToString();
                     txtCeluLabor.Text = dgvColegiados.Rows[indice].Cells["CeluLabor"].Value.ToString();
                     dtpFecVenceFianza.Value = Convert.ToDateTime(dgvColegiados.Rows[indice].Cells["Fianza"].Value.ToString());
+
+                    //***** COLOREO LA FIANZA SEGÚN LA FECHA *****
+                    lblFechaVence.Text = dtpFecVenceFianza.Value.ToString("dd/MM/yyyy");
+
+                    if (dtpFecVenceFianza.Value <= DateTime.Now)
+                    {
+                        lblFechaVence.ForeColor = Color.Red;
+                        lblVenceFianza.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        lblFechaVence.ForeColor = Color.Lime;
+                        lblVenceFianza.ForeColor = Color.Lime;
+                    }
+
                     txtObs.Text = dgvColegiados.Rows[indice].Cells["Obs"].Value.ToString();
                     txtUserRegistro.Text = dgvColegiados.Rows[indice].Cells["UserRegistro"].Value.ToString();
                     txtFechaRegistro.Text = dgvColegiados.Rows[indice].Cells["FechaRegistro"].Value.ToString();
 
+                    //***** BUSCO LA IMAGEN DE CADA COLEGIADO *****
                     id = txtId.Text;
                     byte[] imagenByte = new CN_Colegiados().ObtenerFoto(id, out obtenido);
                     if (obtenido)
@@ -305,7 +348,6 @@ namespace CapaPresentacion.Formularios
                     {
                         picFoto.Image = Image.FromFile("E:\\DBColegMart/Fotos/FotoVacia.png");
                     };
-
                 }
             }
         }
@@ -370,7 +412,56 @@ namespace CapaPresentacion.Formularios
             return imagen;
         }
 
+        //*****BUSCO LA LOCALIDAD DONDE VIVE EL MATRICULADO *****
+        private void btnLocal1_Click(object sender, EventArgs e)
+        {
+            frmQueryCodPostal CodigoParti = new frmQueryCodPostal("btnLocalParti");
+            AddOwnedForm(CodigoParti);
+            CodigoParti.ShowDialog();
+        }
 
+        //*****BUSCO LA LOCALIDAD DONDE TRABAJA EL MATRICULADO *****
+        private void btnLocal2_Click(object sender, EventArgs e)
+        {
+            frmQueryCodPostal CodigoLabor = new frmQueryCodPostal("btnLocalLabor");
+            AddOwnedForm(CodigoLabor);
+            CodigoLabor.ShowDialog();
+        }
 
+        private void Colorear()
+        {
+            for (int i = 0; i < dgvColegiados.Rows.Count; i++)
+            {
+                DateTime dateFecha = Convert.ToDateTime(dgvColegiados.Rows[i].Cells["Fianza"].Value);
+
+                if (dateFecha.Date <= DateTime.Now.Date)
+                {
+                    dgvColegiados.Rows[i].Cells["Fianza"].Style.ForeColor = Color.White;
+                    dgvColegiados.Rows[i].Cells["Fianza"].Style.BackColor = Color.Red;
+                }
+            }
+        }
     }
 }
+
+//if ((DateTime.Now.Date - dateFecha.Date).Days < 5)
+//{
+//    //si quieres colorear toda la fila                            
+//    dgvColegiados.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+//    //si quieres colorear solo la fecha
+//    dgvColegiados.Rows[i].Cells["Fianza"].DefaultCellStyle.BackColor = Color.Green;
+//}
+//else if ((DateTime.Now.Date - dateFecha.Date).Days < 15)
+//{
+//    //si quieres colorear toda la fila
+//    dgvColegiados.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+//    //si quieres colorear solo la fecha
+//    dgvColegiados.Rows[i].Cells["fecha"].DefaultCellStyle.BackColor = Color.Yellow;
+//}
+//else
+//{
+//    //si quieres colorear toda la fila
+//    dgvColegiados.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+//    //si quieres colorear solo la fecha
+//    dgvColegiados.Rows[i].Cells["fecha"].DefaultCellStyle.BackColor = Color.Red;
+//}
