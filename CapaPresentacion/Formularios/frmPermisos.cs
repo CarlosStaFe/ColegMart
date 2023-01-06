@@ -94,7 +94,7 @@ namespace CapaPresentacion.Formularios
                     }
                     else
                     {
-                        Mensaje += "VERIFIQUE...!!!";
+                        Mensaje += ". VERIFIQUE...!!!";
                         frmMsgBox msg1 = new frmMsgBox(Mensaje, "info", 1);
                         msg1.ShowDialog();
                     }
@@ -105,12 +105,12 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO DEL BOTON ELIMINAR *****
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            string Mensaje = string.Empty;
+            string mensaje = string.Empty;
 
             if (Convert.ToInt32(txtId.Text) != 0)
             {
-                Mensaje += "DESEA ELIMINAR ESTE PERMISO...???";
-                frmMsgBox msg = new frmMsgBox(Mensaje, "question", 2);
+                mensaje += "DESEA ELIMINAR ESTE PERMISO...???";
+                frmMsgBox msg = new frmMsgBox(mensaje, "question", 2);
                 DialogResult dr = msg.ShowDialog();
                 respuesta = dr.ToString();
 
@@ -121,7 +121,7 @@ namespace CapaPresentacion.Formularios
                         id_Permiso = Convert.ToInt32(txtId.Text),
                     };
 
-                    bool resultado = new CN_PermisosNew().Eliminar(cEPermisosNew, out Mensaje);
+                    bool resultado = new CN_PermisosNew().Eliminar(cEPermisosNew, out mensaje);
 
                     if (resultado)
                     {
@@ -129,7 +129,7 @@ namespace CapaPresentacion.Formularios
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 Limpiar();

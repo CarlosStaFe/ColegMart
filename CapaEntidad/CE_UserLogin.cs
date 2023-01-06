@@ -1,4 +1,6 @@
-﻿namespace CapaEntidad
+﻿using System;
+
+namespace CapaEntidad
 {
     public static class CE_UserLogin
     {

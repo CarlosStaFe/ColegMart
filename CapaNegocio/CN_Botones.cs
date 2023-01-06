@@ -22,59 +22,59 @@ namespace CapaNegocio
         }
 
         //***** LLAMO AL METODO PARA REGISTRAR UN USUARIO *****
-        public int Registrar(CE_Botones obj, out string Mensaje)
+        public int Registrar(CE_Botones obj, out string mensaje)
         {
-            Mensaje = string.Empty;
+            mensaje = string.Empty;
 
             if (obj.Nombre == "")
             {
-                Mensaje += "* Debe ingresar un Nombre. * ";
+                mensaje += "* Debe ingresar un Nombre. * ";
             }
 
             if (obj.Detalle == "")
             {
-                Mensaje += "Debe ingresar un Detalle. * ";
+                mensaje += "Debe ingresar un Detalle. * ";
             }
 
-            if (Mensaje != string.Empty)
+            if (mensaje != string.Empty)
             {
                 return 0;
             }
             else
             {
-                return cD_Botones.Registrar(obj, out Mensaje);
+                return cD_Botones.Registrar(obj, out mensaje);
             }
         }
 
         //***** LLAMO AL METODO PARA EDITAR UN BOTÓN *****
-        public bool Editar(CE_Botones obj, out string Mensaje)
+        public bool Editar(CE_Botones obj, out string mensaje)
         {
-            Mensaje = string.Empty;
+            mensaje = string.Empty;
 
             if (obj.Nombre == "")
             {
-                Mensaje += "* Debe ingresar un Nombre. * ";
+                mensaje += "* Debe ingresar un Nombre. * ";
             }
 
             if (obj.Detalle == "")
             {
-                Mensaje += "Debe ingresar un Detalle. * ";
+                mensaje += "Debe ingresar un Detalle. * ";
             }
 
-            if (Mensaje != string.Empty)
+            if (mensaje != string.Empty)
             {
                 return false;
             }
             else
             {
-                return cD_Botones.Editar(obj, out Mensaje);
+                return cD_Botones.Editar(obj, out mensaje);
             }
         }
 
         //***** LLAMO AL METODO PARA ELIMINAR UN BOTÓN *****
-        public bool Eliminar(CE_Botones obj, out string Mensaje)
+        public bool Eliminar(CE_Botones obj, out string mensaje)
         {
-            return cD_Botones.Eliminar(obj, out Mensaje);
+            return cD_Botones.Eliminar(obj, out mensaje);
         }
 
     }

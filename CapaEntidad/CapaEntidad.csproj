@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CE_Adebitar.cs" />
     <Compile Include="CE_Botones.cs" />
     <Compile Include="CE_Colegiados.cs" />
+    <Compile Include="CE_Debitos.cs" />
     <Compile Include="CE_Departamentos.cs" />
     <Compile Include="CE_Localidades.cs" />
     <Compile Include="CE_Permisos.cs" />

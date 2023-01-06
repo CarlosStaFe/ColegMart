@@ -104,6 +104,7 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("Nombre", obj.Nombre);
                         command.Parameters.AddWithValue("Detalle", obj.Detalle);
                         command.Parameters.AddWithValue("UserRegistro", CE_UserLogin.UserRegistro);
+                        command.Parameters.AddWithValue("FechaRegistro", DateTime.Now);
                         command.Parameters.Add("idResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                         command.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;

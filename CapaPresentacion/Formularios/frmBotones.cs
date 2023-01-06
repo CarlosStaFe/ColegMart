@@ -42,10 +42,10 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO BOTON GUARDAR/EDITAR *****
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            string Mensaje = string.Empty;
+            string mensaje = string.Empty;
 
-            Mensaje += "DESEA REGISTRAR ESTE BOTÓN...???";
-            frmMsgBox msg = new frmMsgBox(Mensaje, "question", 2);
+            mensaje += "DESEA REGISTRAR ESTE BOTÓN...???";
+            frmMsgBox msg = new frmMsgBox(mensaje, "question", 2);
             DialogResult dr = msg.ShowDialog();
             respuesta = dr.ToString();
 
@@ -62,7 +62,7 @@ namespace CapaPresentacion.Formularios
                 //***** SI EL ID DEL BOTÓN = 0 REGISTRA, SINO EDITA *****
                 if (cEBotones.id_Boton == 0)
                 {
-                    int idBoton = new CN_Botones().Registrar(cEBotones, out Mensaje);
+                    int idBoton = new CN_Botones().Registrar(cEBotones, out mensaje);
 
                     if (idBoton != 0)
                     {
@@ -71,14 +71,14 @@ namespace CapaPresentacion.Formularios
                     }
                     else
                     {
-                        Mensaje += "VERIFIQUE...!!!";
-                        frmMsgBox msg1 = new frmMsgBox(Mensaje, "info", 1);
+                        mensaje += ". VERIFIQUE...!!!";
+                        frmMsgBox msg1 = new frmMsgBox(mensaje, "info", 1);
                         msg1.ShowDialog();
                     }
                 }
                 else
                 {
-                    bool resultado = new CN_Botones().Editar(cEBotones, out Mensaje);
+                    bool resultado = new CN_Botones().Editar(cEBotones, out mensaje);
 
                     if (resultado)
                     {
@@ -92,8 +92,8 @@ namespace CapaPresentacion.Formularios
                     }
                     else
                     {
-                        Mensaje += "VERIFIQUE...!!!";
-                        frmMsgBox msg1 = new frmMsgBox(Mensaje, "info", 1);
+                        mensaje += "VERIFIQUE...!!!";
+                        frmMsgBox msg1 = new frmMsgBox(mensaje, "info", 1);
                         msg1.ShowDialog();
                     }
                 }
@@ -103,12 +103,12 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO DEL BOTON ELIMINAR *****
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            string Mensaje = string.Empty;
+            string mensaje = string.Empty;
 
             if (Convert.ToInt32(txtId.Text) != 0)
             {
-                Mensaje += "DESEA ELIMINAR ESTE BOTÓN...???";
-                frmMsgBox msg = new frmMsgBox(Mensaje, "question", 2);
+                mensaje += "DESEA ELIMINAR ESTE BOTÓN...???";
+                frmMsgBox msg = new frmMsgBox(mensaje, "question", 2);
                 DialogResult dr = msg.ShowDialog();
                 respuesta = dr.ToString();
 
@@ -119,7 +119,7 @@ namespace CapaPresentacion.Formularios
                         id_Boton = Convert.ToInt32(txtId.Text),
                     };
 
-                    bool resultado = new CN_Botones().Eliminar(cEBotones, out Mensaje);
+                    bool resultado = new CN_Botones().Eliminar(cEBotones, out mensaje);
 
                     if (resultado)
                     {
@@ -127,7 +127,7 @@ namespace CapaPresentacion.Formularios
                     }
                     else
                     {
-                        MessageBox.Show(Mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 Limpiar();

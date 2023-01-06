@@ -70,10 +70,10 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO BOTON GUARDAR/EDITAR *****
         private void btnGuardar_Click(object sender, System.EventArgs e)
         {
-            string Mensaje = string.Empty;
+            string mensaje = string.Empty;
 
-            Mensaje += "DESEA REGISTRAR ESTE CÓDIGO POSTAL...???";
-            frmMsgBox msg = new frmMsgBox(Mensaje, "question", 2);
+            mensaje += "DESEA REGISTRAR ESTE CÓDIGO POSTAL...???";
+            frmMsgBox msg = new frmMsgBox(mensaje, "question", 2);
             DialogResult dr = msg.ShowDialog();
             respuesta = dr.ToString();
 
@@ -92,7 +92,7 @@ namespace CapaPresentacion.Formularios
                 //*****SI EL ID DE LA LOCALIDAD = 0 REGISTRA, SINO EDITA *****
                 if (cE_Localidades.id_Local == 0)
                 {
-                    int idLocalidad = new CN_Localidades().Registrar(cE_Localidades, out Mensaje);
+                    int idLocalidad = new CN_Localidades().Registrar(cE_Localidades, out mensaje);
 
                     if (idLocalidad != 0)
                     {
@@ -101,14 +101,14 @@ namespace CapaPresentacion.Formularios
                     }
                     else
                     {
-                        Mensaje += "VERIFIQUE...!!!";
-                        frmMsgBox msg1 = new frmMsgBox(Mensaje, "info", 1);
+                        mensaje += ". VERIFIQUE...!!!";
+                        frmMsgBox msg1 = new frmMsgBox(mensaje, "info", 1);
                         msg1.ShowDialog();
                     }
                 }
                 else
                 {
-                    bool resultado = new CN_Localidades().Editar(cE_Localidades, out Mensaje);
+                    bool resultado = new CN_Localidades().Editar(cE_Localidades, out mensaje);
 
                     if (resultado)
                     {
@@ -125,8 +125,8 @@ namespace CapaPresentacion.Formularios
                     }
                     else
                     {
-                        Mensaje += "VERIFIQUE...!!!";
-                        frmMsgBox msg1 = new frmMsgBox(Mensaje, "info", 1);
+                        mensaje += "VERIFIQUE...!!!";
+                        frmMsgBox msg1 = new frmMsgBox(mensaje, "info", 1);
                         msg1.ShowDialog();
                     }
                 }

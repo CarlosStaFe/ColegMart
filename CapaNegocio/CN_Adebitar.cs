@@ -4,20 +4,14 @@ using System.Collections.Generic;
 
 namespace CapaNegocio
 {
-    public class CN_Usuarios
+    public class CN_Adebitar
     {
-        CD_Usuarios cD_Usuarios = new CD_Usuarios();
+        CD_Adebitar cD_Adebitar = new CD_Adebitar();
 
-        //***** BUSQUEDA DEL USUARIO EN EL LOGIN *****
-        public bool LoginUser(string user, string pass)
+        //***** LLAMO AL METODO PARA LISTAR LOS DEBITOS A COLEGIADOS *****
+        public List<CE_Adebitar> ListaAdebitar()
         {
-            return cD_Usuarios.Login(user, pass);
-        }
-
-        //***** LLAMO AL METODO PARA LISTAR LOS USUARIOS *****
-        public List<CE_Usuarios> ListaUser()
-        {
-            return cD_Usuarios.ListaUser();
+            return cD_Adebitar.ListaAdebitar();
         }
 
         //***** REGISTRA UN NUEVO USUARIO *****
@@ -56,7 +50,7 @@ namespace CapaNegocio
             }
             else
             {
-                return cD_Usuarios.Registrar(obj, out mensaje);
+                return cD_Adebitar.Registrar(obj, out mensaje);
             }
         }
 
@@ -96,14 +90,15 @@ namespace CapaNegocio
             }
             else
             {
-                return cD_Usuarios.Editar(obj, out mensaje);
+                return cD_Adebitar.Editar(obj, out mensaje);
             }
         }
 
         //***** LLAMO AL METODO PARA ELIMINAR UN USUARIO *****
         public bool Eliminar(CE_Usuarios obj, out string mensaje)
         {
-            return cD_Usuarios.Eliminar(obj, out mensaje);
+            return cD_Adebitar.Eliminar(obj, out mensaje);
         }
+
     }
 }

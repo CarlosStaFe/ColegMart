@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace CapaPresentacion.Formularios
@@ -19,8 +18,9 @@ namespace CapaPresentacion.Formularios
         private string respuesta;
         bool obtenido = true;
         private byte[] imagenByte;
-        public string id;
+        public int id;
         int local = 0;
+        public string nromatri;
 
         //MemoryStream ms = new MemoryStream();
 
@@ -62,10 +62,15 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO BOTON GUARDAR/EDITAR *****
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string Mensaje = string.Empty;
+            if (txtMatricula.Text == "")
+            {
+                BuscoMatricula();
+            }
 
-            Mensaje += "DESEA REGISTRAR ESTE COLEGIADO...???";
-            frmMsgBox msg = new frmMsgBox(Mensaje, "question", 2);
+            string mensaje = string.Empty;
+
+            mensaje += "DESEA REGISTRAR ESTE COLEGIADO...???";
+            frmMsgBox msg = new frmMsgBox(mensaje, "question", 2);
             DialogResult dr = msg.ShowDialog();
             respuesta = dr.ToString();
 
@@ -107,17 +112,17 @@ namespace CapaPresentacion.Formularios
                     FecVenceFianza = dtpFecVenceFianza.Value,
                     Obs = txtObs.Text,
                     UserRegistro = CE_UserLogin.Usuario,
-                    FechaRegistro = DateTime.Today,
+                    FechaRegistro = DateTime.Today
                 };
 
                 //*****SI EL ID DEL COLEGIADO = 0 REGISTRA, SINO EDITA *****
                 if (cE_Colegiados.id_Coleg == 0)
                 {
-                    int idColegiado = new CN_Colegiados().Registrar(cE_Colegiados, out Mensaje);
+                    int idColegiado = new CN_Colegiados().Registrar(cE_Colegiados, out mensaje);
 
                     if (idColegiado != 0)
                     {
-                        dgvColegiados.Rows.Add(new object[] {"",id_Coleg,txtMatricula.Text,txtApelNombres.Text,txtApelMaterno.Text,dtpFechaNacim.Value,txtLugarNacim.Text,
+                        dgvColegiados.Rows.Add(new object[] {"",idColegiado,txtMatricula.Text,txtApelNombres.Text,txtApelMaterno.Text,dtpFechaNacim.Value,txtLugarNacim.Text,
                                                   txtNacionalidad.Text,cboTipoDoc.Text,txtNumeroDoc.Text,txtCuit.Text,cboSexo.Text,cboEstadoCivil.Text,dtpJuramento.Value,
                                                   txtTomo.Text,txtFolio.Text,cboCategoria.Text,txtEmail.Text,cboEstado.Text,dtpFecEstado.Value,txtDomParti.Text,
                                                   txtLocalParti.Text,txtDeptoParti.Text,txtProvParti.Text,txtFijoParti.Text,txtCeluParti.Text,txtDomLabor.Text,
@@ -127,19 +132,20 @@ namespace CapaPresentacion.Formularios
                     }
                     else
                     {
-                        Mensaje += "VERIFIQUE...!!!";
-                        frmMsgBox msg1 = new frmMsgBox(Mensaje, "info", 1);
+                        mensaje += ". VERIFIQUE...!!!";
+                        frmMsgBox msg1 = new frmMsgBox(mensaje, "info", 1);
                         msg1.ShowDialog();
                     }
                 }
                 else
                 {
-                    bool resultado = new CN_Colegiados().Editar(cE_Colegiados, out Mensaje);
+                    bool resultado = new CN_Colegiados().Editar(cE_Colegiados, out mensaje);
 
                     if (resultado)
                     {
                         DataGridViewRow row = dgvColegiados.Rows[Convert.ToInt32(txtIndice.Text)];
                         row.Cells["id_Coleg"].Value = txtIndice.Text;
+                        row.Cells["Matri"].Value = txtMatricula.Text;
                         row.Cells["ApellidoyNombres"].Value = txtApelNombres.Text;
                         row.Cells["ApelMaterno"].Value = txtApelMaterno.Text;
                         row.Cells["FechaNacim"].Value = dtpFechaNacim.Value;
@@ -178,8 +184,8 @@ namespace CapaPresentacion.Formularios
                     }
                     else
                     {
-                        Mensaje += "VERIFIQUE...!!!";
-                        frmMsgBox msg1 = new frmMsgBox(Mensaje, "info", 1);
+                        mensaje += ". VERIFIQUE...!!!";
+                        frmMsgBox msg1 = new frmMsgBox(mensaje, "info", 1);
                         msg1.ShowDialog();
                     }
                 }
@@ -203,7 +209,7 @@ namespace CapaPresentacion.Formularios
         {
             txtId.Text = "0";
             txtMatricula.Text = String.Empty;
-            lblMatricula.Text = String.Empty;
+            lblMatricula.Text = "-";
             txtApelNombres.Text = String.Empty;
             txtApelMaterno.Text = String.Empty;
             txtLugarNacim.Text = String.Empty;
@@ -241,6 +247,7 @@ namespace CapaPresentacion.Formularios
             lblFechaVence.Text = "-";
             lblFechaVence.ForeColor = Color.Lime;
             lblVenceFianza.ForeColor = Color.Lime;
+            btnMatricula.Enabled = false;
 
             txtApelNombres.Select();
         }
@@ -276,6 +283,18 @@ namespace CapaPresentacion.Formularios
                     txtId.Text = dgvColegiados.Rows[indice].Cells["id_Coleg"].Value.ToString();
                     txtMatricula.Text = dgvColegiados.Rows[indice].Cells["Matri"].Value.ToString();
                     lblMatricula.Text = txtMatricula.Text;
+
+                    int numero = int.Parse(txtMatricula.Text);
+
+                    if (numero > 79000)
+                    {
+                        btnMatricula.Enabled = true;
+                    }
+                    else
+                    {
+                        btnMatricula.Enabled = false;
+                    }
+
                     txtApelNombres.Text = dgvColegiados.Rows[indice].Cells["ApellidoyNombres"].Value.ToString();
                     txtApelMaterno.Text = dgvColegiados.Rows[indice].Cells["ApelMaterno"].Value.ToString();
                     dtpFechaNacim.Value = Convert.ToDateTime(dgvColegiados.Rows[indice].Cells["FechaNacim"].Value.ToString());
@@ -338,7 +357,7 @@ namespace CapaPresentacion.Formularios
                     txtFechaRegistro.Text = dgvColegiados.Rows[indice].Cells["FechaRegistro"].Value.ToString();
 
                     //***** BUSCO LA IMAGEN DE CADA COLEGIADO *****
-                    id = txtId.Text;
+                    id = int.Parse(txtId.Text);
                     byte[] imagenByte = new CN_Colegiados().ObtenerFoto(id, out obtenido);
                     if (obtenido)
                     {
@@ -380,11 +399,11 @@ namespace CapaPresentacion.Formularios
             }
         }
 
-        //*****BUSCO Y CARGO LA FOTO DEL MATRICULADO *****
+        //***** BUSCO Y CARGO LA FOTO DEL MATRICULADO *****
         private void btnFoto_Click(object sender, EventArgs e)
         {
-            string Mensaje = string.Empty;
-            id = txtId.Text;
+            string mensaje = string.Empty;
+            id = Convert.ToInt32(txtId.Text);
 
             OpenFileDialog SelectorImagen = new OpenFileDialog();
             SelectorImagen.InitialDirectory = "E:\\DBColegMart/Fotos";
@@ -397,13 +416,14 @@ namespace CapaPresentacion.Formularios
             {
                 byte[] byteimage = File.ReadAllBytes(SelectorImagen.FileName);
                 picFoto.Image = Image.FromFile(SelectorImagen.FileName);
-                bool respuesta = new CN_Colegiados().ActualizarFoto(id, byteimage, out Mensaje);
+                bool respuesta = new CN_Colegiados().ActualizarFoto(id, byteimage, out mensaje);
 
-                if (respuesta) picFoto.Image = ByteToImage(imagenByte);
-            }            
+                //if (respuesta) picFoto.Image = ByteToImage(imagenByte);
+                if (respuesta) picFoto.Image = ByteToImage(byteimage);
+            }
         }
 
-        //*****BUSCO Y CARGO LA FOTO DEL MATRICULADO *****
+        //***** BUSCO Y CARGO LA FOTO DEL MATRICULADO *****
         public Image ByteToImage(byte[] imagenByte)
         {
             MemoryStream ms = new MemoryStream();
@@ -412,7 +432,7 @@ namespace CapaPresentacion.Formularios
             return imagen;
         }
 
-        //*****BUSCO LA LOCALIDAD DONDE VIVE EL MATRICULADO *****
+        //***** BUSCO LA LOCALIDAD DONDE VIVE EL MATRICULADO *****
         private void btnLocal1_Click(object sender, EventArgs e)
         {
             frmQueryCodPostal CodigoParti = new frmQueryCodPostal("btnLocalParti");
@@ -420,7 +440,7 @@ namespace CapaPresentacion.Formularios
             CodigoParti.ShowDialog();
         }
 
-        //*****BUSCO LA LOCALIDAD DONDE TRABAJA EL MATRICULADO *****
+        //***** BUSCO LA LOCALIDAD DONDE TRABAJA EL MATRICULADO *****
         private void btnLocal2_Click(object sender, EventArgs e)
         {
             frmQueryCodPostal CodigoLabor = new frmQueryCodPostal("btnLocalLabor");
@@ -428,6 +448,7 @@ namespace CapaPresentacion.Formularios
             CodigoLabor.ShowDialog();
         }
 
+        //***** COLOREO LA CELDA SI LA FIANZA ESTÁ VENCIDA *****
         private void Colorear()
         {
             for (int i = 0; i < dgvColegiados.Rows.Count; i++)
@@ -436,32 +457,28 @@ namespace CapaPresentacion.Formularios
 
                 if (dateFecha.Date <= DateTime.Now.Date)
                 {
-                    dgvColegiados.Rows[i].Cells["Fianza"].Style.ForeColor = Color.White;
-                    dgvColegiados.Rows[i].Cells["Fianza"].Style.BackColor = Color.Red;
+                    dgvColegiados.Rows[i].Cells["Fianza"].Style.ForeColor = Color.Black;
+                    dgvColegiados.Rows[i].Cells["Fianza"].Style.BackColor = Color.DarkOrange;
                 }
             }
         }
+
+        //***** BUSCO NUEVO NÚMERO DE MATRÍCULA DE UN COLEGIADO NUEVO MAYOR A 79000 *****
+        private void BuscoMatricula()
+        {
+            string mensaje = string.Empty;
+            string respuesta = new CN_Colegiados().SinMatricula(nromatri, out mensaje);
+            txtMatricula.Text = respuesta;
+            lblMatricula.Text = txtMatricula.Text;
+        }
+
+        //***** COLOCO UNA MATRÍCULA DESPUÉS DEL JURAMENTO A PARTIR DEL ÚLTIMO EXISTENTE *****
+        private void btnMatricula_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+            string respuesta = new CN_Colegiados().AsignarMatricula(nromatri, out mensaje);
+            txtMatricula.Text = respuesta;
+            lblMatricula.Text = txtMatricula.Text;
+        }
     }
 }
-
-//if ((DateTime.Now.Date - dateFecha.Date).Days < 5)
-//{
-//    //si quieres colorear toda la fila                            
-//    dgvColegiados.Rows[i].DefaultCellStyle.BackColor = Color.Green;
-//    //si quieres colorear solo la fecha
-//    dgvColegiados.Rows[i].Cells["Fianza"].DefaultCellStyle.BackColor = Color.Green;
-//}
-//else if ((DateTime.Now.Date - dateFecha.Date).Days < 15)
-//{
-//    //si quieres colorear toda la fila
-//    dgvColegiados.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
-//    //si quieres colorear solo la fecha
-//    dgvColegiados.Rows[i].Cells["fecha"].DefaultCellStyle.BackColor = Color.Yellow;
-//}
-//else
-//{
-//    //si quieres colorear toda la fila
-//    dgvColegiados.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-//    //si quieres colorear solo la fecha
-//    dgvColegiados.Rows[i].Cells["fecha"].DefaultCellStyle.BackColor = Color.Red;
-//}

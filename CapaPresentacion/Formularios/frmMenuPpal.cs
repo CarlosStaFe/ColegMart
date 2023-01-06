@@ -330,13 +330,25 @@ namespace ColegMart
         }
         #endregion
 
-        //***** MENÚ PARÁMETROS *****
+        //***** MENÚ MANTENEDOR *****
         #region MENÚ PARÁMETROS
-        private void btnParametros_Click(object sender, System.EventArgs e)
+        private void btnMantenedor_Click(object sender, System.EventArgs e)
         {
             ActivarBoton(sender);
             MostrarSubmenu(pnlSubmenuMantenedor);
         }
+        private void btnCodPostales_Click_1(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmCodPostales());
+            OcultarSubmenu();
+        }
+
+        private void btnDebitos_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmDebitos());
+            OcultarSubmenu();
+        }
+
         #endregion
 
         //***** MENÚ SISTEMA *****
@@ -362,11 +374,6 @@ namespace ColegMart
             AbrirFormHijo(new frmPermisos());
             OcultarSubmenu();
         }
-        private void btnCodPostales_Click(object sender, System.EventArgs e)
-        {
-            AbrirFormHijo(new frmCodPostales());
-            OcultarSubmenu();
-        }
 
         #endregion
 
@@ -376,6 +383,8 @@ namespace ColegMart
         {
             Close();
         }
+
+
         #endregion
 
     }

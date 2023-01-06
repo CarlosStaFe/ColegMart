@@ -1,4 +1,6 @@
-﻿namespace CapaEntidad
+﻿using System;
+
+namespace CapaEntidad
 {
     public class CE_Usuarios
     {
@@ -11,6 +13,6 @@
         public string Clave { get; set; }
         public bool Activo { get; set; }
         public string UserRegistro { get; set; }
-        public string FechaRegistro { get; set; }
+        public DateTime FechaRegistro { get; set; }
     }
 }

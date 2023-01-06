@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CapaDatos
 {
@@ -55,13 +57,13 @@ namespace CapaDatos
                                     Estado = dr["Estado"].ToString(),
                                     FecEstado = Convert.ToDateTime(dr["FecEstado"]),
                                     DomParti = dr["DomParti"].ToString(),
-                                    idLocalParti = Convert.ToInt32(dr["idLocalParti"] is DBNull ? 1 : dr["idLocalParti"]),
+                                    idLocalParti = Convert.ToInt32(dr["idLocalParti"] is DBNull ? 164 : dr["idLocalParti"]),
                                     idDeptoParti = Convert.ToInt32(dr["idDeptoParti"] is DBNull ? 1 : dr["idDeptoParti"]),
                                     idProvParti = Convert.ToInt32(dr["idProvParti"] is DBNull ? 1 : dr["idProvParti"]),
                                     FijoParti = dr["FijoParti"].ToString(),
                                     CeluParti = dr["CeluParti"].ToString(),
                                     DomLabor = dr["DomParti"].ToString(),
-                                    idLocalLabor = Convert.ToInt32(dr["idLocalLabor"] is DBNull ? 1 : dr["idLocalLabor"]),
+                                    idLocalLabor = Convert.ToInt32(dr["idLocalLabor"] is DBNull ? 164 : dr["idLocalLabor"]),
                                     idDeptoLabor = Convert.ToInt32(dr["idDeptoLabor"] is DBNull ? 1 : dr["idDeptoLabor"]),
                                     idProvLabor = Convert.ToInt32(dr["idProvLabor"] is DBNull ? 1 : dr["idProvLabor"]),
                                     FijoLabor = dr["FijoLabor"].ToString(),
@@ -84,10 +86,10 @@ namespace CapaDatos
         }
 
         //***** METODO PARA REGISTRAR UN USUARIO *****
-        public int Registrar(CE_Colegiados obj, out string Mensaje)
+        public int Registrar(CE_Colegiados obj, out string mensaje)
         {
             int idColegiado = 0;
-            Mensaje = string.Empty;
+            mensaje = string.Empty;
 
             using (var connection = GetConnection())
             {
@@ -130,20 +132,18 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("Obs", obj.Obs);
                         command.Parameters.AddWithValue("UserRegistro", obj.UserRegistro);
                         command.Parameters.AddWithValue("FechaRegistro", DateTime.Now);
-                        command.Parameters.AddWithValue("UserRegistro", obj.UserRegistro);
-                        command.Parameters.AddWithValue("Foto", obj.Foto);
                         command.Parameters.Add("idResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                         command.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
                         idColegiado = Convert.ToInt32(command.Parameters["idResultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        mensaje = command.Parameters["Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
                         idColegiado = 0;
-                        Mensaje = ex.Message;
+                        mensaje = ex.Message;
                     }
                 }
             }
@@ -151,10 +151,10 @@ namespace CapaDatos
         }
 
         //***** METODO PARA EDITAR UN USUARIO *****
-        public bool Editar(CE_Colegiados obj, out string Mensaje)
+        public bool Editar(CE_Colegiados obj, out string mensaje)
         {
             bool Resultado = false;
-            Mensaje = string.Empty;
+            mensaje = string.Empty;
 
             using (var connection = GetConnection())
             {
@@ -204,12 +204,12 @@ namespace CapaDatos
                         command.ExecuteNonQuery();
 
                         Resultado = Convert.ToBoolean(command.Parameters["Resultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        mensaje = command.Parameters["Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
                         Resultado = false;
-                        Mensaje = ex.Message;
+                        mensaje = ex.Message;
                     }
                 }
             }
@@ -217,7 +217,7 @@ namespace CapaDatos
         }
 
         //***** METODO PARA OBTENER LA FOTO DEL COLEGIADO *****
-        public byte[] ObtenerFoto(string id, out bool obtenido)
+        public byte[] ObtenerFoto(int id, out bool obtenido)
         {
             obtenido = true;
             byte[] FotoByte = new byte[0];
@@ -260,9 +260,10 @@ namespace CapaDatos
             }
         }
 
-        public bool ActualizarFoto(string id, byte[] image, out string Mensaje)
+        //***** METODO PARA REGRABAR LA FOTO DEL COLEGIADO *****
+        public bool ActualizarFoto(int id, byte[] image, out string mensaje)
         {
-            Mensaje = string.Empty;
+            mensaje = string.Empty;
             bool respuesta = true;
 
             using (var connection = GetConnection())
@@ -288,12 +289,99 @@ namespace CapaDatos
                     }
                     catch (Exception ex)
                     {
-                        Mensaje = ex.Message;
+                        mensaje = ex.Message;
                         respuesta = false;
                     }
                     return respuesta;
                 }
             }
         }
+
+        //***** METODO PARA PONER UNA MATRÍCULA MAYOR A 80000 *****
+        public string SinMatricula(string nromatri, out string mensaje)
+        {
+            mensaje = string.Empty;
+            bool respuesta = true;
+            int numero = 0;
+
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    try
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT MAX(Matricula) Matricula FROM Colegiados WHERE Matricula > 79000 AND Matricula < 90000";
+                        command.CommandType = CommandType.Text;
+
+                        using (SqlDataReader dr = command.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                nromatri = dr["Matricula"].ToString();
+                                if (nromatri == "")
+                                {
+                                    nromatri = "80000";
+                                }
+                                else
+                                {
+                                    numero = int.Parse(nromatri) + 1;
+                                    nromatri = numero.ToString();
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        mensaje = ex.Message;
+                    }
+                    return nromatri;
+                }
+            }
+        }
+
+        //***** METODO PARA DARLE LA MATRICULA DESPUÉS DEL JURAMENTO *****
+        public string AsignarMatricula(string nromatri, out string mensaje)
+        {
+            mensaje = string.Empty;
+            bool respuesta = true;
+            int numero = 0;
+
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    try
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT MAX(Matricula) Matricula FROM Colegiados WHERE Matricula < 50000";
+                        command.CommandType = CommandType.Text;
+
+                        using (SqlDataReader dr = command.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                nromatri = dr["Matricula"].ToString();
+                                numero = int.Parse(nromatri) + 1;
+                                nromatri = numero.ToString();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        mensaje = ex.Message;
+                    }
+                    return nromatri;
+                }
+            }
+        }
+
+
+
+
     }
 }

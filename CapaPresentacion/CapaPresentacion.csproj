@@ -74,6 +74,18 @@
     <Compile Include="Formularios\frmColegiados.Designer.cs">
       <DependentUpon>frmColegiados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmDebitoColegiado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDebitoColegiado.Designer.cs">
+      <DependentUpon>frmDebitoColegiado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmDebitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDebitos.Designer.cs">
+      <DependentUpon>frmDebitos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,10 +116,10 @@
     <Compile Include="Formularios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQueryCodPostal.cs">
+    <Compile Include="Formularios\frmQueryCodPostal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQueryCodPostal.Designer.cs">
+    <Compile Include="Formularios\frmQueryCodPostal.Designer.cs">
       <DependentUpon>frmQueryCodPostal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -127,6 +139,12 @@
     <EmbeddedResource Include="Formularios\frmColegiados.resx">
       <DependentUpon>frmColegiados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmDebitoColegiado.resx">
+      <DependentUpon>frmDebitoColegiado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmDebitos.resx">
+      <DependentUpon>frmDebitos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,7 +160,7 @@
     <EmbeddedResource Include="Formularios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQueryCodPostal.resx">
+    <EmbeddedResource Include="Formularios\frmQueryCodPostal.resx">
       <DependentUpon>frmQueryCodPostal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

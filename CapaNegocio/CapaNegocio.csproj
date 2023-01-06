@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_Adebitar.cs" />
     <Compile Include="CN_Botones.cs" />
     <Compile Include="CN_Colegiados.cs" />
+    <Compile Include="CN_Debitos.cs" />
     <Compile Include="CN_Departamentos.cs" />
     <Compile Include="CN_Localidades.cs" />
     <Compile Include="CN_Permisos.cs" />

@@ -15,95 +15,107 @@ namespace CapaNegocio
         }
 
         //***** REGISTRA UN NUEVO COLEGIADO *****
-        public int Registrar(CE_Colegiados obj, out string Mensaje)
+        public int Registrar(CE_Colegiados obj, out string mensaje)
         {
-            Mensaje = string.Empty;
+            mensaje = string.Empty;
 
             if (obj.ApelNombres == "")
             {
-                Mensaje += "* Debe ingresar un Apellido y Nombres. * ";
+                mensaje += "* Debe ingresar un Apellido y Nombres. * ";
             }
 
             if (obj.LugarNacim == "")
             {
-                Mensaje += "Debe ingresar el lugar de nacimiento. * ";
+                mensaje += "Debe ingresar el lugar de nacimiento. * ";
             }
 
             if (obj.Nacionalidad == "")
             {
-                Mensaje += "Debe ingresar la nacionalidad. * ";
+                mensaje += "Debe ingresar la nacionalidad. * ";
             }
 
             if (obj.TipoDoc == "")
             {
-                Mensaje += "Debe ingresar un tipo de documento. * ";
+                mensaje += "Debe ingresar un tipo de documento. * ";
             }
 
             if (obj.NumeroDoc == 0)
             {
-                Mensaje += "Debe ingresar el número de documento. * ";
+                mensaje += "Debe ingresar el número de documento. * ";
             }
 
-            if (Mensaje != string.Empty)
+            if (mensaje != string.Empty)
             {
                 return 0;
             }
             else
             {
-                return cD_Colegiados.Registrar(obj, out Mensaje);
+                return cD_Colegiados.Registrar(obj, out mensaje);
             }
         }
 
         //***** LLAMO AL METODO PARA EDITAR UN COLEGIADO *****
-        public bool Editar(CE_Colegiados obj, out string Mensaje)
+        public bool Editar(CE_Colegiados obj, out string mensaje)
         {
-            Mensaje = string.Empty;
+            mensaje = string.Empty;
 
             if (obj.ApelNombres == "")
             {
-                Mensaje += "* Debe ingresar un Apellido y Nombres. * ";
+                mensaje += "* Debe ingresar un Apellido y Nombres. * ";
             }
 
             if (obj.LugarNacim == "")
             {
-                Mensaje += "Debe ingresar el lugar de nacimiento. * ";
+                mensaje += "Debe ingresar el lugar de nacimiento. * ";
             }
 
             if (obj.Nacionalidad == "")
             {
-                Mensaje += "Debe ingresar la nacionalidad. * ";
+                mensaje += "Debe ingresar la nacionalidad. * ";
             }
 
             if (obj.TipoDoc == "")
             {
-                Mensaje += "Debe ingresar un tipo de documento. * ";
+                mensaje += "Debe ingresar un tipo de documento. * ";
             }
 
             if (obj.NumeroDoc == 0)
             {
-                Mensaje += "Debe ingresar el número de documento. * ";
+                mensaje += "Debe ingresar el número de documento. * ";
             }
 
-            if (Mensaje != string.Empty)
+            if (mensaje != string.Empty)
             {
                 return false;
             }
             else
             {
-                return cD_Colegiados.Editar(obj, out Mensaje);
+                return cD_Colegiados.Editar(obj, out mensaje);
             }
         }
 
         //***** LLAMO AL METODO PARA OBTENER LA FOTO *****
-        public byte[] ObtenerFoto(string id,out bool obtenido)
+        public byte[] ObtenerFoto(int id,out bool obtenido)
         {
             return cD_Colegiados.ObtenerFoto(id, out obtenido);
         }
 
         //***** LLAMO AL METODO PARA ACTUALIZAR LA FOTO *****
-        public bool ActualizarFoto(string id, byte[] imagen, out string Mensaje)
+        public bool ActualizarFoto(int id, byte[] imagen, out string mensaje)
         {
-            return cD_Colegiados.ActualizarFoto(id, imagen, out Mensaje);
+            return cD_Colegiados.ActualizarFoto(id, imagen, out mensaje);
+        }
+
+        //***** LLAMO AL METODO PARA BUSCAR UNA MATRICULA MAYOR A 80000 *****
+        public string SinMatricula(string nromatri, out string mensaje)
+        {
+            return cD_Colegiados.SinMatricula(nromatri, out mensaje);
+        }
+
+        //***** LLAMO AL METODO PARA BUSCAR UNA MATRICULA DESPUES DE JURAR *****
+        public string AsignarMatricula(string nromatri, out string mensaje)
+        {
+            return cD_Colegiados.AsignarMatricula(nromatri, out mensaje);
         }
 
     }

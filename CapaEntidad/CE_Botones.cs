@@ -1,4 +1,6 @@
-﻿namespace CapaEntidad
+﻿using System;
+
+namespace CapaEntidad
 {
     public class CE_Botones
     {
@@ -10,6 +12,6 @@
 
         public string UserRegistro { get; set; }
 
-        public string FechaRegistro { get; set; }
+        public DateTime FechaRegistro { get; set; }
     }
 }

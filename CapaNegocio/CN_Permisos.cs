@@ -20,24 +20,24 @@ namespace CapaNegocio
         CD_PermisosNew cD_PermisosNew = new CD_PermisosNew();
 
         //***** REGISTRA UN NUEVO PERMISO *****
-        public int Registrar(CE_PermisosNew obj, out string Mensaje)
+        public int Registrar(CE_PermisosNew obj, out string mensaje)
         {
-            Mensaje = string.Empty;
+            mensaje = string.Empty;
 
-            if (Mensaje != string.Empty)
+            if (mensaje != string.Empty)
             {
                 return 0;
             }
             else
             {
-                return cD_PermisosNew.Registrar(obj, out Mensaje);
+                return cD_PermisosNew.Registrar(obj, out mensaje);
             }
         }
 
         //***** LLAMO AL METODO PARA ELIMINAR UN PERMISO *****
-        public bool Eliminar(CE_PermisosNew obj, out string Mensaje)
+        public bool Eliminar(CE_PermisosNew obj, out string mensaje)
         {
-            return cD_PermisosNew.Eliminar(obj, out Mensaje);
+            return cD_PermisosNew.Eliminar(obj, out mensaje);
         }
     }
 }

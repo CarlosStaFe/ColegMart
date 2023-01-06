@@ -80,8 +80,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CD_Adebitar.cs" />
     <Compile Include="CD_Botones.cs" />
     <Compile Include="CD_Colegiados.cs" />
+    <Compile Include="CD_Debitos.cs" />
     <Compile Include="CD_Departamentos.cs" />
     <Compile Include="CD_Localidades.cs" />
     <Compile Include="CD_Permisos.cs" />

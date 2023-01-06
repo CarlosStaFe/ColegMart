@@ -6,51 +6,12 @@ using System.Collections.Generic;
 
 namespace CapaDatos
 {
-    public class CD_Usuarios:Conexion
+    public class CD_Adebitar:Conexion
     {
-        //***** BUSQUEDA DE USUARIO EN EL LOGIN *****
-        public bool Login(string user, string pass)
+        //***** METODO PARA LISTAR LOS DEBITOS A COLEGIADOS *****
+        public List<CE_Adebitar> ListaAdebitar()
         {
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                using (var command = new SqlCommand())
-                {
-                    command.Parameters.AddWithValue("@user", user);
-                    command.Parameters.AddWithValue("@pass", pass);
-                    command.Connection = connection;
-                    command.CommandText = "SELECT * FROM usuarios WHERE Usuario = @user AND Clave = @pass";
-                    command.CommandType= CommandType.Text;
-                    SqlDataReader dr = command.ExecuteReader();
-                    if (dr.HasRows)
-                    {
-                        while (dr.Read())
-                        {
-                            CE_UserLogin.id_Usuario = dr.GetInt32(0);
-                            CE_UserLogin.Apellido = dr.GetString(1);
-                            CE_UserLogin.Nombres = dr.GetString(2);
-                            CE_UserLogin.Nivel = dr.GetInt32(3);
-                            CE_UserLogin.Funcion = dr.GetString(4);
-                            CE_UserLogin.Usuario = dr.GetString(5);
-                            CE_UserLogin.Clave = dr.GetString(6);
-                            CE_UserLogin.Activo = dr.GetBoolean(7);
-                            CE_UserLogin.UserRegistro = dr.GetString(8);
-                            CE_UserLogin.FechaRegistro = Convert.ToString(dr.GetDateTime(9));
-                        }
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            } 
-        }
-
-        //***** METODO PARA LISTAR LOS USUARIOS *****
-        public List<CE_Usuarios> ListaUser()
-        {
-            List<CE_Usuarios> lista = new List<CE_Usuarios>();
+            List<CE_Adebitar> lista = new List<CE_Adebitar>();
 
             using (var connection = GetConnection())
             {
@@ -60,7 +21,11 @@ namespace CapaDatos
                     try
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT * FROM Usuarios ORDER BY Usuario";
+                        command.CommandText = "SELECT Adebitar.id_Debitar,Adebitar.fk_idColeg,Colegiados.Matricula,Colegiados.ApelNombres,Adebitar.fk_idDebito," +
+                                              "Debitos.Codigo, Debitos.Detalle,Debitos.Importe,Adebitar.Activo,Adebitar.Obs,Adebitar.UserRegistro,Adebitar.FechaRegistro FROM Adebitar " +
+                                              "INNER JOIN Colegiados ON id_Coleg  = Adebitar.fk_idColeg " +
+                                              "INNER JOIN Debitos    ON id_Debito = Adebitar.fk_idDebito " +
+                                              "ORDER BY Colegiados.ApelNombres";
                         command.CommandType = CommandType.Text;
                         SqlDataReader dr = command.ExecuteReader();
 
@@ -68,16 +33,18 @@ namespace CapaDatos
                         {
                             while (dr.Read())
                             {
-                                lista.Add(new CE_Usuarios()
+                                lista.Add(new CE_Adebitar()
                                 {
-                                    id_Usuario = Convert.ToInt32(dr["id_Usuario"]),
-                                    Apellido = dr["Apellido"].ToString(),
-                                    Nombres = dr["Nombres"].ToString(),
-                                    Nivel = Convert.ToInt32(dr["Nivel"]),
-                                    Funcion = dr["Funcion"].ToString(),
-                                    Usuario = dr["Usuario"].ToString(),
-                                    Clave = dr["Clave"].ToString(),
+                                    id_Debitar = Convert.ToInt32(dr[0]),
+                                    fk_idColeg = Convert.ToInt32(dr[1]),
+                                    Matricula = Convert.ToInt32(dr[2].ToString()),
+                                    Nombres = dr[3].ToString(),
+                                    fk_idDebito = Convert.ToInt32(dr[4]),
+                                    Codigo = Convert.ToInt32(dr[5].ToString()),
+                                    Detalle = dr[6].ToString(),
+                                    Importe = Convert.ToDecimal(dr[6]),
                                     Activo = Convert.ToBoolean(dr["Activo"]),
+                                    Obs = dr["Obs"].ToString(),
                                     UserRegistro = dr["UserRegistro"].ToString(),
                                     FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"])
                                 });
@@ -86,7 +53,7 @@ namespace CapaDatos
                     }
                     catch (Exception)
                     {
-                        lista = new List<CE_Usuarios>();
+                        lista = new List<CE_Adebitar>();
                     }
                 }
             }
@@ -142,10 +109,10 @@ namespace CapaDatos
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new SqlCommand("SP_EditarUsuario",connection))
+                using (var command = new SqlCommand("SP_EditarUsuario", connection))
                 {
                     try
-                    {        
+                    {
                         command.Parameters.AddWithValue("id_Usuario", obj.id_Usuario);
                         command.Parameters.AddWithValue("Apellido", obj.Apellido);
                         command.Parameters.AddWithValue("Nombres", obj.Nombres);
@@ -205,5 +172,38 @@ namespace CapaDatos
             }
             return Resultado;
         }
+
+        //***** METODO PARA BUSCAR LA LOCALIDAD COMPLETA *****
+        public string BuscaCodPos(int local)
+        {
+            string localidad = string.Empty;
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Parameters.AddWithValue("@local", local);
+                    command.Connection = connection;
+                    command.CommandText = "SELECT Localidades.CodigoPostal,Localidades.Localidad,Departamentos.Departamento,Provincias.Provincia FROM Localidades " +
+                                          "INNER JOIN Departamentos ON id_Depto = Localidades.fk_Deptos " +
+                                          "INNER JOIN Provincias    ON id_Prov  = Localidades.fk_Prov " +
+                                          "WHERE id_Local = @local";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader dr = command.ExecuteReader();
+
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            localidad = Convert.ToInt32(dr[0].ToString()) + " - " + dr[1].ToString() + " - " + dr[2].ToString() + " - " + dr[3].ToString();
+                        };
+                    }
+                }
+            }
+            return localidad;
+        }
+
+
     }
 }

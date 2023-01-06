@@ -70,6 +70,7 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("fk_Usuarios", obj.fk_Usuarios);
                         command.Parameters.AddWithValue("fk_Botones", obj.fk_Botones);
                         command.Parameters.AddWithValue("UserRegistro", obj.UserRegistro);
+                        command.Parameters.AddWithValue("FechaRegistro", DateTime.Now);
                         command.Parameters.Add("idResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                         command.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
