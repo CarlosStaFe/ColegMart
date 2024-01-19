@@ -40,6 +40,10 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.txtFianza = new System.Windows.Forms.TextBox();
+            this.txtEstadoMat = new System.Windows.Forms.TextBox();
+            this.txtApelNomb = new System.Windows.Forms.TextBox();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
             this.dgvSociedades = new System.Windows.Forms.DataGridView();
             this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_Soc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,10 +135,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.txtApelNomb = new System.Windows.Forms.TextBox();
-            this.txtEstadoMat = new System.Windows.Forms.TextBox();
-            this.txtFianza = new System.Windows.Forms.TextBox();
+            this.txtIdCol = new System.Windows.Forms.TextBox();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSociedades)).BeginInit();
@@ -166,6 +167,7 @@
             // pnlDeck
             // 
             this.pnlDeck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlDeck.Controls.Add(this.txtIdCol);
             this.pnlDeck.Controls.Add(this.txtFianza);
             this.pnlDeck.Controls.Add(this.txtEstadoMat);
             this.pnlDeck.Controls.Add(this.txtApelNomb);
@@ -239,6 +241,58 @@
             this.pnlDeck.Name = "pnlDeck";
             this.pnlDeck.Size = new System.Drawing.Size(1162, 614);
             this.pnlDeck.TabIndex = 13;
+            // 
+            // txtFianza
+            // 
+            this.txtFianza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtFianza.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFianza.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFianza.Enabled = false;
+            this.txtFianza.ForeColor = System.Drawing.Color.White;
+            this.txtFianza.Location = new System.Drawing.Point(848, 282);
+            this.txtFianza.Name = "txtFianza";
+            this.txtFianza.Size = new System.Drawing.Size(52, 16);
+            this.txtFianza.TabIndex = 170;
+            this.txtFianza.Visible = false;
+            // 
+            // txtEstadoMat
+            // 
+            this.txtEstadoMat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtEstadoMat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstadoMat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEstadoMat.Enabled = false;
+            this.txtEstadoMat.ForeColor = System.Drawing.Color.White;
+            this.txtEstadoMat.Location = new System.Drawing.Point(848, 260);
+            this.txtEstadoMat.Name = "txtEstadoMat";
+            this.txtEstadoMat.Size = new System.Drawing.Size(52, 16);
+            this.txtEstadoMat.TabIndex = 169;
+            this.txtEstadoMat.Visible = false;
+            // 
+            // txtApelNomb
+            // 
+            this.txtApelNomb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtApelNomb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApelNomb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtApelNomb.Enabled = false;
+            this.txtApelNomb.ForeColor = System.Drawing.Color.White;
+            this.txtApelNomb.Location = new System.Drawing.Point(848, 238);
+            this.txtApelNomb.Name = "txtApelNomb";
+            this.txtApelNomb.Size = new System.Drawing.Size(52, 16);
+            this.txtApelNomb.TabIndex = 168;
+            this.txtApelNomb.Visible = false;
+            // 
+            // txtMatricula
+            // 
+            this.txtMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtMatricula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMatricula.Enabled = false;
+            this.txtMatricula.ForeColor = System.Drawing.Color.White;
+            this.txtMatricula.Location = new System.Drawing.Point(848, 216);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(52, 16);
+            this.txtMatricula.TabIndex = 167;
+            this.txtMatricula.Visible = false;
             // 
             // dgvSociedades
             // 
@@ -499,7 +553,7 @@
             this.txtMarti1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarti1.Enabled = false;
             this.txtMarti1.ForeColor = System.Drawing.Color.White;
-            this.txtMarti1.Location = new System.Drawing.Point(849, 185);
+            this.txtMarti1.Location = new System.Drawing.Point(631, 164);
             this.txtMarti1.Name = "txtMarti1";
             this.txtMarti1.Size = new System.Drawing.Size(40, 16);
             this.txtMarti1.TabIndex = 165;
@@ -512,7 +566,7 @@
             this.txtMarti4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarti4.Enabled = false;
             this.txtMarti4.ForeColor = System.Drawing.Color.White;
-            this.txtMarti4.Location = new System.Drawing.Point(986, 185);
+            this.txtMarti4.Location = new System.Drawing.Point(781, 164);
             this.txtMarti4.Name = "txtMarti4";
             this.txtMarti4.Size = new System.Drawing.Size(40, 16);
             this.txtMarti4.TabIndex = 164;
@@ -525,7 +579,7 @@
             this.txtMarti3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarti3.Enabled = false;
             this.txtMarti3.ForeColor = System.Drawing.Color.White;
-            this.txtMarti3.Location = new System.Drawing.Point(944, 185);
+            this.txtMarti3.Location = new System.Drawing.Point(731, 164);
             this.txtMarti3.Name = "txtMarti3";
             this.txtMarti3.Size = new System.Drawing.Size(40, 16);
             this.txtMarti3.TabIndex = 163;
@@ -538,7 +592,7 @@
             this.txtMarti2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarti2.Enabled = false;
             this.txtMarti2.ForeColor = System.Drawing.Color.White;
-            this.txtMarti2.Location = new System.Drawing.Point(902, 185);
+            this.txtMarti2.Location = new System.Drawing.Point(681, 164);
             this.txtMarti2.Name = "txtMarti2";
             this.txtMarti2.Size = new System.Drawing.Size(40, 16);
             this.txtMarti2.TabIndex = 162;
@@ -551,7 +605,7 @@
             this.txtCodPostal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCodPostal.Enabled = false;
             this.txtCodPostal.ForeColor = System.Drawing.Color.White;
-            this.txtCodPostal.Location = new System.Drawing.Point(849, 163);
+            this.txtCodPostal.Location = new System.Drawing.Point(831, 164);
             this.txtCodPostal.Name = "txtCodPostal";
             this.txtCodPostal.Size = new System.Drawing.Size(40, 16);
             this.txtCodPostal.TabIndex = 161;
@@ -565,19 +619,21 @@
             this.cboSemestral.ForeColor = System.Drawing.Color.White;
             this.cboSemestral.FormattingEnabled = true;
             this.cboSemestral.Items.AddRange(new object[] {
-            "FERIAS",
-            "INDUSTRIALES",
-            "HIPICAS",
-            "OTRAS"});
-            this.cboSemestral.Location = new System.Drawing.Point(939, 103);
+            "611",
+            "612",
+            "613",
+            "614",
+            "615",
+            "616"});
+            this.cboSemestral.Location = new System.Drawing.Point(921, 103);
             this.cboSemestral.Name = "cboSemestral";
-            this.cboSemestral.Size = new System.Drawing.Size(87, 25);
+            this.cboSemestral.Size = new System.Drawing.Size(107, 25);
             this.cboSemestral.TabIndex = 159;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(823, 106);
+            this.label10.Location = new System.Drawing.Point(805, 106);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 17);
             this.label10.TabIndex = 160;
@@ -590,19 +646,21 @@
             this.cboInscripcion.ForeColor = System.Drawing.Color.White;
             this.cboInscripcion.FormattingEnabled = true;
             this.cboInscripcion.Items.AddRange(new object[] {
-            "FERIAS",
-            "INDUSTRIALES",
-            "HIPICAS",
-            "OTRAS"});
-            this.cboInscripcion.Location = new System.Drawing.Point(726, 103);
+            "601",
+            "602",
+            "603",
+            "604",
+            "605",
+            "606"});
+            this.cboInscripcion.Location = new System.Drawing.Point(674, 103);
             this.cboInscripcion.Name = "cboInscripcion";
-            this.cboInscripcion.Size = new System.Drawing.Size(87, 25);
+            this.cboInscripcion.Size = new System.Drawing.Size(125, 25);
             this.cboInscripcion.TabIndex = 157;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(627, 106);
+            this.label7.Location = new System.Drawing.Point(575, 106);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 17);
             this.label7.TabIndex = 158;
@@ -621,7 +679,7 @@
             "OTRAS"});
             this.cboTipo.Location = new System.Drawing.Point(436, 103);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(184, 25);
+            this.cboTipo.Size = new System.Drawing.Size(130, 25);
             this.cboTipo.TabIndex = 7;
             // 
             // label15
@@ -656,7 +714,7 @@
             this.btnMarti4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnMarti4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMarti4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarti4.IconChar = FontAwesome.Sharp.IconChar.PersonWalking;
+            this.btnMarti4.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
             this.btnMarti4.IconColor = System.Drawing.Color.Aqua;
             this.btnMarti4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMarti4.IconSize = 20;
@@ -692,7 +750,7 @@
             this.btnMarti3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnMarti3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMarti3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarti3.IconChar = FontAwesome.Sharp.IconChar.PersonWalking;
+            this.btnMarti3.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
             this.btnMarti3.IconColor = System.Drawing.Color.Aqua;
             this.btnMarti3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMarti3.IconSize = 20;
@@ -728,7 +786,7 @@
             this.btnMarti2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnMarti2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMarti2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarti2.IconChar = FontAwesome.Sharp.IconChar.PersonWalking;
+            this.btnMarti2.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
             this.btnMarti2.IconColor = System.Drawing.Color.Aqua;
             this.btnMarti2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMarti2.IconSize = 20;
@@ -764,7 +822,7 @@
             this.btnMarti1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnMarti1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMarti1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarti1.IconChar = FontAwesome.Sharp.IconChar.PersonWalking;
+            this.btnMarti1.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
             this.btnMarti1.IconColor = System.Drawing.Color.Aqua;
             this.btnMarti1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMarti1.IconSize = 20;
@@ -826,7 +884,7 @@
             this.btnLocalSoc.IconColor = System.Drawing.Color.Aqua;
             this.btnLocalSoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLocalSoc.IconSize = 20;
-            this.btnLocalSoc.Location = new System.Drawing.Point(630, 183);
+            this.btnLocalSoc.Location = new System.Drawing.Point(548, 183);
             this.btnLocalSoc.Name = "btnLocalSoc";
             this.btnLocalSoc.Size = new System.Drawing.Size(27, 24);
             this.btnLocalSoc.TabIndex = 22;
@@ -839,7 +897,7 @@
             this.txtFechaRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFechaRegistro.Enabled = false;
             this.txtFechaRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtFechaRegistro.Location = new System.Drawing.Point(757, 3);
+            this.txtFechaRegistro.Location = new System.Drawing.Point(513, 3);
             this.txtFechaRegistro.Name = "txtFechaRegistro";
             this.txtFechaRegistro.Size = new System.Drawing.Size(53, 16);
             this.txtFechaRegistro.TabIndex = 132;
@@ -1010,7 +1068,7 @@
             this.txtProv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProv.Enabled = false;
             this.txtProv.ForeColor = System.Drawing.Color.White;
-            this.txtProv.Location = new System.Drawing.Point(986, 163);
+            this.txtProv.Location = new System.Drawing.Point(981, 164);
             this.txtProv.Name = "txtProv";
             this.txtProv.Size = new System.Drawing.Size(40, 16);
             this.txtProv.TabIndex = 26;
@@ -1023,7 +1081,7 @@
             this.txtDepto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDepto.Enabled = false;
             this.txtDepto.ForeColor = System.Drawing.Color.White;
-            this.txtDepto.Location = new System.Drawing.Point(944, 163);
+            this.txtDepto.Location = new System.Drawing.Point(931, 164);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(40, 16);
             this.txtDepto.TabIndex = 25;
@@ -1036,7 +1094,7 @@
             this.txtLocal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLocal.Enabled = false;
             this.txtLocal.ForeColor = System.Drawing.Color.White;
-            this.txtLocal.Location = new System.Drawing.Point(902, 163);
+            this.txtLocal.Location = new System.Drawing.Point(881, 164);
             this.txtLocal.Name = "txtLocal";
             this.txtLocal.Size = new System.Drawing.Size(40, 16);
             this.txtLocal.TabIndex = 24;
@@ -1065,11 +1123,11 @@
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalidad.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocalidad.ForeColor = System.Drawing.Color.Aqua;
-            this.lblLocalidad.Location = new System.Drawing.Point(673, 184);
+            this.lblLocalidad.Location = new System.Drawing.Point(583, 184);
             this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(15, 21);
+            this.lblLocalidad.Size = new System.Drawing.Size(14, 20);
             this.lblLocalidad.TabIndex = 12;
             this.lblLocalidad.Text = "-";
             // 
@@ -1087,7 +1145,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(536, 187);
+            this.label23.Location = new System.Drawing.Point(454, 187);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(88, 17);
             this.label23.TabIndex = 94;
@@ -1130,7 +1188,7 @@
             this.txtDomicilio.ForeColor = System.Drawing.Color.White;
             this.txtDomicilio.Location = new System.Drawing.Point(127, 185);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(396, 23);
+            this.txtDomicilio.Size = new System.Drawing.Size(321, 23);
             this.txtDomicilio.TabIndex = 11;
             // 
             // label20
@@ -1223,7 +1281,7 @@
             this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumero.Enabled = false;
             this.txtNumero.ForeColor = System.Drawing.Color.White;
-            this.txtNumero.Location = new System.Drawing.Point(816, 3);
+            this.txtNumero.Location = new System.Drawing.Point(572, 3);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(52, 16);
             this.txtNumero.TabIndex = 0;
@@ -1235,7 +1293,7 @@
             this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIndice.Enabled = false;
             this.txtIndice.ForeColor = System.Drawing.Color.White;
-            this.txtIndice.Location = new System.Drawing.Point(639, 3);
+            this.txtIndice.Location = new System.Drawing.Point(395, 3);
             this.txtIndice.Name = "txtIndice";
             this.txtIndice.Size = new System.Drawing.Size(53, 16);
             this.txtIndice.TabIndex = 53;
@@ -1247,7 +1305,7 @@
             this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserRegistro.Enabled = false;
             this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtUserRegistro.Location = new System.Drawing.Point(698, 3);
+            this.txtUserRegistro.Location = new System.Drawing.Point(454, 3);
             this.txtUserRegistro.Name = "txtUserRegistro";
             this.txtUserRegistro.Size = new System.Drawing.Size(53, 16);
             this.txtUserRegistro.TabIndex = 52;
@@ -1259,7 +1317,7 @@
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtId.Enabled = false;
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(599, 3);
+            this.txtId.Location = new System.Drawing.Point(355, 3);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(34, 16);
             this.txtId.TabIndex = 51;
@@ -1306,57 +1364,18 @@
             this.panel1.Size = new System.Drawing.Size(1127, 42);
             this.panel1.TabIndex = 137;
             // 
-            // txtMatricula
+            // txtIdCol
             // 
-            this.txtMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtMatricula.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMatricula.Enabled = false;
-            this.txtMatricula.ForeColor = System.Drawing.Color.White;
-            this.txtMatricula.Location = new System.Drawing.Point(848, 216);
-            this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(52, 16);
-            this.txtMatricula.TabIndex = 167;
-            this.txtMatricula.Visible = false;
-            // 
-            // txtApelNomb
-            // 
-            this.txtApelNomb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtApelNomb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApelNomb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApelNomb.Enabled = false;
-            this.txtApelNomb.ForeColor = System.Drawing.Color.White;
-            this.txtApelNomb.Location = new System.Drawing.Point(848, 238);
-            this.txtApelNomb.Name = "txtApelNomb";
-            this.txtApelNomb.Size = new System.Drawing.Size(52, 16);
-            this.txtApelNomb.TabIndex = 168;
-            this.txtApelNomb.Visible = false;
-            // 
-            // txtEstadoMat
-            // 
-            this.txtEstadoMat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtEstadoMat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstadoMat.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEstadoMat.Enabled = false;
-            this.txtEstadoMat.ForeColor = System.Drawing.Color.White;
-            this.txtEstadoMat.Location = new System.Drawing.Point(848, 260);
-            this.txtEstadoMat.Name = "txtEstadoMat";
-            this.txtEstadoMat.Size = new System.Drawing.Size(52, 16);
-            this.txtEstadoMat.TabIndex = 169;
-            this.txtEstadoMat.Visible = false;
-            // 
-            // txtFianza
-            // 
-            this.txtFianza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtFianza.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFianza.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFianza.Enabled = false;
-            this.txtFianza.ForeColor = System.Drawing.Color.White;
-            this.txtFianza.Location = new System.Drawing.Point(848, 282);
-            this.txtFianza.Name = "txtFianza";
-            this.txtFianza.Size = new System.Drawing.Size(52, 16);
-            this.txtFianza.TabIndex = 170;
-            this.txtFianza.Visible = false;
+            this.txtIdCol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtIdCol.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdCol.Enabled = false;
+            this.txtIdCol.ForeColor = System.Drawing.Color.White;
+            this.txtIdCol.Location = new System.Drawing.Point(631, 3);
+            this.txtIdCol.Name = "txtIdCol";
+            this.txtIdCol.Size = new System.Drawing.Size(34, 16);
+            this.txtIdCol.TabIndex = 171;
+            this.txtIdCol.Text = "0";
+            this.txtIdCol.Visible = false;
             // 
             // frmSociedades
             // 
@@ -1483,5 +1502,6 @@
         public System.Windows.Forms.TextBox txtEstadoMat;
         public System.Windows.Forms.TextBox txtApelNomb;
         public System.Windows.Forms.TextBox txtMatricula;
+        private System.Windows.Forms.TextBox txtIdCol;
     }
 }

@@ -13,8 +13,8 @@ namespace CapaPresentacion.Formularios
     {
         SoloNumeros validar = new SoloNumeros();
 
-        private string respuesta, localidad, nrosoc, fecha;
-        private int idcodpos, numero;
+        private string respuesta, localidad, nrosoc, fecha, estado, fechafianza;
+        private int idcodpos, nuevoNro;
 
         public frmSociedades()
         {
@@ -35,7 +35,7 @@ namespace CapaPresentacion.Formularios
                                                 item.Martillero3, item.Martillero4, item.Obs, item.UserRegistro, item.FechaRegistro });
             }
 
-            //Colorear();
+            Colorear();
 
             //***** CARGO EL COMBO DE BUSQUEDA *****
             foreach (DataGridViewColumn columna in dgvSociedades.Columns)
@@ -46,6 +46,10 @@ namespace CapaPresentacion.Formularios
                 }
             }
 
+            //cboInscripcion.DropDownHeight = 100;
+            //cboInscripcion.DropDownWidth = 300;
+            //CargoCboI();
+
             txtNombre.Select();
         }
 
@@ -54,18 +58,11 @@ namespace CapaPresentacion.Formularios
         {
             for (int i = 0; i < dgvSociedades.Rows.Count; i++)
             {
-                DateTime dateFecha = Convert.ToDateTime(dgvSociedades.Rows[i].Cells["Fianza"].Value);
+                estado = dgvSociedades.Rows[i].Cells["Estado"].Value.ToString();
 
-                if (dateFecha.Date <= DateTime.Now.Date)
-                {
-                    dgvSociedades.Rows[i].Cells["Fianza"].Style.ForeColor = Color.Black;
-                    dgvSociedades.Rows[i].Cells["Fianza"].Style.BackColor = Color.DarkOrange;
-                }
-                else
-                {
-                    dgvSociedades.Rows[i].Cells["Fianza"].Style.ForeColor = Color.Lime;
-                    dgvSociedades.Rows[i].Cells["Fianza"].Style.BackColor = Color.Black;
-                }
+                if (estado == "ACTIVA") dgvSociedades.Rows[i].Cells["Estado"].Style.ForeColor = Color.Lime;
+                if (estado == "SUSPENDIDA") dgvSociedades.Rows[i].Cells["Estado"].Style.ForeColor = Color.Yellow;
+                if (estado == "BAJA") dgvSociedades.Rows[i].Cells["Estado"].Style.ForeColor = Color.Red;
             }
         }
 
@@ -81,10 +78,12 @@ namespace CapaPresentacion.Formularios
 
             if (respuesta == "OK")
             {
-                nrosoc = numero.ToString();
-                string respuesta = new CN_Sociedades().AsignarNumero(nrosoc, out mensaje);
-                txtNumero.Text = respuesta;
-                lblNumero.Text = txtNumero.Text;
+                if (txtId.Text == "0")
+                {
+                    string nuevoNro = new CN_Sociedades().AsignarNumero(nrosoc, out mensaje);
+                    txtNumero.Text = nuevoNro;
+                    lblNumero.Text = txtNumero.Text;
+                }
 
                 CE_Sociedades cE_Sociedades = new CE_Sociedades()
                 {
@@ -272,10 +271,25 @@ namespace CapaPresentacion.Formularios
                     txtUserRegistro.Text = dgvSociedades.Rows[indice].Cells["UserRegistro"].Value.ToString();
                     txtFechaRegistro.Text = dgvSociedades.Rows[indice].Cells["FechaRegistro"].Value.ToString();
 
-                    lblMartillero1.Text = txtMarti1.Text;
-                    lblMartillero2.Text = txtMarti2.Text;
-                    lblMartillero3.Text = txtMarti3.Text;
-                    lblMartillero4.Text = txtMarti4.Text;
+                    txtMatricula.Text = txtMarti1.Text;
+                    LeerColegiado();
+                    lblMartillero1.Text = "-";
+                    if (txtMatricula.Text != "0") lblMartillero1.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estado + " - VTO. " + fechafianza;
+
+                    txtMatricula.Text = txtMarti2.Text;
+                    LeerColegiado();
+                    lblMartillero2.Text = "-";
+                    if (txtMatricula.Text != "0") lblMartillero2.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estado + " - VTO. " + fechafianza;
+
+                    txtMatricula.Text = txtMarti3.Text;
+                    LeerColegiado();
+                    lblMartillero3.Text = "-";
+                    if (txtMatricula.Text != "0") lblMartillero3.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estado + " - VTO. " + fechafianza;
+
+                    txtMatricula.Text = txtMarti4.Text;
+                    LeerColegiado();
+                    lblMartillero4.Text = "-";
+                    if (txtMatricula.Text != "0") lblMartillero4.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estado + " - VTO. " + fechafianza;
 
                     //***** BUSCO LA LOCALIDAD DE LA SOCIEDAD *****
                     idcodpos = Convert.ToInt32(txtLocal.Text);
@@ -380,6 +394,41 @@ namespace CapaPresentacion.Formularios
             txtMarti4.Text = txtMatricula.Text;
         }
 
+        //***** PROCEDIMIENTO PARA LEER EL COLEGIADO INGRESADO *****
+        private void LeerColegiado()
+        {
+            string mensaje = string.Empty;
+            List<CE_Colegiados> ListaBuscado = new CN_Colegiados().ListaBuscado(txtMatricula.Text, out mensaje);
+
+            foreach (CE_Colegiados item in ListaBuscado)
+            {
+                txtIdCol.Text = Convert.ToString(item.id_Coleg);
+                txtMatricula.Text = Convert.ToString(item.Matricula);
+                txtApelNomb.Text = item.ApelNombres.ToString().Trim();
+                estado = item.Estado.ToString().Trim();
+                string fecha = item.FecVenceFianza.ToString();
+                int pos1 = fecha.IndexOf(" ");
+                fechafianza = fecha.Substring(0, pos1);
+            }
+        }
+
+        //***** CARGO EL COMBO DE INSCRIPCIONES ***** no se usa
+        private void CargoCboI()
+        {
+            cboInscripcion.Items.Clear();
+
+            List<CE_Debitos> ListaI = new CN_Debitos().ListaDebitoRec();
+
+            foreach (CE_Debitos item in ListaI)
+            {
+                if (item.Codigo > 600 & item.Codigo < 607)
+                {
+                    cboInscripcion.Items.Add(item.Detalle);
+                    cboInscripcion.DisplayMember = "Detalle";
+                    cboInscripcion.ValueMember = "Codigo";
+                }
+            }
+        }
 
 
     }

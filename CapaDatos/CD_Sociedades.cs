@@ -88,6 +88,10 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("_idLocal", obj.idLocal);
                         command.Parameters.AddWithValue("_idDepto", obj.idDepto);
                         command.Parameters.AddWithValue("_idProv", obj.idProv);
+                        command.Parameters.AddWithValue("_Telefono", obj.Telefono);
+                        command.Parameters.AddWithValue("_Email", obj.Email);
+                        command.Parameters.AddWithValue("_Tipo", obj.Tipo);
+                        command.Parameters.AddWithValue("_Estado", obj.Estado);
                         command.Parameters.AddWithValue("_FechaEstado", obj.FechaEstado);
                         command.Parameters.AddWithValue("_Inscripcion", obj.Inscripcion);
                         command.Parameters.AddWithValue("_Semestral", obj.Semestral);
@@ -130,7 +134,7 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("_id_Coleg", obj.id_Soc);
+                        command.Parameters.AddWithValue("_id_Soc", obj.id_Soc);
                         command.Parameters.AddWithValue("_Numero", obj.Numero);
                         command.Parameters.AddWithValue("_Nombre", obj.Nombre);
                         command.Parameters.AddWithValue("_Cuit", obj.Cuit);
@@ -139,6 +143,10 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("_idLocal", obj.idLocal);
                         command.Parameters.AddWithValue("_idDepto", obj.idDepto);
                         command.Parameters.AddWithValue("_idProv", obj.idProv);
+                        command.Parameters.AddWithValue("_Telefono", obj.Telefono);
+                        command.Parameters.AddWithValue("_Email", obj.Email);
+                        command.Parameters.AddWithValue("_Tipo", obj.Tipo);
+                        command.Parameters.AddWithValue("_Estado", obj.Estado);
                         command.Parameters.AddWithValue("_FechaEstado", obj.FechaEstado);
                         command.Parameters.AddWithValue("_Inscripcion", obj.Inscripcion);
                         command.Parameters.AddWithValue("_Semestral", obj.Semestral);
