@@ -55,37 +55,37 @@
             this.btnBotones = new FontAwesome.Sharp.IconButton();
             this.btnUsuarios = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuMantenedor = new System.Windows.Forms.Panel();
-            this.iconButton9 = new FontAwesome.Sharp.IconButton();
+            this.btnConceptosGastos = new FontAwesome.Sharp.IconButton();
             this.btnDebitos = new FontAwesome.Sharp.IconButton();
             this.btnCodPostales = new FontAwesome.Sharp.IconButton();
             this.btnBackupRestore = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuTesoreria = new System.Windows.Forms.Panel();
             this.iconButton31 = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuProveedores = new System.Windows.Forms.Panel();
-            this.iconButton10 = new FontAwesome.Sharp.IconButton();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton23 = new FontAwesome.Sharp.IconButton();
+            this.btnLibroCompras = new FontAwesome.Sharp.IconButton();
+            this.btnSaldoPagoProv = new FontAwesome.Sharp.IconButton();
+            this.btnCtasCtesProv = new FontAwesome.Sharp.IconButton();
+            this.btnPagarProveedores = new FontAwesome.Sharp.IconButton();
+            this.btnCargarCompras = new FontAwesome.Sharp.IconButton();
+            this.btnActualizarProv = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuMesaEntradas = new System.Windows.Forms.Panel();
-            this.iconButton15 = new FontAwesome.Sharp.IconButton();
+            this.btnMesaEntrada = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuCajaDiaria = new System.Windows.Forms.Panel();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnLibroVentas = new FontAwesome.Sharp.IconButton();
+            this.btnProcesoBanco = new FontAwesome.Sharp.IconButton();
             this.btnCobrarVarios = new FontAwesome.Sharp.IconButton();
             this.btnCobrarPendientes = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnMovimientosCaja = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuSociedades = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnSaldoPagoSoc = new FontAwesome.Sharp.IconButton();
             this.btnPadronSoc = new FontAwesome.Sharp.IconButton();
             this.btnCtasCtesSoc = new FontAwesome.Sharp.IconButton();
             this.btnLiquidarSoc = new FontAwesome.Sharp.IconButton();
-            this.btnActualizaSoc = new FontAwesome.Sharp.IconButton();
+            this.btnActualizarSoc = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuColegiados = new System.Windows.Forms.Panel();
             this.btnListasOficio = new FontAwesome.Sharp.IconButton();
             this.btnFianzas = new FontAwesome.Sharp.IconButton();
-            this.btnSaldoPagoColeg = new FontAwesome.Sharp.IconButton();
+            this.btnSaldoPagoCol = new FontAwesome.Sharp.IconButton();
             this.btnPadronCol = new FontAwesome.Sharp.IconButton();
             this.btnCtasCtesCol = new FontAwesome.Sharp.IconButton();
             this.btnLiquidarCol = new FontAwesome.Sharp.IconButton();
@@ -491,7 +491,7 @@
             this.pnlSubmenuSistema.Controls.Add(this.btnPermisos);
             this.pnlSubmenuSistema.Controls.Add(this.btnBotones);
             this.pnlSubmenuSistema.Controls.Add(this.btnUsuarios);
-            this.pnlSubmenuSistema.Font = new System.Drawing.Font("Cascadia Code", 11.25F);
+            this.pnlSubmenuSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.pnlSubmenuSistema.Location = new System.Drawing.Point(801, 0);
             this.pnlSubmenuSistema.Name = "pnlSubmenuSistema";
             this.pnlSubmenuSistema.Size = new System.Drawing.Size(160, 283);
@@ -572,38 +572,38 @@
             // pnlSubmenuMantenedor
             // 
             this.pnlSubmenuMantenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.pnlSubmenuMantenedor.Controls.Add(this.iconButton9);
+            this.pnlSubmenuMantenedor.Controls.Add(this.btnConceptosGastos);
             this.pnlSubmenuMantenedor.Controls.Add(this.btnDebitos);
             this.pnlSubmenuMantenedor.Controls.Add(this.btnCodPostales);
             this.pnlSubmenuMantenedor.Controls.Add(this.btnBackupRestore);
-            this.pnlSubmenuMantenedor.Font = new System.Drawing.Font("Cascadia Code", 11.25F);
+            this.pnlSubmenuMantenedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.pnlSubmenuMantenedor.Location = new System.Drawing.Point(687, 0);
             this.pnlSubmenuMantenedor.Name = "pnlSubmenuMantenedor";
             this.pnlSubmenuMantenedor.Size = new System.Drawing.Size(160, 311);
             this.pnlSubmenuMantenedor.TabIndex = 18;
             // 
-            // iconButton9
+            // btnConceptosGastos
             // 
-            this.iconButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton9.FlatAppearance.BorderSize = 0;
-            this.iconButton9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton9.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton9.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton9.IconColor = System.Drawing.Color.White;
-            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.IconSize = 15;
-            this.iconButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton9.Location = new System.Drawing.Point(0, 99);
-            this.iconButton9.Name = "iconButton9";
-            this.iconButton9.Size = new System.Drawing.Size(160, 33);
-            this.iconButton9.TabIndex = 20;
-            this.iconButton9.Text = "Conceptos Gastos";
-            this.iconButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton9.UseVisualStyleBackColor = true;
+            this.btnConceptosGastos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConceptosGastos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConceptosGastos.FlatAppearance.BorderSize = 0;
+            this.btnConceptosGastos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnConceptosGastos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnConceptosGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConceptosGastos.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnConceptosGastos.ForeColor = System.Drawing.Color.Aqua;
+            this.btnConceptosGastos.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnConceptosGastos.IconColor = System.Drawing.Color.White;
+            this.btnConceptosGastos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConceptosGastos.IconSize = 15;
+            this.btnConceptosGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConceptosGastos.Location = new System.Drawing.Point(0, 99);
+            this.btnConceptosGastos.Name = "btnConceptosGastos";
+            this.btnConceptosGastos.Size = new System.Drawing.Size(160, 33);
+            this.btnConceptosGastos.TabIndex = 20;
+            this.btnConceptosGastos.Text = "Conceptos Gastos";
+            this.btnConceptosGastos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConceptosGastos.UseVisualStyleBackColor = true;
             // 
             // btnDebitos
             // 
@@ -681,7 +681,7 @@
             // 
             this.pnlSubmenuTesoreria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.pnlSubmenuTesoreria.Controls.Add(this.iconButton31);
-            this.pnlSubmenuTesoreria.Font = new System.Drawing.Font("Cascadia Code", 11.25F);
+            this.pnlSubmenuTesoreria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.pnlSubmenuTesoreria.Location = new System.Drawing.Point(573, 0);
             this.pnlSubmenuTesoreria.Name = "pnlSubmenuTesoreria";
             this.pnlSubmenuTesoreria.Size = new System.Drawing.Size(160, 283);
@@ -713,248 +713,248 @@
             // pnlSubmenuProveedores
             // 
             this.pnlSubmenuProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.pnlSubmenuProveedores.Controls.Add(this.iconButton10);
-            this.pnlSubmenuProveedores.Controls.Add(this.iconButton8);
-            this.pnlSubmenuProveedores.Controls.Add(this.iconButton7);
-            this.pnlSubmenuProveedores.Controls.Add(this.iconButton6);
-            this.pnlSubmenuProveedores.Controls.Add(this.iconButton5);
-            this.pnlSubmenuProveedores.Controls.Add(this.iconButton23);
-            this.pnlSubmenuProveedores.Font = new System.Drawing.Font("Cascadia Code", 11.25F);
+            this.pnlSubmenuProveedores.Controls.Add(this.btnLibroCompras);
+            this.pnlSubmenuProveedores.Controls.Add(this.btnSaldoPagoProv);
+            this.pnlSubmenuProveedores.Controls.Add(this.btnCtasCtesProv);
+            this.pnlSubmenuProveedores.Controls.Add(this.btnPagarProveedores);
+            this.pnlSubmenuProveedores.Controls.Add(this.btnCargarCompras);
+            this.pnlSubmenuProveedores.Controls.Add(this.btnActualizarProv);
+            this.pnlSubmenuProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.pnlSubmenuProveedores.Location = new System.Drawing.Point(459, 0);
             this.pnlSubmenuProveedores.Name = "pnlSubmenuProveedores";
             this.pnlSubmenuProveedores.Size = new System.Drawing.Size(160, 283);
             this.pnlSubmenuProveedores.TabIndex = 16;
             // 
-            // iconButton10
+            // btnLibroCompras
             // 
-            this.iconButton10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton10.FlatAppearance.BorderSize = 0;
-            this.iconButton10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton10.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton10.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton10.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton10.IconColor = System.Drawing.Color.White;
-            this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton10.IconSize = 15;
-            this.iconButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton10.Location = new System.Drawing.Point(0, 165);
-            this.iconButton10.Name = "iconButton10";
-            this.iconButton10.Size = new System.Drawing.Size(160, 33);
-            this.iconButton10.TabIndex = 6;
-            this.iconButton10.Text = "Libro Compras";
-            this.iconButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton10.UseVisualStyleBackColor = true;
+            this.btnLibroCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLibroCompras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLibroCompras.FlatAppearance.BorderSize = 0;
+            this.btnLibroCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnLibroCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnLibroCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibroCompras.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnLibroCompras.ForeColor = System.Drawing.Color.Aqua;
+            this.btnLibroCompras.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnLibroCompras.IconColor = System.Drawing.Color.White;
+            this.btnLibroCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLibroCompras.IconSize = 15;
+            this.btnLibroCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLibroCompras.Location = new System.Drawing.Point(0, 165);
+            this.btnLibroCompras.Name = "btnLibroCompras";
+            this.btnLibroCompras.Size = new System.Drawing.Size(160, 33);
+            this.btnLibroCompras.TabIndex = 6;
+            this.btnLibroCompras.Text = "Libro Compras";
+            this.btnLibroCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLibroCompras.UseVisualStyleBackColor = true;
             // 
-            // iconButton8
+            // btnSaldoPagoProv
             // 
-            this.iconButton8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton8.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton8.IconColor = System.Drawing.Color.White;
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 15;
-            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.Location = new System.Drawing.Point(0, 132);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(160, 33);
-            this.iconButton8.TabIndex = 4;
-            this.iconButton8.Text = "Listar Saldos/Pagos";
-            this.iconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton8.UseVisualStyleBackColor = true;
+            this.btnSaldoPagoProv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaldoPagoProv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSaldoPagoProv.FlatAppearance.BorderSize = 0;
+            this.btnSaldoPagoProv.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnSaldoPagoProv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSaldoPagoProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaldoPagoProv.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnSaldoPagoProv.ForeColor = System.Drawing.Color.Aqua;
+            this.btnSaldoPagoProv.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnSaldoPagoProv.IconColor = System.Drawing.Color.White;
+            this.btnSaldoPagoProv.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaldoPagoProv.IconSize = 15;
+            this.btnSaldoPagoProv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaldoPagoProv.Location = new System.Drawing.Point(0, 132);
+            this.btnSaldoPagoProv.Name = "btnSaldoPagoProv";
+            this.btnSaldoPagoProv.Size = new System.Drawing.Size(160, 33);
+            this.btnSaldoPagoProv.TabIndex = 4;
+            this.btnSaldoPagoProv.Text = "Listar Saldos/Pagos";
+            this.btnSaldoPagoProv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaldoPagoProv.UseVisualStyleBackColor = true;
             // 
-            // iconButton7
+            // btnCtasCtesProv
             // 
-            this.iconButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton7.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton7.IconColor = System.Drawing.Color.White;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 15;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(0, 99);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(160, 33);
-            this.iconButton7.TabIndex = 3;
-            this.iconButton7.Text = "Cuentas Corrientes";
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
+            this.btnCtasCtesProv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCtasCtesProv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCtasCtesProv.FlatAppearance.BorderSize = 0;
+            this.btnCtasCtesProv.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnCtasCtesProv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCtasCtesProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCtasCtesProv.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnCtasCtesProv.ForeColor = System.Drawing.Color.Aqua;
+            this.btnCtasCtesProv.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnCtasCtesProv.IconColor = System.Drawing.Color.White;
+            this.btnCtasCtesProv.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCtasCtesProv.IconSize = 15;
+            this.btnCtasCtesProv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCtasCtesProv.Location = new System.Drawing.Point(0, 99);
+            this.btnCtasCtesProv.Name = "btnCtasCtesProv";
+            this.btnCtasCtesProv.Size = new System.Drawing.Size(160, 33);
+            this.btnCtasCtesProv.TabIndex = 3;
+            this.btnCtasCtesProv.Text = "Cuentas Corrientes";
+            this.btnCtasCtesProv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCtasCtesProv.UseVisualStyleBackColor = true;
             // 
-            // iconButton6
+            // btnPagarProveedores
             // 
-            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton6.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton6.IconColor = System.Drawing.Color.White;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 15;
-            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton6.Location = new System.Drawing.Point(0, 66);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(160, 33);
-            this.iconButton6.TabIndex = 2;
-            this.iconButton6.Text = "Recibo de Pagos";
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = true;
+            this.btnPagarProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPagarProveedores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPagarProveedores.FlatAppearance.BorderSize = 0;
+            this.btnPagarProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnPagarProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPagarProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagarProveedores.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnPagarProveedores.ForeColor = System.Drawing.Color.Aqua;
+            this.btnPagarProveedores.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnPagarProveedores.IconColor = System.Drawing.Color.White;
+            this.btnPagarProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPagarProveedores.IconSize = 15;
+            this.btnPagarProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPagarProveedores.Location = new System.Drawing.Point(0, 66);
+            this.btnPagarProveedores.Name = "btnPagarProveedores";
+            this.btnPagarProveedores.Size = new System.Drawing.Size(160, 33);
+            this.btnPagarProveedores.TabIndex = 2;
+            this.btnPagarProveedores.Text = "Recibo de Pagos";
+            this.btnPagarProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPagarProveedores.UseVisualStyleBackColor = true;
             // 
-            // iconButton5
+            // btnCargarCompras
             // 
-            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton5.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 15;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(0, 33);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(160, 33);
-            this.iconButton5.TabIndex = 1;
-            this.iconButton5.Text = "Cargar Compras";
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
+            this.btnCargarCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargarCompras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCargarCompras.FlatAppearance.BorderSize = 0;
+            this.btnCargarCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnCargarCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCargarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarCompras.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnCargarCompras.ForeColor = System.Drawing.Color.Aqua;
+            this.btnCargarCompras.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnCargarCompras.IconColor = System.Drawing.Color.White;
+            this.btnCargarCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCargarCompras.IconSize = 15;
+            this.btnCargarCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargarCompras.Location = new System.Drawing.Point(0, 33);
+            this.btnCargarCompras.Name = "btnCargarCompras";
+            this.btnCargarCompras.Size = new System.Drawing.Size(160, 33);
+            this.btnCargarCompras.TabIndex = 1;
+            this.btnCargarCompras.Text = "Cargar Compras";
+            this.btnCargarCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCargarCompras.UseVisualStyleBackColor = true;
             // 
-            // iconButton23
+            // btnActualizarProv
             // 
-            this.iconButton23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton23.FlatAppearance.BorderSize = 0;
-            this.iconButton23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton23.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton23.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton23.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton23.IconColor = System.Drawing.Color.White;
-            this.iconButton23.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton23.IconSize = 15;
-            this.iconButton23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton23.Location = new System.Drawing.Point(0, 0);
-            this.iconButton23.Name = "iconButton23";
-            this.iconButton23.Size = new System.Drawing.Size(160, 33);
-            this.iconButton23.TabIndex = 0;
-            this.iconButton23.Text = "Actualizar";
-            this.iconButton23.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton23.UseVisualStyleBackColor = true;
+            this.btnActualizarProv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizarProv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnActualizarProv.FlatAppearance.BorderSize = 0;
+            this.btnActualizarProv.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnActualizarProv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnActualizarProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarProv.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnActualizarProv.ForeColor = System.Drawing.Color.Aqua;
+            this.btnActualizarProv.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnActualizarProv.IconColor = System.Drawing.Color.White;
+            this.btnActualizarProv.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizarProv.IconSize = 15;
+            this.btnActualizarProv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarProv.Location = new System.Drawing.Point(0, 0);
+            this.btnActualizarProv.Name = "btnActualizarProv";
+            this.btnActualizarProv.Size = new System.Drawing.Size(160, 33);
+            this.btnActualizarProv.TabIndex = 0;
+            this.btnActualizarProv.Text = "Actualizar";
+            this.btnActualizarProv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizarProv.UseVisualStyleBackColor = true;
             // 
             // pnlSubmenuMesaEntradas
             // 
             this.pnlSubmenuMesaEntradas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.pnlSubmenuMesaEntradas.Controls.Add(this.iconButton15);
-            this.pnlSubmenuMesaEntradas.Font = new System.Drawing.Font("Cascadia Code", 11.25F);
+            this.pnlSubmenuMesaEntradas.Controls.Add(this.btnMesaEntrada);
+            this.pnlSubmenuMesaEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.pnlSubmenuMesaEntradas.Location = new System.Drawing.Point(345, 0);
             this.pnlSubmenuMesaEntradas.Name = "pnlSubmenuMesaEntradas";
             this.pnlSubmenuMesaEntradas.Size = new System.Drawing.Size(160, 283);
             this.pnlSubmenuMesaEntradas.TabIndex = 15;
             // 
-            // iconButton15
+            // btnMesaEntrada
             // 
-            this.iconButton15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton15.FlatAppearance.BorderSize = 0;
-            this.iconButton15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton15.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton15.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton15.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton15.IconColor = System.Drawing.Color.White;
-            this.iconButton15.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton15.IconSize = 15;
-            this.iconButton15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton15.Location = new System.Drawing.Point(0, 0);
-            this.iconButton15.Name = "iconButton15";
-            this.iconButton15.Size = new System.Drawing.Size(160, 33);
-            this.iconButton15.TabIndex = 0;
-            this.iconButton15.Text = "Actualizar";
-            this.iconButton15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton15.UseVisualStyleBackColor = true;
+            this.btnMesaEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesaEntrada.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMesaEntrada.FlatAppearance.BorderSize = 0;
+            this.btnMesaEntrada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnMesaEntrada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMesaEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesaEntrada.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnMesaEntrada.ForeColor = System.Drawing.Color.Aqua;
+            this.btnMesaEntrada.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnMesaEntrada.IconColor = System.Drawing.Color.White;
+            this.btnMesaEntrada.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMesaEntrada.IconSize = 15;
+            this.btnMesaEntrada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMesaEntrada.Location = new System.Drawing.Point(0, 0);
+            this.btnMesaEntrada.Name = "btnMesaEntrada";
+            this.btnMesaEntrada.Size = new System.Drawing.Size(160, 33);
+            this.btnMesaEntrada.TabIndex = 0;
+            this.btnMesaEntrada.Text = "Actualizar";
+            this.btnMesaEntrada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMesaEntrada.UseVisualStyleBackColor = true;
             // 
             // pnlSubmenuCajaDiaria
             // 
             this.pnlSubmenuCajaDiaria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.pnlSubmenuCajaDiaria.Controls.Add(this.iconButton4);
-            this.pnlSubmenuCajaDiaria.Controls.Add(this.iconButton2);
+            this.pnlSubmenuCajaDiaria.Controls.Add(this.btnLibroVentas);
+            this.pnlSubmenuCajaDiaria.Controls.Add(this.btnProcesoBanco);
             this.pnlSubmenuCajaDiaria.Controls.Add(this.btnCobrarVarios);
             this.pnlSubmenuCajaDiaria.Controls.Add(this.btnCobrarPendientes);
-            this.pnlSubmenuCajaDiaria.Controls.Add(this.iconButton3);
-            this.pnlSubmenuCajaDiaria.Font = new System.Drawing.Font("Cascadia Code", 11.25F);
+            this.pnlSubmenuCajaDiaria.Controls.Add(this.btnMovimientosCaja);
+            this.pnlSubmenuCajaDiaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.pnlSubmenuCajaDiaria.Location = new System.Drawing.Point(231, 0);
             this.pnlSubmenuCajaDiaria.Name = "pnlSubmenuCajaDiaria";
             this.pnlSubmenuCajaDiaria.Size = new System.Drawing.Size(160, 225);
             this.pnlSubmenuCajaDiaria.TabIndex = 16;
             // 
-            // iconButton4
+            // btnLibroVentas
             // 
-            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton4.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 15;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(0, 132);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(160, 33);
-            this.iconButton4.TabIndex = 7;
-            this.iconButton4.Text = "Libro Ventas";
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
+            this.btnLibroVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLibroVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLibroVentas.FlatAppearance.BorderSize = 0;
+            this.btnLibroVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnLibroVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnLibroVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibroVentas.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnLibroVentas.ForeColor = System.Drawing.Color.Aqua;
+            this.btnLibroVentas.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnLibroVentas.IconColor = System.Drawing.Color.White;
+            this.btnLibroVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLibroVentas.IconSize = 15;
+            this.btnLibroVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLibroVentas.Location = new System.Drawing.Point(0, 132);
+            this.btnLibroVentas.Name = "btnLibroVentas";
+            this.btnLibroVentas.Size = new System.Drawing.Size(160, 33);
+            this.btnLibroVentas.TabIndex = 7;
+            this.btnLibroVentas.Text = "Libro Ventas";
+            this.btnLibroVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLibroVentas.UseVisualStyleBackColor = true;
             // 
-            // iconButton2
+            // btnProcesoBanco
             // 
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton2.ForeColor = System.Drawing.Color.Yellow;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 15;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 99);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(160, 33);
-            this.iconButton2.TabIndex = 6;
-            this.iconButton2.Text = "Proceso Banco";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnProcesoBanco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProcesoBanco.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProcesoBanco.FlatAppearance.BorderSize = 0;
+            this.btnProcesoBanco.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnProcesoBanco.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnProcesoBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcesoBanco.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnProcesoBanco.ForeColor = System.Drawing.Color.Yellow;
+            this.btnProcesoBanco.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnProcesoBanco.IconColor = System.Drawing.Color.White;
+            this.btnProcesoBanco.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProcesoBanco.IconSize = 15;
+            this.btnProcesoBanco.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcesoBanco.Location = new System.Drawing.Point(0, 99);
+            this.btnProcesoBanco.Name = "btnProcesoBanco";
+            this.btnProcesoBanco.Size = new System.Drawing.Size(160, 33);
+            this.btnProcesoBanco.TabIndex = 6;
+            this.btnProcesoBanco.Text = "Proceso Banco";
+            this.btnProcesoBanco.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProcesoBanco.UseVisualStyleBackColor = true;
             // 
             // btnCobrarVarios
             // 
@@ -1004,65 +1004,65 @@
             this.btnCobrarPendientes.UseVisualStyleBackColor = true;
             this.btnCobrarPendientes.Click += new System.EventHandler(this.btnCobrarPendientes_Click_1);
             // 
-            // iconButton3
+            // btnMovimientosCaja
             // 
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 15;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 0);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(160, 33);
-            this.iconButton3.TabIndex = 3;
-            this.iconButton3.Text = "Movimientos Caja";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btnMovimientosCaja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMovimientosCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMovimientosCaja.FlatAppearance.BorderSize = 0;
+            this.btnMovimientosCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnMovimientosCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMovimientosCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMovimientosCaja.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnMovimientosCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMovimientosCaja.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnMovimientosCaja.IconColor = System.Drawing.Color.White;
+            this.btnMovimientosCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMovimientosCaja.IconSize = 15;
+            this.btnMovimientosCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMovimientosCaja.Location = new System.Drawing.Point(0, 0);
+            this.btnMovimientosCaja.Name = "btnMovimientosCaja";
+            this.btnMovimientosCaja.Size = new System.Drawing.Size(160, 33);
+            this.btnMovimientosCaja.TabIndex = 3;
+            this.btnMovimientosCaja.Text = "Movimientos Caja";
+            this.btnMovimientosCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMovimientosCaja.UseVisualStyleBackColor = true;
             // 
             // pnlSubmenuSociedades
             // 
             this.pnlSubmenuSociedades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.pnlSubmenuSociedades.Controls.Add(this.iconButton1);
+            this.pnlSubmenuSociedades.Controls.Add(this.btnSaldoPagoSoc);
             this.pnlSubmenuSociedades.Controls.Add(this.btnPadronSoc);
             this.pnlSubmenuSociedades.Controls.Add(this.btnCtasCtesSoc);
             this.pnlSubmenuSociedades.Controls.Add(this.btnLiquidarSoc);
-            this.pnlSubmenuSociedades.Controls.Add(this.btnActualizaSoc);
-            this.pnlSubmenuSociedades.Font = new System.Drawing.Font("Cascadia Code", 11.25F);
+            this.pnlSubmenuSociedades.Controls.Add(this.btnActualizarSoc);
+            this.pnlSubmenuSociedades.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.pnlSubmenuSociedades.Location = new System.Drawing.Point(117, 0);
             this.pnlSubmenuSociedades.Name = "pnlSubmenuSociedades";
             this.pnlSubmenuSociedades.Size = new System.Drawing.Size(160, 225);
             this.pnlSubmenuSociedades.TabIndex = 15;
             // 
-            // iconButton1
+            // btnSaldoPagoSoc
             // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton1.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 15;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 132);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(160, 33);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.Text = "Listar Saldos/Pagos";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnSaldoPagoSoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaldoPagoSoc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSaldoPagoSoc.FlatAppearance.BorderSize = 0;
+            this.btnSaldoPagoSoc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnSaldoPagoSoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSaldoPagoSoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaldoPagoSoc.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnSaldoPagoSoc.ForeColor = System.Drawing.Color.Aqua;
+            this.btnSaldoPagoSoc.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnSaldoPagoSoc.IconColor = System.Drawing.Color.White;
+            this.btnSaldoPagoSoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaldoPagoSoc.IconSize = 15;
+            this.btnSaldoPagoSoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaldoPagoSoc.Location = new System.Drawing.Point(0, 132);
+            this.btnSaldoPagoSoc.Name = "btnSaldoPagoSoc";
+            this.btnSaldoPagoSoc.Size = new System.Drawing.Size(160, 33);
+            this.btnSaldoPagoSoc.TabIndex = 6;
+            this.btnSaldoPagoSoc.Text = "Listar Saldos/Pagos";
+            this.btnSaldoPagoSoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaldoPagoSoc.UseVisualStyleBackColor = true;
             // 
             // btnPadronSoc
             // 
@@ -1133,41 +1133,41 @@
             this.btnLiquidarSoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLiquidarSoc.UseVisualStyleBackColor = true;
             // 
-            // btnActualizaSoc
+            // btnActualizarSoc
             // 
-            this.btnActualizaSoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizaSoc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnActualizaSoc.FlatAppearance.BorderSize = 0;
-            this.btnActualizaSoc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnActualizaSoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnActualizaSoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizaSoc.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnActualizaSoc.ForeColor = System.Drawing.Color.Aqua;
-            this.btnActualizaSoc.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnActualizaSoc.IconColor = System.Drawing.Color.White;
-            this.btnActualizaSoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizaSoc.IconSize = 15;
-            this.btnActualizaSoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizaSoc.Location = new System.Drawing.Point(0, 0);
-            this.btnActualizaSoc.Name = "btnActualizaSoc";
-            this.btnActualizaSoc.Size = new System.Drawing.Size(160, 33);
-            this.btnActualizaSoc.TabIndex = 0;
-            this.btnActualizaSoc.Text = "Actualizar";
-            this.btnActualizaSoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnActualizaSoc.UseVisualStyleBackColor = true;
-            this.btnActualizaSoc.Click += new System.EventHandler(this.btnActualizaSoc_Click);
+            this.btnActualizarSoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizarSoc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnActualizarSoc.FlatAppearance.BorderSize = 0;
+            this.btnActualizarSoc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnActualizarSoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnActualizarSoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarSoc.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnActualizarSoc.ForeColor = System.Drawing.Color.Aqua;
+            this.btnActualizarSoc.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnActualizarSoc.IconColor = System.Drawing.Color.White;
+            this.btnActualizarSoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizarSoc.IconSize = 15;
+            this.btnActualizarSoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarSoc.Location = new System.Drawing.Point(0, 0);
+            this.btnActualizarSoc.Name = "btnActualizarSoc";
+            this.btnActualizarSoc.Size = new System.Drawing.Size(160, 33);
+            this.btnActualizarSoc.TabIndex = 0;
+            this.btnActualizarSoc.Text = "Actualizar";
+            this.btnActualizarSoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizarSoc.UseVisualStyleBackColor = true;
+            this.btnActualizarSoc.Click += new System.EventHandler(this.btnActualizaSoc_Click);
             // 
             // pnlSubmenuColegiados
             // 
             this.pnlSubmenuColegiados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.pnlSubmenuColegiados.Controls.Add(this.btnListasOficio);
             this.pnlSubmenuColegiados.Controls.Add(this.btnFianzas);
-            this.pnlSubmenuColegiados.Controls.Add(this.btnSaldoPagoColeg);
+            this.pnlSubmenuColegiados.Controls.Add(this.btnSaldoPagoCol);
             this.pnlSubmenuColegiados.Controls.Add(this.btnPadronCol);
             this.pnlSubmenuColegiados.Controls.Add(this.btnCtasCtesCol);
             this.pnlSubmenuColegiados.Controls.Add(this.btnLiquidarCol);
             this.pnlSubmenuColegiados.Controls.Add(this.btnActualizarCol);
-            this.pnlSubmenuColegiados.Font = new System.Drawing.Font("Cascadia Code", 11.25F);
+            this.pnlSubmenuColegiados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.pnlSubmenuColegiados.Location = new System.Drawing.Point(3, 0);
             this.pnlSubmenuColegiados.Name = "pnlSubmenuColegiados";
             this.pnlSubmenuColegiados.Size = new System.Drawing.Size(160, 283);
@@ -1220,29 +1220,29 @@
             this.btnFianzas.UseVisualStyleBackColor = true;
             this.btnFianzas.Click += new System.EventHandler(this.btnFianzas_Click);
             // 
-            // btnSaldoPagoColeg
+            // btnSaldoPagoCol
             // 
-            this.btnSaldoPagoColeg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaldoPagoColeg.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSaldoPagoColeg.FlatAppearance.BorderSize = 0;
-            this.btnSaldoPagoColeg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSaldoPagoColeg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSaldoPagoColeg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaldoPagoColeg.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnSaldoPagoColeg.ForeColor = System.Drawing.Color.Aqua;
-            this.btnSaldoPagoColeg.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnSaldoPagoColeg.IconColor = System.Drawing.Color.White;
-            this.btnSaldoPagoColeg.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSaldoPagoColeg.IconSize = 15;
-            this.btnSaldoPagoColeg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaldoPagoColeg.Location = new System.Drawing.Point(0, 132);
-            this.btnSaldoPagoColeg.Name = "btnSaldoPagoColeg";
-            this.btnSaldoPagoColeg.Size = new System.Drawing.Size(160, 33);
-            this.btnSaldoPagoColeg.TabIndex = 8;
-            this.btnSaldoPagoColeg.Text = "Listar Saldos/Cobros";
-            this.btnSaldoPagoColeg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSaldoPagoColeg.UseVisualStyleBackColor = true;
-            this.btnSaldoPagoColeg.Click += new System.EventHandler(this.btnSaldoPagoColeg_Click);
+            this.btnSaldoPagoCol.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaldoPagoCol.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSaldoPagoCol.FlatAppearance.BorderSize = 0;
+            this.btnSaldoPagoCol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnSaldoPagoCol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSaldoPagoCol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaldoPagoCol.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnSaldoPagoCol.ForeColor = System.Drawing.Color.Aqua;
+            this.btnSaldoPagoCol.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnSaldoPagoCol.IconColor = System.Drawing.Color.White;
+            this.btnSaldoPagoCol.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaldoPagoCol.IconSize = 15;
+            this.btnSaldoPagoCol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaldoPagoCol.Location = new System.Drawing.Point(0, 132);
+            this.btnSaldoPagoCol.Name = "btnSaldoPagoCol";
+            this.btnSaldoPagoCol.Size = new System.Drawing.Size(160, 33);
+            this.btnSaldoPagoCol.TabIndex = 8;
+            this.btnSaldoPagoCol.Text = "Listar Saldos/Cobros";
+            this.btnSaldoPagoCol.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaldoPagoCol.UseVisualStyleBackColor = true;
+            this.btnSaldoPagoCol.Click += new System.EventHandler(this.btnSaldoPagoColeg_Click);
             // 
             // btnPadronCol
             // 
@@ -1416,7 +1416,7 @@
         private FontAwesome.Sharp.IconButton btnPadronSoc;
         private FontAwesome.Sharp.IconButton btnCtasCtesSoc;
         private FontAwesome.Sharp.IconButton btnLiquidarSoc;
-        private FontAwesome.Sharp.IconButton btnActualizaSoc;
+        private FontAwesome.Sharp.IconButton btnActualizarSoc;
         private FontAwesome.Sharp.IconButton btnPadronCol;
         private FontAwesome.Sharp.IconButton btnCtasCtesCol;
         private FontAwesome.Sharp.IconButton btnLiquidarCol;
@@ -1424,9 +1424,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnlSubmenuCajaDiaria;
         private System.Windows.Forms.Panel pnlSubmenuMesaEntradas;
-        private FontAwesome.Sharp.IconButton iconButton15;
+        private FontAwesome.Sharp.IconButton btnMesaEntrada;
         private System.Windows.Forms.Panel pnlSubmenuProveedores;
-        private FontAwesome.Sharp.IconButton iconButton23;
+        private FontAwesome.Sharp.IconButton btnActualizarProv;
         private System.Windows.Forms.Panel pnlSubmenuTesoreria;
         private FontAwesome.Sharp.IconButton iconButton31;
         private System.Windows.Forms.Panel pnlSubmenuMantenedor;
@@ -1437,22 +1437,22 @@
         private FontAwesome.Sharp.IconButton btnPermisos;
         private FontAwesome.Sharp.IconButton btnListasOficio;
         private FontAwesome.Sharp.IconButton btnFianzas;
-        private FontAwesome.Sharp.IconButton btnSaldoPagoColeg;
-        private FontAwesome.Sharp.IconButton iconButton10;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnSaldoPagoCol;
+        private FontAwesome.Sharp.IconButton btnLibroCompras;
+        private FontAwesome.Sharp.IconButton btnSaldoPagoProv;
+        private FontAwesome.Sharp.IconButton btnCtasCtesProv;
+        private FontAwesome.Sharp.IconButton btnPagarProveedores;
+        private FontAwesome.Sharp.IconButton btnCargarCompras;
+        private FontAwesome.Sharp.IconButton btnLibroVentas;
+        private FontAwesome.Sharp.IconButton btnProcesoBanco;
         private FontAwesome.Sharp.IconButton btnCobrarVarios;
         private FontAwesome.Sharp.IconButton btnCobrarPendientes;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnMovimientosCaja;
+        private FontAwesome.Sharp.IconButton btnSaldoPagoSoc;
         private FontAwesome.Sharp.IconButton btnDebitos;
         private FontAwesome.Sharp.IconButton btnCodPostales;
         private FontAwesome.Sharp.IconButton btnBackupRestore;
-        private FontAwesome.Sharp.IconButton iconButton9;
+        private FontAwesome.Sharp.IconButton btnConceptosGastos;
     }
 }
 

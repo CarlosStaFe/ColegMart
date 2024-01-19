@@ -92,6 +92,7 @@
     <Compile Include="CD_Provincias.cs" />
     <Compile Include="CD_Renglones.cs" />
     <Compile Include="CD_SaldosPagos.cs" />
+    <Compile Include="CD_Sociedades.cs" />
     <Compile Include="CD_Usuarios.cs" />
     <Compile Include="CD_Ventas.cs" />
     <Compile Include="Conexion.cs" />

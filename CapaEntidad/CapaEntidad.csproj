@@ -87,6 +87,7 @@
     <Compile Include="CE_Provincias.cs" />
     <Compile Include="CE_Renglones.cs" />
     <Compile Include="CE_SaldosPagos.cs" />
+    <Compile Include="CE_Sociedades.cs" />
     <Compile Include="CE_UserLogin.cs" />
     <Compile Include="CE_Usuarios.cs" />
     <Compile Include="CE_Ventas.cs" />

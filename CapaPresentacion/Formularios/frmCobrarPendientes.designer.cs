@@ -103,7 +103,6 @@
             this.reportCobroBoletas = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataSetPrincipal = new CapaPresentacion.DataSetPrincipal();
             this.spCobroBoletasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spCobroBoletasTableAdapter = new CapaPresentacion.DataSetPrincipalTableAdapters.spCobroBoletasTableAdapter();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCtasCtes)).BeginInit();
@@ -832,7 +831,7 @@
             // 
             // spCobroBoletasTableAdapter
             // 
-            this.spCobroBoletasTableAdapter.ClearBeforeFill = true;
+            //this.spCobroBoletasTableAdapter.ClearBeforeFill = true;
             // 
             // frmCobrarPendientes
             // 
@@ -921,6 +920,5 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportCobroBoletas;
         private System.Windows.Forms.BindingSource spCobroBoletasBindingSource;
         private DataSetPrincipal dataSetPrincipal;
-        private DataSetPrincipalTableAdapters.spCobroBoletasTableAdapter spCobroBoletasTableAdapter;
     }
 }

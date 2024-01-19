@@ -87,6 +87,7 @@
     <Compile Include="CN_Provincias.cs" />
     <Compile Include="CN_Renglones.cs" />
     <Compile Include="CN_SaldosPagos.cs" />
+    <Compile Include="CN_Sociedades.cs" />
     <Compile Include="CN_Usuarios.cs" />
     <Compile Include="CN_Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

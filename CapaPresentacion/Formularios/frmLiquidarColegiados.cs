@@ -42,6 +42,7 @@ namespace CapaPresentacion.Formularios
             txtUserRegistro.Text = CE_UserLogin.Usuario;
             rdbMatricula.Checked = true;
             txtObs.Text = "Informar al colegio el medio de pago y el monto si no paga con esta boleta en el banco, gracias.";
+            txtObs.Refresh();
             txtDesde.Select();
         }
 
@@ -57,6 +58,7 @@ namespace CapaPresentacion.Formularios
             txtAsunto.Text = string.Empty;
             txtMensaje.Text = string.Empty;
             txtObs.Text = "Informar al colegio el medio de pago y el monto si no paga con esta boleta en el banco, gracias.";
+            txtObs.Refresh();
             txtDesde.Select();
         }
 
@@ -79,7 +81,7 @@ namespace CapaPresentacion.Formularios
             {
                 string mensaje = string.Empty;
 
-                mensaje += "LA MATRÍCULA HASTA NO PUEDE SER MAYOR A LA MATRÍCULA DESDE...???";
+                mensaje += "LA MATRÍCULA HASTA NO PUEDE SER MAYOR A LA MATRÍCULA DESDE...!!!";
                 frmMsgBox msg = new frmMsgBox(mensaje, "info", 1);
                 DialogResult dialogo = msg.ShowDialog();
                 txtDesde.Text = "0";
@@ -415,7 +417,7 @@ namespace CapaPresentacion.Formularios
                 ApelNombres = apelnombres,
                 Fecha = dtpFechaLiq.Value,
                 Tipo = tipo,
-                Prefijo = "0001",
+                Prefijo = "0000",
                 Subfijo = comprobante,
                 Domicilio = domicilio,
                 Localidad = localidad,
@@ -446,7 +448,7 @@ namespace CapaPresentacion.Formularios
             nombrePDF = matri + "-" + txtPeriodo.Text + ".pdf";
 
             spLiquidacionTableAdapter.Fill(dataSetPrincipal.spLiquidacion, matricula);
-            spDetalleLiquiTableAdapter.Fill(dataSetPrincipal.spDetalleLiqui, prefijo, subfijo);
+            //spDetalleLiquiTableAdapter.Fill(dataSetPrincipal.spDetalleLiqui, prefijo, subfijo);
             spDeudaLiquiTableAdapter.Fill(dataSetPrincipal.spDeudaLiqui, prefijo, subfijo);
 
             reportLiquidacion.RefreshReport();
@@ -455,7 +457,7 @@ namespace CapaPresentacion.Formularios
             reportLiquidacion.LocalReport.DataSources.Add(new ReportDataSource("DataSetPrincipal", spDetalleLiquiBindingSource));
             reportLiquidacion.LocalReport.DataSources.Add(new ReportDataSource("DataSetPrincipal", spDeudaLiquiBindingSource));
 
-            FechaVtoCae();
+            //FechaVtoCae();
 
             ReportParameter[] parametros = new ReportParameter[7];
             parametros[0] = new ReportParameter("prmObsFianza", avisofianza);
@@ -608,13 +610,13 @@ namespace CapaPresentacion.Formularios
         }
 
         //***** PROCESO PARA CAMBIAR LA FECHA DEL VTO DEL CAE *****
-        private void FechaVtoCae()
-        {
-            yycae = new PonerCeros().Proceso(vtocae.Substring(0, 4), 4);
-            mmcae = new PonerCeros().Proceso(vtocae.Substring(4, 2), 2);
-            ddcae = new PonerCeros().Proceso(vtocae.Substring(6, 2), 2);
-            vtocae = ddcae + "/" + mmcae + "/" + yycae;
-        }
+        //private void FechaVtoCae()
+        //{
+        //    yycae = new PonerCeros().Proceso(vtocae.Substring(0, 4), 4);
+        //    mmcae = new PonerCeros().Proceso(vtocae.Substring(4, 2), 2);
+        //    ddcae = new PonerCeros().Proceso(vtocae.Substring(6, 2), 2);
+        //    vtocae = ddcae + "/" + mmcae + "/" + yycae;
+        //}
 
         //***** PROCESO PARA ENVIAR EL SEGUNDO RECLAMO *****
         private void EnviarReclamo2()

@@ -445,7 +445,7 @@ namespace CapaPresentacion.Formularios
             int matri = Convert.ToInt32(txtMatricula.Text);
             nombrePDF = "CIC-" + comprobante + "-" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
 
-            spCobroBoletasTableAdapter.Fill(dataSetPrincipal.spCobroBoletas, matri, comprobante);
+            //spCobroBoletasTableAdapter.Fill(dataSetPrincipal.spCobroBoletas, matri, comprobante);
 
             reportCobroBoletas.RefreshReport();
 

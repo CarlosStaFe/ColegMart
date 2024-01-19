@@ -470,6 +470,11 @@ namespace CapaPresentacion.Formularios
                     dgvColegiados.Rows[i].Cells["Fianza"].Style.ForeColor = Color.Black;
                     dgvColegiados.Rows[i].Cells["Fianza"].Style.BackColor = Color.DarkOrange;
                 }
+                else
+                {
+                    dgvColegiados.Rows[i].Cells["Fianza"].Style.ForeColor = Color.Lime;
+                    dgvColegiados.Rows[i].Cells["Fianza"].Style.BackColor = Color.Black;
+                }
             }
         }
 

@@ -109,6 +109,18 @@ namespace CapaPresentacion
                         Close();
                         Dispose();
                     }
+                    if (NombreBoton == "btnLocalSoc")
+                    {
+                        frmSociedades LocalSoc = Owner as frmSociedades;
+                        LocalSoc.lblLocalidad.Text = txtCodigo.Text + " - " + txtLocalidad.Text + " - " + txtDepartamento.Text + " - " + txtProvincia.Text;
+                        LocalSoc.txtCodPostal.Text = txtIdCodPos.Text;
+                        LocalSoc.txtLocal.Text = txtFkLocal.Text;
+                        LocalSoc.txtDepto.Text = txtFkDepto.Text;
+                        LocalSoc.txtProv.Text = txtFkProv.Text;
+                        Close();
+                        Dispose();
+                    }
+
                 }
             }
         }

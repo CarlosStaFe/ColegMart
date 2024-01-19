@@ -181,6 +181,7 @@
             this.reportReclamo2.ServerReport.BearerToken = null;
             this.reportReclamo2.Size = new System.Drawing.Size(107, 29);
             this.reportReclamo2.TabIndex = 147;
+            this.reportReclamo2.Visible = false;
             // 
             // reportReclamo1
             // 
@@ -191,6 +192,7 @@
             this.reportReclamo1.ServerReport.BearerToken = null;
             this.reportReclamo1.Size = new System.Drawing.Size(97, 29);
             this.reportReclamo1.TabIndex = 146;
+            this.reportReclamo1.Visible = false;
             // 
             // reportLiquidacion
             // 
@@ -209,6 +211,7 @@
             this.reportLiquidacion.ServerReport.BearerToken = null;
             this.reportLiquidacion.Size = new System.Drawing.Size(106, 29);
             this.reportLiquidacion.TabIndex = 145;
+            this.reportLiquidacion.Visible = false;
             // 
             // dtpFechaLiq
             // 

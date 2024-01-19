@@ -77,7 +77,7 @@ namespace CapaDatos
                             }
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         lista = new List<CE_Colegiados>();
                     }
@@ -156,7 +156,7 @@ namespace CapaDatos
             return idColegiado;
         }
 
-        //***** METODO PARA EDITAR UN USUARIO *****
+        //***** METODO PARA EDITAR UN COLEGIADO *****
         public bool Editar(CE_Colegiados obj, out string mensaje)
         {
             bool Resultado = false;

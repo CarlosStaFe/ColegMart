@@ -20,7 +20,7 @@ namespace CapaPresentacion.Formularios
             NameBoton = NombreBoton;
         }
 
-        private void frmQueryColegiado_Load(object sender, EventArgs e)
+        private void mdlColegiado_Load(object sender, EventArgs e)
         {
             txtUserRegistro.Text = CE_UserLogin.Usuario;
 
@@ -43,6 +43,7 @@ namespace CapaPresentacion.Formularios
 
             cboBusqueda.Select();
         }
+
 
         //***** PROCEDIMIENTO DEL BOTON SALIR *****
         private void btnSalir_Click(object sender, EventArgs e)
@@ -116,6 +117,46 @@ namespace CapaPresentacion.Formularios
                         Close();
                         Dispose();
                     }
+                    if (NameBoton == "btnMarti1")
+                    {
+                        frmSociedades Marti1 = Owner as frmSociedades;
+                        Marti1.txtMatricula.Text = dgvColegiados.Rows[indice].Cells["Mat"].Value.ToString();
+                        Marti1.txtApelNomb.Text = dgvColegiados.Rows[indice].Cells["Nombres"].Value.ToString();
+                        Marti1.txtEstadoMat.Text = dgvColegiados.Rows[indice].Cells["Estado"].Value.ToString();
+                        Marti1.txtFianza.Text = dgvColegiados.Rows[indice].Cells["FecVenceFianza"].Value.ToString();
+                        Close();
+                        Dispose();
+                    }
+                    if (NameBoton == "btnMarti2")
+                    {
+                        frmSociedades Marti2 = Owner as frmSociedades;
+                        Marti2.txtMatricula.Text = dgvColegiados.Rows[indice].Cells["Mat"].Value.ToString();
+                        Marti2.txtApelNomb.Text = dgvColegiados.Rows[indice].Cells["Nombres"].Value.ToString();
+                        Marti2.txtEstadoMat.Text = dgvColegiados.Rows[indice].Cells["Estado"].Value.ToString();
+                        Marti2.txtFianza.Text = dgvColegiados.Rows[indice].Cells["FecVenceFianza"].Value.ToString();
+                        Close();
+                        Dispose();
+                    }
+                    if (NameBoton == "btnMarti3")
+                    {
+                        frmSociedades Marti3 = Owner as frmSociedades;
+                        Marti3.txtMatricula.Text = dgvColegiados.Rows[indice].Cells["Mat"].Value.ToString();
+                        Marti3.txtApelNomb.Text = dgvColegiados.Rows[indice].Cells["Nombres"].Value.ToString();
+                        Marti3.txtEstadoMat.Text = dgvColegiados.Rows[indice].Cells["Estado"].Value.ToString();
+                        Marti3.txtFianza.Text = dgvColegiados.Rows[indice].Cells["FecVenceFianza"].Value.ToString();
+                        Close();
+                        Dispose();
+                    }
+                    if (NameBoton == "btnMarti4")
+                    {
+                        frmSociedades Marti4 = Owner as frmSociedades;
+                        Marti4.txtMatricula.Text = dgvColegiados.Rows[indice].Cells["Mat"].Value.ToString();
+                        Marti4.txtApelNomb.Text = dgvColegiados.Rows[indice].Cells["Nombres"].Value.ToString();
+                        Marti4.txtEstadoMat.Text = dgvColegiados.Rows[indice].Cells["Estado"].Value.ToString();
+                        Marti4.txtFianza.Text = dgvColegiados.Rows[indice].Cells["FecVenceFianza"].Value.ToString();
+                        Close();
+                        Dispose();
+                    }
 
                 }
             }
@@ -148,5 +189,6 @@ namespace CapaPresentacion.Formularios
                 row.Visible = true;
             }
         }
+
     }
 }

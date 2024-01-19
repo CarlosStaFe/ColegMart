@@ -65,6 +65,46 @@
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.dgvColegiados = new System.Windows.Forms.DataGridView();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_Coleg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoyNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApelMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LugarNacim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Juramento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tomo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Iapos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DomParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCodPosParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLocalParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDeptoParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProvParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FijoParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CeluParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DomLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCodPosLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLocalLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDeptoLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProvLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FijoLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CeluLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fianza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Foto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -139,46 +179,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
             this.ofdSeleccionar = new System.Windows.Forms.OpenFileDialog();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Coleg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Matri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoyNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApelMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNacim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LugarNacim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Juramento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tomo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Iapos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DomParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCodPosParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLocalParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDeptoParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProvParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FijoParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CeluParti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DomLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCodPosLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLocalLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDeptoLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProvLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FijoLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CeluLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fianza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Foto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -386,7 +386,7 @@
             this.txtCodPosLabor.Name = "txtCodPosLabor";
             this.txtCodPosLabor.Size = new System.Drawing.Size(40, 16);
             this.txtCodPosLabor.TabIndex = 141;
-            this.txtCodPosLabor.Text = "0";
+            this.txtCodPosLabor.Text = "1";
             this.txtCodPosLabor.Visible = false;
             // 
             // txtCodPosParti
@@ -399,7 +399,7 @@
             this.txtCodPosParti.Name = "txtCodPosParti";
             this.txtCodPosParti.Size = new System.Drawing.Size(40, 16);
             this.txtCodPosParti.TabIndex = 140;
-            this.txtCodPosParti.Text = "0";
+            this.txtCodPosParti.Text = "1";
             this.txtCodPosParti.Visible = false;
             // 
             // cboIAPOS
@@ -715,6 +715,306 @@
             this.dgvColegiados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColegiados_CellContentClick);
             this.dgvColegiados.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvColegiados_CellPainting);
             // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
+            this.Seleccionar.Width = 25;
+            // 
+            // id_Coleg
+            // 
+            this.id_Coleg.HeaderText = "id";
+            this.id_Coleg.Name = "id_Coleg";
+            this.id_Coleg.ReadOnly = true;
+            this.id_Coleg.Visible = false;
+            // 
+            // Matri
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Matri.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Matri.HeaderText = "MATRI";
+            this.Matri.Name = "Matri";
+            this.Matri.ReadOnly = true;
+            this.Matri.Width = 55;
+            // 
+            // ApellidoyNombres
+            // 
+            this.ApellidoyNombres.HeaderText = "APELLIDO Y NOMBRES";
+            this.ApellidoyNombres.Name = "ApellidoyNombres";
+            this.ApellidoyNombres.ReadOnly = true;
+            this.ApellidoyNombres.Width = 230;
+            // 
+            // ApelMaterno
+            // 
+            this.ApelMaterno.HeaderText = "ApelMaterno";
+            this.ApelMaterno.Name = "ApelMaterno";
+            this.ApelMaterno.ReadOnly = true;
+            this.ApelMaterno.Visible = false;
+            // 
+            // FechaNacim
+            // 
+            this.FechaNacim.HeaderText = "FechaNacim";
+            this.FechaNacim.Name = "FechaNacim";
+            this.FechaNacim.ReadOnly = true;
+            this.FechaNacim.Visible = false;
+            // 
+            // LugarNacim
+            // 
+            this.LugarNacim.HeaderText = "LugarNacim";
+            this.LugarNacim.Name = "LugarNacim";
+            this.LugarNacim.ReadOnly = true;
+            this.LugarNacim.Visible = false;
+            // 
+            // Nacionalidad
+            // 
+            this.Nacionalidad.HeaderText = "Nacionalidad";
+            this.Nacionalidad.Name = "Nacionalidad";
+            this.Nacionalidad.ReadOnly = true;
+            this.Nacionalidad.Visible = false;
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.HeaderText = "TipoDoc";
+            this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.ReadOnly = true;
+            this.TipoDoc.Visible = false;
+            // 
+            // NumeroDoc
+            // 
+            this.NumeroDoc.HeaderText = "NumeroDoc";
+            this.NumeroDoc.Name = "NumeroDoc";
+            this.NumeroDoc.ReadOnly = true;
+            this.NumeroDoc.Visible = false;
+            // 
+            // Cuit
+            // 
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.Name = "Cuit";
+            this.Cuit.ReadOnly = true;
+            this.Cuit.Visible = false;
+            // 
+            // Sexo
+            // 
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
+            this.Sexo.Visible = false;
+            // 
+            // EstadoCivil
+            // 
+            this.EstadoCivil.HeaderText = "EstadoCivil";
+            this.EstadoCivil.Name = "EstadoCivil";
+            this.EstadoCivil.ReadOnly = true;
+            this.EstadoCivil.Visible = false;
+            // 
+            // Juramento
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Juramento.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Juramento.HeaderText = "JURAMENTO";
+            this.Juramento.Name = "Juramento";
+            this.Juramento.ReadOnly = true;
+            this.Juramento.Width = 90;
+            // 
+            // Tomo
+            // 
+            this.Tomo.HeaderText = "Tomo";
+            this.Tomo.Name = "Tomo";
+            this.Tomo.ReadOnly = true;
+            this.Tomo.Visible = false;
+            // 
+            // Folio
+            // 
+            this.Folio.HeaderText = "Folio";
+            this.Folio.Name = "Folio";
+            this.Folio.ReadOnly = true;
+            this.Folio.Visible = false;
+            // 
+            // Categ
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Categ.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Categ.HeaderText = "CATEG";
+            this.Categ.Name = "Categ";
+            this.Categ.ReadOnly = true;
+            this.Categ.Width = 55;
+            // 
+            // Iapos
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Iapos.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Iapos.HeaderText = "IAPOS";
+            this.Iapos.Name = "Iapos";
+            this.Iapos.ReadOnly = true;
+            this.Iapos.Width = 60;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Visible = false;
+            // 
+            // Estado
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Estado.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Estado.HeaderText = "ESTADO";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 110;
+            // 
+            // Fecha
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Format = "d";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Fecha.HeaderText = "FECHA";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 80;
+            // 
+            // DomParti
+            // 
+            this.DomParti.HeaderText = "DomParti";
+            this.DomParti.Name = "DomParti";
+            this.DomParti.ReadOnly = true;
+            this.DomParti.Visible = false;
+            // 
+            // IdCodPosParti
+            // 
+            this.IdCodPosParti.HeaderText = "IdCodPosParti";
+            this.IdCodPosParti.Name = "IdCodPosParti";
+            this.IdCodPosParti.ReadOnly = true;
+            this.IdCodPosParti.Visible = false;
+            // 
+            // idLocalParti
+            // 
+            this.idLocalParti.HeaderText = "idLocalParti";
+            this.idLocalParti.Name = "idLocalParti";
+            this.idLocalParti.ReadOnly = true;
+            this.idLocalParti.Visible = false;
+            // 
+            // idDeptoParti
+            // 
+            this.idDeptoParti.HeaderText = "idDeptoParti";
+            this.idDeptoParti.Name = "idDeptoParti";
+            this.idDeptoParti.ReadOnly = true;
+            this.idDeptoParti.Visible = false;
+            // 
+            // idProvParti
+            // 
+            this.idProvParti.HeaderText = "idProvParti";
+            this.idProvParti.Name = "idProvParti";
+            this.idProvParti.ReadOnly = true;
+            this.idProvParti.Visible = false;
+            // 
+            // FijoParti
+            // 
+            this.FijoParti.HeaderText = "FijoParti";
+            this.FijoParti.Name = "FijoParti";
+            this.FijoParti.ReadOnly = true;
+            this.FijoParti.Visible = false;
+            // 
+            // CeluParti
+            // 
+            this.CeluParti.HeaderText = "CeluParti";
+            this.CeluParti.Name = "CeluParti";
+            this.CeluParti.ReadOnly = true;
+            this.CeluParti.Visible = false;
+            // 
+            // DomLabor
+            // 
+            this.DomLabor.HeaderText = "DomLabor";
+            this.DomLabor.Name = "DomLabor";
+            this.DomLabor.ReadOnly = true;
+            this.DomLabor.Visible = false;
+            // 
+            // IdCodPosLabor
+            // 
+            this.IdCodPosLabor.HeaderText = "IdCodPosLabor";
+            this.IdCodPosLabor.Name = "IdCodPosLabor";
+            this.IdCodPosLabor.ReadOnly = true;
+            this.IdCodPosLabor.Visible = false;
+            // 
+            // idLocalLabor
+            // 
+            this.idLocalLabor.HeaderText = "idLocalLabor";
+            this.idLocalLabor.Name = "idLocalLabor";
+            this.idLocalLabor.ReadOnly = true;
+            this.idLocalLabor.Visible = false;
+            // 
+            // idDeptoLabor
+            // 
+            this.idDeptoLabor.HeaderText = "idDeptoLabor";
+            this.idDeptoLabor.Name = "idDeptoLabor";
+            this.idDeptoLabor.ReadOnly = true;
+            this.idDeptoLabor.Visible = false;
+            // 
+            // idProvLabor
+            // 
+            this.idProvLabor.HeaderText = "idProvLabor";
+            this.idProvLabor.Name = "idProvLabor";
+            this.idProvLabor.ReadOnly = true;
+            this.idProvLabor.Visible = false;
+            // 
+            // FijoLabor
+            // 
+            this.FijoLabor.HeaderText = "FijoLabor";
+            this.FijoLabor.Name = "FijoLabor";
+            this.FijoLabor.ReadOnly = true;
+            this.FijoLabor.Visible = false;
+            // 
+            // CeluLabor
+            // 
+            this.CeluLabor.HeaderText = "CeluLabor";
+            this.CeluLabor.Name = "CeluLabor";
+            this.CeluLabor.ReadOnly = true;
+            this.CeluLabor.Visible = false;
+            // 
+            // Fianza
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "d";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Fianza.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Fianza.HeaderText = "FIANZA";
+            this.Fianza.Name = "Fianza";
+            this.Fianza.ReadOnly = true;
+            this.Fianza.Width = 90;
+            // 
+            // Obs
+            // 
+            this.Obs.HeaderText = "Obs";
+            this.Obs.Name = "Obs";
+            this.Obs.ReadOnly = true;
+            this.Obs.Visible = false;
+            // 
+            // UserRegistro
+            // 
+            this.UserRegistro.HeaderText = "UserRegistro";
+            this.UserRegistro.Name = "UserRegistro";
+            this.UserRegistro.ReadOnly = true;
+            this.UserRegistro.Visible = false;
+            // 
+            // FechaRegistro
+            // 
+            this.FechaRegistro.HeaderText = "FechaRegistro";
+            this.FechaRegistro.Name = "FechaRegistro";
+            this.FechaRegistro.ReadOnly = true;
+            this.FechaRegistro.Visible = false;
+            // 
+            // Foto
+            // 
+            this.Foto.HeaderText = "Foto";
+            this.Foto.Name = "Foto";
+            this.Foto.ReadOnly = true;
+            this.Foto.Visible = false;
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -824,7 +1124,7 @@
             this.txtLocalLabor.Name = "txtLocalLabor";
             this.txtLocalLabor.Size = new System.Drawing.Size(40, 16);
             this.txtLocalLabor.TabIndex = 32;
-            this.txtLocalLabor.Text = "164";
+            this.txtLocalLabor.Text = "0";
             this.txtLocalLabor.Visible = false;
             // 
             // txtProvParti
@@ -863,7 +1163,7 @@
             this.txtLocalParti.Name = "txtLocalParti";
             this.txtLocalParti.Size = new System.Drawing.Size(40, 16);
             this.txtLocalParti.TabIndex = 24;
-            this.txtLocalParti.Text = "164";
+            this.txtLocalParti.Text = "0";
             this.txtLocalParti.Visible = false;
             // 
             // lblVenceFianza
@@ -1537,306 +1837,6 @@
             // ofdSeleccionar
             // 
             this.ofdSeleccionar.FileName = "openFileDialog";
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
-            this.Seleccionar.Width = 25;
-            // 
-            // id_Coleg
-            // 
-            this.id_Coleg.HeaderText = "id";
-            this.id_Coleg.Name = "id_Coleg";
-            this.id_Coleg.ReadOnly = true;
-            this.id_Coleg.Visible = false;
-            // 
-            // Matri
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Matri.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Matri.HeaderText = "MATRI";
-            this.Matri.Name = "Matri";
-            this.Matri.ReadOnly = true;
-            this.Matri.Width = 55;
-            // 
-            // ApellidoyNombres
-            // 
-            this.ApellidoyNombres.HeaderText = "APELLIDO Y NOMBRES";
-            this.ApellidoyNombres.Name = "ApellidoyNombres";
-            this.ApellidoyNombres.ReadOnly = true;
-            this.ApellidoyNombres.Width = 230;
-            // 
-            // ApelMaterno
-            // 
-            this.ApelMaterno.HeaderText = "ApelMaterno";
-            this.ApelMaterno.Name = "ApelMaterno";
-            this.ApelMaterno.ReadOnly = true;
-            this.ApelMaterno.Visible = false;
-            // 
-            // FechaNacim
-            // 
-            this.FechaNacim.HeaderText = "FechaNacim";
-            this.FechaNacim.Name = "FechaNacim";
-            this.FechaNacim.ReadOnly = true;
-            this.FechaNacim.Visible = false;
-            // 
-            // LugarNacim
-            // 
-            this.LugarNacim.HeaderText = "LugarNacim";
-            this.LugarNacim.Name = "LugarNacim";
-            this.LugarNacim.ReadOnly = true;
-            this.LugarNacim.Visible = false;
-            // 
-            // Nacionalidad
-            // 
-            this.Nacionalidad.HeaderText = "Nacionalidad";
-            this.Nacionalidad.Name = "Nacionalidad";
-            this.Nacionalidad.ReadOnly = true;
-            this.Nacionalidad.Visible = false;
-            // 
-            // TipoDoc
-            // 
-            this.TipoDoc.HeaderText = "TipoDoc";
-            this.TipoDoc.Name = "TipoDoc";
-            this.TipoDoc.ReadOnly = true;
-            this.TipoDoc.Visible = false;
-            // 
-            // NumeroDoc
-            // 
-            this.NumeroDoc.HeaderText = "NumeroDoc";
-            this.NumeroDoc.Name = "NumeroDoc";
-            this.NumeroDoc.ReadOnly = true;
-            this.NumeroDoc.Visible = false;
-            // 
-            // Cuit
-            // 
-            this.Cuit.HeaderText = "Cuit";
-            this.Cuit.Name = "Cuit";
-            this.Cuit.ReadOnly = true;
-            this.Cuit.Visible = false;
-            // 
-            // Sexo
-            // 
-            this.Sexo.HeaderText = "Sexo";
-            this.Sexo.Name = "Sexo";
-            this.Sexo.ReadOnly = true;
-            this.Sexo.Visible = false;
-            // 
-            // EstadoCivil
-            // 
-            this.EstadoCivil.HeaderText = "EstadoCivil";
-            this.EstadoCivil.Name = "EstadoCivil";
-            this.EstadoCivil.ReadOnly = true;
-            this.EstadoCivil.Visible = false;
-            // 
-            // Juramento
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Juramento.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Juramento.HeaderText = "JURAMENTO";
-            this.Juramento.Name = "Juramento";
-            this.Juramento.ReadOnly = true;
-            this.Juramento.Width = 90;
-            // 
-            // Tomo
-            // 
-            this.Tomo.HeaderText = "Tomo";
-            this.Tomo.Name = "Tomo";
-            this.Tomo.ReadOnly = true;
-            this.Tomo.Visible = false;
-            // 
-            // Folio
-            // 
-            this.Folio.HeaderText = "Folio";
-            this.Folio.Name = "Folio";
-            this.Folio.ReadOnly = true;
-            this.Folio.Visible = false;
-            // 
-            // Categ
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Categ.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Categ.HeaderText = "CATEG";
-            this.Categ.Name = "Categ";
-            this.Categ.ReadOnly = true;
-            this.Categ.Width = 55;
-            // 
-            // Iapos
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Iapos.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Iapos.HeaderText = "IAPOS";
-            this.Iapos.Name = "Iapos";
-            this.Iapos.ReadOnly = true;
-            this.Iapos.Width = 60;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Visible = false;
-            // 
-            // Estado
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Estado.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Estado.HeaderText = "ESTADO";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 110;
-            // 
-            // Fecha
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Format = "d";
-            dataGridViewCellStyle8.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Fecha.HeaderText = "FECHA";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 80;
-            // 
-            // DomParti
-            // 
-            this.DomParti.HeaderText = "DomParti";
-            this.DomParti.Name = "DomParti";
-            this.DomParti.ReadOnly = true;
-            this.DomParti.Visible = false;
-            // 
-            // IdCodPosParti
-            // 
-            this.IdCodPosParti.HeaderText = "IdCodPosParti";
-            this.IdCodPosParti.Name = "IdCodPosParti";
-            this.IdCodPosParti.ReadOnly = true;
-            this.IdCodPosParti.Visible = false;
-            // 
-            // idLocalParti
-            // 
-            this.idLocalParti.HeaderText = "idLocalParti";
-            this.idLocalParti.Name = "idLocalParti";
-            this.idLocalParti.ReadOnly = true;
-            this.idLocalParti.Visible = false;
-            // 
-            // idDeptoParti
-            // 
-            this.idDeptoParti.HeaderText = "idDeptoParti";
-            this.idDeptoParti.Name = "idDeptoParti";
-            this.idDeptoParti.ReadOnly = true;
-            this.idDeptoParti.Visible = false;
-            // 
-            // idProvParti
-            // 
-            this.idProvParti.HeaderText = "idProvParti";
-            this.idProvParti.Name = "idProvParti";
-            this.idProvParti.ReadOnly = true;
-            this.idProvParti.Visible = false;
-            // 
-            // FijoParti
-            // 
-            this.FijoParti.HeaderText = "FijoParti";
-            this.FijoParti.Name = "FijoParti";
-            this.FijoParti.ReadOnly = true;
-            this.FijoParti.Visible = false;
-            // 
-            // CeluParti
-            // 
-            this.CeluParti.HeaderText = "CeluParti";
-            this.CeluParti.Name = "CeluParti";
-            this.CeluParti.ReadOnly = true;
-            this.CeluParti.Visible = false;
-            // 
-            // DomLabor
-            // 
-            this.DomLabor.HeaderText = "DomLabor";
-            this.DomLabor.Name = "DomLabor";
-            this.DomLabor.ReadOnly = true;
-            this.DomLabor.Visible = false;
-            // 
-            // IdCodPosLabor
-            // 
-            this.IdCodPosLabor.HeaderText = "IdCodPosLabor";
-            this.IdCodPosLabor.Name = "IdCodPosLabor";
-            this.IdCodPosLabor.ReadOnly = true;
-            this.IdCodPosLabor.Visible = false;
-            // 
-            // idLocalLabor
-            // 
-            this.idLocalLabor.HeaderText = "idLocalLabor";
-            this.idLocalLabor.Name = "idLocalLabor";
-            this.idLocalLabor.ReadOnly = true;
-            this.idLocalLabor.Visible = false;
-            // 
-            // idDeptoLabor
-            // 
-            this.idDeptoLabor.HeaderText = "idDeptoLabor";
-            this.idDeptoLabor.Name = "idDeptoLabor";
-            this.idDeptoLabor.ReadOnly = true;
-            this.idDeptoLabor.Visible = false;
-            // 
-            // idProvLabor
-            // 
-            this.idProvLabor.HeaderText = "idProvLabor";
-            this.idProvLabor.Name = "idProvLabor";
-            this.idProvLabor.ReadOnly = true;
-            this.idProvLabor.Visible = false;
-            // 
-            // FijoLabor
-            // 
-            this.FijoLabor.HeaderText = "FijoLabor";
-            this.FijoLabor.Name = "FijoLabor";
-            this.FijoLabor.ReadOnly = true;
-            this.FijoLabor.Visible = false;
-            // 
-            // CeluLabor
-            // 
-            this.CeluLabor.HeaderText = "CeluLabor";
-            this.CeluLabor.Name = "CeluLabor";
-            this.CeluLabor.ReadOnly = true;
-            this.CeluLabor.Visible = false;
-            // 
-            // Fianza
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Format = "d";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Fianza.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Fianza.HeaderText = "FIANZA";
-            this.Fianza.Name = "Fianza";
-            this.Fianza.ReadOnly = true;
-            this.Fianza.Width = 90;
-            // 
-            // Obs
-            // 
-            this.Obs.HeaderText = "Obs";
-            this.Obs.Name = "Obs";
-            this.Obs.ReadOnly = true;
-            this.Obs.Visible = false;
-            // 
-            // UserRegistro
-            // 
-            this.UserRegistro.HeaderText = "UserRegistro";
-            this.UserRegistro.Name = "UserRegistro";
-            this.UserRegistro.ReadOnly = true;
-            this.UserRegistro.Visible = false;
-            // 
-            // FechaRegistro
-            // 
-            this.FechaRegistro.HeaderText = "FechaRegistro";
-            this.FechaRegistro.Name = "FechaRegistro";
-            this.FechaRegistro.ReadOnly = true;
-            this.FechaRegistro.Visible = false;
-            // 
-            // Foto
-            // 
-            this.Foto.HeaderText = "Foto";
-            this.Foto.Name = "Foto";
-            this.Foto.ReadOnly = true;
-            this.Foto.Visible = false;
             // 
             // frmColegiados
             // 

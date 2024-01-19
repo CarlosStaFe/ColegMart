@@ -102,17 +102,17 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("Nombre", obj.Nombre);
-                        command.Parameters.AddWithValue("Detalle", obj.Detalle);
-                        command.Parameters.AddWithValue("UserRegistro", CE_UserLogin.UserRegistro);
-                        command.Parameters.AddWithValue("FechaRegistro", DateTime.Now);
-                        command.Parameters.Add("idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.AddWithValue("_Nombre", obj.Nombre);
+                        command.Parameters.AddWithValue("_Detalle", obj.Detalle);
+                        command.Parameters.AddWithValue("_UserRegistro", CE_UserLogin.UserRegistro);
+                        command.Parameters.AddWithValue("_FechaRegistro", DateTime.Now);
+                        command.Parameters.Add("_idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        idBoton = Convert.ToInt32(command.Parameters["idResultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        idBoton = Convert.ToInt32(command.Parameters["_idResultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
@@ -137,18 +137,18 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("id_Boton", obj.id_Boton);
-                        command.Parameters.AddWithValue("Nombre", obj.Nombre);
-                        command.Parameters.AddWithValue("Detalle", obj.Detalle);
-                        command.Parameters.AddWithValue("UserRegistro", CE_UserLogin.UserRegistro);
-                        command.Parameters.AddWithValue("FechaRegistro", DateTime.Now);
-                        command.Parameters.Add("Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.AddWithValue("_id_Boton", obj.id_Boton);
+                        command.Parameters.AddWithValue("_Nombre", obj.Nombre);
+                        command.Parameters.AddWithValue("_Detalle", obj.Detalle);
+                        command.Parameters.AddWithValue("_UserRegistro", CE_UserLogin.UserRegistro);
+                        command.Parameters.AddWithValue("_FechaRegistro", DateTime.Now);
+                        command.Parameters.Add("_Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        Resultado = Convert.ToBoolean(command.Parameters["Resultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        Resultado = Convert.ToBoolean(command.Parameters["_Resultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
@@ -173,14 +173,14 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("id_Boton", obj.id_Boton);
-                        command.Parameters.Add("Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.AddWithValue("_id_Boton", obj.id_Boton);
+                        command.Parameters.Add("_Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        Resultado = Convert.ToBoolean(command.Parameters["Resultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        Resultado = Convert.ToBoolean(command.Parameters["_Resultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
