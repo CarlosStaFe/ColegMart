@@ -2,10 +2,10 @@
 
 namespace CapaEntidad
 {
-    public class CE_CtasCtesColeg
+    public class CE_CtasCtesSoc
     {
         public int id_CtaCte { get; set; }
-        public int Matricula { get; set; }
+        public int Numero { get; set; }
         public DateTime Fecha { get; set; }
         public string Tipo { get; set; }
         public string Prefijo { get; set; }

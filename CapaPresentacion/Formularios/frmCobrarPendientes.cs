@@ -85,7 +85,7 @@ namespace CapaPresentacion.Formularios
             {
                 foreach (CE_CtasCtesColeg item in ListaCtaCte)
                 {
-                    dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.fk_idColeg, item.Matricula, item.Fecha, item.Tipo, item.Prefijo, item.Subfijo, item.Item, item.fk_idDebito,
+                    dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.Matricula, item.Fecha, item.Tipo, item.Prefijo, item.Subfijo, item.Item, item.fk_idDebito,
                                                 item.Detalle, item.Periodo, item.Debe, item.Pagado, item.FechaPago, item.Saldo, item.Estado, item.Obs,
                                                 item.UserRegistro, item.FechaRegistro, "" });
 
@@ -377,7 +377,6 @@ namespace CapaPresentacion.Formularios
 
             CE_CtasCtesColeg cE_CtasCtesColeg = new CE_CtasCtesColeg()
             {
-                fk_idColeg = idColeg,
                 Matricula = Convert.ToInt32(txtMatricula.Text),
                 Fecha = DateTime.Today,
                 Tipo = tipo,

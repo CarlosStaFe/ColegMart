@@ -9,7 +9,7 @@ namespace CapaDatos
     public class CD_CtasCtesColeg:Conexion
     {
         //***** METODO PARA CALCULAR LA CANTIDAD DE ITEMS ADEUDADOS DE LOS COLEGIADOS *****
-        public int ContarDeuda(int idColeg)
+        public int ContarDeuda(int matri)
         {
             int cantidad = 0;
 
@@ -19,8 +19,8 @@ namespace CapaDatos
                 using (var command = new MySqlCommand())
                 {
                     command.Connection = connection;
-                    command.Parameters.AddWithValue("@idColeg", idColeg);
-                    command.CommandText = "SELECT COUNT(DISTINCT Periodo) AS cantidad FROM CtasCtesColeg WHERE fk_idColeg = @idColeg AND Saldo > 0";
+                    command.Parameters.AddWithValue("@matri", matri);
+                    command.CommandText = "SELECT COUNT(DISTINCT Periodo) AS cantidad FROM CtasCtesColeg WHERE Matricula = @matri AND Saldo > 0";
                     command.CommandType = CommandType.Text;
                     cantidad = Convert.ToInt32(command.ExecuteScalar());
 
@@ -30,7 +30,7 @@ namespace CapaDatos
         }
 
         //***** METODO PARA CALCULAR EL SALDO ADEUDADO DE LOS COLEGIADOS *****
-        public decimal CalcularSaldo(int idColeg)
+        public decimal CalcularSaldo(int matri)
         {
             decimal saldo = 0;
 
@@ -40,8 +40,8 @@ namespace CapaDatos
                 using (var command = new MySqlCommand())
                 {
                     command.Connection = connection;
-                    command.Parameters.AddWithValue("@idColeg", idColeg);
-                    command.CommandText = "SELECT SUM(Saldo) AS Saldo FROM CtasCtesColeg WHERE fk_idColeg = @idColeg AND Saldo != 0";
+                    command.Parameters.AddWithValue("@matri", matri);
+                    command.CommandText = "SELECT SUM(Saldo) AS Saldo FROM CtasCtesColeg WHERE Matricula = @matri AND Saldo != 0";
                     command.CommandType = CommandType.Text;
                     //saldo = Convert.ToDecimal(command.ExecuteScalar() is DBNull ? 0 : saldo);
                     saldo = Convert.ToDecimal(command.ExecuteScalar());
@@ -75,7 +75,6 @@ namespace CapaDatos
                                 lista.Add(new CE_CtasCtesColeg()
                                 {
                                     id_CtaCte = Convert.ToInt32(dr["id_CtaCte"]),
-                                    fk_idColeg= Convert.ToInt32(dr["fk_idColeg"]),
                                     Matricula = Convert.ToInt32(dr["Matricula"]),
                                     Fecha = Convert.ToDateTime(dr["Fecha"]),
                                     Tipo = dr["Tipo"].ToString(),
@@ -131,7 +130,6 @@ namespace CapaDatos
                                 lista.Add(new CE_CtasCtesColeg()
                                 {
                                     id_CtaCte = Convert.ToInt32(dr["id_CtaCte"]),
-                                    fk_idColeg = Convert.ToInt32(dr["fk_idColeg"]),
                                     Matricula = Convert.ToInt32(dr["Matricula"]),
                                     Fecha = Convert.ToDateTime(dr["Fecha"]),
                                     Tipo = dr["Tipo"].ToString(),
@@ -175,7 +173,6 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("fk_idColeg", obj.fk_idColeg);
                         command.Parameters.AddWithValue("Matricula", obj.Matricula);
                         command.Parameters.AddWithValue("Fecha", obj.Fecha);
                         command.Parameters.AddWithValue("Tipo", obj.Tipo);
@@ -275,7 +272,6 @@ namespace CapaDatos
                                 lista.Add(new CE_CtasCtesColeg()
                                 {
                                     id_CtaCte = Convert.ToInt32(dr["id_CtaCte"]),
-                                    fk_idColeg = Convert.ToInt32(dr["fk_idColeg"]),
                                     Matricula = Convert.ToInt32(dr["Matricula"]),
                                     Fecha = Convert.ToDateTime(dr["Fecha"]),
                                     Tipo = dr["Tipo"].ToString(),

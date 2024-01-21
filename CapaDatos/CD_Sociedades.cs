@@ -213,6 +213,49 @@ namespace CapaDatos
             }
         }
 
+        //***** METODO PARA BUSCAR UNA SOCIEDAD DESEADA *****
+        public List<CE_Sociedades> ListaBuscado(string nro, out string mensaje)
+        {
+            List<CE_Sociedades> lista = new List<CE_Sociedades>();
+
+            mensaje = string.Empty;
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand())
+                {
+                    try
+                    {
+                        command.Connection = connection;
+                        command.Parameters.AddWithValue("@nro", nro);
+                        command.CommandText = "SELECT * FROM Sociedades WHERE Numero = @nro";
+                        command.CommandType = CommandType.Text;
+                        MySqlDataReader dr = command.ExecuteReader();
+
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                lista.Add(new CE_Sociedades()
+                                {
+                                    id_Soc = Convert.ToInt32(dr["id_Soc"]),
+                                    Numero = Convert.ToInt32(dr["Numero"]),
+                                    Nombre = dr["Nombre"].ToString(),
+                                    Estado = dr["Estado"].ToString()
+                                });
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        lista = new List<CE_Sociedades>();
+                    }
+                    return lista;
+                }
+            }
+        }
+
 
     }
 }

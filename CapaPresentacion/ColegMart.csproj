@@ -218,6 +218,12 @@
     <Compile Include="Formularios\frmCtasCtesColeg.designer.cs">
       <DependentUpon>frmCtasCtesColeg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmCtasCtesSoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCtasCtesSoc.Designer.cs">
+      <DependentUpon>frmCtasCtesSoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmDebitos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,12 @@
     <Compile Include="Formularios\mdlSaldoPago.designer.cs">
       <DependentUpon>mdlSaldoPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\mdlSociedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\mdlSociedades.Designer.cs">
+      <DependentUpon>mdlSociedades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
@@ -369,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCtasCtesColeg.resx">
       <DependentUpon>frmCtasCtesColeg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCtasCtesSoc.resx">
+      <DependentUpon>frmCtasCtesSoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmDebitos.resx">
       <DependentUpon>frmDebitos.cs</DependentUpon>
@@ -426,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\mdlSaldoPago.resx">
       <DependentUpon>mdlSaldoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\mdlSociedades.resx">
+      <DependentUpon>mdlSociedades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

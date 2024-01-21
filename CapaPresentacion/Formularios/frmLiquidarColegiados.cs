@@ -350,7 +350,6 @@ namespace CapaPresentacion.Formularios
             CE_CtasCtesColeg cE_CtasCtesColeg = new CE_CtasCtesColeg()
             {
                 id_CtaCte = 0,
-                fk_idColeg = Convert.ToInt32(idColeg),
                 Matricula = matricula,
                 Fecha = dtpFechaLiq.Value,
                 Tipo = tipo,

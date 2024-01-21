@@ -1,6 +1,7 @@
-﻿namespace CapaPresentacion.Formularios
+﻿
+namespace CapaPresentacion.Formularios
 {
-    partial class frmCtasCtesColeg
+    partial class frmCtasCtesSoc
     {
         /// <summary>
         /// Required designer variable.
@@ -39,37 +40,35 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCtasCtesColeg));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCtasCtesSoc));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnCtasCtes = new FontAwesome.Sharp.IconButton();
-            this.lblColegiado = new System.Windows.Forms.Label();
-            this.txtIndice = new System.Windows.Forms.TextBox();
-            this.txtUserRegistro = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.lblFechaVence = new System.Windows.Forms.Label();
-            this.lblVenceFianza = new System.Windows.Forms.Label();
-            this.txtFechaVence = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSaldo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtFechaVence = new System.Windows.Forms.TextBox();
+            this.txtIndice = new System.Windows.Forms.TextBox();
+            this.txtUserRegistro = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblSociedad = new System.Windows.Forms.Label();
+            this.btnCtasCtes = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.dgvCtasCtes = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Compbte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fk_idDebito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,7 +76,6 @@
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fk_idColeg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCtasCtes)).BeginInit();
@@ -91,8 +89,8 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1180, 40);
-            this.pnlTitulo.TabIndex = 12;
+            this.pnlTitulo.Size = new System.Drawing.Size(1182, 40);
+            this.pnlTitulo.TabIndex = 13;
             // 
             // label1
             // 
@@ -101,164 +99,9 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(11, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(386, 30);
+            this.label1.Size = new System.Drawing.Size(388, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cuentas Corrientes Colegiados";
-            // 
-            // txtMatricula
-            // 
-            this.txtMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtMatricula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMatricula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatricula.ForeColor = System.Drawing.Color.Lime;
-            this.txtMatricula.Location = new System.Drawing.Point(97, 49);
-            this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(63, 27);
-            this.txtMatricula.TabIndex = 75;
-            this.txtMatricula.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatricula_KeyDown);
-            this.txtMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatricula_KeyPress);
-            this.txtMatricula.Leave += new System.EventHandler(this.txtMatricula_Leave);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(19, 55);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 17);
-            this.label10.TabIndex = 80;
-            this.label10.Text = "Matrícula:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(207, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 17);
-            this.label2.TabIndex = 81;
-            this.label2.Text = "Apellido y Nombres:";
-            // 
-            // btnCtasCtes
-            // 
-            this.btnCtasCtes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnCtasCtes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCtasCtes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCtasCtes.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.btnCtasCtes.IconColor = System.Drawing.Color.Aqua;
-            this.btnCtasCtes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCtasCtes.IconSize = 20;
-            this.btnCtasCtes.Location = new System.Drawing.Point(171, 51);
-            this.btnCtasCtes.Name = "btnCtasCtes";
-            this.btnCtasCtes.Size = new System.Drawing.Size(27, 24);
-            this.btnCtasCtes.TabIndex = 82;
-            this.btnCtasCtes.UseVisualStyleBackColor = false;
-            this.btnCtasCtes.Click += new System.EventHandler(this.btnCtasCtes_Click);
-            // 
-            // lblColegiado
-            // 
-            this.lblColegiado.AutoSize = true;
-            this.lblColegiado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColegiado.ForeColor = System.Drawing.Color.Lime;
-            this.lblColegiado.Location = new System.Drawing.Point(350, 53);
-            this.lblColegiado.Name = "lblColegiado";
-            this.lblColegiado.Size = new System.Drawing.Size(16, 19);
-            this.lblColegiado.TabIndex = 83;
-            this.lblColegiado.Text = "-";
-            // 
-            // txtIndice
-            // 
-            this.txtIndice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIndice.Enabled = false;
-            this.txtIndice.ForeColor = System.Drawing.Color.White;
-            this.txtIndice.Location = new System.Drawing.Point(1039, 46);
-            this.txtIndice.Name = "txtIndice";
-            this.txtIndice.Size = new System.Drawing.Size(53, 16);
-            this.txtIndice.TabIndex = 86;
-            this.txtIndice.Visible = false;
-            // 
-            // txtUserRegistro
-            // 
-            this.txtUserRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserRegistro.Enabled = false;
-            this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtUserRegistro.Location = new System.Drawing.Point(1098, 46);
-            this.txtUserRegistro.Name = "txtUserRegistro";
-            this.txtUserRegistro.Size = new System.Drawing.Size(53, 16);
-            this.txtUserRegistro.TabIndex = 85;
-            this.txtUserRegistro.Visible = false;
-            // 
-            // txtId
-            // 
-            this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtId.Enabled = false;
-            this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(1058, 68);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(34, 16);
-            this.txtId.TabIndex = 84;
-            this.txtId.Text = "0";
-            this.txtId.Visible = false;
-            // 
-            // lblFechaVence
-            // 
-            this.lblFechaVence.AutoSize = true;
-            this.lblFechaVence.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaVence.ForeColor = System.Drawing.Color.Lime;
-            this.lblFechaVence.Location = new System.Drawing.Point(900, 52);
-            this.lblFechaVence.Name = "lblFechaVence";
-            this.lblFechaVence.Size = new System.Drawing.Size(16, 19);
-            this.lblFechaVence.TabIndex = 88;
-            this.lblFechaVence.Text = "-";
-            this.lblFechaVence.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblVenceFianza
-            // 
-            this.lblVenceFianza.AutoSize = true;
-            this.lblVenceFianza.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVenceFianza.ForeColor = System.Drawing.Color.Lime;
-            this.lblVenceFianza.Location = new System.Drawing.Point(797, 53);
-            this.lblVenceFianza.Name = "lblVenceFianza";
-            this.lblVenceFianza.Size = new System.Drawing.Size(97, 19);
-            this.lblVenceFianza.TabIndex = 87;
-            this.lblVenceFianza.Text = "Vto. Fianza:";
-            // 
-            // txtFechaVence
-            // 
-            this.txtFechaVence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtFechaVence.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFechaVence.Enabled = false;
-            this.txtFechaVence.ForeColor = System.Drawing.Color.White;
-            this.txtFechaVence.Location = new System.Drawing.Point(1098, 68);
-            this.txtFechaVence.Name = "txtFechaVence";
-            this.txtFechaVence.Size = new System.Drawing.Size(53, 16);
-            this.txtFechaVence.TabIndex = 89;
-            this.txtFechaVence.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(661, 605);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 19);
-            this.label4.TabIndex = 90;
-            this.label4.Text = "SALDO:";
-            // 
-            // txtSaldo
-            // 
-            this.txtSaldo.BackColor = System.Drawing.Color.Black;
-            this.txtSaldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSaldo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaldo.ForeColor = System.Drawing.Color.Cyan;
-            this.txtSaldo.Location = new System.Drawing.Point(731, 603);
-            this.txtSaldo.Name = "txtSaldo";
-            this.txtSaldo.Size = new System.Drawing.Size(118, 27);
-            this.txtSaldo.TabIndex = 91;
-            this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label1.Text = "Cuentas Corrientes Sociedades";
             // 
             // groupBox1
             // 
@@ -266,10 +109,10 @@
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1056, 90);
+            this.groupBox1.Location = new System.Drawing.Point(1063, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(95, 265);
-            this.groupBox1.TabIndex = 131;
+            this.groupBox1.TabIndex = 146;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controles";
             // 
@@ -336,6 +179,138 @@
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
+            // txtSaldo
+            // 
+            this.txtSaldo.BackColor = System.Drawing.Color.Black;
+            this.txtSaldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSaldo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaldo.ForeColor = System.Drawing.Color.Cyan;
+            this.txtSaldo.Location = new System.Drawing.Point(745, 600);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.Size = new System.Drawing.Size(118, 27);
+            this.txtSaldo.TabIndex = 145;
+            this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Lime;
+            this.label4.Location = new System.Drawing.Point(675, 602);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 19);
+            this.label4.TabIndex = 144;
+            this.label4.Text = "SALDO:";
+            // 
+            // txtFechaVence
+            // 
+            this.txtFechaVence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtFechaVence.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFechaVence.Enabled = false;
+            this.txtFechaVence.ForeColor = System.Drawing.Color.White;
+            this.txtFechaVence.Location = new System.Drawing.Point(1105, 65);
+            this.txtFechaVence.Name = "txtFechaVence";
+            this.txtFechaVence.Size = new System.Drawing.Size(53, 16);
+            this.txtFechaVence.TabIndex = 143;
+            this.txtFechaVence.Visible = false;
+            // 
+            // txtIndice
+            // 
+            this.txtIndice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIndice.Enabled = false;
+            this.txtIndice.ForeColor = System.Drawing.Color.White;
+            this.txtIndice.Location = new System.Drawing.Point(1046, 43);
+            this.txtIndice.Name = "txtIndice";
+            this.txtIndice.Size = new System.Drawing.Size(53, 16);
+            this.txtIndice.TabIndex = 140;
+            this.txtIndice.Visible = false;
+            // 
+            // txtUserRegistro
+            // 
+            this.txtUserRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserRegistro.Enabled = false;
+            this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
+            this.txtUserRegistro.Location = new System.Drawing.Point(1105, 43);
+            this.txtUserRegistro.Name = "txtUserRegistro";
+            this.txtUserRegistro.Size = new System.Drawing.Size(53, 16);
+            this.txtUserRegistro.TabIndex = 139;
+            this.txtUserRegistro.Visible = false;
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtId.Enabled = false;
+            this.txtId.ForeColor = System.Drawing.Color.White;
+            this.txtId.Location = new System.Drawing.Point(1065, 65);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(34, 16);
+            this.txtId.TabIndex = 138;
+            this.txtId.Text = "0";
+            this.txtId.Visible = false;
+            // 
+            // lblSociedad
+            // 
+            this.lblSociedad.AutoSize = true;
+            this.lblSociedad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSociedad.ForeColor = System.Drawing.Color.Lime;
+            this.lblSociedad.Location = new System.Drawing.Point(346, 50);
+            this.lblSociedad.Name = "lblSociedad";
+            this.lblSociedad.Size = new System.Drawing.Size(16, 19);
+            this.lblSociedad.TabIndex = 137;
+            this.lblSociedad.Text = "-";
+            // 
+            // btnCtasCtes
+            // 
+            this.btnCtasCtes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnCtasCtes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCtasCtes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCtasCtes.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.btnCtasCtes.IconColor = System.Drawing.Color.Aqua;
+            this.btnCtasCtes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCtasCtes.IconSize = 20;
+            this.btnCtasCtes.Location = new System.Drawing.Point(174, 48);
+            this.btnCtasCtes.Name = "btnCtasCtes";
+            this.btnCtasCtes.Size = new System.Drawing.Size(27, 24);
+            this.btnCtasCtes.TabIndex = 136;
+            this.btnCtasCtes.UseVisualStyleBackColor = false;
+            this.btnCtasCtes.Click += new System.EventHandler(this.btnCtasCtes_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(210, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 17);
+            this.label2.TabIndex = 135;
+            this.label2.Text = "Nombre Sociedad:";
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNumero.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero.ForeColor = System.Drawing.Color.Lime;
+            this.txtNumero.Location = new System.Drawing.Point(96, 46);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(63, 27);
+            this.txtNumero.TabIndex = 132;
+            this.txtNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNumero_KeyDown);
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+            this.txtNumero.Leave += new System.EventHandler(this.txtNumero_Leave);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(26, 52);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 17);
+            this.label10.TabIndex = 134;
+            this.label10.Text = "Número:";
+            // 
             // dgvCtasCtes
             // 
             this.dgvCtasCtes.AllowUserToAddRows = false;
@@ -363,20 +338,19 @@
             this.Matricula,
             this.Fecha,
             this.Tipo,
-            this.Numero,
+            this.Compbte,
             this.Item,
             this.fk_idDebito,
             this.Detalle,
             this.Periodo,
-            this.Debe,
+            this.Haber,
             this.Pagado,
             this.Saldo,
             this.FechaPago,
             this.Estado,
             this.Obs,
             this.UserRegistro,
-            this.FechaRegistro,
-            this.fk_idColeg});
+            this.FechaRegistro});
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -387,7 +361,7 @@
             this.dgvCtasCtes.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCtasCtes.EnableHeadersVisualStyles = false;
             this.dgvCtasCtes.GridColor = System.Drawing.Color.White;
-            this.dgvCtasCtes.Location = new System.Drawing.Point(12, 90);
+            this.dgvCtasCtes.Location = new System.Drawing.Point(17, 87);
             this.dgvCtasCtes.MultiSelect = false;
             this.dgvCtasCtes.Name = "dgvCtasCtes";
             this.dgvCtasCtes.ReadOnly = true;
@@ -405,7 +379,7 @@
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gray;
             this.dgvCtasCtes.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvCtasCtes.Size = new System.Drawing.Size(1035, 504);
-            this.dgvCtasCtes.TabIndex = 132;
+            this.dgvCtasCtes.TabIndex = 147;
             // 
             // id
             // 
@@ -439,12 +413,12 @@
             this.Tipo.ReadOnly = true;
             this.Tipo.Width = 40;
             // 
-            // Numero
+            // Compbte
             // 
-            this.Numero.HeaderText = "NUMERO";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.Width = 75;
+            this.Compbte.HeaderText = "COMPBTE";
+            this.Compbte.Name = "Compbte";
+            this.Compbte.ReadOnly = true;
+            this.Compbte.Width = 75;
             // 
             // Item
             // 
@@ -476,16 +450,16 @@
             this.Periodo.ReadOnly = true;
             this.Periodo.Width = 60;
             // 
-            // Debe
+            // Haber
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle5.Format = "N2";
             dataGridViewCellStyle5.NullValue = null;
-            this.Debe.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Debe.HeaderText = "DEBE";
-            this.Debe.Name = "Debe";
-            this.Debe.ReadOnly = true;
-            this.Debe.Width = 90;
+            this.Haber.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Haber.HeaderText = "HABER";
+            this.Haber.Name = "Haber";
+            this.Haber.ReadOnly = true;
+            this.Haber.Width = 90;
             // 
             // Pagado
             // 
@@ -547,42 +521,33 @@
             this.FechaRegistro.ReadOnly = true;
             this.FechaRegistro.Visible = false;
             // 
-            // fk_idColeg
-            // 
-            this.fk_idColeg.HeaderText = "fk_idColeg";
-            this.fk_idColeg.Name = "fk_idColeg";
-            this.fk_idColeg.ReadOnly = true;
-            this.fk_idColeg.Visible = false;
-            // 
-            // frmCtasCtesColeg
+            // frmCtasCtesSoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1180, 650);
+            this.ClientSize = new System.Drawing.Size(1182, 647);
             this.Controls.Add(this.dgvCtasCtes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFechaVence);
-            this.Controls.Add(this.lblFechaVence);
-            this.Controls.Add(this.lblVenceFianza);
             this.Controls.Add(this.txtIndice);
             this.Controls.Add(this.txtUserRegistro);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.lblColegiado);
+            this.Controls.Add(this.lblSociedad);
             this.Controls.Add(this.btnCtasCtes);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtMatricula);
+            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.pnlTitulo);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmCtasCtesColeg";
-            this.Text = "CUENTAS CORRIENTES DE COLEGIADOS";
-            this.Load += new System.EventHandler(this.frmCtasCtesColeg_Load);
+            this.Name = "frmCtasCtesSoc";
+            this.Text = "CUENTAS CORRIENTES SOCIEDADES";
+            this.Load += new System.EventHandler(this.frmCtasCtesSoc_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -596,34 +561,32 @@
 
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconButton btnCtasCtes;
-        public System.Windows.Forms.TextBox txtMatricula;
-        public System.Windows.Forms.Label lblColegiado;
-        public System.Windows.Forms.TextBox txtIndice;
-        public System.Windows.Forms.TextBox txtUserRegistro;
-        public System.Windows.Forms.TextBox txtId;
-        public System.Windows.Forms.Label lblFechaVence;
-        private System.Windows.Forms.Label lblVenceFianza;
-        public System.Windows.Forms.TextBox txtFechaVence;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnSalir;
         private FontAwesome.Sharp.IconButton btnClear;
         private FontAwesome.Sharp.IconButton btnImprimir;
+        private System.Windows.Forms.TextBox txtSaldo;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox txtFechaVence;
+        public System.Windows.Forms.TextBox txtIndice;
+        public System.Windows.Forms.TextBox txtUserRegistro;
+        public System.Windows.Forms.TextBox txtId;
+        public System.Windows.Forms.Label lblSociedad;
+        private FontAwesome.Sharp.IconButton btnCtasCtes;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvCtasCtes;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Compbte;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item;
         private System.Windows.Forms.DataGridViewTextBoxColumn fk_idDebito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Periodo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Debe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Haber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pagado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPago;
@@ -631,6 +594,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fk_idColeg;
     }
 }

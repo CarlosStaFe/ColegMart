@@ -1109,6 +1109,7 @@
             this.btnCtasCtesSoc.Text = "Cuentas Corrientes";
             this.btnCtasCtesSoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCtasCtesSoc.UseVisualStyleBackColor = true;
+            this.btnCtasCtesSoc.Click += new System.EventHandler(this.btnCtasCtesSoc_Click);
             // 
             // btnLiquidarSoc
             // 

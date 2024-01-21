@@ -7,77 +7,61 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Formularios
 {
-    public partial class frmCtasCtesColeg : Form
+    public partial class frmCtasCtesSoc : Form
     {
         string dgvtipo = string.Empty;
         string dgvestado = string.Empty;
         string dgvitem = string.Empty;
         decimal saldoTot = 0;
-        string matriculado = string.Empty;
-        string estadoMat = string.Empty;
-        string fianza = string.Empty;
+        string sociedad = string.Empty;
+        string estadoSoc = string.Empty;
 
-        public frmCtasCtesColeg()
+        public frmCtasCtesSoc()
         {
             InitializeComponent();
         }
 
-        private void frmCtasCtesColeg_Load(object sender, EventArgs e)
+        private void frmCtasCtesSoc_Load(object sender, System.EventArgs e)
         {
             txtUserRegistro.Text = CE_UserLogin.Usuario;
 
-            txtMatricula.Select();
+            txtNumero.Select();
         }
 
-        //***** PROCEDIMIENTO CUENDO SE PRESIONA F1 EN EL CAMPO MATRICULA *****
-        private void txtMatricula_KeyDown(object sender, KeyEventArgs e)
+        //***** PROCEDIMIENTO CUENDO SE PRESIONA F1 EN EL CAMPO NUMERO *****
+        private void txtNumero_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1) Consulta();
         }
 
-        //***** PROCEDIMIENTO PARA PROCESO DEL BOTÓN DE COLEGIADO *****
+        //***** PROCEDIMIENTO PARA PROCESO DEL BOTÓN DE LA SOCIEDAD *****
         private void btnCtasCtes_Click(object sender, EventArgs e)
         {
             Consulta();
         }
 
-        //***** PROCEDIMIENTO PARA LLAMAR A LA CONSULTA DE COLEGIADOS *****
+        //***** PROCEDIMIENTO PARA LLAMAR A LA CONSULTA DE SOCIEDADES *****
         private void Consulta()
         {
-            mdlColegiado CtasCtesColeg = new mdlColegiado("btnCtasCtes");
-            AddOwnedForm(CtasCtesColeg);
-            CtasCtesColeg.ShowDialog();
+            mdlSociedades CtasCtesSoc = new mdlSociedades("btnCtasCtes");
+            AddOwnedForm(CtasCtesSoc);
+            CtasCtesSoc.ShowDialog();
 
-            int pos1 = txtFechaVence.Text.IndexOf(" ");
-            string fecha = txtFechaVence.Text.Substring(0, pos1);
-
-            lblFechaVence.Text = fecha;
-
-            if (Convert.ToDateTime(txtFechaVence.Text) <= DateTime.Now)
-            {
-                lblFechaVence.ForeColor = Color.Red;
-                lblVenceFianza.ForeColor = Color.Red;
-            }
-            else
-            {
-                lblFechaVence.ForeColor = Color.Lime;
-                lblVenceFianza.ForeColor = Color.Lime;
-            }
             CargarDGV();
         }
 
         //***** PROCEDIMIENTO PARA CARGAR EL DGV DE LAS CTASCTES *****
         private void CargarDGV()
         {
-            int matri = Convert.ToInt32(txtMatricula.Text);
+            int nro = Convert.ToInt32(txtNumero.Text);
 
-            List<CE_CtasCtesColeg> ListaCtaCte = new CN_CtasCtesColeg().ListaCtaCte(matri);
+            List<CE_CtasCtesSoc> ListaCtaCte = new CN_CtasCtesSoc().ListaCtaCte(nro);
 
             if (ListaCtaCte.Count > 0)
             {
-                foreach (CE_CtasCtesColeg item in ListaCtaCte)
+                foreach (CE_CtasCtesSoc item in ListaCtaCte)
                 {
-                    dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.Matricula, item.Fecha, item.Tipo, item.Subfijo, item.Item, item.fk_idDebito,
+                    dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.Numero, item.Fecha, item.Tipo, item.Subfijo, item.Item, item.fk_idDebito,
                                                 item.Detalle, item.Periodo, item.Debe, item.Pagado, item.Saldo, item.FechaPago, item.Estado, item.Obs,
                                                 item.UserRegistro, item.FechaRegistro });
                 }
@@ -87,7 +71,7 @@ namespace CapaPresentacion.Formularios
             {
                 dgvCtasCtes.Rows.Clear();
                 saldoTot = 0;
-                txtMatricula.Select();
+                txtNumero.Select();
 
                 string mensaje = string.Empty;
 
@@ -147,24 +131,24 @@ namespace CapaPresentacion.Formularios
                 //dgvCtasCtes.Rows[dgvCtasCtes.RowCount - 1].Selected = true; **** ESTO SELECCIONA TODA LA FILA
                 dgvCtasCtes.CurrentCell = dgvCtasCtes.Rows[dgvCtasCtes.RowCount - 1].Cells[3];
                 txtSaldo.Text = saldoTot.ToString("$##,###,##0.00");
-                txtMatricula.Select();
+                txtNumero.Select();
             }
         }
 
         //***** PROCEDIMIENTO CUANDO PRESIONA EL BOTÓN DE BÚSQUEDA *****
-        private void txtMatricula_Leave(object sender, EventArgs e)
+        private void txtNumero_Leave(object sender, EventArgs e)
         {
-            if (txtMatricula.Text == "") txtMatricula.Text = "0";
+            if (txtNumero.Text == "") txtNumero.Text = "0";
             Limpiar();
         }
 
         //***** PROCEDIMIENTO CUANDO PRESIONA ENTER *****
-        private void txtMatricula_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 Limpiar();
-                LeerColegiado();
+                LeerSociedad();
                 CargarDGV();
             }
         }
@@ -172,43 +156,26 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO PARA LIMPIAR LOS DATOS *****
         private void Limpiar()
         {
-            lblColegiado.Text = "-";
-            lblFechaVence.Text = "-";
+            lblSociedad.Text = "-";
             txtSaldo.Text = string.Empty;
             dgvCtasCtes.Rows.Clear();
             saldoTot = 0;
-            txtMatricula.Select();
+            txtNumero.Select();
         }
 
         //***** PROCEDIMIENTO PARA LEER EL COLEGIADO INGRESADO *****
-        private void LeerColegiado()
+        private void LeerSociedad()
         {
             string mensaje = string.Empty;
-            List<CE_Colegiados> ListaBuscado = new CN_Colegiados().ListaBuscado(txtMatricula.Text, out mensaje);
+            List<CE_Sociedades> ListaBuscado = new CN_Sociedades().ListaBuscado(txtNumero.Text, out mensaje);
 
-            foreach (CE_Colegiados item in ListaBuscado)
+            foreach (CE_Sociedades item in ListaBuscado)
             {
-                txtId.Text = Convert.ToString(item.id_Coleg);
-                txtMatricula.Text = Convert.ToString(item.Matricula);
-                matriculado = item.ApelNombres.ToString().Trim();
-                estadoMat = item.Estado.ToString().Trim();
-                lblColegiado.Text = matriculado + " - Estado: " + estadoMat;
-                txtFechaVence.Text = item.FecVenceFianza.ToString();
-                int pos1 = txtFechaVence.Text.IndexOf(" ");
-                string fecha = txtFechaVence.Text.Substring(0, pos1);
-                fianza = fecha;
-                lblFechaVence.Text = fecha;
-
-                if (Convert.ToDateTime(txtFechaVence.Text) <= DateTime.Now)
-                {
-                    lblFechaVence.ForeColor = Color.Red;
-                    lblVenceFianza.ForeColor = Color.Red;
-                }
-                else
-                {
-                    lblFechaVence.ForeColor = Color.Lime;
-                    lblVenceFianza.ForeColor = Color.Lime;
-                }
+                txtId.Text = Convert.ToString(item.id_Soc);
+                txtNumero.Text = Convert.ToString(item.Numero);
+                sociedad = item.Nombre.ToString().Trim();
+                estadoSoc = item.Estado.ToString().Trim();
+                lblSociedad.Text = sociedad + " - Estado: " + estadoSoc;
             }
         }
 
@@ -221,7 +188,7 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO PARA EL BOTON LIMPIAR *****
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtMatricula.Text = string.Empty;
+            txtNumero.Text = string.Empty;
             Limpiar();
         }
 
@@ -229,14 +196,13 @@ namespace CapaPresentacion.Formularios
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             mdlRptCtaCteColeg Mostrar = new mdlRptCtaCteColeg();
-            Mostrar.matri = Convert.ToInt32(txtMatricula.Text);
-            Mostrar.detalle = "Listado de cuenta corriente de " + txtMatricula.Text + " - " + matriculado + " - Estado: " + estadoMat + " - Vto. Fianza: " + fianza;
+            Mostrar.matri = Convert.ToInt32(txtNumero.Text);
+            Mostrar.detalle = "Listado de cuenta corriente de " + txtNumero.Text + " - " + sociedad + " - Estado: " + estadoSoc;
             Mostrar.user = txtUserRegistro.Text;
             Mostrar.ShowDialog();
-            txtMatricula.Text = string.Empty;
+            txtNumero.Text = string.Empty;
             Limpiar();
+
         }
-
-
     }
 }

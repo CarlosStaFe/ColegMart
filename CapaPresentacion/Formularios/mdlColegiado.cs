@@ -44,7 +44,6 @@ namespace CapaPresentacion.Formularios
             cboBusqueda.Select();
         }
 
-
         //***** PROCEDIMIENTO DEL BOTON SALIR *****
         private void btnSalir_Click(object sender, EventArgs e)
         {

@@ -130,5 +130,11 @@ namespace CapaNegocio
             return cD_Sociedades.AsignarNumero(numero, out mensaje);
         }
 
+        //***** LLAMO AL METODO PARA LISTAR UNA SOCIEDAD BUSCADA *****
+        public List<CE_Sociedades> ListaBuscado(string nro, out string mensaje)
+        {
+            return cD_Sociedades.ListaBuscado(nro, out mensaje);
+        }
+
     }
 }

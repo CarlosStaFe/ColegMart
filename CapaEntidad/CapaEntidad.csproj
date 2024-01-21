@@ -75,6 +75,7 @@
     <Compile Include="CE_Colegiados.cs" />
     <Compile Include="CE_Comprobantes.cs" />
     <Compile Include="CE_CtasCtesColeg.cs" />
+    <Compile Include="CE_CtasCtesSoc.cs" />
     <Compile Include="CE_Debitos.cs" />
     <Compile Include="CE_Departamentos.cs" />
     <Compile Include="CE_DetalleLiqui.cs" />
