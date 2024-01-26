@@ -85,6 +85,7 @@
     <Compile Include="CD_Departamentos.cs" />
     <Compile Include="CD_DetalleLiqui.cs" />
     <Compile Include="CD_DeudaLiqui.cs" />
+    <Compile Include="CD_Documentos.cs" />
     <Compile Include="CD_Fianzas.cs" />
     <Compile Include="CD_Liquidacion.cs" />
     <Compile Include="CD_Localidades.cs" />

@@ -40,35 +40,14 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboDocum = new System.Windows.Forms.ComboBox();
+            this.txtIdCol = new System.Windows.Forms.TextBox();
             this.txtFianza = new System.Windows.Forms.TextBox();
             this.txtEstadoMat = new System.Windows.Forms.TextBox();
             this.txtApelNomb = new System.Windows.Forms.TextBox();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.dgvSociedades = new System.Windows.Forms.DataGridView();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Soc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOMICILIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCodPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FecEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inscr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Semest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marti1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marti2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marti3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marti4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMarti1 = new System.Windows.Forms.TextBox();
             this.txtMarti4 = new System.Windows.Forms.TextBox();
             this.txtMarti3 = new System.Windows.Forms.TextBox();
@@ -135,7 +114,31 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtIdCol = new System.Windows.Forms.TextBox();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_Soc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClaseDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOMICILIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCodPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FecEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inscr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Semest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marti1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marti2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marti3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marti4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSociedades)).BeginInit();
@@ -167,6 +170,8 @@
             // pnlDeck
             // 
             this.pnlDeck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlDeck.Controls.Add(this.label5);
+            this.pnlDeck.Controls.Add(this.cboDocum);
             this.pnlDeck.Controls.Add(this.txtIdCol);
             this.pnlDeck.Controls.Add(this.txtFianza);
             this.pnlDeck.Controls.Add(this.txtEstadoMat);
@@ -241,6 +246,46 @@
             this.pnlDeck.Name = "pnlDeck";
             this.pnlDeck.Size = new System.Drawing.Size(1162, 614);
             this.pnlDeck.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(708, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.TabIndex = 173;
+            this.label5.Text = "Tipo Doc.:";
+            // 
+            // cboDocum
+            // 
+            this.cboDocum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cboDocum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboDocum.ForeColor = System.Drawing.Color.White;
+            this.cboDocum.FormattingEnabled = true;
+            this.cboDocum.Items.AddRange(new object[] {
+            "CUIT",
+            "CUIL",
+            "DNI",
+            "LE",
+            "LC",
+            "CDI"});
+            this.cboDocum.Location = new System.Drawing.Point(787, 45);
+            this.cboDocum.Name = "cboDocum";
+            this.cboDocum.Size = new System.Drawing.Size(76, 25);
+            this.cboDocum.TabIndex = 2;
+            // 
+            // txtIdCol
+            // 
+            this.txtIdCol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtIdCol.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdCol.Enabled = false;
+            this.txtIdCol.ForeColor = System.Drawing.Color.White;
+            this.txtIdCol.Location = new System.Drawing.Point(631, 3);
+            this.txtIdCol.Name = "txtIdCol";
+            this.txtIdCol.Size = new System.Drawing.Size(34, 16);
+            this.txtIdCol.TabIndex = 171;
+            this.txtIdCol.Text = "0";
+            this.txtIdCol.Visible = false;
             // 
             // txtFianza
             // 
@@ -321,6 +366,7 @@
             this.id_Soc,
             this.Num,
             this.Nombre,
+            this.ClaseDoc,
             this.CUIT,
             this.DOMICILIO,
             this.idCodPostal,
@@ -330,7 +376,7 @@
             this.Telefono,
             this.Email,
             this.Tipo,
-            this.ESTADO,
+            this.Estado,
             this.FecEstado,
             this.Inscr,
             this.Semest,
@@ -351,7 +397,7 @@
             this.dgvSociedades.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSociedades.EnableHeadersVisualStyles = false;
             this.dgvSociedades.GridColor = System.Drawing.Color.White;
-            this.dgvSociedades.Location = new System.Drawing.Point(12, 397);
+            this.dgvSociedades.Location = new System.Drawing.Point(12, 396);
             this.dgvSociedades.MultiSelect = false;
             this.dgvSociedades.Name = "dgvSociedades";
             this.dgvSociedades.ReadOnly = true;
@@ -372,180 +418,6 @@
             this.dgvSociedades.TabIndex = 166;
             this.dgvSociedades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSociedades_CellContentClick);
             this.dgvSociedades.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvSociedades_CellPainting);
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
-            this.Seleccionar.Width = 25;
-            // 
-            // id_Soc
-            // 
-            this.id_Soc.HeaderText = "id";
-            this.id_Soc.Name = "id_Soc";
-            this.id_Soc.ReadOnly = true;
-            this.id_Soc.Visible = false;
-            // 
-            // Num
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Num.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Num.HeaderText = "NUM";
-            this.Num.Name = "Num";
-            this.Num.ReadOnly = true;
-            this.Num.Width = 60;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "NOMBRE";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 300;
-            // 
-            // CUIT
-            // 
-            this.CUIT.HeaderText = "CUIT";
-            this.CUIT.Name = "CUIT";
-            this.CUIT.ReadOnly = true;
-            this.CUIT.Visible = false;
-            this.CUIT.Width = 80;
-            // 
-            // DOMICILIO
-            // 
-            this.DOMICILIO.HeaderText = "DOMICILIO";
-            this.DOMICILIO.Name = "DOMICILIO";
-            this.DOMICILIO.ReadOnly = true;
-            this.DOMICILIO.Width = 170;
-            // 
-            // idCodPostal
-            // 
-            this.idCodPostal.HeaderText = "idCodPostal";
-            this.idCodPostal.Name = "idCodPostal";
-            this.idCodPostal.ReadOnly = true;
-            this.idCodPostal.Visible = false;
-            // 
-            // idLocal
-            // 
-            this.idLocal.HeaderText = "IdLocal";
-            this.idLocal.Name = "idLocal";
-            this.idLocal.ReadOnly = true;
-            this.idLocal.Visible = false;
-            // 
-            // idDepto
-            // 
-            this.idDepto.HeaderText = "idDepto";
-            this.idDepto.Name = "idDepto";
-            this.idDepto.ReadOnly = true;
-            this.idDepto.Visible = false;
-            // 
-            // idProv
-            // 
-            this.idProv.HeaderText = "idProv";
-            this.idProv.Name = "idProv";
-            this.idProv.ReadOnly = true;
-            this.idProv.Visible = false;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "TELEFONO";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "EMAIL";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 150;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "TIPO";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 80;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.HeaderText = "ESTADO";
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.ReadOnly = true;
-            this.ESTADO.Width = 80;
-            // 
-            // FecEstado
-            // 
-            this.FecEstado.HeaderText = "FecEstado";
-            this.FecEstado.Name = "FecEstado";
-            this.FecEstado.ReadOnly = true;
-            this.FecEstado.Visible = false;
-            // 
-            // Inscr
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Inscr.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Inscr.HeaderText = "INSCR";
-            this.Inscr.Name = "Inscr";
-            this.Inscr.ReadOnly = true;
-            this.Inscr.Width = 50;
-            // 
-            // Semest
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Semest.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Semest.HeaderText = "SEMEST";
-            this.Semest.Name = "Semest";
-            this.Semest.ReadOnly = true;
-            this.Semest.Width = 50;
-            // 
-            // Marti1
-            // 
-            this.Marti1.HeaderText = "Marti1";
-            this.Marti1.Name = "Marti1";
-            this.Marti1.ReadOnly = true;
-            this.Marti1.Visible = false;
-            // 
-            // Marti2
-            // 
-            this.Marti2.HeaderText = "Marti2";
-            this.Marti2.Name = "Marti2";
-            this.Marti2.ReadOnly = true;
-            this.Marti2.Visible = false;
-            // 
-            // Marti3
-            // 
-            this.Marti3.HeaderText = "Marti3";
-            this.Marti3.Name = "Marti3";
-            this.Marti3.ReadOnly = true;
-            this.Marti3.Visible = false;
-            // 
-            // Marti4
-            // 
-            this.Marti4.HeaderText = "Marti4";
-            this.Marti4.Name = "Marti4";
-            this.Marti4.ReadOnly = true;
-            this.Marti4.Visible = false;
-            // 
-            // Obs
-            // 
-            this.Obs.HeaderText = "Obs";
-            this.Obs.Name = "Obs";
-            this.Obs.ReadOnly = true;
-            this.Obs.Visible = false;
-            // 
-            // UserRegistro
-            // 
-            this.UserRegistro.HeaderText = "UserRegistro";
-            this.UserRegistro.Name = "UserRegistro";
-            this.UserRegistro.ReadOnly = true;
-            this.UserRegistro.Visible = false;
-            // 
-            // FechaRegistro
-            // 
-            this.FechaRegistro.HeaderText = "FechaRegistro";
-            this.FechaRegistro.Name = "FechaRegistro";
-            this.FechaRegistro.ReadOnly = true;
-            this.FechaRegistro.Visible = false;
             // 
             // txtMarti1
             // 
@@ -625,15 +497,15 @@
             "614",
             "615",
             "616"});
-            this.cboSemestral.Location = new System.Drawing.Point(921, 103);
+            this.cboSemestral.Location = new System.Drawing.Point(950, 104);
             this.cboSemestral.Name = "cboSemestral";
-            this.cboSemestral.Size = new System.Drawing.Size(107, 25);
-            this.cboSemestral.TabIndex = 159;
+            this.cboSemestral.Size = new System.Drawing.Size(78, 25);
+            this.cboSemestral.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(805, 106);
+            this.label10.Location = new System.Drawing.Point(834, 107);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 17);
             this.label10.TabIndex = 160;
@@ -652,15 +524,15 @@
             "604",
             "605",
             "606"});
-            this.cboInscripcion.Location = new System.Drawing.Point(674, 103);
+            this.cboInscripcion.Location = new System.Drawing.Point(726, 104);
             this.cboInscripcion.Name = "cboInscripcion";
-            this.cboInscripcion.Size = new System.Drawing.Size(125, 25);
-            this.cboInscripcion.TabIndex = 157;
+            this.cboInscripcion.Size = new System.Drawing.Size(84, 25);
+            this.cboInscripcion.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(575, 106);
+            this.label7.Location = new System.Drawing.Point(627, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 17);
             this.label7.TabIndex = 158;
@@ -677,15 +549,15 @@
             "INDUSTRIALES",
             "HIPICAS",
             "OTRAS"});
-            this.cboTipo.Location = new System.Drawing.Point(436, 103);
+            this.cboTipo.Location = new System.Drawing.Point(479, 103);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(130, 25);
-            this.cboTipo.TabIndex = 7;
+            this.cboTipo.Size = new System.Drawing.Size(118, 25);
+            this.cboTipo.TabIndex = 8;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(392, 106);
+            this.label15.Location = new System.Drawing.Point(435, 106);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(38, 17);
             this.label15.TabIndex = 153;
@@ -700,14 +572,13 @@
             this.dtpFecEstado.Enabled = false;
             this.dtpFecEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.dtpFecEstado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecEstado.Location = new System.Drawing.Point(415, 72);
+            this.dtpFecEstado.Location = new System.Drawing.Point(397, 72);
             this.dtpFecEstado.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpFecEstado.Name = "dtpFecEstado";
             this.dtpFecEstado.Size = new System.Drawing.Size(108, 23);
             this.dtpFecEstado.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpFecEstado.TabIndex = 4;
+            this.dtpFecEstado.TabIndex = 5;
             this.dtpFecEstado.TextColor = System.Drawing.Color.White;
-            this.dtpFecEstado.Visible = false;
             // 
             // btnMarti4
             // 
@@ -721,7 +592,7 @@
             this.btnMarti4.Location = new System.Drawing.Point(127, 322);
             this.btnMarti4.Name = "btnMarti4";
             this.btnMarti4.Size = new System.Drawing.Size(27, 24);
-            this.btnMarti4.TabIndex = 16;
+            this.btnMarti4.TabIndex = 17;
             this.btnMarti4.UseVisualStyleBackColor = false;
             this.btnMarti4.Click += new System.EventHandler(this.btnMarti4_Click);
             // 
@@ -757,7 +628,7 @@
             this.btnMarti3.Location = new System.Drawing.Point(127, 294);
             this.btnMarti3.Name = "btnMarti3";
             this.btnMarti3.Size = new System.Drawing.Size(27, 24);
-            this.btnMarti3.TabIndex = 15;
+            this.btnMarti3.TabIndex = 16;
             this.btnMarti3.UseVisualStyleBackColor = false;
             this.btnMarti3.Click += new System.EventHandler(this.btnMarti3_Click);
             // 
@@ -793,7 +664,7 @@
             this.btnMarti2.Location = new System.Drawing.Point(127, 266);
             this.btnMarti2.Name = "btnMarti2";
             this.btnMarti2.Size = new System.Drawing.Size(27, 24);
-            this.btnMarti2.TabIndex = 142;
+            this.btnMarti2.TabIndex = 15;
             this.btnMarti2.UseVisualStyleBackColor = false;
             this.btnMarti2.Click += new System.EventHandler(this.btnMarti2_Click);
             // 
@@ -829,7 +700,7 @@
             this.btnMarti1.Location = new System.Drawing.Point(127, 238);
             this.btnMarti1.Name = "btnMarti1";
             this.btnMarti1.Size = new System.Drawing.Size(27, 24);
-            this.btnMarti1.TabIndex = 139;
+            this.btnMarti1.TabIndex = 14;
             this.btnMarti1.UseVisualStyleBackColor = false;
             this.btnMarti1.Click += new System.EventHandler(this.btnMarti1_Click);
             // 
@@ -887,7 +758,7 @@
             this.btnLocalSoc.Location = new System.Drawing.Point(548, 183);
             this.btnLocalSoc.Name = "btnLocalSoc";
             this.btnLocalSoc.Size = new System.Drawing.Size(27, 24);
-            this.btnLocalSoc.TabIndex = 22;
+            this.btnLocalSoc.TabIndex = 13;
             this.btnLocalSoc.UseVisualStyleBackColor = false;
             this.btnLocalSoc.Click += new System.EventHandler(this.btnLocalidad_Click);
             // 
@@ -994,7 +865,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(914, 358);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(28, 28);
-            this.btnLimpiar.TabIndex = 20;
+            this.btnLimpiar.TabIndex = 21;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
@@ -1013,7 +884,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(848, 358);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(28, 28);
-            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.TabIndex = 20;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -1026,7 +897,7 @@
             this.txtFiltro.Location = new System.Drawing.Point(637, 361);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(193, 23);
-            this.txtFiltro.TabIndex = 18;
+            this.txtFiltro.TabIndex = 19;
             // 
             // cboBusqueda
             // 
@@ -1038,7 +909,7 @@
             this.cboBusqueda.Location = new System.Drawing.Point(412, 360);
             this.cboBusqueda.Name = "cboBusqueda";
             this.cboBusqueda.Size = new System.Drawing.Size(219, 25);
-            this.cboBusqueda.TabIndex = 17;
+            this.cboBusqueda.TabIndex = 18;
             // 
             // label33
             // 
@@ -1118,7 +989,7 @@
             this.txtObs.Location = new System.Drawing.Point(127, 134);
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(901, 23);
-            this.txtObs.TabIndex = 10;
+            this.txtObs.TabIndex = 11;
             // 
             // lblLocalidad
             // 
@@ -1168,8 +1039,8 @@
             this.txtTelefono.ForeColor = System.Drawing.Color.White;
             this.txtTelefono.Location = new System.Drawing.Point(127, 104);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(259, 23);
-            this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.Size = new System.Drawing.Size(293, 23);
+            this.txtTelefono.TabIndex = 7;
             // 
             // label21
             // 
@@ -1189,7 +1060,7 @@
             this.txtDomicilio.Location = new System.Drawing.Point(127, 185);
             this.txtDomicilio.Name = "txtDomicilio";
             this.txtDomicilio.Size = new System.Drawing.Size(321, 23);
-            this.txtDomicilio.TabIndex = 11;
+            this.txtDomicilio.TabIndex = 12;
             // 
             // label20
             // 
@@ -1209,12 +1080,12 @@
             this.txtEmail.Location = new System.Drawing.Point(592, 75);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(436, 23);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 6;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(310, 77);
+            this.label17.Location = new System.Drawing.Point(292, 77);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 17);
             this.label17.TabIndex = 81;
@@ -1232,8 +1103,8 @@
             "SUSPENDIDA"});
             this.cboEstado.Location = new System.Drawing.Point(127, 74);
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(168, 25);
-            this.cboEstado.TabIndex = 3;
+            this.cboEstado.Size = new System.Drawing.Size(133, 25);
+            this.cboEstado.TabIndex = 4;
             // 
             // label16
             // 
@@ -1250,20 +1121,20 @@
             this.txtCuit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCuit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCuit.ForeColor = System.Drawing.Color.White;
-            this.txtCuit.Location = new System.Drawing.Point(866, 46);
+            this.txtCuit.Location = new System.Drawing.Point(936, 46);
             this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(162, 23);
-            this.txtCuit.TabIndex = 2;
+            this.txtCuit.Size = new System.Drawing.Size(92, 23);
+            this.txtCuit.TabIndex = 3;
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(809, 48);
+            this.label13.Location = new System.Drawing.Point(891, 48);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 17);
+            this.label13.Size = new System.Drawing.Size(39, 17);
             this.label13.TabIndex = 72;
-            this.label13.Text = "C.U.I.T:";
+            this.label13.Text = "Nro.:";
             // 
             // label3
             // 
@@ -1329,9 +1200,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(213, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 17);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 50;
-            this.label2.Text = "Nombre Sociedad:";
+            this.label2.Text = "Nombre:";
             // 
             // txtNombre
             // 
@@ -1339,9 +1210,9 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNombre.Location = new System.Drawing.Point(349, 46);
+            this.txtNombre.Location = new System.Drawing.Point(284, 46);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(454, 23);
+            this.txtNombre.Size = new System.Drawing.Size(399, 23);
             this.txtNombre.TabIndex = 1;
             // 
             // label9
@@ -1364,18 +1235,186 @@
             this.panel1.Size = new System.Drawing.Size(1127, 42);
             this.panel1.TabIndex = 137;
             // 
-            // txtIdCol
+            // Seleccionar
             // 
-            this.txtIdCol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtIdCol.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdCol.Enabled = false;
-            this.txtIdCol.ForeColor = System.Drawing.Color.White;
-            this.txtIdCol.Location = new System.Drawing.Point(631, 3);
-            this.txtIdCol.Name = "txtIdCol";
-            this.txtIdCol.Size = new System.Drawing.Size(34, 16);
-            this.txtIdCol.TabIndex = 171;
-            this.txtIdCol.Text = "0";
-            this.txtIdCol.Visible = false;
+            this.Seleccionar.HeaderText = "";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
+            this.Seleccionar.Width = 25;
+            // 
+            // id_Soc
+            // 
+            this.id_Soc.HeaderText = "id";
+            this.id_Soc.Name = "id_Soc";
+            this.id_Soc.ReadOnly = true;
+            this.id_Soc.Visible = false;
+            // 
+            // Num
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Num.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Num.HeaderText = "NUM";
+            this.Num.Name = "Num";
+            this.Num.ReadOnly = true;
+            this.Num.Width = 60;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "NOMBRE";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 300;
+            // 
+            // ClaseDoc
+            // 
+            this.ClaseDoc.HeaderText = "ClaseDoc";
+            this.ClaseDoc.Name = "ClaseDoc";
+            this.ClaseDoc.ReadOnly = true;
+            this.ClaseDoc.Visible = false;
+            // 
+            // CUIT
+            // 
+            this.CUIT.HeaderText = "CUIT";
+            this.CUIT.Name = "CUIT";
+            this.CUIT.ReadOnly = true;
+            this.CUIT.Width = 80;
+            // 
+            // DOMICILIO
+            // 
+            this.DOMICILIO.HeaderText = "DOMICILIO";
+            this.DOMICILIO.Name = "DOMICILIO";
+            this.DOMICILIO.ReadOnly = true;
+            this.DOMICILIO.Width = 170;
+            // 
+            // idCodPostal
+            // 
+            this.idCodPostal.HeaderText = "idCodPostal";
+            this.idCodPostal.Name = "idCodPostal";
+            this.idCodPostal.ReadOnly = true;
+            this.idCodPostal.Visible = false;
+            // 
+            // idLocal
+            // 
+            this.idLocal.HeaderText = "IdLocal";
+            this.idLocal.Name = "idLocal";
+            this.idLocal.ReadOnly = true;
+            this.idLocal.Visible = false;
+            // 
+            // idDepto
+            // 
+            this.idDepto.HeaderText = "idDepto";
+            this.idDepto.Name = "idDepto";
+            this.idDepto.ReadOnly = true;
+            this.idDepto.Visible = false;
+            // 
+            // idProv
+            // 
+            this.idProv.HeaderText = "idProv";
+            this.idProv.Name = "idProv";
+            this.idProv.ReadOnly = true;
+            this.idProv.Visible = false;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "TELEFONO";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "EMAIL";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 150;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "TIPO";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Width = 80;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "ESTADO";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // FecEstado
+            // 
+            this.FecEstado.HeaderText = "FecEstado";
+            this.FecEstado.Name = "FecEstado";
+            this.FecEstado.ReadOnly = true;
+            this.FecEstado.Visible = false;
+            // 
+            // Inscr
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Inscr.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Inscr.HeaderText = "INSCR";
+            this.Inscr.Name = "Inscr";
+            this.Inscr.ReadOnly = true;
+            this.Inscr.Visible = false;
+            this.Inscr.Width = 50;
+            // 
+            // Semest
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Semest.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Semest.HeaderText = "SEMEST";
+            this.Semest.Name = "Semest";
+            this.Semest.ReadOnly = true;
+            this.Semest.Visible = false;
+            this.Semest.Width = 50;
+            // 
+            // Marti1
+            // 
+            this.Marti1.HeaderText = "Marti1";
+            this.Marti1.Name = "Marti1";
+            this.Marti1.ReadOnly = true;
+            this.Marti1.Visible = false;
+            // 
+            // Marti2
+            // 
+            this.Marti2.HeaderText = "Marti2";
+            this.Marti2.Name = "Marti2";
+            this.Marti2.ReadOnly = true;
+            this.Marti2.Visible = false;
+            // 
+            // Marti3
+            // 
+            this.Marti3.HeaderText = "Marti3";
+            this.Marti3.Name = "Marti3";
+            this.Marti3.ReadOnly = true;
+            this.Marti3.Visible = false;
+            // 
+            // Marti4
+            // 
+            this.Marti4.HeaderText = "Marti4";
+            this.Marti4.Name = "Marti4";
+            this.Marti4.ReadOnly = true;
+            this.Marti4.Visible = false;
+            // 
+            // Obs
+            // 
+            this.Obs.HeaderText = "Obs";
+            this.Obs.Name = "Obs";
+            this.Obs.ReadOnly = true;
+            this.Obs.Visible = false;
+            // 
+            // UserRegistro
+            // 
+            this.UserRegistro.HeaderText = "UserRegistro";
+            this.UserRegistro.Name = "UserRegistro";
+            this.UserRegistro.ReadOnly = true;
+            this.UserRegistro.Visible = false;
+            // 
+            // FechaRegistro
+            // 
+            this.FechaRegistro.HeaderText = "FechaRegistro";
+            this.FechaRegistro.Name = "FechaRegistro";
+            this.FechaRegistro.ReadOnly = true;
+            this.FechaRegistro.Visible = false;
             // 
             // frmSociedades
             // 
@@ -1474,10 +1513,18 @@
         public System.Windows.Forms.TextBox txtMarti3;
         public System.Windows.Forms.TextBox txtMarti2;
         private System.Windows.Forms.DataGridView dgvSociedades;
+        public System.Windows.Forms.TextBox txtFianza;
+        public System.Windows.Forms.TextBox txtEstadoMat;
+        public System.Windows.Forms.TextBox txtApelNomb;
+        public System.Windows.Forms.TextBox txtMatricula;
+        private System.Windows.Forms.TextBox txtIdCol;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cboDocum;
         private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Soc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClaseDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUIT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DOMICILIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCodPostal;
@@ -1487,7 +1534,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn FecEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Inscr;
         private System.Windows.Forms.DataGridViewTextBoxColumn Semest;
@@ -1498,10 +1545,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
-        public System.Windows.Forms.TextBox txtFianza;
-        public System.Windows.Forms.TextBox txtEstadoMat;
-        public System.Windows.Forms.TextBox txtApelNomb;
-        public System.Windows.Forms.TextBox txtMatricula;
-        private System.Windows.Forms.TextBox txtIdCol;
     }
 }

@@ -297,6 +297,12 @@ namespace ColegMart
             OcultarSubmenu();
         }
 
+        private void btnLiquidarSoc_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmLiquidarSociedades());
+            OcultarSubmenu();
+        }
+
         private void btnCtasCtesSoc_Click(object sender, System.EventArgs e)
         {
             AbrirFormHijo(new frmCtasCtesSoc());

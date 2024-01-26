@@ -43,7 +43,7 @@ namespace CapaDatos
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         lista = new List<CE_CodigosPostales>();
                     }

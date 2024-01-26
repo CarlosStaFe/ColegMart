@@ -1133,6 +1133,7 @@
             this.btnLiquidarSoc.Text = "Liquidación";
             this.btnLiquidarSoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLiquidarSoc.UseVisualStyleBackColor = true;
+            this.btnLiquidarSoc.Click += new System.EventHandler(this.btnLiquidarSoc_Click);
             // 
             // btnActualizarSoc
             // 

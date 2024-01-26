@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Utiles;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -61,8 +62,8 @@ namespace CapaPresentacion.Formularios
             {
                 foreach (CE_CtasCtesSoc item in ListaCtaCte)
                 {
-                    dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.Numero, item.Fecha, item.Tipo, item.Subfijo, item.Item, item.fk_idDebito,
-                                                item.Detalle, item.Periodo, item.Debe, item.Pagado, item.Saldo, item.FechaPago, item.Estado, item.Obs,
+                    dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.Numero, item.Fecha, item.Tipo, item.Prefijo, item.Subfijo, item.Item, item.fk_idDebito,
+                                                item.Detalle, item.Periodo, item.Haber, item.Pagado, item.Saldo, item.FechaPago, item.Estado, item.Obs,
                                                 item.UserRegistro, item.FechaRegistro });
                 }
                 PintarDGV();
@@ -93,6 +94,9 @@ namespace CapaPresentacion.Formularios
                     dgvitem = fila.Cells["Item"].Value.ToString();
                     saldoTot = saldoTot + Convert.ToDecimal(fila.Cells["Saldo"].Value.ToString());
 
+                    fila.Cells["Prjo"].Value = new PonerCeros().Proceso(Convert.ToString(fila.Cells["Prjo"].Value), 4);
+                    fila.Cells["Subfijo"].Value = new PonerCeros().Proceso(Convert.ToString(fila.Cells["Subfijo"].Value), 8);
+
                     if (dgvtipo == "LIQ" && dgvestado == "PENDIENTE" || dgvestado == "LIQUIDADA")
                     {
                         fila.DefaultCellStyle.ForeColor = Color.Orange;
@@ -119,7 +123,8 @@ namespace CapaPresentacion.Formularios
                     {
                         fila.Cells["Fecha"].Value = DBNull.Value;
                         fila.Cells["Tipo"].Value = "";
-                        fila.Cells["Numero"].Value = DBNull.Value;
+                        fila.Cells["Prjo"].Value = DBNull.Value;
+                        fila.Cells["Subfijo"].Value = DBNull.Value;
                     }
                     if (fila.Cells["FechaPago"].Value.ToString() == "1/1/1900 00:00:00")
                     {
@@ -129,7 +134,7 @@ namespace CapaPresentacion.Formularios
 
                 dgvCtasCtes.FirstDisplayedScrollingRowIndex = dgvCtasCtes.RowCount - 1;
                 //dgvCtasCtes.Rows[dgvCtasCtes.RowCount - 1].Selected = true; **** ESTO SELECCIONA TODA LA FILA
-                dgvCtasCtes.CurrentCell = dgvCtasCtes.Rows[dgvCtasCtes.RowCount - 1].Cells[3];
+                dgvCtasCtes.CurrentCell = dgvCtasCtes.Rows[dgvCtasCtes.RowCount - 1].Cells[2];
                 txtSaldo.Text = saldoTot.ToString("$##,###,##0.00");
                 txtNumero.Select();
             }

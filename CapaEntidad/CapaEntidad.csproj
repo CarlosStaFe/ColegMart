@@ -80,6 +80,7 @@
     <Compile Include="CE_Departamentos.cs" />
     <Compile Include="CE_DetalleLiqui.cs" />
     <Compile Include="CE_DeudaLiqui.cs" />
+    <Compile Include="CE_Documentos.cs" />
     <Compile Include="CE_Fianzas.cs" />
     <Compile Include="CE_Liquidacion.cs" />
     <Compile Include="CE_Localidades.cs" />

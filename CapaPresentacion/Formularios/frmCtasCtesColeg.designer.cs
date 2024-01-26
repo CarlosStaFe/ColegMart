@@ -64,7 +64,8 @@
             this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subfijo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fk_idDebito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,7 +113,7 @@
             this.txtMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMatricula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatricula.ForeColor = System.Drawing.Color.Lime;
-            this.txtMatricula.Location = new System.Drawing.Point(97, 49);
+            this.txtMatricula.Location = new System.Drawing.Point(97, 50);
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(63, 27);
             this.txtMatricula.TabIndex = 75;
@@ -266,7 +267,7 @@
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1056, 90);
+            this.groupBox1.Location = new System.Drawing.Point(1068, 90);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(95, 265);
             this.groupBox1.TabIndex = 131;
@@ -363,7 +364,8 @@
             this.Matricula,
             this.Fecha,
             this.Tipo,
-            this.Numero,
+            this.Prjo,
+            this.Subfijo,
             this.Item,
             this.fk_idDebito,
             this.Detalle,
@@ -404,7 +406,7 @@
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gray;
             this.dgvCtasCtes.RowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvCtasCtes.Size = new System.Drawing.Size(1035, 504);
+            this.dgvCtasCtes.Size = new System.Drawing.Size(1050, 504);
             this.dgvCtasCtes.TabIndex = 132;
             // 
             // id
@@ -439,12 +441,19 @@
             this.Tipo.ReadOnly = true;
             this.Tipo.Width = 40;
             // 
-            // Numero
+            // Prjo
             // 
-            this.Numero.HeaderText = "NUMERO";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.Width = 75;
+            this.Prjo.HeaderText = "PRJO";
+            this.Prjo.Name = "Prjo";
+            this.Prjo.ReadOnly = true;
+            this.Prjo.Width = 45;
+            // 
+            // Subfijo
+            // 
+            this.Subfijo.HeaderText = "SUBFIJO";
+            this.Subfijo.Name = "Subfijo";
+            this.Subfijo.ReadOnly = true;
+            this.Subfijo.Width = 75;
             // 
             // Item
             // 
@@ -474,7 +483,7 @@
             this.Periodo.HeaderText = "PDO.";
             this.Periodo.Name = "Periodo";
             this.Periodo.ReadOnly = true;
-            this.Periodo.Width = 60;
+            this.Periodo.Width = 55;
             // 
             // Debe
             // 
@@ -618,7 +627,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prjo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subfijo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item;
         private System.Windows.Forms.DataGridViewTextBoxColumn fk_idDebito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;

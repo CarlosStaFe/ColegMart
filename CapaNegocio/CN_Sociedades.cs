@@ -136,5 +136,17 @@ namespace CapaNegocio
             return cD_Sociedades.ListaBuscado(nro, out mensaje);
         }
 
+        //***** LLAMO AL METODO PARA LISTAR LAS SOCIEDADES A LIQUIDAR *****
+        public List<CE_Sociedades> LiquidaSoc(string desde, string hasta)
+        {
+            return cD_Sociedades.LiquidaSoc(desde, hasta);
+        }
+
+        //***** ACTUALIZO EL ESTADO DE LAS SOCIEDADES *****
+        public bool ActualizarEstado(int nro, string estado)
+        {
+            return cD_Sociedades.ActualizarEstado(nro, estado);
+        }
+
     }
 }

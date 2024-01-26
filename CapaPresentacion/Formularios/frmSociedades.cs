@@ -13,7 +13,7 @@ namespace CapaPresentacion.Formularios
     {
         SoloNumeros validar = new SoloNumeros();
 
-        private string respuesta, localidad, nrosoc, fecha, estado, fechafianza;
+        private string respuesta, localidad, nrosoc, fecha, estadosoc, fechafianza;
         private int idcodpos, nuevoNro;
 
         public frmSociedades()
@@ -30,7 +30,7 @@ namespace CapaPresentacion.Formularios
             //***** CARGO EL DGV *****
             foreach (CE_Sociedades item in ListaSoc)
             {
-                dgvSociedades.Rows.Add(new object[] { "", item.id_Soc, item.Numero, item.Nombre, item.Cuit, item.Domicilio, item.idCodPostal, item.idLocal, item.idDepto, item.idProv,
+                dgvSociedades.Rows.Add(new object[] { "", item.id_Soc, item.Numero, item.Nombre, item.TipoDoc, item.Cuit, item.Domicilio, item.idCodPostal, item.idLocal, item.idDepto, item.idProv,
                                                 item.Telefono, item.Email, item.Tipo, item.Estado, item.FechaEstado, item.Inscripcion, item.Semestral, item.Martillero1, item.Martillero2,
                                                 item.Martillero3, item.Martillero4, item.Obs, item.UserRegistro, item.FechaRegistro });
             }
@@ -48,7 +48,7 @@ namespace CapaPresentacion.Formularios
 
             //cboInscripcion.DropDownHeight = 100;
             //cboInscripcion.DropDownWidth = 300;
-            //CargoCboI();
+            //CargoCboDocum();
 
             txtNombre.Select();
         }
@@ -58,11 +58,11 @@ namespace CapaPresentacion.Formularios
         {
             for (int i = 0; i < dgvSociedades.Rows.Count; i++)
             {
-                estado = dgvSociedades.Rows[i].Cells["Estado"].Value.ToString();
+                estadosoc = dgvSociedades.Rows[i].Cells["Estado"].Value.ToString();
 
-                if (estado == "ACTIVA") dgvSociedades.Rows[i].Cells["Estado"].Style.ForeColor = Color.Lime;
-                if (estado == "SUSPENDIDA") dgvSociedades.Rows[i].Cells["Estado"].Style.ForeColor = Color.Yellow;
-                if (estado == "BAJA") dgvSociedades.Rows[i].Cells["Estado"].Style.ForeColor = Color.Red;
+                if (estadosoc == "ACTIVA") dgvSociedades.Rows[i].Cells["Estado"].Style.ForeColor = Color.Lime;
+                if (estadosoc == "SUSPENDIDA") dgvSociedades.Rows[i].Cells["Estado"].Style.ForeColor = Color.Yellow;
+                if (estadosoc == "BAJA") dgvSociedades.Rows[i].Cells["Estado"].Style.ForeColor = Color.Red;
             }
         }
 
@@ -119,8 +119,8 @@ namespace CapaPresentacion.Formularios
 
                     if (idSociedad != 0)
                     {
-                        dgvSociedades.Rows.Add(new object[] {"",idSociedad,txtNumero.Text,txtNombre.Text,txtCuit.Text,txtDomicilio.Text,txtCodPostal.Text,txtLocal.Text,txtDepto.Text,txtProv.Text,
-                                                  txtTelefono.Text,txtEmail.Text,cboTipo.Text,cboEstado.Text,dtpFecEstado.Text,cboInscripcion.Text,cboSemestral.Text,txtMarti1.Text,
+                        dgvSociedades.Rows.Add(new object[] {"",idSociedad,txtNumero.Text,txtNombre.Text,cboDocum.Text,txtCuit.Text,txtDomicilio.Text,txtCodPostal.Text,txtLocal.Text,txtDepto.Text,
+                                                  txtProv.Text,txtTelefono.Text,txtEmail.Text,cboTipo.Text,cboEstado.Text,dtpFecEstado.Text,cboInscripcion.Text,cboSemestral.Text,txtMarti1.Text,
                                                   txtMarti2.Text,txtMarti3.Text,txtMarti4.Text,txtObs.Text,txtUserRegistro.Text,txtFechaRegistro.Text});
                         Limpiar();
                     }
@@ -141,6 +141,7 @@ namespace CapaPresentacion.Formularios
                         row.Cells["id_Soc"].Value = txtId.Text;
                         row.Cells["Num"].Value = txtNumero.Text;
                         row.Cells["Nombre"].Value = txtNombre.Text;
+                        row.Cells["ClaseDoc"].Value = cboDocum.Text;
                         row.Cells["Cuit"].Value = txtCuit.Text;
                         row.Cells["Domicilio"].Value = txtDomicilio.Text;
                         row.Cells["idCodPostal"].Value = txtCodPostal.Text;
@@ -180,6 +181,7 @@ namespace CapaPresentacion.Formularios
             txtNumero.Text = string.Empty;
             lblNumero.Text = "-";
             txtNombre.Text = string.Empty;
+            cboDocum.Text = string.Empty;
             txtCuit.Text = string.Empty;
             txtDomicilio.Text = string.Empty;
             txtCodPostal.Text = string.Empty;
@@ -249,6 +251,7 @@ namespace CapaPresentacion.Formularios
                     txtId.Text = dgvSociedades.Rows[indice].Cells["id_Soc"].Value.ToString();
                     txtNumero.Text = dgvSociedades.Rows[indice].Cells["Num"].Value.ToString();
                     lblNumero.Text = txtNumero.Text;
+                    cboDocum.Text = dgvSociedades.Rows[indice].Cells["ClaseDoc"].Value.ToString();
                     txtNombre.Text = dgvSociedades.Rows[indice].Cells["Nombre"].Value.ToString();
                     txtCuit.Text = dgvSociedades.Rows[indice].Cells["Cuit"].Value.ToString();
                     txtDomicilio.Text = dgvSociedades.Rows[indice].Cells["Domicilio"].Value.ToString();
@@ -274,22 +277,22 @@ namespace CapaPresentacion.Formularios
                     txtMatricula.Text = txtMarti1.Text;
                     LeerColegiado();
                     lblMartillero1.Text = "-";
-                    if (txtMatricula.Text != "0") lblMartillero1.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estado + " - VTO. " + fechafianza;
+                    if (txtMatricula.Text != "0") lblMartillero1.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estadosoc + " - VTO. " + fechafianza;
 
                     txtMatricula.Text = txtMarti2.Text;
                     LeerColegiado();
                     lblMartillero2.Text = "-";
-                    if (txtMatricula.Text != "0") lblMartillero2.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estado + " - VTO. " + fechafianza;
+                    if (txtMatricula.Text != "0") lblMartillero2.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estadosoc + " - VTO. " + fechafianza;
 
                     txtMatricula.Text = txtMarti3.Text;
                     LeerColegiado();
                     lblMartillero3.Text = "-";
-                    if (txtMatricula.Text != "0") lblMartillero3.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estado + " - VTO. " + fechafianza;
+                    if (txtMatricula.Text != "0") lblMartillero3.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estadosoc + " - VTO. " + fechafianza;
 
                     txtMatricula.Text = txtMarti4.Text;
                     LeerColegiado();
                     lblMartillero4.Text = "-";
-                    if (txtMatricula.Text != "0") lblMartillero4.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estado + " - VTO. " + fechafianza;
+                    if (txtMatricula.Text != "0") lblMartillero4.Text = txtMatricula.Text + " - " + txtApelNomb.Text + " - " + estadosoc + " - VTO. " + fechafianza;
 
                     //***** BUSCO LA LOCALIDAD DE LA SOCIEDAD *****
                     idcodpos = Convert.ToInt32(txtLocal.Text);
@@ -405,7 +408,7 @@ namespace CapaPresentacion.Formularios
                 txtIdCol.Text = Convert.ToString(item.id_Coleg);
                 txtMatricula.Text = Convert.ToString(item.Matricula);
                 txtApelNomb.Text = item.ApelNombres.ToString().Trim();
-                estado = item.Estado.ToString().Trim();
+                estadosoc = item.Estado.ToString().Trim();
                 string fecha = item.FecVenceFianza.ToString();
                 int pos1 = fecha.IndexOf(" ");
                 fechafianza = fecha.Substring(0, pos1);

@@ -80,6 +80,7 @@
     <Compile Include="CN_Departamentos.cs" />
     <Compile Include="CN_DetalleLiqui.cs" />
     <Compile Include="CN_DeudaLiqui.cs" />
+    <Compile Include="CN_Documentos.cs" />
     <Compile Include="CN_Fianzas.cs" />
     <Compile Include="CN_Liquidacion.cs" />
     <Compile Include="CN_Localidades.cs" />

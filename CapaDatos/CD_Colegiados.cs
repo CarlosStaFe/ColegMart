@@ -3,8 +3,6 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.IO;
 
 namespace CapaDatos
 {
@@ -77,7 +75,7 @@ namespace CapaDatos
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         lista = new List<CE_Colegiados>();
                     }
@@ -355,7 +353,7 @@ namespace CapaDatos
         }
 
         //***** METODO PARA ACTUALIZAR EL ESTADO *****
-        public bool ActualizarEstado(int id, string estado)
+        public bool ActualizarEstado(int matri, string estado)
         {
             bool respuesta = true;
 
@@ -366,11 +364,11 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@id_Coleg", id);
+                        command.Parameters.AddWithValue("@Matricula", matri);
                         command.Parameters.AddWithValue("@Estado", estado);
                         command.Parameters.AddWithValue("@FecEstado", DateTime.Now);
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Colegiados SET Estado = @Estado, FecEstado = @FecEstado WHERE id_Coleg = @id_Coleg";
+                        command.CommandText = "UPDATE Colegiados SET Estado = @Estado, FecEstado = @FecEstado WHERE Matricula = @Matricula";
                         command.CommandType = CommandType.Text;
 
                         using (MySqlDataReader dr = command.ExecuteReader())

@@ -7,6 +7,7 @@ namespace CapaEntidad
         public int id_Soc { get; set; }
         public int Numero { get; set; }
         public string Nombre { get; set; }
+        public string TipoDoc { get; set; }
         public int Cuit { get; set; }
         public string Domicilio { get; set; }
         public int idCodPostal { get; set; }

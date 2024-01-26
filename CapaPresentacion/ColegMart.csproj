@@ -242,6 +242,12 @@
     <Compile Include="Formularios\frmLiquidarColegiados.designer.cs">
       <DependentUpon>frmLiquidarColegiados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmLiquidarSociedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmLiquidarSociedades.Designer.cs">
+      <DependentUpon>frmLiquidarSociedades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -394,6 +400,9 @@
     <EmbeddedResource Include="Formularios\frmLiquidarColegiados.resx">
       <DependentUpon>frmLiquidarColegiados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmLiquidarSociedades.resx">
+      <DependentUpon>frmLiquidarSociedades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -459,11 +468,13 @@
     <EmbeddedResource Include="Reportes\rpt_Cic_Boletas.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_CtaCte_Coleg.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Liquidacion_Coleg.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_Liquidacion_Sociedades.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Pad_Coleg_Comun.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Pad_Coleg_Elecc.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Pad_Coleg_Subasta.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Reclamo_1.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Reclamo_2.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_Reclamo_Soc.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Saldo_Pago.rdlc" />
     <None Include="DataSetPrincipal.xsc">
       <DependentUpon>DataSetPrincipal.xsd</DependentUpon>
@@ -529,6 +540,44 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="FEAFIPLib">
+      <Guid>{DAE2CF79-E2C1-40C0-90CD-43C9688F108E}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="FEGen">
+      <Guid>{E13A9289-5066-440C-8CFB-9341CAF6CD8B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="QrAfip">
+      <Guid>{1E54A3BD-3D9C-46D1-842F-FBF722BB3106}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
