@@ -20,20 +20,21 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("Subfijo", obj.Subfijo);
-                        command.Parameters.AddWithValue("Item", obj.Item);
-                        command.Parameters.AddWithValue("Codigo", obj.Codigo);
-                        command.Parameters.AddWithValue("Detalle", obj.Detalle);
-                        command.Parameters.AddWithValue("Importe", obj.Importe);
-                        command.Parameters.AddWithValue("UserRegistro", CE_UserLogin.UserRegistro);
-                        command.Parameters.AddWithValue("FechaRegistro", DateTime.Now);
-                        command.Parameters.Add("idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.AddWithValue("_Prefijo", obj.Prefijo);
+                        command.Parameters.AddWithValue("_Subfijo", obj.Subfijo);
+                        command.Parameters.AddWithValue("_Item", obj.Item);
+                        command.Parameters.AddWithValue("_Codigo", obj.Codigo);
+                        command.Parameters.AddWithValue("_Detalle", obj.Detalle);
+                        command.Parameters.AddWithValue("_Importe", obj.Importe);
+                        command.Parameters.AddWithValue("_UserRegistro", CE_UserLogin.UserRegistro);
+                        command.Parameters.AddWithValue("_FechaRegistro", DateTime.Now);
+                        command.Parameters.Add("_idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        idDetLiq = Convert.ToInt32(command.Parameters["idResultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        idDetLiq = Convert.ToInt32(command.Parameters["_idResultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {

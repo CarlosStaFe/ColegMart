@@ -9,27 +9,27 @@ namespace CapaNegocio
         CD_CtasCtesSoc cD_CtasCtesSoc = new CD_CtasCtesSoc();
 
         //***** LLAMO AL METODO PARA LISTAR LAS CUENTAS CORRIENTES DE LAS SOCIEDADES *****
-        public int ContarDeuda(int numero)
+        public int ContarDeuda(int numerosoc)
         {
-            return cD_CtasCtesSoc.ContarDeuda(numero);
+            return cD_CtasCtesSoc.ContarDeuda(numerosoc);
         }
 
         //***** LLAMO AL METODO PARA CALCULAR EL SALDO DE LAS CUENTAS CORIIENTES *****
-        public int CalcularSaldo(int numero)
+        public int CalcularSaldo(int numerosoc)
         {
-            return (int)cD_CtasCtesSoc.CalcularSaldo(numero);
+            return (int)cD_CtasCtesSoc.CalcularSaldo(numerosoc);
         }
 
         //***** LLAMO AL METODO PARA LISTAR LAS CUENTAS CORRIENTES *****
-        public List<CE_CtasCtesSoc> ListaCtaCte(int numero)
+        public List<CE_CtasCtesSoc> ListaCtaCte(int numerosoc)
         {
-            return cD_CtasCtesSoc.ListaCtaCte(numero);
+            return cD_CtasCtesSoc.ListaCtaCte(numerosoc);
         }
 
         //***** LLAMO AL METODO PARA LISTAR LAS CUOTAS ADEUDADAS *****
-        public List<CE_CtasCtesSoc> ListaDeuda(int numero)
+        public List<CE_CtasCtesSoc> ListaDeuda(int numerosoc)
         {
-            return cD_CtasCtesSoc.ListaDeuda(numero);
+            return cD_CtasCtesSoc.ListaDeuda(numerosoc);
         }
 
         //***** REGISTRA UN MOVIMIENTO DE LA CTA CTE *****

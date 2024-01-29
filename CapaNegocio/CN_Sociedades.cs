@@ -24,7 +24,7 @@ namespace CapaNegocio
                 mensaje += "* Debe ingresar un Nombre. * ";
             }
 
-            if (obj.Cuit == 0)
+            if (obj.Cuit == "")
             {
                 mensaje += "Debe ingresar una C.U.I.T. * ";
             }
@@ -79,7 +79,7 @@ namespace CapaNegocio
                 mensaje += "* Debe ingresar un Nombre. * ";
             }
 
-            if (obj.Cuit == 0)
+            if (obj.Cuit == "")
             {
                 mensaje += "Debe ingresar una C.U.I.T. * ";
             }

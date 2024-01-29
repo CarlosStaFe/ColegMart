@@ -63,7 +63,7 @@ namespace CapaPresentacion.Formularios
                 foreach (CE_CtasCtesSoc item in ListaCtaCte)
                 {
                     dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.Numero, item.Fecha, item.Tipo, item.Prefijo, item.Subfijo, item.Item, item.fk_idDebito,
-                                                item.Detalle, item.Periodo, item.Haber, item.Pagado, item.Saldo, item.FechaPago, item.Estado, item.Obs,
+                                                item.Detalle, item.Periodo, item.Debe, item.Pagado, item.Saldo, item.FechaPago, item.Estado, item.Obs,
                                                 item.UserRegistro, item.FechaRegistro });
                 }
                 PintarDGV();

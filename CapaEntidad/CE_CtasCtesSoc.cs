@@ -14,7 +14,7 @@ namespace CapaEntidad
         public string Detalle { get; set; }
         public int fk_idDebito { get; set; }
         public string Periodo { get; set; }
-        public decimal Haber { get; set; }
+        public decimal Debe { get; set; }
         public decimal Pagado { get; set; }
         public DateTime FechaPago { get; set; }
         public decimal Saldo { get; set; }

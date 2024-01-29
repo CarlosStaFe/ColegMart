@@ -9,7 +9,7 @@ namespace CapaDatos
     public class CD_CtasCtesSoc:Conexion
     {
         //***** METODO PARA CALCULAR LA CANTIDAD DE ITEMS ADEUDADOS DE LAS SOCIEDADES *****
-        public int ContarDeuda(int numero)
+        public int ContarDeuda(int numerosoc)
         {
             int cantidad = 0;
 
@@ -19,7 +19,7 @@ namespace CapaDatos
                 using (var command = new MySqlCommand())
                 {
                     command.Connection = connection;
-                    command.Parameters.AddWithValue("@nro", numero);
+                    command.Parameters.AddWithValue("@nro", numerosoc);
                     command.CommandText = "SELECT COUNT(DISTINCT Periodo) AS cantidad FROM ctasctessoc WHERE Numero = @nro AND Saldo > 0";
                     command.CommandType = CommandType.Text;
                     cantidad = Convert.ToInt32(command.ExecuteScalar());
@@ -30,7 +30,7 @@ namespace CapaDatos
         }
 
         //***** METODO PARA CALCULAR EL SALDO ADEUDADO DE LAS SOCIEDADES *****
-        public decimal CalcularSaldo(int nro)
+        public decimal CalcularSaldo(int numerosoc)
         {
             decimal saldo = 0;
 
@@ -40,7 +40,7 @@ namespace CapaDatos
                 using (var command = new MySqlCommand())
                 {
                     command.Connection = connection;
-                    command.Parameters.AddWithValue("@nro", nro);
+                    command.Parameters.AddWithValue("@nro", numerosoc);
                     command.CommandText = "SELECT SUM(Saldo) AS Saldo FROM CtasCtesSoc WHERE Numero = @nro AND Saldo != 0";
                     command.CommandType = CommandType.Text;
                     //saldo = Convert.ToDecimal(command.ExecuteScalar() is DBNull ? 0 : saldo);
@@ -51,7 +51,7 @@ namespace CapaDatos
         }
 
         //***** METODO PARA LISTAR LAS CUENTAS CORRIENTES *****
-        public List<CE_CtasCtesSoc> ListaCtaCte(int nro)
+        public List<CE_CtasCtesSoc> ListaCtaCte(int numerosoc)
         {
             List<CE_CtasCtesSoc> lista = new List<CE_CtasCtesSoc>();
 
@@ -63,7 +63,7 @@ namespace CapaDatos
                     try
                     {
                         command.Connection = connection;
-                        command.Parameters.AddWithValue("@nro", nro);
+                        command.Parameters.AddWithValue("@nro", numerosoc);
                         command.CommandText = "SELECT * FROM CtasCtesSoc WHERE Numero = @nro ORDER BY Fecha, Item ASC";
                         command.CommandType = CommandType.Text;
                         MySqlDataReader dr = command.ExecuteReader();
@@ -84,7 +84,7 @@ namespace CapaDatos
                                     fk_idDebito = Convert.ToInt32(dr["fk_idDebito"]),
                                     Detalle = dr["Detalle"].ToString(),
                                     Periodo = dr["Periodo"].ToString(),
-                                    Haber = Convert.ToDecimal(dr["Haber"].ToString()),
+                                    Debe = Convert.ToDecimal(dr["Debe"].ToString()),
                                     Pagado = Convert.ToDecimal(dr["Pagado"].ToString()),
                                     FechaPago = Convert.ToDateTime(dr["FechaPago"]),
                                     Saldo = Convert.ToDecimal(dr["Saldo"].ToString()),
@@ -106,7 +106,7 @@ namespace CapaDatos
         }
 
         //***** METODO PARA LISTAR LAS CUENTAS CORRIENTES PARA CARGARLOS EN UN ARRAY *****
-        public List<CE_CtasCtesSoc> ListaDeuda(int nro)
+        public List<CE_CtasCtesSoc> ListaDeuda(int numerosoc)
         {
             List<CE_CtasCtesSoc> lista = new List<CE_CtasCtesSoc>();
 
@@ -118,8 +118,8 @@ namespace CapaDatos
                     try
                     {
                         command.Connection = connection;
-                        command.Parameters.AddWithValue("@numero", nro);
-                        command.CommandText = "SELECT * FROM ctasctessoc WHERE Numero = @nro AND saldo != 0 ORDER BY Fecha, Item ASC";
+                        command.Parameters.AddWithValue("@numero", numerosoc);
+                        command.CommandText = "SELECT * FROM ctasctessoc WHERE Numero = @numero AND saldo != 0 ORDER BY Fecha, Item ASC";
                         command.CommandType = CommandType.Text;
                         MySqlDataReader dr = command.ExecuteReader();
 
@@ -130,7 +130,7 @@ namespace CapaDatos
                                 lista.Add(new CE_CtasCtesSoc()
                                 {
                                     id_CtaCte = Convert.ToInt32(dr["id_CtaCte"]),
-                                    Numero = Convert.ToInt32(dr["Matricula"]),
+                                    Numero = Convert.ToInt32(dr["Numero"]),
                                     Fecha = Convert.ToDateTime(dr["Fecha"]),
                                     Tipo = dr["Tipo"].ToString(),
                                     Prefijo = dr["Prefijo"].ToString(),
@@ -139,7 +139,7 @@ namespace CapaDatos
                                     fk_idDebito = Convert.ToInt32(dr["fk_idDebito"]),
                                     Detalle = dr["Detalle"].ToString(),
                                     Periodo = dr["Periodo"].ToString(),
-                                    Haber = Convert.ToDecimal(dr["Haber"].ToString()),
+                                    Debe = Convert.ToDecimal(dr["Debe"].ToString()),
                                     Pagado = Convert.ToDecimal(dr["Pagado"].ToString()),
                                     FechaPago = Convert.ToDateTime(dr["FechaPago"]),
                                     Saldo = Convert.ToDecimal(dr["Saldo"].ToString()),
@@ -151,7 +151,7 @@ namespace CapaDatos
                             }
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         lista = new List<CE_CtasCtesSoc>();
                     }
@@ -182,7 +182,7 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("_fk_idDebito", obj.fk_idDebito);
                         command.Parameters.AddWithValue("_Detalle", obj.Detalle);
                         command.Parameters.AddWithValue("_Periodo", obj.Periodo);
-                        command.Parameters.AddWithValue("_Haber", obj.Haber);
+                        command.Parameters.AddWithValue("_Debe", obj.Debe);
                         command.Parameters.AddWithValue("_Pagado", obj.Pagado);
                         command.Parameters.AddWithValue("_FechaPago", obj.FechaPago);
                         command.Parameters.AddWithValue("_Saldo", obj.Saldo);

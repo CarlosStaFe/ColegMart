@@ -14,6 +14,5 @@ namespace CapaEntidad
         public decimal Importe { get; set; }
         public string UserRegistro { get; set; }
         public DateTime FechaRegistro { get; set; }
-
     }
 }
