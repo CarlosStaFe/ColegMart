@@ -34,13 +34,11 @@ namespace CapaPresentacion.Formularios
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLiquidarSociedades));
-            this.spLiquidacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetPrincipal = new CapaPresentacion.DataSetPrincipal();
-            this.spDetalleLiquiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spDeudaLiquiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.txtValorKilo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbInscripcion = new System.Windows.Forms.RadioButton();
             this.rdbSemestral = new System.Windows.Forms.RadioButton();
@@ -48,8 +46,6 @@ namespace CapaPresentacion.Formularios
             this.rdbSegundo = new System.Windows.Forms.RadioButton();
             this.rdbPrimero = new System.Windows.Forms.RadioButton();
             this.lblPeriodo = new System.Windows.Forms.Label();
-            this.reportReclamo = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportLiquidacion = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label6 = new System.Windows.Forms.Label();
             this.nudCuotas = new System.Windows.Forms.NumericUpDown();
             this.dtpFechaLiq = new Controles.Controles.DatePicker();
@@ -77,42 +73,26 @@ namespace CapaPresentacion.Formularios
             this.label2 = new System.Windows.Forms.Label();
             this.txtDesde = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.reportLiquidacion = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dataSetPrincipal = new CapaPresentacion.DataSetPrincipal();
+            this.spLiquidacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.spLiquidacionTableAdapter = new CapaPresentacion.DataSetPrincipalTableAdapters.spLiquidacionTableAdapter();
-            this.spDetalleLiquiTableAdapter = new CapaPresentacion.DataSetPrincipalTableAdapters.spDetalleLiquiTableAdapter();
+            this.spDeudaLiquiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.spDeudaLiquiTableAdapter = new CapaPresentacion.DataSetPrincipalTableAdapters.spDeudaLiquiTableAdapter();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtValorKilo = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.spLiquidacionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spDetalleLiquiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spDeudaLiquiBindingSource)).BeginInit();
+            this.spDetalleLiquiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spDetalleLiquiTableAdapter = new CapaPresentacion.DataSetPrincipalTableAdapters.spDetalleLiquiTableAdapter();
+            this.reportReclamo = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpSemestre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCuotas)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spLiquidacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spDeudaLiquiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spDetalleLiquiBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // spLiquidacionBindingSource
-            // 
-            this.spLiquidacionBindingSource.DataMember = "spLiquidacion";
-            this.spLiquidacionBindingSource.DataSource = this.dataSetPrincipal;
-            // 
-            // dataSetPrincipal
-            // 
-            this.dataSetPrincipal.DataSetName = "DataSetPrincipal";
-            this.dataSetPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spDetalleLiquiBindingSource
-            // 
-            this.spDetalleLiquiBindingSource.DataMember = "spDetalleLiqui";
-            this.spDetalleLiquiBindingSource.DataSource = this.dataSetPrincipal;
-            // 
-            // spDeudaLiquiBindingSource
-            // 
-            this.spDeudaLiquiBindingSource.DataMember = "spDeudaLiqui";
-            this.spDeudaLiquiBindingSource.DataSource = this.dataSetPrincipal;
             // 
             // pnlTitulo
             // 
@@ -139,12 +119,12 @@ namespace CapaPresentacion.Formularios
             // pnlDeck
             // 
             this.pnlDeck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlDeck.Controls.Add(this.reportReclamo);
+            this.pnlDeck.Controls.Add(this.reportLiquidacion);
             this.pnlDeck.Controls.Add(this.txtValorKilo);
             this.pnlDeck.Controls.Add(this.label4);
             this.pnlDeck.Controls.Add(this.groupBox2);
             this.pnlDeck.Controls.Add(this.grpSemestre);
-            this.pnlDeck.Controls.Add(this.reportReclamo);
-            this.pnlDeck.Controls.Add(this.reportLiquidacion);
             this.pnlDeck.Controls.Add(this.label6);
             this.pnlDeck.Controls.Add(this.nudCuotas);
             this.pnlDeck.Controls.Add(this.dtpFechaLiq);
@@ -174,6 +154,28 @@ namespace CapaPresentacion.Formularios
             this.pnlDeck.Name = "pnlDeck";
             this.pnlDeck.Size = new System.Drawing.Size(1067, 548);
             this.pnlDeck.TabIndex = 25;
+            // 
+            // txtValorKilo
+            // 
+            this.txtValorKilo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtValorKilo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtValorKilo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtValorKilo.ForeColor = System.Drawing.Color.White;
+            this.txtValorKilo.Location = new System.Drawing.Point(444, 158);
+            this.txtValorKilo.Name = "txtValorKilo";
+            this.txtValorKilo.Size = new System.Drawing.Size(73, 23);
+            this.txtValorKilo.TabIndex = 4;
+            this.txtValorKilo.Text = "0";
+            this.txtValorKilo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(312, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(126, 17);
+            this.label4.TabIndex = 156;
+            this.label4.Text = "Precio Kg. Novillo:";
             // 
             // groupBox2
             // 
@@ -268,33 +270,6 @@ namespace CapaPresentacion.Formularios
             this.lblPeriodo.Size = new System.Drawing.Size(18, 23);
             this.lblPeriodo.TabIndex = 6;
             this.lblPeriodo.Text = "-";
-            // 
-            // reportReclamo
-            // 
-            this.reportReclamo.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rpt_Reclamo_Soc.rdlc";
-            this.reportReclamo.Location = new System.Drawing.Point(872, 10);
-            this.reportReclamo.Name = "reportReclamo";
-            this.reportReclamo.ServerReport.BearerToken = null;
-            this.reportReclamo.Size = new System.Drawing.Size(150, 32);
-            this.reportReclamo.TabIndex = 148;
-            // 
-            // reportLiquidacion
-            // 
-            reportDataSource1.Name = "DS_Liquidacion";
-            reportDataSource1.Value = this.spLiquidacionBindingSource;
-            reportDataSource2.Name = "DS_Detalle";
-            reportDataSource2.Value = this.spDetalleLiquiBindingSource;
-            reportDataSource3.Name = "DS_Deuda";
-            reportDataSource3.Value = this.spDeudaLiquiBindingSource;
-            this.reportLiquidacion.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportLiquidacion.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportLiquidacion.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportLiquidacion.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rpt_Liquidacion_Sociedades.rdlc";
-            this.reportLiquidacion.Location = new System.Drawing.Point(704, 10);
-            this.reportLiquidacion.Name = "reportLiquidacion";
-            this.reportLiquidacion.ServerReport.BearerToken = null;
-            this.reportLiquidacion.Size = new System.Drawing.Size(161, 32);
-            this.reportLiquidacion.TabIndex = 147;
             // 
             // label6
             // 
@@ -629,39 +604,64 @@ namespace CapaPresentacion.Formularios
             this.txtId.Text = "0";
             this.txtId.Visible = false;
             // 
+            // reportLiquidacion
+            // 
+            reportDataSource1.Name = "DS_Liquidacion";
+            reportDataSource1.Value = this.spLiquidacionBindingSource;
+            reportDataSource2.Name = "DS_Deuda";
+            reportDataSource2.Value = this.spDeudaLiquiBindingSource;
+            reportDataSource3.Name = "DS_Detalle";
+            reportDataSource3.Value = this.spDetalleLiquiBindingSource;
+            this.reportLiquidacion.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportLiquidacion.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportLiquidacion.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportLiquidacion.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rpt_Liquidacion_Soc.rdlc";
+            this.reportLiquidacion.Location = new System.Drawing.Point(770, 20);
+            this.reportLiquidacion.Name = "reportLiquidacion";
+            this.reportLiquidacion.ServerReport.BearerToken = null;
+            this.reportLiquidacion.Size = new System.Drawing.Size(271, 32);
+            this.reportLiquidacion.TabIndex = 157;
+            // 
+            // dataSetPrincipal
+            // 
+            this.dataSetPrincipal.DataSetName = "DataSetPrincipal";
+            this.dataSetPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // spLiquidacionBindingSource
+            // 
+            this.spLiquidacionBindingSource.DataMember = "spLiquidacion";
+            this.spLiquidacionBindingSource.DataSource = this.dataSetPrincipal;
+            // 
             // spLiquidacionTableAdapter
             // 
             this.spLiquidacionTableAdapter.ClearBeforeFill = true;
             // 
-            // spDetalleLiquiTableAdapter
+            // spDeudaLiquiBindingSource
             // 
-            this.spDetalleLiquiTableAdapter.ClearBeforeFill = true;
+            this.spDeudaLiquiBindingSource.DataMember = "spDeudaLiqui";
+            this.spDeudaLiquiBindingSource.DataSource = this.dataSetPrincipal;
             // 
             // spDeudaLiquiTableAdapter
             // 
             this.spDeudaLiquiTableAdapter.ClearBeforeFill = true;
             // 
-            // label4
+            // spDetalleLiquiBindingSource
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(312, 160);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 17);
-            this.label4.TabIndex = 156;
-            this.label4.Text = "Precio Kg. Novillo:";
+            this.spDetalleLiquiBindingSource.DataMember = "spDetalleLiqui";
+            this.spDetalleLiquiBindingSource.DataSource = this.dataSetPrincipal;
             // 
-            // txtValorKilo
+            // spDetalleLiquiTableAdapter
             // 
-            this.txtValorKilo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtValorKilo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtValorKilo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtValorKilo.ForeColor = System.Drawing.Color.White;
-            this.txtValorKilo.Location = new System.Drawing.Point(444, 158);
-            this.txtValorKilo.Name = "txtValorKilo";
-            this.txtValorKilo.Size = new System.Drawing.Size(73, 23);
-            this.txtValorKilo.TabIndex = 4;
-            this.txtValorKilo.Text = "0";
-            this.txtValorKilo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.spDetalleLiquiTableAdapter.ClearBeforeFill = true;
+            // 
+            // reportReclamo
+            // 
+            this.reportReclamo.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rpt_Reclamo_Soc.rdlc";
+            this.reportReclamo.Location = new System.Drawing.Point(771, 59);
+            this.reportReclamo.Name = "reportReclamo";
+            this.reportReclamo.ServerReport.BearerToken = null;
+            this.reportReclamo.Size = new System.Drawing.Size(270, 30);
+            this.reportReclamo.TabIndex = 158;
             // 
             // frmLiquidarSociedades
             // 
@@ -679,10 +679,6 @@ namespace CapaPresentacion.Formularios
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LIQUIDACIÓN A SOCIEDADES";
             this.Load += new System.EventHandler(this.frmLiquidarSociedades_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.spLiquidacionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spDetalleLiquiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spDeudaLiquiBindingSource)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlDeck.ResumeLayout(false);
@@ -693,6 +689,10 @@ namespace CapaPresentacion.Formularios
             this.grpSemestre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCuotas)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spLiquidacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spDeudaLiquiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spDetalleLiquiBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -731,15 +731,6 @@ namespace CapaPresentacion.Formularios
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown nudCuotas;
-        private Microsoft.Reporting.WinForms.ReportViewer reportLiquidacion;
-        private System.Windows.Forms.BindingSource spLiquidacionBindingSource;
-        private DataSetPrincipal dataSetPrincipal;
-        private System.Windows.Forms.BindingSource spDetalleLiquiBindingSource;
-        private System.Windows.Forms.BindingSource spDeudaLiquiBindingSource;
-        private DataSetPrincipalTableAdapters.spLiquidacionTableAdapter spLiquidacionTableAdapter;
-        private DataSetPrincipalTableAdapters.spDetalleLiquiTableAdapter spDetalleLiquiTableAdapter;
-        private DataSetPrincipalTableAdapters.spDeudaLiquiTableAdapter spDeudaLiquiTableAdapter;
-        private Microsoft.Reporting.WinForms.ReportViewer reportReclamo;
         private System.Windows.Forms.GroupBox grpSemestre;
         private System.Windows.Forms.RadioButton rdbSegundo;
         private System.Windows.Forms.RadioButton rdbPrimero;
@@ -747,5 +738,14 @@ namespace CapaPresentacion.Formularios
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtValorKilo;
         private System.Windows.Forms.Label label4;
+        private Microsoft.Reporting.WinForms.ReportViewer reportLiquidacion;
+        private System.Windows.Forms.BindingSource spLiquidacionBindingSource;
+        private DataSetPrincipal dataSetPrincipal;
+        private System.Windows.Forms.BindingSource spDeudaLiquiBindingSource;
+        private System.Windows.Forms.BindingSource spDetalleLiquiBindingSource;
+        private DataSetPrincipalTableAdapters.spLiquidacionTableAdapter spLiquidacionTableAdapter;
+        private DataSetPrincipalTableAdapters.spDeudaLiquiTableAdapter spDeudaLiquiTableAdapter;
+        private DataSetPrincipalTableAdapters.spDetalleLiquiTableAdapter spDetalleLiquiTableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer reportReclamo;
     }
 }

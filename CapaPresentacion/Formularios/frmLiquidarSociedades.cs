@@ -29,12 +29,13 @@ namespace CapaPresentacion.Formularios
 
         decimal totalAfip, saldoAnt, valorKilo, importeLiq;
         bool senial = true;
+        bool vence = false;
         int idSoc, numeroSoc, codpostal, codins, codsem, cuotasAnt, nrocpbte;
         int matri1, matri2, matri3, matri4, documAfip, item, idDebito, id;
         double cuitAfip;
         //---
 
-        string nombrePDF, path, buscar, linea;
+        string matricula, martillero, nombrePDF, path, buscar, linea;
         string ddfianza, mmfianza, yyyyfianza, avisofianza;
 
         DateTime vencefianza, fechanacim, fecestado;
@@ -51,6 +52,8 @@ namespace CapaPresentacion.Formularios
             txtObs.Text = "Informar al colegio el medio de pago y el monto si no paga con esta boleta en el banco, gracias.";
             txtObs.Refresh();
             txtDesde.Select();
+            this.reportLiquidacion.RefreshReport();
+            this.reportReclamo.RefreshReport();
         }
 
         //***** PROCEDIMIENTO DEL BOTÓN LIMPIAR *****
@@ -236,6 +239,9 @@ namespace CapaPresentacion.Formularios
                 debitoS = string.Empty;
                 debitoI = string.Empty;
 
+                lblProcesando.Text = numeroSoc + " - " + nombre + " - " + estadoSoc;
+                lblProcesando.Refresh();
+
                 saldoAnt = 0;
                 tipoFac = "FAC";
                 prefijo = "0004";
@@ -257,8 +263,20 @@ namespace CapaPresentacion.Formularios
 
                         if (cuotasAnt < nudCuotas.Value)
                         {
+                            //comprobante = "12345678";
+                            //cae = "987654321";
+                            //vtocae = "20240131";
+                            //Subfijo = "12345678";
+                            //GraboDetalle();
+                            //GraboLiquidacion();
+                            //GraboCpbte();
+                            //BuscaMartillero();
+                            //ExportarPDF();
+
                             //ProcesoLiquidacion();
                             PruebaLiquidacion();
+
+                            BuscaMartillero();
                         }
                         else
                         {
@@ -275,88 +293,6 @@ namespace CapaPresentacion.Formularios
             }
         }
 
-        //***** PROCESO PARA REALIZAR LA FACTURA DE PRUEBA *****
-        private void PruebaLiquidacion()
-        {
-            /* Los nombres de los parametros de las funciones se obtienen descomprimiendo FEAFIP DOC
-                y luego abriendo el archivo index.html de la carpeta "Doc Interfaces".
-                la interfaz correspondiente a este ejemplo es Iwsfev1 para facturas A y B.*/
-            const
-            //URLs de autenticacion y negocio. Cambiarlas por las de producción al implementarlas en el cliente(abajo)
-            string URLWSAA = "https://wsaahomo.afip.gov.ar/ws/services/LoginCms";
-            // Desarrollo: https://wsaahomo.afip.gov.ar/ws/services/LoginCms
-            string URLWSW = "https://wswhomo.afip.gov.ar/wsfev1/service.asmx";
-            // Desarrollo: https://wswhomo.afip.gov.ar/wsfev1/service.asmx
-
-            // Agregar FEAFIPlib como referencia al proyecto desde el menu y luego en el using.
-
-            string CAE = "";
-            string Vencimiento = "";
-            string Resultado = "";
-            string Reproceso = "";
-            double nro = 0;
-            double total = 0;
-            int PtoVta = 4;
-            int TipoComp = 11; // Factura C(ir a http://www.bitingenieria.com.ar/codigos.html)
-            string FechaComp = DateTime.Today.ToString("yyyyMMdd");
-
-            wsfev1 lwsfev1 = new wsfev1();
-            lwsfev1.CUIT = 20939802593;
-            lwsfev1.URL = URLWSW;
-            if (lwsfev1.login("certificado.crt", "clave.key", URLWSAA))
-            {
-                if (lwsfev1.SFRecuperaLastCMP(PtoVta, TipoComp) == false)
-                {
-                    MessageBox.Show(lwsfev1.ErrorDesc);
-                }
-                else
-                {
-                    nro = lwsfev1.SFLastCMP + 1;
-                    comprobante = new PonerCeros().Proceso(Convert.ToString(nro), 8);    // muevo el comprobante recuperado de AFIP 
-
-                    //***** PROCESO GENERAL PARA LIQUIDAR LA SOCIEDAD *****
-                    senial = true;
-
-                    GraboDetalle();
-                    GraboLiquidacion();
-                    GraboCpbte();
-
-                    if (senial)
-                    {
-                        lwsfev1.Reset();
-                        total = Convert.ToDouble(totalAfip);
-
-                        lwsfev1.AgregaFactura(3, documAfip, cuitAfip, nro, nro, FechaComp, total, 0, total, 0, FechaComp, FechaComp, FechaComp, "PES", 1);
-                        //lwsfev1.AgregaIVA(3, 0, 0); 
-
-                        if (lwsfev1.Autorizar(PtoVta, (int)FEAFIPLib.TipoComprobante.tcFacturaC))
-                        {
-                            lwsfev1.AutorizarRespuesta(0, out CAE, out Vencimiento, out Resultado, out Reproceso);
-                            if (Resultado == "A")
-                            {
-                                cae = CAE;
-                                vtocae = Vencimiento;
-                                MessageBox.Show("Felicitaciones! Si ve este mensaje instalo correctamente FEAFIP. CAE y Vencimiento "
-                                    + ":" + CAE + " " + Vencimiento);
-                                ExportarPDF();
-                            }
-                            else
-                            {
-                                MessageBox.Show(lwsfev1.AutorizarRespuestaObs(0));
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show(lwsfev1.ErrorDesc);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show(lwsfev1.ErrorDesc);
-            }
-        }
 
 
         //***** CUENTO LA CANTIDAD DE PERÍODOS ADEUDADOS *****
@@ -603,15 +539,19 @@ namespace CapaPresentacion.Formularios
 
             FechaVtoCae();
             GenerarQR();
-            avisofianza = "";
 
-            ReportParameter[] parametros = new ReportParameter[6];
+            reportLiquidacion.LocalReport.EnableExternalImages = true;
+
+            ReportParameter[] parametros = new ReportParameter[7];
             parametros[0] = new ReportParameter("prmObsFianza", avisofianza);
             parametros[1] = new ReportParameter("prmObsGral", txtObs.Text);
             parametros[2] = new ReportParameter("prmCae", cae);
             parametros[3] = new ReportParameter("prmVtoCae", vtocae);
             parametros[4] = new ReportParameter("prmFecha", fechaLiq);
             parametros[5] = new ReportParameter("prmCuit", Convert.ToString(cuit));
+            parametros[6] = new ReportParameter("prmRutaImg", @"file:///D:\Proyectos\FeAFIP\QRAfip\qr.png", true);
+            //parametros[6].Name = "prmRutaImg";
+            //parametros[6].Values.Add(@"D:\Proyectos\FeAFIP\QRAfip\qr.png");
 
             reportLiquidacion.LocalReport.SetParameters(parametros);
 
@@ -632,7 +572,7 @@ namespace CapaPresentacion.Formularios
             buscar = "PasswordMail";
             password = new LeerConfig().Proceso(buscar);
 
-            maildestino = "carlos.a.mayans@gmail.com";            //*** mail para pruebas
+            //maildestino = "carlos.a.mayans@gmail.com";            //*** mail para pruebas
 
             bool enviado = new EnviarCorreo().EnviarMail(mailorigen, password, maildestino, txtAsunto.Text, txtMensaje.Text, path);
 
@@ -650,6 +590,29 @@ namespace CapaPresentacion.Formularios
             }
         }
 
+        //***** PROCESO PARA BUSCAR LOS MARTILLEROS DE LA SOCIEDAD *****
+        private void BuscaMartillero()
+        {
+            for (int i = 1; i < 5; i++)
+            {
+                if (i == 1) matricula = Convert.ToString(matri1);
+                if (i == 2) matricula = Convert.ToString(matri2);
+                if (i == 3) matricula = Convert.ToString(matri3);
+                if (i == 4) matricula = Convert.ToString(matri4);
+
+                string mensaje = string.Empty;
+
+                List<CE_Colegiados> Lista = new CN_Colegiados().ListaBuscado(matricula, out mensaje);
+
+                foreach (var item in Lista)
+                {
+                    vencefianza = item.FecVenceFianza;
+                    martillero = item.ApelNombres;
+                    ControlFianza();
+                }
+            }
+        }
+
         //***** PROCESO PARA CONTROLAR EL VENCIMIENTO DE LA FIANZA *****
         private void ControlFianza()
         {
@@ -658,19 +621,24 @@ namespace CapaPresentacion.Formularios
             mmfianza = new PonerCeros().Proceso(fecha.Substring(3, 2), 2);
             yyyyfianza = fecha.Substring(6, 4);
             avisofianza = "";
+            vence = false;
 
-            if (int.Parse(mm) == int.Parse(mmfianza) && int.Parse(yyyy) == int.Parse(yyyyfianza))
+            if (int.Parse(yyyy) > int.Parse(yyyyfianza))
             {
-                avisofianza = "SU FIANZA VENCE EL: " + ddfianza + "/" + mmfianza + "/" + yyyyfianza;
+                vence = true;
             }
-            else if (int.Parse(mm) > int.Parse(mmfianza) && (int.Parse(yyyy) == int.Parse(yyyyfianza) || int.Parse(yyyy) > int.Parse(yyyyfianza)))
+            else if (int.Parse(yyyy) == int.Parse(yyyyfianza) && int.Parse(mm) > int.Parse(mmfianza))
             {
-                avisofianza = "SU FIANZA ESTÁ VENCIDA DESDE EL: " + ddfianza + "/" + mmfianza + "/" + yyyyfianza;
-                CambiarEstado(numeroSoc, "INACTIVA");
+                vence = true;
             }
-            else if (int.Parse(yyyy) < int.Parse(yyyyfianza))
+
+            if (vence)
             {
-                avisofianza = string.Empty;
+                avisofianza = " * Martillero: " + matricula + " - " + martillero + " Fianza Vencida el : " + ddfianza + "/" + mmfianza + "/" + yyyyfianza;
+            }
+            else
+            {
+                avisofianza = " * Martillero: " + matricula + " - " + martillero + " Fianza Vence el : " + ddfianza + "/" + mmfianza + "/" + yyyyfianza;
             }
         }
 
@@ -757,7 +725,7 @@ namespace CapaPresentacion.Formularios
             Double codAut = Convert.ToDouble(cae);
             if (Qr.Generar(ver, fecha, cuit, ptoVta, tipoComp, nroCmp, importe, moneda, ctz, tipoDocRec, nroDocRec, tipoCodAut, codAut))
             {
-                MessageBox.Show("QR generado con éxito");
+                //MessageBox.Show("QR generado con éxito");
             }
             else
             {
@@ -812,28 +780,43 @@ namespace CapaPresentacion.Formularios
                     nro = lwsfev1.SFLastCMP + 1;
                     comprobante = new PonerCeros().Proceso(Convert.ToString(nro), 8);    // muevo el comprobante recuperado de AFIP 
 
-                    lwsfev1.Reset();
-                    lwsfev1.AgregaFactura(3, 80, 30508664180, nro, nro, FechaComp, total, 0, total, 0, FechaComp, FechaComp, FechaComp, "PES", 1);
-                    //lwsfev1.AgregaIVA(3, 0, 0); -------NO SE DECLARA
+                    //***** PROCESO GENERAL PARA LIQUIDAR LA SOCIEDAD *****
+                    senial = true;
 
-                    if (lwsfev1.Autorizar(PtoVta, (int)FEAFIPLib.TipoComprobante.tcFacturaC))
+                    GraboDetalle();
+                    GraboLiquidacion();
+                    GraboCpbte();
+                    BuscaMartillero();
+
+                    if (senial)
                     {
-                        lwsfev1.AutorizarRespuesta(0, out CAE, out Vencimiento, out Resultado, out Reproceso);
-                        if (Resultado == "A")
+                        lwsfev1.Reset();
+                        total = Convert.ToDouble(totalAfip);
+
+                        lwsfev1.AgregaFactura(3, 80, 30508664180, nro, nro, FechaComp, total, 0, total, 0, FechaComp, FechaComp, FechaComp, "PES", 1);
+                        //lwsfev1.AgregaIVA(3, 0, 0); -------NO SE DECLARA
+
+                        if (lwsfev1.Autorizar(PtoVta, (int)FEAFIPLib.TipoComprobante.tcFacturaC))
                         {
-                            cae = CAE;
-                            vtocae = Vencimiento;
-                            //MessageBox.Show("Felicitaciones! Si ve este mensaje instalo correctamente FEAFIP. CAE y Vencimiento "
-                            //    + ":" + CAE + " " + Vencimiento);
+                            lwsfev1.AutorizarRespuesta(0, out CAE, out Vencimiento, out Resultado, out Reproceso);
+                            if (Resultado == "A")
+                            {
+                                cae = CAE;
+                                vtocae = Vencimiento;
+                                //MessageBox.Show("Felicitaciones! Si ve este mensaje instalo correctamente FEAFIP. CAE y Vencimiento "
+                                //    + ":" + CAE + " " + Vencimiento);
+                                ExportarPDF();
+                            }
+                            else
+                            {
+                                MessageBox.Show(lwsfev1.AutorizarRespuestaObs(0));
+                            }
                         }
                         else
                         {
-                            MessageBox.Show(lwsfev1.AutorizarRespuestaObs(0));
+                            MessageBox.Show(lwsfev1.ErrorDesc);
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show(lwsfev1.ErrorDesc);
+
                     }
                 }
             }
@@ -844,9 +827,88 @@ namespace CapaPresentacion.Formularios
         }
 
 
+        //***** PROCESO PARA REALIZAR LA FACTURA DE PRUEBA *****
+        private void PruebaLiquidacion()
+        {
+            /* Los nombres de los parametros de las funciones se obtienen descomprimiendo FEAFIP DOC
+                y luego abriendo el archivo index.html de la carpeta "Doc Interfaces".
+                la interfaz correspondiente a este ejemplo es Iwsfev1 para facturas A y B.*/
+            const
+            //URLs de autenticacion y negocio. Cambiarlas por las de producción al implementarlas en el cliente(abajo)
+            string URLWSAA = "https://wsaahomo.afip.gov.ar/ws/services/LoginCms";
+            // Desarrollo: https://wsaahomo.afip.gov.ar/ws/services/LoginCms
+            string URLWSW = "https://wswhomo.afip.gov.ar/wsfev1/service.asmx";
+            // Desarrollo: https://wswhomo.afip.gov.ar/wsfev1/service.asmx
 
+            // Agregar FEAFIPlib como referencia al proyecto desde el menu y luego en el using.
 
+            string CAE = "";
+            string Vencimiento = "";
+            string Resultado = "";
+            string Reproceso = "";
+            double nro = 0;
+            double total = 0;
+            int PtoVta = 4;
+            int TipoComp = 11; // Factura C(ir a http://www.bitingenieria.com.ar/codigos.html)
+            string FechaComp = DateTime.Today.ToString("yyyyMMdd");
 
+            wsfev1 lwsfev1 = new wsfev1();
+            lwsfev1.CUIT = 20939802593;
+            lwsfev1.URL = URLWSW;
+            if (lwsfev1.login("certificado.crt", "clave.key", URLWSAA))
+            {
+                if (lwsfev1.SFRecuperaLastCMP(PtoVta, TipoComp) == false)
+                {
+                    MessageBox.Show(lwsfev1.ErrorDesc);
+                }
+                else
+                {
+                    nro = lwsfev1.SFLastCMP + 1;
+                    comprobante = new PonerCeros().Proceso(Convert.ToString(nro), 8);    // muevo el comprobante recuperado de AFIP 
+
+                    //***** PROCESO GENERAL PARA LIQUIDAR LA SOCIEDAD *****
+                    senial = true;
+
+                    GraboDetalle();
+                    GraboLiquidacion();
+                    GraboCpbte();
+                    BuscaMartillero();
+
+                    if (senial)
+                    {
+                        lwsfev1.Reset();
+                        total = Convert.ToDouble(totalAfip);
+
+                        lwsfev1.AgregaFactura(3, documAfip, cuitAfip, nro, nro, FechaComp, total, 0, total, 0, FechaComp, FechaComp, FechaComp, "PES", 1);
+                        //lwsfev1.AgregaIVA(3, 0, 0); 
+
+                        if (lwsfev1.Autorizar(PtoVta, (int)FEAFIPLib.TipoComprobante.tcFacturaC))
+                        {
+                            lwsfev1.AutorizarRespuesta(0, out CAE, out Vencimiento, out Resultado, out Reproceso);
+                            if (Resultado == "A")
+                            {
+                                cae = CAE;
+                                vtocae = Vencimiento;
+                                //MessageBox.Show("Felicitaciones! Si ve este mensaje instalo correctamente FEAFIP. CAE y Vencimiento "
+                                //    + ":" + CAE + " " + Vencimiento);
+                                ExportarPDF();
+                            }
+                            else
+                            {
+                                MessageBox.Show(lwsfev1.AutorizarRespuestaObs(0));
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(lwsfev1.ErrorDesc);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show(lwsfev1.ErrorDesc);
+            }
+        }
     }
-
 }
