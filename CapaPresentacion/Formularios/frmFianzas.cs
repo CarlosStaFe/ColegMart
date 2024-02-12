@@ -3,7 +3,6 @@ using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -66,9 +65,9 @@ namespace CapaPresentacion.Formularios
                 }
 
                 estado = dgvFianzas.Rows[i].Cells["EstadoFza"].Value.ToString().Trim();
-                if (estado == "PENDIENTE")
+                if (estado == "INCOMPLETA")
                 {
-                    dgvFianzas.Rows[i].Cells["EstadoFza"].Style.ForeColor = Color.Red;
+                    dgvFianzas.Rows[i].Cells["EstadoFza"].Style.ForeColor = Color.Yellow;
                 }
                 else
                 {
@@ -117,8 +116,10 @@ namespace CapaPresentacion.Formularios
             txtTelFiador.Text = string.Empty;
             dtpFecFirmaMat.Format = DateTimePickerFormat.Custom;
             dtpFecFirmaMat.CustomFormat = " ";
+            dtpFecFirmaMat.Enabled = false;
             dtpFecFirmaFiador.Format = DateTimePickerFormat.Custom;
             dtpFecFirmaFiador.CustomFormat = " ";
+            dtpFecFirmaFiador.Enabled = false;
             lblEstadoFianza.ForeColor = Color.Lime;
             lblEstado.ForeColor = Color.Lime;
 
@@ -154,8 +155,8 @@ namespace CapaPresentacion.Formularios
                 {
                     txtIndice.Text = indice.ToString();
                     txtId.Text = dgvFianzas.Rows[indice].Cells["id_Fza"].Value.ToString();
-                    lblNombre.Text = dgvFianzas.Rows[indice].Cells["Matricula"].Value.ToString();
-                    lblNombre.Text = lblNombre.Text + " - " + dgvFianzas.Rows[indice].Cells["Apellido"].Value.ToString();
+                    lblNombre.Text = dgvFianzas.Rows[indice].Cells["Mat"].Value.ToString();
+                    lblNombre.Text = lblNombre.Text + " - " + dgvFianzas.Rows[indice].Cells["Apellido"].Value.ToString().Trim();
                     lblNombre.Text = lblNombre.Text + " - Tel.: " + dgvFianzas.Rows[indice].Cells["Telefono"].Value.ToString();
 
                     fecha = dgvFianzas.Rows[indice].Cells["FecFirmaMat"].Value.ToString();
@@ -163,10 +164,13 @@ namespace CapaPresentacion.Formularios
                     {
                         dtpFecFirmaMat.Format = DateTimePickerFormat.Custom;
                         dtpFecFirmaMat.CustomFormat = " ";
+                        dtpFecFirmaMat.Enabled = true;
                     }
                     else
                     {
-                        dtpFecFirmaMat.Value = Convert.ToDateTime(dgvFianzas.Rows[indice].Cells["FecFirmaMat"].Value);
+                        dtpFecFirmaMat.CustomFormat = "dd/MM/yyyy";
+                        dtpFecFirmaMat.Value = Convert.ToDateTime(dgvFianzas.Rows[indice].Cells["FecFirmaMat"].Value.ToString());
+                        dtpFecFirmaMat.Enabled = false;
                     }
 
                     txtUserFirmaMat.Text = dgvFianzas.Rows[indice].Cells["UserFirmaMat"].Value.ToString();
@@ -176,10 +180,13 @@ namespace CapaPresentacion.Formularios
                     {
                         dtpFecFirmaFiador.Format = DateTimePickerFormat.Custom;
                         dtpFecFirmaFiador.CustomFormat = " ";
+                        dtpFecFirmaFiador.Enabled = true;
                     }
                     else
                     {
-                        dtpFecFirmaFiador.Value = (DateTime)dgvFianzas.Rows[indice].Cells["FecFirmaFiador"].Value;
+                        dtpFecFirmaFiador.CustomFormat = "dd/MM/yyyy";
+                        dtpFecFirmaFiador.Value = Convert.ToDateTime(dgvFianzas.Rows[indice].Cells["FecFirmaFiador"].Value.ToString());
+                        dtpFecFirmaFiador.Enabled = false;
                     }
 
                     txtUserFirmaFiador.Text = dgvFianzas.Rows[indice].Cells["UserFirmaFiador"].Value.ToString();
@@ -191,10 +198,12 @@ namespace CapaPresentacion.Formularios
                     lblEstadoFianza.Text = dgvFianzas.Rows[indice].Cells["EstadoFza"].Value.ToString();
 
                     //***** COLOREO LA FIANZA SEGÚN LA FECHA *****
-                    if (lblEstadoFianza.Text == "PENDIENTE")
+                    if (lblEstadoFianza.Text == "INCOMPLETA")
                     {
                         lblEstado.ForeColor = Color.Red;
                         lblEstadoFianza.ForeColor = Color.Red;
+                        dtpFecFirmaMat.Enabled = true;
+                        dtpFecFirmaFiador.Enabled = true;
                     }
                     else
                     {
@@ -253,7 +262,7 @@ namespace CapaPresentacion.Formularios
                     row.Cells["TelFiador"].Value = txtTelFiador.Text;
                     row.Cells["EstadoFza"].Value = estado;
 
-                    if(estado == "COMPLETA")
+                    if (estado == "COMPLETA")
                     {
                         row.Cells["FecVtoFianza"].Style.ForeColor = Color.Lime;
                         row.Cells["EstadoFza"].Style.ForeColor = Color.Lime;
@@ -331,7 +340,8 @@ namespace CapaPresentacion.Formularios
                 respuesta = dr.ToString();
                 dtpFecFirmaMat.Format = DateTimePickerFormat.Custom;
                 dtpFecFirmaMat.CustomFormat = " ";
-                dtpFecFirmaMat.Select();            }
+                dtpFecFirmaMat.Select();
+            }
         }
 
         //***** PROCEDIMIENTO DEL INGRESO DE LA FIRMA DEL FIADOR *****

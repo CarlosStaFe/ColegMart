@@ -69,7 +69,7 @@ namespace CapaPresentacion.Formularios
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(821, 40);
+            this.pnlTitulo.Size = new System.Drawing.Size(910, 40);
             this.pnlTitulo.TabIndex = 14;
             // 
             // label1
@@ -100,7 +100,7 @@ namespace CapaPresentacion.Formularios
             this.pnlDeck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDeck.Location = new System.Drawing.Point(0, 40);
             this.pnlDeck.Name = "pnlDeck";
-            this.pnlDeck.Size = new System.Drawing.Size(821, 625);
+            this.pnlDeck.Size = new System.Drawing.Size(910, 625);
             this.pnlDeck.TabIndex = 15;
             // 
             // btnSalir
@@ -115,7 +115,7 @@ namespace CapaPresentacion.Formularios
             this.btnSalir.IconColor = System.Drawing.Color.Aqua;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
-            this.btnSalir.Location = new System.Drawing.Point(705, 115);
+            this.btnSalir.Location = new System.Drawing.Point(816, 115);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(70, 53);
             this.btnSalir.TabIndex = 3;
@@ -180,7 +180,7 @@ namespace CapaPresentacion.Formularios
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
             this.dgvSociedades.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvSociedades.Size = new System.Drawing.Size(668, 535);
+            this.dgvSociedades.Size = new System.Drawing.Size(780, 535);
             this.dgvSociedades.TabIndex = 71;
             this.dgvSociedades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSociedades_CellContentClick);
             this.dgvSociedades.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvSociedades_CellPainting);
@@ -191,7 +191,7 @@ namespace CapaPresentacion.Formularios
             this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIndice.Enabled = false;
             this.txtIndice.ForeColor = System.Drawing.Color.White;
-            this.txtIndice.Location = new System.Drawing.Point(695, 303);
+            this.txtIndice.Location = new System.Drawing.Point(821, 303);
             this.txtIndice.Name = "txtIndice";
             this.txtIndice.Size = new System.Drawing.Size(65, 16);
             this.txtIndice.TabIndex = 75;
@@ -203,7 +203,7 @@ namespace CapaPresentacion.Formularios
             this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserRegistro.Enabled = false;
             this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtUserRegistro.Location = new System.Drawing.Point(695, 281);
+            this.txtUserRegistro.Location = new System.Drawing.Point(821, 281);
             this.txtUserRegistro.Name = "txtUserRegistro";
             this.txtUserRegistro.Size = new System.Drawing.Size(65, 16);
             this.txtUserRegistro.TabIndex = 74;
@@ -215,7 +215,7 @@ namespace CapaPresentacion.Formularios
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtId.Enabled = false;
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(695, 259);
+            this.txtId.Location = new System.Drawing.Point(821, 259);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(49, 16);
             this.txtId.TabIndex = 60;
@@ -331,7 +331,7 @@ namespace CapaPresentacion.Formularios
             this.Nombre.HeaderText = "NOMBRE";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 350;
+            this.Nombre.Width = 460;
             // 
             // Estado
             // 
@@ -352,7 +352,7 @@ namespace CapaPresentacion.Formularios
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(821, 665);
+            this.ClientSize = new System.Drawing.Size(910, 665);
             this.Controls.Add(this.pnlDeck);
             this.Controls.Add(this.pnlTitulo);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

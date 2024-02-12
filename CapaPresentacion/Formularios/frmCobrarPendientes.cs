@@ -18,7 +18,7 @@ namespace CapaPresentacion.Formularios
         decimal saldodeudor, apagar, diferencia, efectivo, transferencia, tarjeta;
         decimal saldo, saldoant, pagado, saldoactual, pagoactual;
         string nombrePDF, tipo, comprobante, buscar, linea, path, estado, detalle, letras, periodo;
-        int nrocpbte, idColeg, idctacte, matricula, orden;
+        int nrocpbte, idctacte, matricula, orden, matri;
 
         public frmCobrarPendientes()
         {
@@ -46,9 +46,20 @@ namespace CapaPresentacion.Formularios
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                matri = Convert.ToInt32(txtMatricula.Text);
+
                 Limpiar();
-                LeerColegiado();
-                CargarDGV();
+
+                if (matri > 60000 && matri < 70000)
+                {
+                    LeerSociedad();
+                    CargarDGVSoc();
+                }
+                else
+                {
+                    LeerColegiado();
+                    CargarDGVColeg();
+                }
             }
         }
 
@@ -60,24 +71,24 @@ namespace CapaPresentacion.Formularios
             AddOwnedForm(CobrarPendientes);
             CobrarPendientes.ShowDialog();
 
-            CargarDGV();
+            CargarDGVColeg();
         }
 
         //***** PROCEDIMIENTO PARA LLAMAR A LA CONSULTA DE SOCIEDADES *****
         private void ConsultaSoc()
         {
             Limpiar();
-            mdlColegiado CobrarPendientes = new mdlColegiado("btnCobrarPendientes");
+            mdlSociedades CobrarPendientes = new mdlSociedades("btnCobrarPendientes");
             AddOwnedForm(CobrarPendientes);
             CobrarPendientes.ShowDialog();
 
-            CargarDGV();
+            CargarDGVSoc();
         }
 
         //***** PROCEDIMIENTO PARA CARGAR LOS MOVIMIENTOS PENDIENTES DE LAS CTASCTES *****
-        private void CargarDGV()
+        private void CargarDGVColeg()
         {
-            int matri = Convert.ToInt32(txtMatricula.Text);
+            matri = Convert.ToInt32(txtMatricula.Text);
 
             List<CE_CtasCtesColeg> ListaCtaCte = new CN_CtasCtesColeg().ListaDeuda(matri);
 
@@ -91,6 +102,37 @@ namespace CapaPresentacion.Formularios
 
                     saldodeudor = saldodeudor + Convert.ToDecimal(item.Saldo);
                     matricula = Convert.ToInt32(item.Matricula);
+                }
+                PintarDGV();
+            }
+            else
+            {
+                string mensaje = string.Empty;
+
+                mensaje += "NO REGISTRA DEUDAS PENDIENTES...!!!";
+                frmMsgBox msg = new frmMsgBox(mensaje, "info", 1);
+                DialogResult dr = msg.ShowDialog();
+            }
+            txtSaldoDeudor.Text = Convert.ToString(saldodeudor);
+        }
+
+        //***** PROCEDIMIENTO PARA CARGAR LOS MOVIMIENTOS PENDIENTES DE LAS CTASCTES *****
+        private void CargarDGVSoc()
+        {
+            matri = Convert.ToInt32(txtMatricula.Text);
+
+            List<CE_CtasCtesSoc> ListaCtaCte = new CN_CtasCtesSoc().ListaDeuda(matri);
+
+            if (ListaCtaCte.Count > 0)
+            {
+                foreach (CE_CtasCtesSoc item in ListaCtaCte)
+                {
+                    dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.Numero, item.Fecha, item.Tipo, item.Prefijo, item.Subfijo, item.Item, item.fk_idDebito,
+                                                item.Detalle, item.Periodo, item.Debe, item.Pagado, item.FechaPago, item.Saldo, item.Estado, item.Obs,
+                                                item.UserRegistro, item.FechaRegistro, "" });
+
+                    saldodeudor = saldodeudor + Convert.ToDecimal(item.Saldo);
+                    matricula = Convert.ToInt32(item.Numero);
                 }
                 PintarDGV();
             }
@@ -156,9 +198,22 @@ namespace CapaPresentacion.Formularios
             foreach (CE_Colegiados item in ListaBuscado)
             {
                 txtId.Text = Convert.ToString(item.id_Coleg);
-                idColeg = Convert.ToInt32(item.id_Coleg);
                 txtMatricula.Text = Convert.ToString(item.Matricula);
                 lblNombre.Text = item.ApelNombres.ToString().Trim();
+            }
+        }
+
+        //***** PROCEDIMIENTO PARA LEER LA SOCIEDAD INGRESADA *****
+        private void LeerSociedad()
+        {
+            string mensaje = string.Empty;
+            List<CE_Sociedades> ListaBuscado = new CN_Sociedades().ListaBuscado(txtMatricula.Text, out mensaje);
+
+            foreach (CE_Sociedades item in ListaBuscado)
+            {
+                txtId.Text = Convert.ToString(item.id_Soc);
+                txtMatricula.Text = Convert.ToString(item.Numero);
+                lblNombre.Text = item.Nombre.ToString().Trim();
             }
         }
 

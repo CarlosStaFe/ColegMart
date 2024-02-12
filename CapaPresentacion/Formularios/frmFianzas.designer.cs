@@ -48,6 +48,8 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtIndice = new System.Windows.Forms.TextBox();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.dtpFecFirmaFiador = new Controles.Controles.DatePicker();
+            this.dtpFecFirmaMat = new Controles.Controles.DatePicker();
             this.lblEstadoFianza = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -69,9 +71,16 @@
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvFianzas = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCalleFiador = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_Fza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FecPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,15 +95,6 @@
             this.ApelFiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CalleFiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TelFiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCalleFiador = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.dtpFecFirmaMat = new Controles.Controles.DatePicker();
-            this.dtpFecFirmaFiador = new Controles.Controles.DatePicker();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -222,6 +222,38 @@
             this.pnlDeck.Name = "pnlDeck";
             this.pnlDeck.Size = new System.Drawing.Size(1185, 588);
             this.pnlDeck.TabIndex = 24;
+            // 
+            // dtpFecFirmaFiador
+            // 
+            this.dtpFecFirmaFiador.BorderColor = System.Drawing.Color.Gray;
+            this.dtpFecFirmaFiador.BorderSize = 1;
+            this.dtpFecFirmaFiador.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dtpFecFirmaFiador.CalendarTitleBackColor = System.Drawing.Color.Silver;
+            this.dtpFecFirmaFiador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpFecFirmaFiador.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecFirmaFiador.Location = new System.Drawing.Point(886, 105);
+            this.dtpFecFirmaFiador.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpFecFirmaFiador.Name = "dtpFecFirmaFiador";
+            this.dtpFecFirmaFiador.Size = new System.Drawing.Size(108, 23);
+            this.dtpFecFirmaFiador.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dtpFecFirmaFiador.TabIndex = 146;
+            this.dtpFecFirmaFiador.TextColor = System.Drawing.Color.White;
+            // 
+            // dtpFecFirmaMat
+            // 
+            this.dtpFecFirmaMat.BorderColor = System.Drawing.Color.Gray;
+            this.dtpFecFirmaMat.BorderSize = 1;
+            this.dtpFecFirmaMat.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dtpFecFirmaMat.CalendarTitleBackColor = System.Drawing.Color.Silver;
+            this.dtpFecFirmaMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpFecFirmaMat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecFirmaMat.Location = new System.Drawing.Point(565, 105);
+            this.dtpFecFirmaMat.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpFecFirmaMat.Name = "dtpFecFirmaMat";
+            this.dtpFecFirmaMat.Size = new System.Drawing.Size(108, 23);
+            this.dtpFecFirmaMat.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dtpFecFirmaMat.TabIndex = 145;
+            this.dtpFecFirmaMat.TextColor = System.Drawing.Color.White;
             // 
             // lblEstadoFianza
             // 
@@ -517,7 +549,7 @@
             this.dgvFianzas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar,
             this.id_Fza,
-            this.Matricula,
+            this.Mat,
             this.Apellido,
             this.Telefono,
             this.FecPago,
@@ -564,6 +596,77 @@
             this.dgvFianzas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFianzas_CellContentClick);
             this.dgvFianzas.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvFianzas_CellPainting);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(678, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 17);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Domicilio Fiador:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 17);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "Doc. Fiador:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 17);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Colegiado:";
+            // 
+            // txtCalleFiador
+            // 
+            this.txtCalleFiador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtCalleFiador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCalleFiador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCalleFiador.ForeColor = System.Drawing.Color.White;
+            this.txtCalleFiador.Location = new System.Drawing.Point(801, 79);
+            this.txtCalleFiador.Name = "txtCalleFiador";
+            this.txtCalleFiador.Size = new System.Drawing.Size(330, 23);
+            this.txtCalleFiador.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label33);
+            this.panel1.Controls.Add(this.label34);
+            this.panel1.Location = new System.Drawing.Point(17, 141);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1059, 42);
+            this.panel1.TabIndex = 138;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label33.Location = new System.Drawing.Point(265, 14);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(79, 17);
+            this.label33.TabIndex = 139;
+            this.label33.Text = "Buscar por:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label34.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label34.Location = new System.Drawing.Point(7, 9);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(149, 22);
+            this.label34.TabIndex = 139;
+            this.label34.Text = "Lista de Fianzas";
+            // 
             // Seleccionar
             // 
             this.Seleccionar.HeaderText = "";
@@ -578,14 +681,14 @@
             this.id_Fza.ReadOnly = true;
             this.id_Fza.Visible = false;
             // 
-            // Matricula
+            // Mat
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Matricula.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Matricula.HeaderText = "MAT";
-            this.Matricula.Name = "Matricula";
-            this.Matricula.ReadOnly = true;
-            this.Matricula.Width = 50;
+            this.Mat.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Mat.HeaderText = "MAT";
+            this.Mat.Name = "Mat";
+            this.Mat.ReadOnly = true;
+            this.Mat.Width = 50;
             // 
             // Apellido
             // 
@@ -701,111 +804,6 @@
             this.TelFiador.Name = "TelFiador";
             this.TelFiador.ReadOnly = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(678, 81);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 17);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Domicilio Fiador:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 81);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 17);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "Doc. Fiador:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 17);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Colegiado:";
-            // 
-            // txtCalleFiador
-            // 
-            this.txtCalleFiador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtCalleFiador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCalleFiador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCalleFiador.ForeColor = System.Drawing.Color.White;
-            this.txtCalleFiador.Location = new System.Drawing.Point(801, 79);
-            this.txtCalleFiador.Name = "txtCalleFiador";
-            this.txtCalleFiador.Size = new System.Drawing.Size(330, 23);
-            this.txtCalleFiador.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label33);
-            this.panel1.Controls.Add(this.label34);
-            this.panel1.Location = new System.Drawing.Point(17, 141);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1059, 42);
-            this.panel1.TabIndex = 138;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label33.Location = new System.Drawing.Point(265, 14);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(79, 17);
-            this.label33.TabIndex = 139;
-            this.label33.Text = "Buscar por:";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label34.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label34.Location = new System.Drawing.Point(7, 9);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(149, 22);
-            this.label34.TabIndex = 139;
-            this.label34.Text = "Lista de Fianzas";
-            // 
-            // dtpFecFirmaMat
-            // 
-            this.dtpFecFirmaMat.BorderColor = System.Drawing.Color.Gray;
-            this.dtpFecFirmaMat.BorderSize = 1;
-            this.dtpFecFirmaMat.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpFecFirmaMat.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.dtpFecFirmaMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.dtpFecFirmaMat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecFirmaMat.Location = new System.Drawing.Point(565, 105);
-            this.dtpFecFirmaMat.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpFecFirmaMat.Name = "dtpFecFirmaMat";
-            this.dtpFecFirmaMat.Size = new System.Drawing.Size(108, 23);
-            this.dtpFecFirmaMat.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpFecFirmaMat.TabIndex = 145;
-            this.dtpFecFirmaMat.TextColor = System.Drawing.Color.White;
-            this.dtpFecFirmaMat.Visible = false;
-            // 
-            // dtpFecFirmaFiador
-            // 
-            this.dtpFecFirmaFiador.BorderColor = System.Drawing.Color.Gray;
-            this.dtpFecFirmaFiador.BorderSize = 1;
-            this.dtpFecFirmaFiador.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpFecFirmaFiador.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.dtpFecFirmaFiador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.dtpFecFirmaFiador.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecFirmaFiador.Location = new System.Drawing.Point(886, 105);
-            this.dtpFecFirmaFiador.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpFecFirmaFiador.Name = "dtpFecFirmaFiador";
-            this.dtpFecFirmaFiador.Size = new System.Drawing.Size(108, 23);
-            this.dtpFecFirmaFiador.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpFecFirmaFiador.TabIndex = 146;
-            this.dtpFecFirmaFiador.TextColor = System.Drawing.Color.White;
-            this.dtpFecFirmaFiador.Visible = false;
-            // 
             // frmFianzas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -872,9 +870,11 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txtUserFirmaFiador;
         private System.Windows.Forms.TextBox txtUserFirmaMat;
+        private Controles.Controles.DatePicker dtpFecFirmaFiador;
+        private Controles.Controles.DatePicker dtpFecFirmaMat;
         private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Fza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn FecPago;
@@ -889,7 +889,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ApelFiador;
         private System.Windows.Forms.DataGridViewTextBoxColumn CalleFiador;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelFiador;
-        private Controles.Controles.DatePicker dtpFecFirmaFiador;
-        private Controles.Controles.DatePicker dtpFecFirmaMat;
     }
 }

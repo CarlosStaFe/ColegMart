@@ -21,7 +21,7 @@ namespace CapaDatos
                     try
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT * FROM Fianzas ORDER BY FecPagoFza DESC";
+                        command.CommandText = "SELECT * FROM Fianzas ORDER BY ApelNomMatri, EstadoFza, FecVtoFianza";
                         command.CommandType = CommandType.Text;
                         MySqlDataReader dr = command.ExecuteReader();
 
@@ -52,7 +52,7 @@ namespace CapaDatos
                             }
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         lista = new List<CE_Fianzas>();
                     }
@@ -74,29 +74,29 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("Matricula", obj.Matricula);
-                        command.Parameters.AddWithValue("ApelNomMatri", obj.ApelNomMatri);
-                        command.Parameters.AddWithValue("TelMatri", obj.TelMatri);
-                        command.Parameters.AddWithValue("FecPagoFza", obj.FecPagoFza);
-                        command.Parameters.AddWithValue("UserFecPagoFza", obj.UserFecPagoFza);
-                        command.Parameters.AddWithValue("FecFirmaMat", obj.FecFirmaMat);
-                        command.Parameters.AddWithValue("UserFirmaMat", obj.UserFirmaMat);
-                        command.Parameters.AddWithValue("FecFirmaFiador", obj.FecFirmaFiador);
-                        command.Parameters.AddWithValue("UserFirmaFiador", obj.UserFirmaFiador);
-                        command.Parameters.AddWithValue("FecVtoFianza", obj.FecVtoFianza);
-                        command.Parameters.AddWithValue("NroDocFiador", obj.NroDocFiador);
-                        command.Parameters.AddWithValue("ApelNomFiador", obj.ApelNomFiador);
-                        command.Parameters.AddWithValue("CalleFiador", obj.CalleFiador);
-                        command.Parameters.AddWithValue("TelFiador", obj.TelFiador);
-                        command.Parameters.AddWithValue("EstadoFza", obj.EstadoFza);
-                        command.Parameters.AddWithValue("Obs", obj.Obs);
-                        command.Parameters.Add("idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.AddWithValue("_Matricula", obj.Matricula);
+                        command.Parameters.AddWithValue("_ApelNomMatri", obj.ApelNomMatri);
+                        command.Parameters.AddWithValue("_TelMatri", obj.TelMatri);
+                        command.Parameters.AddWithValue("_FecPagoFza", obj.FecPagoFza);
+                        command.Parameters.AddWithValue("_UserFecPagoFza", obj.UserFecPagoFza);
+                        command.Parameters.AddWithValue("_FecFirmaMat", obj.FecFirmaMat);
+                        command.Parameters.AddWithValue("_UserFirmaMat", obj.UserFirmaMat);
+                        command.Parameters.AddWithValue("_FecFirmaFiador", obj.FecFirmaFiador);
+                        command.Parameters.AddWithValue("_UserFirmaFiador", obj.UserFirmaFiador);
+                        command.Parameters.AddWithValue("_FecVtoFianza", obj.FecVtoFianza);
+                        command.Parameters.AddWithValue("_NroDocFiador", obj.NroDocFiador);
+                        command.Parameters.AddWithValue("_ApelNomFiador", obj.ApelNomFiador);
+                        command.Parameters.AddWithValue("_CalleFiador", obj.CalleFiador);
+                        command.Parameters.AddWithValue("_TelFiador", obj.TelFiador);
+                        command.Parameters.AddWithValue("_EstadoFza", obj.EstadoFza);
+                        command.Parameters.AddWithValue("_Obs", obj.Obs);
+                        command.Parameters.Add("_idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        idFza = Convert.ToInt32(command.Parameters["idResultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        idFza = Convert.ToInt32(command.Parameters["_idResultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
@@ -121,30 +121,30 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("id_Fza", obj.id_Fza);
+                        command.Parameters.AddWithValue("_id_Fza", obj.id_Fza);
                         //command.Parameters.AddWithValue("Matricula", obj.Matricula);
                         //command.Parameters.AddWithValue("ApelNomMatri", obj.ApelNomMatri);
                         //command.Parameters.AddWithValue("TelMatri", obj.TelMatri);
                         //command.Parameters.AddWithValue("FecPagoFza", obj.FecPagoFza);
                         //command.Parameters.AddWithValue("UserFecPagoFza", obj.UserFecPagoFza);
-                        command.Parameters.AddWithValue("FecFirmaMat", obj.FecFirmaMat);
-                        command.Parameters.AddWithValue("UserFirmaMat", obj.UserFirmaMat);
-                        command.Parameters.AddWithValue("FecFirmaFiador", obj.FecFirmaFiador);
-                        command.Parameters.AddWithValue("UserFirmaFiador", obj.UserFirmaFiador);
-                        command.Parameters.AddWithValue("FecVtoFianza", obj.FecVtoFianza);
-                        command.Parameters.AddWithValue("NroDocFiador", obj.NroDocFiador);
-                        command.Parameters.AddWithValue("ApelNomFiador", obj.ApelNomFiador);
-                        command.Parameters.AddWithValue("CalleFiador", obj.CalleFiador);
-                        command.Parameters.AddWithValue("TelFiador", obj.TelFiador);
-                        command.Parameters.AddWithValue("EstadoFza", obj.EstadoFza);
+                        command.Parameters.AddWithValue("_FecFirmaMat", obj.FecFirmaMat);
+                        command.Parameters.AddWithValue("_UserFirmaMat", obj.UserFirmaMat);
+                        command.Parameters.AddWithValue("_FecFirmaFiador", obj.FecFirmaFiador);
+                        command.Parameters.AddWithValue("_UserFirmaFiador", obj.UserFirmaFiador);
+                        command.Parameters.AddWithValue("_FecVtoFianza", obj.FecVtoFianza);
+                        command.Parameters.AddWithValue("_NroDocFiador", obj.NroDocFiador);
+                        command.Parameters.AddWithValue("_ApelNomFiador", obj.ApelNomFiador);
+                        command.Parameters.AddWithValue("_CalleFiador", obj.CalleFiador);
+                        command.Parameters.AddWithValue("_TelFiador", obj.TelFiador);
+                        command.Parameters.AddWithValue("_EstadoFza", obj.EstadoFza);
                         //command.Parameters.AddWithValue("Obs", obj.Obs);
-                        command.Parameters.Add("Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        Resultado = Convert.ToBoolean(command.Parameters["Resultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        Resultado = Convert.ToBoolean(command.Parameters["_Resultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
@@ -169,14 +169,14 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("id_Fza", obj.id_Fza);
-                        command.Parameters.Add("Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.AddWithValue("_id_Fza", obj.id_Fza);
+                        command.Parameters.Add("_Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        Resultado = Convert.ToBoolean(command.Parameters["Resultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        Resultado = Convert.ToBoolean(command.Parameters["_Resultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {

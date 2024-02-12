@@ -489,13 +489,12 @@
     <EmbeddedResource Include="Reportes\rpt_CtaCte_Coleg.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Liquidacion_Coleg.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Liquidacion_Soc.rdlc" />
-    <EmbeddedResource Include="Reportes\rpt_Liquidacion_Sociedades.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Pad_Coleg_Comun.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Pad_Coleg_Elecc.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Pad_Coleg_Subasta.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_Reclamo.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Reclamo_1.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Reclamo_2.rdlc" />
-    <EmbeddedResource Include="Reportes\rpt_Reclamo_Soc.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Saldo_Pago.rdlc" />
     <None Include="DataSetPrincipal.xsc">
       <DependentUpon>DataSetPrincipal.xsd</DependentUpon>

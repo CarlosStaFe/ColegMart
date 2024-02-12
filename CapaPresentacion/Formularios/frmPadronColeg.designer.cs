@@ -41,10 +41,6 @@
             this.cboDepartamento = new System.Windows.Forms.ComboBox();
             this.cboLocalidad = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.nudMeses = new System.Windows.Forms.NumericUpDown();
-            this.nudAnios = new System.Windows.Forms.NumericUpDown();
             this.chbFianza = new System.Windows.Forms.CheckBox();
             this.rdbSubasta = new System.Windows.Forms.RadioButton();
             this.rdbComun = new System.Windows.Forms.RadioButton();
@@ -65,15 +61,19 @@
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtpFianza = new Controles.Controles.DatePicker();
-            this.dtpAntiguedad = new Controles.Controles.DatePicker();
             this.dtpControl = new Controles.Controles.DatePicker();
+            this.dtpAntiguedad = new Controles.Controles.DatePicker();
+            this.dtpFianza = new Controles.Controles.DatePicker();
+            this.nudMeses = new System.Windows.Forms.NumericUpDown();
+            this.nudAnios = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMeses)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAnios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMeses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAnios)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -110,10 +110,6 @@
             this.pnlDeck.Controls.Add(this.cboDepartamento);
             this.pnlDeck.Controls.Add(this.cboLocalidad);
             this.pnlDeck.Controls.Add(this.label19);
-            this.pnlDeck.Controls.Add(this.label18);
-            this.pnlDeck.Controls.Add(this.label17);
-            this.pnlDeck.Controls.Add(this.nudMeses);
-            this.pnlDeck.Controls.Add(this.nudAnios);
             this.pnlDeck.Controls.Add(this.chbFianza);
             this.pnlDeck.Controls.Add(this.rdbSubasta);
             this.pnlDeck.Controls.Add(this.rdbComun);
@@ -246,51 +242,6 @@
             this.label19.TabIndex = 82;
             this.label19.Text = "Fecha Control:";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(526, 220);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 17);
-            this.label18.TabIndex = 81;
-            this.label18.Text = "Meses";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(421, 220);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 17);
-            this.label17.TabIndex = 80;
-            this.label17.Text = "Años";
-            // 
-            // nudMeses
-            // 
-            this.nudMeses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.nudMeses.ForeColor = System.Drawing.Color.White;
-            this.nudMeses.Location = new System.Drawing.Point(471, 218);
-            this.nudMeses.Maximum = new decimal(new int[] {
-            11,
-            0,
-            0,
-            0});
-            this.nudMeses.Name = "nudMeses";
-            this.nudMeses.Size = new System.Drawing.Size(49, 23);
-            this.nudMeses.TabIndex = 10;
-            this.nudMeses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudMeses.Click += new System.EventHandler(this.nudMeses_Click);
-            // 
-            // nudAnios
-            // 
-            this.nudAnios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.nudAnios.ForeColor = System.Drawing.Color.White;
-            this.nudAnios.Location = new System.Drawing.Point(366, 218);
-            this.nudAnios.Name = "nudAnios";
-            this.nudAnios.Size = new System.Drawing.Size(49, 23);
-            this.nudAnios.TabIndex = 9;
-            this.nudAnios.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudAnios.Click += new System.EventHandler(this.nudAnios_Click);
-            // 
             // chbFianza
             // 
             this.chbFianza.AutoSize = true;
@@ -301,6 +252,7 @@
             this.chbFianza.TabIndex = 6;
             this.chbFianza.Text = "Fianza Vencida";
             this.chbFianza.UseVisualStyleBackColor = true;
+            this.chbFianza.CheckedChanged += new System.EventHandler(this.chbFianza_CheckedChanged);
             // 
             // rdbSubasta
             // 
@@ -373,7 +325,7 @@
             "A",
             "B",
             "I"});
-            this.cboCategoria.Location = new System.Drawing.Point(587, 121);
+            this.cboCategoria.Location = new System.Drawing.Point(596, 121);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(88, 25);
             this.cboCategoria.TabIndex = 4;
@@ -381,7 +333,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(502, 124);
+            this.label14.Location = new System.Drawing.Point(511, 124);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(79, 17);
             this.label14.TabIndex = 71;
@@ -398,7 +350,7 @@
             "TODOS",
             "M",
             "F"});
-            this.cboSexo.Location = new System.Drawing.Point(370, 121);
+            this.cboSexo.Location = new System.Drawing.Point(379, 121);
             this.cboSexo.Name = "cboSexo";
             this.cboSexo.Size = new System.Drawing.Size(85, 25);
             this.cboSexo.TabIndex = 3;
@@ -406,7 +358,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(323, 124);
+            this.label10.Location = new System.Drawing.Point(332, 124);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 17);
             this.label10.TabIndex = 69;
@@ -550,6 +502,10 @@
             this.groupBox2.Controls.Add(this.dtpControl);
             this.groupBox2.Controls.Add(this.dtpAntiguedad);
             this.groupBox2.Controls.Add(this.dtpFianza);
+            this.groupBox2.Controls.Add(this.nudMeses);
+            this.groupBox2.Controls.Add(this.nudAnios);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(56, 53);
             this.groupBox2.Name = "groupBox2";
@@ -557,6 +513,38 @@
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opciones";
+            // 
+            // dtpControl
+            // 
+            this.dtpControl.BorderColor = System.Drawing.Color.Gray;
+            this.dtpControl.BorderSize = 1;
+            this.dtpControl.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dtpControl.CalendarTitleBackColor = System.Drawing.Color.Silver;
+            this.dtpControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpControl.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpControl.Location = new System.Drawing.Point(654, 162);
+            this.dtpControl.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpControl.Name = "dtpControl";
+            this.dtpControl.Size = new System.Drawing.Size(108, 23);
+            this.dtpControl.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dtpControl.TabIndex = 146;
+            this.dtpControl.TextColor = System.Drawing.Color.White;
+            // 
+            // dtpAntiguedad
+            // 
+            this.dtpAntiguedad.BorderColor = System.Drawing.Color.Gray;
+            this.dtpAntiguedad.BorderSize = 1;
+            this.dtpAntiguedad.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dtpAntiguedad.CalendarTitleBackColor = System.Drawing.Color.Silver;
+            this.dtpAntiguedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpAntiguedad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpAntiguedad.Location = new System.Drawing.Point(163, 162);
+            this.dtpAntiguedad.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpAntiguedad.Name = "dtpAntiguedad";
+            this.dtpAntiguedad.Size = new System.Drawing.Size(108, 23);
+            this.dtpAntiguedad.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dtpAntiguedad.TabIndex = 145;
+            this.dtpAntiguedad.TextColor = System.Drawing.Color.White;
             // 
             // dtpFianza
             // 
@@ -575,39 +563,50 @@
             this.dtpFianza.TextColor = System.Drawing.Color.White;
             this.dtpFianza.Visible = false;
             // 
-            // dtpAntiguedad
+            // nudMeses
             // 
-            this.dtpAntiguedad.BorderColor = System.Drawing.Color.Gray;
-            this.dtpAntiguedad.BorderSize = 1;
-            this.dtpAntiguedad.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpAntiguedad.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.dtpAntiguedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.dtpAntiguedad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAntiguedad.Location = new System.Drawing.Point(163, 162);
-            this.dtpAntiguedad.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpAntiguedad.Name = "dtpAntiguedad";
-            this.dtpAntiguedad.Size = new System.Drawing.Size(108, 23);
-            this.dtpAntiguedad.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpAntiguedad.TabIndex = 145;
-            this.dtpAntiguedad.TextColor = System.Drawing.Color.White;
-            this.dtpAntiguedad.Visible = false;
+            this.nudMeses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.nudMeses.ForeColor = System.Drawing.Color.White;
+            this.nudMeses.Location = new System.Drawing.Point(411, 165);
+            this.nudMeses.Maximum = new decimal(new int[] {
+            11,
+            0,
+            0,
+            0});
+            this.nudMeses.Name = "nudMeses";
+            this.nudMeses.Size = new System.Drawing.Size(49, 23);
+            this.nudMeses.TabIndex = 10;
+            this.nudMeses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudMeses.Click += new System.EventHandler(this.nudMeses_Click);
             // 
-            // dtpControl
+            // nudAnios
             // 
-            this.dtpControl.BorderColor = System.Drawing.Color.Gray;
-            this.dtpControl.BorderSize = 1;
-            this.dtpControl.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpControl.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.dtpControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.dtpControl.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpControl.Location = new System.Drawing.Point(654, 162);
-            this.dtpControl.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpControl.Name = "dtpControl";
-            this.dtpControl.Size = new System.Drawing.Size(108, 23);
-            this.dtpControl.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpControl.TabIndex = 146;
-            this.dtpControl.TextColor = System.Drawing.Color.White;
-            this.dtpControl.Visible = false;
+            this.nudAnios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.nudAnios.ForeColor = System.Drawing.Color.White;
+            this.nudAnios.Location = new System.Drawing.Point(306, 165);
+            this.nudAnios.Name = "nudAnios";
+            this.nudAnios.Size = new System.Drawing.Size(49, 23);
+            this.nudAnios.TabIndex = 9;
+            this.nudAnios.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudAnios.Click += new System.EventHandler(this.nudAnios_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(361, 167);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 17);
+            this.label17.TabIndex = 80;
+            this.label17.Text = "Años";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(466, 167);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(45, 17);
+            this.label18.TabIndex = 81;
+            this.label18.Text = "Meses";
             // 
             // frmPadronColeg
             // 
@@ -629,10 +628,11 @@
             this.pnlTitulo.PerformLayout();
             this.pnlDeck.ResumeLayout(false);
             this.pnlDeck.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMeses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAnios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMeses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAnios)).EndInit();
             this.ResumeLayout(false);
 
         }

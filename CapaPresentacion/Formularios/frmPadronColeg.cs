@@ -338,7 +338,20 @@ namespace CapaPresentacion.Formularios
                 Elecciones.user = txtUserRegistro.Text;
                 Elecciones.ShowDialog();
             }
+
             Limpiar();
+        }
+
+        private void chbFianza_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbFianza.Checked)
+            {
+                dtpFianza.Visible = true;
+            }
+            else
+            {
+                dtpFianza.Visible = false;
+            }
         }
 
         //***** CALCULO LA ANTIGUEDAD *****
@@ -368,6 +381,7 @@ namespace CapaPresentacion.Formularios
             contador = 0;
 
             List<CE_Colegiados> ListaPadron = new CN_Colegiados().ListaPadron(comando);
+
 
             foreach (CE_Colegiados item in ListaPadron)
             {

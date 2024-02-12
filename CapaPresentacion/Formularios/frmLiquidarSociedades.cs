@@ -38,7 +38,7 @@ namespace CapaPresentacion.Formularios
         string matricula, martillero, nombrePDF, path, buscar, linea;
         string ddfianza, mmfianza, yyyyfianza, avisofianza;
 
-        DateTime vencefianza, fechanacim, fecestado;
+        DateTime vencefianza;
 
         public frmLiquidarSociedades()
         {
@@ -52,8 +52,6 @@ namespace CapaPresentacion.Formularios
             txtObs.Text = "Informar al colegio el medio de pago y el monto si no paga con esta boleta en el banco, gracias.";
             txtObs.Refresh();
             txtDesde.Select();
-            this.reportLiquidacion.RefreshReport();
-            this.reportReclamo.RefreshReport();
         }
 
         //***** PROCEDIMIENTO DEL BOTÓN LIMPIAR *****
@@ -242,9 +240,6 @@ namespace CapaPresentacion.Formularios
                 lblProcesando.Text = numeroSoc + " - " + nombre + " - " + estadoSoc;
                 lblProcesando.Refresh();
 
-                saldoAnt = 0;
-                tipoFac = "FAC";
-                prefijo = "0004";
                 BuscoLocalidad();
 
                 switch (estadoSoc)
@@ -273,14 +268,18 @@ namespace CapaPresentacion.Formularios
                             //BuscaMartillero();
                             //ExportarPDF();
 
+                            saldoAnt = 0;
+                            tipoFac = "FAC";
+                            prefijo = "0004";
+
                             //ProcesoLiquidacion();
                             PruebaLiquidacion();
-
-                            BuscaMartillero();
                         }
                         else
                         {
                             tipoFac = "RCL1";
+                            prefijo = "0004";
+
                             BuscoComprobante();
                             GraboDeuda();
                             EnviarReclamo();
@@ -516,7 +515,7 @@ namespace CapaPresentacion.Formularios
         //***** BUSCO EL NÚMERO DE COMPROBANTE DE LA LIQUIDACIÓN *****
         private void BuscoComprobante()
         {
-            nrocpbte = new CN_Comprobantes().BuscoCpbte(tipoLiq);
+            nrocpbte = new CN_Comprobantes().BuscoCpbte(tipoFac);
             comprobante = Convert.ToString(nrocpbte + 1);
             comprobante = new PonerCeros().Proceso(comprobante, 8);
         }
@@ -647,12 +646,11 @@ namespace CapaPresentacion.Formularios
         {
             string numero = new PonerCeros().Proceso(Convert.ToString(numeroSoc), 5);
             nombrePDF = numero + "-" + txtPeriodo.Text + ".pdf";
+            Subfijo = new PonerCeros().Proceso(comprobante, 4);
 
             spDeudaLiquiTableAdapter.Fill(dataSetPrincipal.spDeudaLiqui, prefijo, Subfijo);
 
-            reportReclamo.RefreshReport();
-
-            reportReclamo.LocalReport.DataSources.Add(new ReportDataSource("DataSetPrincipal", spDeudaLiquiBindingSource));
+            reportDeuda.LocalReport.DataSources.Add(new ReportDataSource("DataSetPrincipal", spDeudaLiquiBindingSource));
 
             ReportParameter[] parametros = new ReportParameter[6];
             parametros[0] = new ReportParameter("prmNumero", Convert.ToString(numero));
@@ -662,9 +660,9 @@ namespace CapaPresentacion.Formularios
             parametros[4] = new ReportParameter("prmComprobante", comprobante);
             parametros[5] = new ReportParameter("prmTesorero", txtTesorero.Text);
 
-            reportReclamo.LocalReport.SetParameters(parametros);
+            reportDeuda.LocalReport.SetParameters(parametros);
 
-            byte[] bytes = reportReclamo.LocalReport.Render("PDF");
+            byte[] bytes = reportDeuda.LocalReport.Render("PDF");
 
             buscar = "PathReclamo1";
             linea = new LeerConfig().Proceso(buscar);

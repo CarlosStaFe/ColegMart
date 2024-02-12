@@ -691,6 +691,7 @@
                                   <Value>=Fields!Matricula.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -730,6 +731,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1059,7 +1061,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Colegio de Martilleros y Corredores Públicos de Santa Fe</Value>
+                      <Value>Colegio Profesional de Martilleros y Corredores Públicos de Santa Fe</Value>
                       <Style>
                         <FontFamily>Arial Black</FontFamily>
                         <FontSize>12pt</FontSize>
@@ -1075,9 +1077,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.39441cm</Top>
-              <Left>6.19843cm</Left>
+              <Left>4.98135cm</Left>
               <Height>0.83855cm</Height>
-              <Width>15.08761cm</Width>
+              <Width>16.72297cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1130,7 +1132,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.09021cm</Height>
+          <Height>1.905cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>

@@ -89,6 +89,17 @@ namespace CapaPresentacion.Formularios
                         Dispose();
                     }
 
+                    if (NameBoton == "btnCobrarPendientes")
+                    {
+                        frmCobrarPendientes CobroPen = Owner as frmCobrarPendientes;
+                        CobroPen.lblNombre.Text = dgvSociedades.Rows[indice].Cells["Nombre"].Value.ToString() + " - " +
+                                                     dgvSociedades.Rows[indice].Cells["Estado"].Value.ToString();
+                        CobroPen.txtMatricula.Text = dgvSociedades.Rows[indice].Cells["Numero"].Value.ToString();
+                        CobroPen.txtId.Text = dgvSociedades.Rows[indice].Cells["id_Soc"].Value.ToString();
+                        Close();
+                        Dispose();
+                    }
+
                 }
             }
         }

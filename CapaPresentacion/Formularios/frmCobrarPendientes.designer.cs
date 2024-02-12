@@ -54,6 +54,7 @@
             this.txtUserRegistro = new System.Windows.Forms.TextBox();
             this.txtFk_idColeg = new System.Windows.Forms.TextBox();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.reportCobroBoletas = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label10 = new System.Windows.Forms.Label();
             this.txtImporteNCR = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.dgvCtasCtes = new System.Windows.Forms.DataGridView();
             this.C_id_CtaCte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C_fk_idColeg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,7 +100,6 @@
             this.chbNCR = new System.Windows.Forms.CheckBox();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.reportCobroBoletas = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataSetPrincipal = new CapaPresentacion.DataSetPrincipal();
             this.spCobroBoletasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlTitulo.SuspendLayout();
@@ -244,6 +243,15 @@
             this.pnlDeck.Name = "pnlDeck";
             this.pnlDeck.Size = new System.Drawing.Size(1168, 578);
             this.pnlDeck.TabIndex = 24;
+            // 
+            // reportCobroBoletas
+            // 
+            this.reportCobroBoletas.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rpt_Cic_Boletas.rdlc";
+            this.reportCobroBoletas.Location = new System.Drawing.Point(17, 524);
+            this.reportCobroBoletas.Name = "reportCobroBoletas";
+            this.reportCobroBoletas.ServerReport.BearerToken = null;
+            this.reportCobroBoletas.Size = new System.Drawing.Size(667, 30);
+            this.reportCobroBoletas.TabIndex = 96;
             // 
             // label10
             // 
@@ -440,7 +448,6 @@
             this.dgvCtasCtes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCtasCtes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.C_id_CtaCte,
-            this.C_fk_idColeg,
             this.C_Matricula,
             this.C_Fecha,
             this.C_Tipo,
@@ -496,13 +503,6 @@
             this.C_id_CtaCte.Name = "C_id_CtaCte";
             this.C_id_CtaCte.ReadOnly = true;
             this.C_id_CtaCte.Visible = false;
-            // 
-            // C_fk_idColeg
-            // 
-            this.C_fk_idColeg.HeaderText = "fk_idColeg";
-            this.C_fk_idColeg.Name = "C_fk_idColeg";
-            this.C_fk_idColeg.ReadOnly = true;
-            this.C_fk_idColeg.Visible = false;
             // 
             // C_Matricula
             // 
@@ -810,15 +810,6 @@
             this.txtMatricula.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatricula_KeyDown);
             this.txtMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatricula_KeyPress);
             // 
-            // reportCobroBoletas
-            // 
-            this.reportCobroBoletas.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rpt_Cic_Boletas.rdlc";
-            this.reportCobroBoletas.Location = new System.Drawing.Point(17, 524);
-            this.reportCobroBoletas.Name = "reportCobroBoletas";
-            this.reportCobroBoletas.ServerReport.BearerToken = null;
-            this.reportCobroBoletas.Size = new System.Drawing.Size(667, 30);
-            this.reportCobroBoletas.TabIndex = 96;
-            // 
             // dataSetPrincipal
             // 
             this.dataSetPrincipal.DataSetName = "DataSetPrincipal";
@@ -828,10 +819,6 @@
             // 
             this.spCobroBoletasBindingSource.DataMember = "spCobroBoletas";
             this.spCobroBoletasBindingSource.DataSource = this.dataSetPrincipal;
-            // 
-            // spCobroBoletasTableAdapter
-            // 
-            //this.spCobroBoletasTableAdapter.ClearBeforeFill = true;
             // 
             // frmCobrarPendientes
             // 
@@ -866,7 +853,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIndice;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.TextBox txtId;
         public System.Windows.Forms.TextBox txtFk_idDebito;
         private System.Windows.Forms.TextBox txtUserRegistro;
         public System.Windows.Forms.TextBox txtFk_idColeg;
@@ -897,8 +883,10 @@
         private System.Windows.Forms.TextBox txtDiferencia;
         private System.Windows.Forms.TextBox txtApagar;
         private System.Windows.Forms.TextBox txtSaldoDeudor;
+        private Microsoft.Reporting.WinForms.ReportViewer reportCobroBoletas;
+        private System.Windows.Forms.BindingSource spCobroBoletasBindingSource;
+        private DataSetPrincipal dataSetPrincipal;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_id_CtaCte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C_fk_idColeg;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_Tipo;
@@ -917,8 +905,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn C_UserRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_FechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Seleccionar;
-        private Microsoft.Reporting.WinForms.ReportViewer reportCobroBoletas;
-        private System.Windows.Forms.BindingSource spCobroBoletasBindingSource;
-        private DataSetPrincipal dataSetPrincipal;
+        public System.Windows.Forms.TextBox txtId;
     }
 }

@@ -40,12 +40,6 @@
             this.pnlDeck = new System.Windows.Forms.Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.dgvColegiados = new System.Windows.Forms.DataGridView();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Coleg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FecVenceFianza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtIndice = new System.Windows.Forms.TextBox();
             this.txtUserRegistro = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -55,6 +49,12 @@
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_Coleg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FecVenceFianza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColegiados)).BeginInit();
@@ -114,7 +114,7 @@
             this.btnSalir.IconColor = System.Drawing.Color.Aqua;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
-            this.btnSalir.Location = new System.Drawing.Point(705, 115);
+            this.btnSalir.Location = new System.Drawing.Point(770, 115);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(70, 53);
             this.btnSalir.TabIndex = 3;
@@ -179,54 +179,10 @@
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
             this.dgvColegiados.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvColegiados.Size = new System.Drawing.Size(668, 535);
+            this.dgvColegiados.Size = new System.Drawing.Size(742, 535);
             this.dgvColegiados.TabIndex = 71;
             this.dgvColegiados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColegiados_CellContentClick);
             this.dgvColegiados.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvColegiados_CellPainting);
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
-            this.Seleccionar.Width = 25;
-            // 
-            // id_Coleg
-            // 
-            this.id_Coleg.HeaderText = "id";
-            this.id_Coleg.Name = "id_Coleg";
-            this.id_Coleg.ReadOnly = true;
-            this.id_Coleg.Visible = false;
-            // 
-            // Mat
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Mat.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Mat.HeaderText = "MAT";
-            this.Mat.Name = "Mat";
-            this.Mat.ReadOnly = true;
-            this.Mat.Width = 80;
-            // 
-            // Nombres
-            // 
-            this.Nombres.HeaderText = "NOMBRES";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            this.Nombres.Width = 350;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "ESTADO";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 150;
-            // 
-            // FecVenceFianza
-            // 
-            this.FecVenceFianza.HeaderText = "FecVenceFianza";
-            this.FecVenceFianza.Name = "FecVenceFianza";
-            this.FecVenceFianza.ReadOnly = true;
-            this.FecVenceFianza.Visible = false;
             // 
             // txtIndice
             // 
@@ -234,7 +190,7 @@
             this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIndice.Enabled = false;
             this.txtIndice.ForeColor = System.Drawing.Color.White;
-            this.txtIndice.Location = new System.Drawing.Point(695, 303);
+            this.txtIndice.Location = new System.Drawing.Point(760, 303);
             this.txtIndice.Name = "txtIndice";
             this.txtIndice.Size = new System.Drawing.Size(65, 16);
             this.txtIndice.TabIndex = 75;
@@ -246,7 +202,7 @@
             this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserRegistro.Enabled = false;
             this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtUserRegistro.Location = new System.Drawing.Point(695, 281);
+            this.txtUserRegistro.Location = new System.Drawing.Point(760, 281);
             this.txtUserRegistro.Name = "txtUserRegistro";
             this.txtUserRegistro.Size = new System.Drawing.Size(65, 16);
             this.txtUserRegistro.TabIndex = 74;
@@ -258,7 +214,7 @@
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtId.Enabled = false;
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(695, 259);
+            this.txtId.Location = new System.Drawing.Point(760, 259);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(49, 16);
             this.txtId.TabIndex = 60;
@@ -345,6 +301,50 @@
             this.label8.Size = new System.Drawing.Size(187, 22);
             this.label8.TabIndex = 54;
             this.label8.Text = "Lista de Colegiados";
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
+            this.Seleccionar.Width = 25;
+            // 
+            // id_Coleg
+            // 
+            this.id_Coleg.HeaderText = "id";
+            this.id_Coleg.Name = "id_Coleg";
+            this.id_Coleg.ReadOnly = true;
+            this.id_Coleg.Visible = false;
+            // 
+            // Mat
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Mat.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Mat.HeaderText = "MAT";
+            this.Mat.Name = "Mat";
+            this.Mat.ReadOnly = true;
+            this.Mat.Width = 80;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "NOMBRES";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 420;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "ESTADO";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 150;
+            // 
+            // FecVenceFianza
+            // 
+            this.FecVenceFianza.HeaderText = "FecVenceFianza";
+            this.FecVenceFianza.Name = "FecVenceFianza";
+            this.FecVenceFianza.ReadOnly = true;
+            this.FecVenceFianza.Visible = false;
             // 
             // mdlColegiado
             // 

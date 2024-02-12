@@ -92,10 +92,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.5475cm</Width>
+                  <Width>1.67941cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.01833cm</Width>
+                  <Width>0.88643cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.04479cm</Width>
@@ -107,7 +107,7 @@
                   <Width>0.67438cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.35208cm</Width>
+                  <Width>5.24517cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.23cm</Width>
@@ -894,6 +894,26 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -918,7 +938,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -1244,6 +1264,26 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1279,6 +1319,26 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1300,6 +1360,7 @@
                                   <Value>=IIf(Fields!FechaPago.Value="1/1/1900","",Fields!FechaPago.Value)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
+                                    <Format>d</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1367,6 +1428,26 @@
                             <Border>
                               <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1513,7 +1594,7 @@
             <Top>0.13943cm</Top>
             <Left>0.28787cm</Left>
             <Height>1.2cm</Height>
-            <Width>26.09708cm</Width>
+            <Width>26.99018cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1541,7 +1622,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox45</rd:DefaultName>
             <Top>1.40999cm</Top>
-            <Left>13.503cm</Left>
+            <Left>14.3961cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24588cm</Width>
             <ZIndex>1</ZIndex>
@@ -1577,7 +1658,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox36</rd:DefaultName>
             <Top>1.40835cm</Top>
-            <Left>16.88999cm</Left>
+            <Left>17.78309cm</Left>
             <Height>0.6cm</Height>
             <Width>3.06621cm</Width>
             <ZIndex>2</ZIndex>
@@ -1617,7 +1698,7 @@
         <Height>0.88542in</Height>
         <Style />
       </Body>
-      <Width>10.63572in</Width>
+      <Width>10.84405in</Width>
       <Page>
         <PageHeader>
           <Height>2.43417cm</Height>
@@ -1645,7 +1726,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Colegio de Martilleros y Corredores Públicos de Santa Fe</Value>
+                      <Value>Colegio Profesional de Martilleros y Corredores Públicos de Santa Fe</Value>
                       <Style>
                         <FontFamily>Arial Black</FontFamily>
                         <FontSize>12pt</FontSize>
@@ -1661,9 +1742,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.35515cm</Top>
-              <Left>6.03389cm</Left>
+              <Left>3.8985cm</Left>
               <Height>0.83855cm</Height>
-              <Width>15.20798cm</Width>
+              <Width>17.47566cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1696,7 +1777,7 @@
               <Top>1.71783cm</Top>
               <Left>2.14366cm</Left>
               <Height>0.67938cm</Height>
-              <Width>24.24129cm</Width>
+              <Width>25.13439cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -1716,7 +1797,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>1.95792cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1741,7 +1822,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
               <Top>0.31709cm</Top>
-              <Left>23.31703cm</Left>
+              <Left>24.21013cm</Left>
               <Height>0.6cm</Height>
               <Width>3.06792cm</Width>
               <Style>
@@ -1828,7 +1909,7 @@
               <Top>0.21126cm</Top>
               <Left>0.14978cm</Left>
               <Height>0cm</Height>
-              <Width>26.23518cm</Width>
+              <Width>27.12827cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
