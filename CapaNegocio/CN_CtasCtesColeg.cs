@@ -68,5 +68,11 @@ namespace CapaNegocio
             return cD_CtasCtesColeg.ListarSaldoPago(comando);
         }
 
+        //***** LLAMO AL METODO PARA BUSCAR SI EXISTE EL PERIODO PAGADO *****
+        public int BuscaPago(int matricula, string periodo)
+        {
+            return cD_CtasCtesColeg.BuscaPago(matricula,periodo);
+        }
+
     }
 }

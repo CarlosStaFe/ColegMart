@@ -107,6 +107,7 @@
     <Compile Include="CD_Fianzas.cs" />
     <Compile Include="CD_Liquidacion.cs" />
     <Compile Include="CD_Localidades.cs" />
+    <Compile Include="CD_LoteBanco.cs" />
     <Compile Include="CD_PadronColeg.cs" />
     <Compile Include="CD_Permisos.cs" />
     <Compile Include="CD_Provincias.cs" />

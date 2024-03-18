@@ -301,5 +301,50 @@ namespace CapaDatos
             }
             return lista;
         }
+
+        //***** METODO PARA BUSCAR EL PERÍODO PAGADO EN LA CTA CTE *****
+        public int BuscaPago(int matricula, string periodo)
+        {
+            int cantidad = 0;
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand())
+                {
+                    command.Connection = connection;
+                    command.Parameters.AddWithValue("@matri", matricula);
+                    command.Parameters.AddWithValue("@peri", periodo);
+                    command.CommandText = "SELECT COUNT(DISTINCT Periodo) AS cantidad FROM CtasCtesColeg WHERE Detalle = 'PAGO BANCO PERÍODO' AND Matricula = @matri AND Periodo = @peri";
+                    command.CommandType = CommandType.Text;
+                    cantidad = Convert.ToInt32(command.ExecuteScalar());
+
+                    return cantidad;
+                }
+            }
+        }
+
+        //***** METODO PARA BUSCAR EL PERÍODO IMPAGO EN LA CTA CTE *****
+        public int BuscaDeuda(int matricula, string periodo)
+        {
+            int id = 0;
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand())
+                {
+                    command.Connection = connection;
+                    command.Parameters.AddWithValue("@matri", matricula);
+                    command.Parameters.AddWithValue("@peri", periodo);
+                    command.CommandText = "SELECT * FROM CtasCtesColeg WHERE Tipo = 'LIQ' AND Matricula = @matri AND Periodo = @peri AND Saldo > 0";
+                    command.CommandType = CommandType.Text;
+                    id = Convert.ToInt32(command.ExecuteScalar());
+
+                    return id;
+                }
+            }
+        }
+
     }
 }
