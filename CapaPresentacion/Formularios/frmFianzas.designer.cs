@@ -71,13 +71,6 @@
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvFianzas = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCalleFiador = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_Fza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +88,13 @@
             this.ApelFiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CalleFiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TelFiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCalleFiador = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -573,7 +573,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFianzas.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvFianzas.EnableHeadersVisualStyles = false;
-            this.dgvFianzas.GridColor = System.Drawing.Color.White;
+            this.dgvFianzas.GridColor = System.Drawing.Color.Gray;
             this.dgvFianzas.Location = new System.Drawing.Point(17, 183);
             this.dgvFianzas.MultiSelect = false;
             this.dgvFianzas.Name = "dgvFianzas";
@@ -595,77 +595,6 @@
             this.dgvFianzas.TabIndex = 46;
             this.dgvFianzas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFianzas_CellContentClick);
             this.dgvFianzas.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvFianzas_CellPainting);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(678, 81);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 17);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Domicilio Fiador:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 81);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 17);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "Doc. Fiador:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 17);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Colegiado:";
-            // 
-            // txtCalleFiador
-            // 
-            this.txtCalleFiador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtCalleFiador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCalleFiador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCalleFiador.ForeColor = System.Drawing.Color.White;
-            this.txtCalleFiador.Location = new System.Drawing.Point(801, 79);
-            this.txtCalleFiador.Name = "txtCalleFiador";
-            this.txtCalleFiador.Size = new System.Drawing.Size(330, 23);
-            this.txtCalleFiador.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label33);
-            this.panel1.Controls.Add(this.label34);
-            this.panel1.Location = new System.Drawing.Point(17, 141);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1059, 42);
-            this.panel1.TabIndex = 138;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label33.Location = new System.Drawing.Point(265, 14);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(79, 17);
-            this.label33.TabIndex = 139;
-            this.label33.Text = "Buscar por:";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label34.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label34.Location = new System.Drawing.Point(7, 9);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(149, 22);
-            this.label34.TabIndex = 139;
-            this.label34.Text = "Lista de Fianzas";
             // 
             // Seleccionar
             // 
@@ -803,6 +732,77 @@
             this.TelFiador.HeaderText = "TEL FIADOR";
             this.TelFiador.Name = "TelFiador";
             this.TelFiador.ReadOnly = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(678, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 17);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Domicilio Fiador:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 17);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "Doc. Fiador:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(44, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 17);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Colegiado:";
+            // 
+            // txtCalleFiador
+            // 
+            this.txtCalleFiador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtCalleFiador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCalleFiador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCalleFiador.ForeColor = System.Drawing.Color.White;
+            this.txtCalleFiador.Location = new System.Drawing.Point(801, 79);
+            this.txtCalleFiador.Name = "txtCalleFiador";
+            this.txtCalleFiador.Size = new System.Drawing.Size(330, 23);
+            this.txtCalleFiador.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label33);
+            this.panel1.Controls.Add(this.label34);
+            this.panel1.Location = new System.Drawing.Point(17, 141);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1059, 42);
+            this.panel1.TabIndex = 138;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label33.Location = new System.Drawing.Point(265, 14);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(79, 17);
+            this.label33.TabIndex = 139;
+            this.label33.Text = "Buscar por:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label34.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label34.Location = new System.Drawing.Point(7, 9);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(149, 22);
+            this.label34.TabIndex = 139;
+            this.label34.Text = "Lista de Fianzas";
             // 
             // frmFianzas
             // 

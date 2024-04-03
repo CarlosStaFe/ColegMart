@@ -31,20 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBackupRestore));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlDeck = new System.Windows.Forms.Panel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtUserRegistro = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBackup = new FontAwesome.Sharp.IconButton();
+            this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRestaurar = new FontAwesome.Sharp.IconButton();
             this.txtCopia = new System.Windows.Forms.TextBox();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.btnSalir = new FontAwesome.Sharp.IconButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBackup = new FontAwesome.Sharp.IconButton();
-            this.txtUserRegistro = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pnlDeck = new System.Windows.Forms.Panel();
+            this.lblProceso = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
-            this.pnlDeck.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.pnlDeck.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -69,18 +70,77 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Backup y Restauración de Copias de Seguridad";
             // 
-            // pnlDeck
+            // openFileDialog1
             // 
-            this.pnlDeck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.pnlDeck.Controls.Add(this.groupBox2);
-            this.pnlDeck.Controls.Add(this.btnSalir);
-            this.pnlDeck.Controls.Add(this.groupBox1);
-            this.pnlDeck.Controls.Add(this.txtUserRegistro);
-            this.pnlDeck.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDeck.Location = new System.Drawing.Point(0, 40);
-            this.pnlDeck.Name = "pnlDeck";
-            this.pnlDeck.Size = new System.Drawing.Size(1059, 545);
-            this.pnlDeck.TabIndex = 12;
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // txtUserRegistro
+            // 
+            this.txtUserRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserRegistro.Enabled = false;
+            this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
+            this.txtUserRegistro.Location = new System.Drawing.Point(699, 6);
+            this.txtUserRegistro.Name = "txtUserRegistro";
+            this.txtUserRegistro.Size = new System.Drawing.Size(68, 16);
+            this.txtUserRegistro.TabIndex = 74;
+            this.txtUserRegistro.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnBackup);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Lime;
+            this.groupBox1.Location = new System.Drawing.Point(140, 38);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(688, 149);
+            this.groupBox1.TabIndex = 76;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "BACKUP de la Base de Datos";
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackup.FlatAppearance.BorderSize = 0;
+            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackup.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackup.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            this.btnBackup.IconColor = System.Drawing.Color.Yellow;
+            this.btnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBackup.IconSize = 40;
+            this.btnBackup.Location = new System.Drawing.Point(254, 35);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(193, 93);
+            this.btnBackup.TabIndex = 77;
+            this.btnBackup.Text = "Copia de Seguridad";
+            this.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBackup.UseVisualStyleBackColor = false;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.MailForward;
+            this.btnSalir.IconColor = System.Drawing.Color.Aqua;
+            this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSalir.IconSize = 50;
+            this.btnSalir.Location = new System.Drawing.Point(843, 198);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(124, 102);
+            this.btnSalir.TabIndex = 35;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox2
             // 
@@ -148,77 +208,31 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // btnSalir
+            // pnlDeck
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.MailForward;
-            this.btnSalir.IconColor = System.Drawing.Color.Aqua;
-            this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSalir.IconSize = 50;
-            this.btnSalir.Location = new System.Drawing.Point(428, 193);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(124, 102);
-            this.btnSalir.TabIndex = 35;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.pnlDeck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlDeck.Controls.Add(this.lblProceso);
+            this.pnlDeck.Controls.Add(this.groupBox2);
+            this.pnlDeck.Controls.Add(this.btnSalir);
+            this.pnlDeck.Controls.Add(this.groupBox1);
+            this.pnlDeck.Controls.Add(this.txtUserRegistro);
+            this.pnlDeck.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDeck.Location = new System.Drawing.Point(0, 40);
+            this.pnlDeck.Name = "pnlDeck";
+            this.pnlDeck.Size = new System.Drawing.Size(1059, 545);
+            this.pnlDeck.TabIndex = 12;
             // 
-            // groupBox1
+            // lblProceso
             // 
-            this.groupBox1.Controls.Add(this.btnBackup);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Lime;
-            this.groupBox1.Location = new System.Drawing.Point(140, 38);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(688, 149);
-            this.groupBox1.TabIndex = 76;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "BACKUP de la Base de Datos";
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBackup.FlatAppearance.BorderSize = 0;
-            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackup.IconChar = FontAwesome.Sharp.IconChar.Upload;
-            this.btnBackup.IconColor = System.Drawing.Color.Yellow;
-            this.btnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBackup.IconSize = 40;
-            this.btnBackup.Location = new System.Drawing.Point(254, 35);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(193, 93);
-            this.btnBackup.TabIndex = 77;
-            this.btnBackup.Text = "Copia de Seguridad";
-            this.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnBackup.UseVisualStyleBackColor = false;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
-            // 
-            // txtUserRegistro
-            // 
-            this.txtUserRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtUserRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserRegistro.Enabled = false;
-            this.txtUserRegistro.ForeColor = System.Drawing.Color.White;
-            this.txtUserRegistro.Location = new System.Drawing.Point(699, 6);
-            this.txtUserRegistro.Name = "txtUserRegistro";
-            this.txtUserRegistro.Size = new System.Drawing.Size(68, 16);
-            this.txtUserRegistro.TabIndex = 74;
-            this.txtUserRegistro.Visible = false;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.lblProceso.AutoSize = true;
+            this.lblProceso.Font = new System.Drawing.Font("Consolas", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProceso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblProceso.Location = new System.Drawing.Point(366, 222);
+            this.lblProceso.Name = "lblProceso";
+            this.lblProceso.Size = new System.Drawing.Size(279, 43);
+            this.lblProceso.TabIndex = 79;
+            this.lblProceso.Text = "Procesando...";
+            this.lblProceso.Visible = false;
             // 
             // frmBackupRestore
             // 
@@ -236,11 +250,11 @@
             this.Text = "COPIA Y RESTAURACIÓN DE COPIAS DE SEGURIDAD";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            this.pnlDeck.ResumeLayout(false);
-            this.pnlDeck.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.pnlDeck.ResumeLayout(false);
+            this.pnlDeck.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -249,15 +263,16 @@
 
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlDeck;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private FontAwesome.Sharp.IconButton btnSalir;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox txtUserRegistro;
+        private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnBackup;
+        private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.GroupBox groupBox2;
         private FontAwesome.Sharp.IconButton btnRestaurar;
         private System.Windows.Forms.TextBox txtCopia;
         private FontAwesome.Sharp.IconButton btnBuscar;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Panel pnlDeck;
+        private System.Windows.Forms.Label lblProceso;
     }
 }

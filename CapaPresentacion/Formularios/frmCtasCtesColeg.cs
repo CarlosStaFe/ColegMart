@@ -110,7 +110,7 @@ namespace CapaPresentacion.Formularios
                     dgvitem = fila.Cells["Item"].Value.ToString();
                     saldoTot = saldoTot + Convert.ToDecimal(fila.Cells["Saldo"].Value.ToString());
 
-                    fila.Cells["Prjo"].Value = new PonerCeros().Proceso(Convert.ToString(fila.Cells["Prjo"].Value), 4);
+                    fila.Cells["Pjo"].Value = new PonerCeros().Proceso(Convert.ToString(fila.Cells["Pjo"].Value), 4);
                     fila.Cells["Subfijo"].Value = new PonerCeros().Proceso(Convert.ToString(fila.Cells["Subfijo"].Value), 8);
 
                     if (dgvtipo == "LIQ" && dgvestado == "PENDIENTE" || dgvestado == "LIQUIDADA")
@@ -139,7 +139,7 @@ namespace CapaPresentacion.Formularios
                     {
                         fila.Cells["Fecha"].Value = DBNull.Value;
                         fila.Cells["Tipo"].Value = "";
-                        fila.Cells["Prjo"].Value = DBNull.Value;
+                        fila.Cells["Pjo"].Value = DBNull.Value;
                         fila.Cells["Subfijo"].Value = DBNull.Value;
                     }
                     if (fila.Cells["FechaPago"].Value.ToString() == "1/1/1900 00:00:00")

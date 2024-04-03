@@ -475,7 +475,7 @@
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCtasCtes.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvCtasCtes.EnableHeadersVisualStyles = false;
-            this.dgvCtasCtes.GridColor = System.Drawing.Color.White;
+            this.dgvCtasCtes.GridColor = System.Drawing.Color.Gray;
             this.dgvCtasCtes.Location = new System.Drawing.Point(17, 44);
             this.dgvCtasCtes.MultiSelect = false;
             this.dgvCtasCtes.Name = "dgvCtasCtes";

@@ -26,9 +26,13 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO DEL BOTON BACKUP *****
         private void btnBackup_Click(object sender, EventArgs e)
         {
+            lblProceso.Visible = true;
+
             string mensaje = string.Empty;
 
             bool valor = new Backup().RealizarCopia();
+
+            lblProceso.Visible = false;
 
             if (valor)
             {
@@ -80,7 +84,11 @@ namespace CapaPresentacion.Formularios
 
             if (respuesta == "OK")
             {
+                lblProceso.Visible = true;
+
                 bool valor = new Restaurar().RealizarRestore(nombre);
+
+                lblProceso.Visible = false;
 
                 if (valor)
                 {

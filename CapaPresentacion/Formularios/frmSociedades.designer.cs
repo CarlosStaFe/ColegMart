@@ -48,6 +48,31 @@
             this.txtApelNomb = new System.Windows.Forms.TextBox();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.dgvSociedades = new System.Windows.Forms.DataGridView();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_Soc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClaseDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOMICILIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCodPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FecEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inscr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Semest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marti1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marti2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marti3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marti4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMarti1 = new System.Windows.Forms.TextBox();
             this.txtMarti4 = new System.Windows.Forms.TextBox();
             this.txtMarti3 = new System.Windows.Forms.TextBox();
@@ -114,31 +139,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Soc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClaseDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOMICILIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCodPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FecEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inscr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Semest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marti1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marti2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marti3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marti4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSociedades)).BeginInit();
@@ -396,7 +396,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSociedades.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSociedades.EnableHeadersVisualStyles = false;
-            this.dgvSociedades.GridColor = System.Drawing.Color.White;
+            this.dgvSociedades.GridColor = System.Drawing.Color.Gray;
             this.dgvSociedades.Location = new System.Drawing.Point(12, 396);
             this.dgvSociedades.MultiSelect = false;
             this.dgvSociedades.Name = "dgvSociedades";
@@ -418,6 +418,187 @@
             this.dgvSociedades.TabIndex = 166;
             this.dgvSociedades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSociedades_CellContentClick);
             this.dgvSociedades.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvSociedades_CellPainting);
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
+            this.Seleccionar.Width = 25;
+            // 
+            // id_Soc
+            // 
+            this.id_Soc.HeaderText = "id";
+            this.id_Soc.Name = "id_Soc";
+            this.id_Soc.ReadOnly = true;
+            this.id_Soc.Visible = false;
+            // 
+            // Num
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Num.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Num.HeaderText = "NUM";
+            this.Num.Name = "Num";
+            this.Num.ReadOnly = true;
+            this.Num.Width = 60;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "NOMBRE";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 300;
+            // 
+            // ClaseDoc
+            // 
+            this.ClaseDoc.HeaderText = "ClaseDoc";
+            this.ClaseDoc.Name = "ClaseDoc";
+            this.ClaseDoc.ReadOnly = true;
+            this.ClaseDoc.Visible = false;
+            // 
+            // CUIT
+            // 
+            this.CUIT.HeaderText = "CUIT";
+            this.CUIT.Name = "CUIT";
+            this.CUIT.ReadOnly = true;
+            this.CUIT.Width = 80;
+            // 
+            // DOMICILIO
+            // 
+            this.DOMICILIO.HeaderText = "DOMICILIO";
+            this.DOMICILIO.Name = "DOMICILIO";
+            this.DOMICILIO.ReadOnly = true;
+            this.DOMICILIO.Width = 170;
+            // 
+            // idCodPostal
+            // 
+            this.idCodPostal.HeaderText = "idCodPostal";
+            this.idCodPostal.Name = "idCodPostal";
+            this.idCodPostal.ReadOnly = true;
+            this.idCodPostal.Visible = false;
+            // 
+            // idLocal
+            // 
+            this.idLocal.HeaderText = "IdLocal";
+            this.idLocal.Name = "idLocal";
+            this.idLocal.ReadOnly = true;
+            this.idLocal.Visible = false;
+            // 
+            // idDepto
+            // 
+            this.idDepto.HeaderText = "idDepto";
+            this.idDepto.Name = "idDepto";
+            this.idDepto.ReadOnly = true;
+            this.idDepto.Visible = false;
+            // 
+            // idProv
+            // 
+            this.idProv.HeaderText = "idProv";
+            this.idProv.Name = "idProv";
+            this.idProv.ReadOnly = true;
+            this.idProv.Visible = false;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "TELEFONO";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "EMAIL";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 150;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "TIPO";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Width = 80;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "ESTADO";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // FecEstado
+            // 
+            this.FecEstado.HeaderText = "FecEstado";
+            this.FecEstado.Name = "FecEstado";
+            this.FecEstado.ReadOnly = true;
+            this.FecEstado.Visible = false;
+            // 
+            // Inscr
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Inscr.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Inscr.HeaderText = "INSCR";
+            this.Inscr.Name = "Inscr";
+            this.Inscr.ReadOnly = true;
+            this.Inscr.Visible = false;
+            this.Inscr.Width = 50;
+            // 
+            // Semest
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Semest.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Semest.HeaderText = "SEMEST";
+            this.Semest.Name = "Semest";
+            this.Semest.ReadOnly = true;
+            this.Semest.Visible = false;
+            this.Semest.Width = 50;
+            // 
+            // Marti1
+            // 
+            this.Marti1.HeaderText = "Marti1";
+            this.Marti1.Name = "Marti1";
+            this.Marti1.ReadOnly = true;
+            this.Marti1.Visible = false;
+            // 
+            // Marti2
+            // 
+            this.Marti2.HeaderText = "Marti2";
+            this.Marti2.Name = "Marti2";
+            this.Marti2.ReadOnly = true;
+            this.Marti2.Visible = false;
+            // 
+            // Marti3
+            // 
+            this.Marti3.HeaderText = "Marti3";
+            this.Marti3.Name = "Marti3";
+            this.Marti3.ReadOnly = true;
+            this.Marti3.Visible = false;
+            // 
+            // Marti4
+            // 
+            this.Marti4.HeaderText = "Marti4";
+            this.Marti4.Name = "Marti4";
+            this.Marti4.ReadOnly = true;
+            this.Marti4.Visible = false;
+            // 
+            // Obs
+            // 
+            this.Obs.HeaderText = "Obs";
+            this.Obs.Name = "Obs";
+            this.Obs.ReadOnly = true;
+            this.Obs.Visible = false;
+            // 
+            // UserRegistro
+            // 
+            this.UserRegistro.HeaderText = "UserRegistro";
+            this.UserRegistro.Name = "UserRegistro";
+            this.UserRegistro.ReadOnly = true;
+            this.UserRegistro.Visible = false;
+            // 
+            // FechaRegistro
+            // 
+            this.FechaRegistro.HeaderText = "FechaRegistro";
+            this.FechaRegistro.Name = "FechaRegistro";
+            this.FechaRegistro.ReadOnly = true;
+            this.FechaRegistro.Visible = false;
             // 
             // txtMarti1
             // 
@@ -1234,187 +1415,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1127, 42);
             this.panel1.TabIndex = 137;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
-            this.Seleccionar.Width = 25;
-            // 
-            // id_Soc
-            // 
-            this.id_Soc.HeaderText = "id";
-            this.id_Soc.Name = "id_Soc";
-            this.id_Soc.ReadOnly = true;
-            this.id_Soc.Visible = false;
-            // 
-            // Num
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Num.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Num.HeaderText = "NUM";
-            this.Num.Name = "Num";
-            this.Num.ReadOnly = true;
-            this.Num.Width = 60;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "NOMBRE";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 300;
-            // 
-            // ClaseDoc
-            // 
-            this.ClaseDoc.HeaderText = "ClaseDoc";
-            this.ClaseDoc.Name = "ClaseDoc";
-            this.ClaseDoc.ReadOnly = true;
-            this.ClaseDoc.Visible = false;
-            // 
-            // CUIT
-            // 
-            this.CUIT.HeaderText = "CUIT";
-            this.CUIT.Name = "CUIT";
-            this.CUIT.ReadOnly = true;
-            this.CUIT.Width = 80;
-            // 
-            // DOMICILIO
-            // 
-            this.DOMICILIO.HeaderText = "DOMICILIO";
-            this.DOMICILIO.Name = "DOMICILIO";
-            this.DOMICILIO.ReadOnly = true;
-            this.DOMICILIO.Width = 170;
-            // 
-            // idCodPostal
-            // 
-            this.idCodPostal.HeaderText = "idCodPostal";
-            this.idCodPostal.Name = "idCodPostal";
-            this.idCodPostal.ReadOnly = true;
-            this.idCodPostal.Visible = false;
-            // 
-            // idLocal
-            // 
-            this.idLocal.HeaderText = "IdLocal";
-            this.idLocal.Name = "idLocal";
-            this.idLocal.ReadOnly = true;
-            this.idLocal.Visible = false;
-            // 
-            // idDepto
-            // 
-            this.idDepto.HeaderText = "idDepto";
-            this.idDepto.Name = "idDepto";
-            this.idDepto.ReadOnly = true;
-            this.idDepto.Visible = false;
-            // 
-            // idProv
-            // 
-            this.idProv.HeaderText = "idProv";
-            this.idProv.Name = "idProv";
-            this.idProv.ReadOnly = true;
-            this.idProv.Visible = false;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "TELEFONO";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "EMAIL";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 150;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "TIPO";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 80;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "ESTADO";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // FecEstado
-            // 
-            this.FecEstado.HeaderText = "FecEstado";
-            this.FecEstado.Name = "FecEstado";
-            this.FecEstado.ReadOnly = true;
-            this.FecEstado.Visible = false;
-            // 
-            // Inscr
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Inscr.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Inscr.HeaderText = "INSCR";
-            this.Inscr.Name = "Inscr";
-            this.Inscr.ReadOnly = true;
-            this.Inscr.Visible = false;
-            this.Inscr.Width = 50;
-            // 
-            // Semest
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Semest.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Semest.HeaderText = "SEMEST";
-            this.Semest.Name = "Semest";
-            this.Semest.ReadOnly = true;
-            this.Semest.Visible = false;
-            this.Semest.Width = 50;
-            // 
-            // Marti1
-            // 
-            this.Marti1.HeaderText = "Marti1";
-            this.Marti1.Name = "Marti1";
-            this.Marti1.ReadOnly = true;
-            this.Marti1.Visible = false;
-            // 
-            // Marti2
-            // 
-            this.Marti2.HeaderText = "Marti2";
-            this.Marti2.Name = "Marti2";
-            this.Marti2.ReadOnly = true;
-            this.Marti2.Visible = false;
-            // 
-            // Marti3
-            // 
-            this.Marti3.HeaderText = "Marti3";
-            this.Marti3.Name = "Marti3";
-            this.Marti3.ReadOnly = true;
-            this.Marti3.Visible = false;
-            // 
-            // Marti4
-            // 
-            this.Marti4.HeaderText = "Marti4";
-            this.Marti4.Name = "Marti4";
-            this.Marti4.ReadOnly = true;
-            this.Marti4.Visible = false;
-            // 
-            // Obs
-            // 
-            this.Obs.HeaderText = "Obs";
-            this.Obs.Name = "Obs";
-            this.Obs.ReadOnly = true;
-            this.Obs.Visible = false;
-            // 
-            // UserRegistro
-            // 
-            this.UserRegistro.HeaderText = "UserRegistro";
-            this.UserRegistro.Name = "UserRegistro";
-            this.UserRegistro.ReadOnly = true;
-            this.UserRegistro.Visible = false;
-            // 
-            // FechaRegistro
-            // 
-            this.FechaRegistro.HeaderText = "FechaRegistro";
-            this.FechaRegistro.Name = "FechaRegistro";
-            this.FechaRegistro.ReadOnly = true;
-            this.FechaRegistro.Visible = false;
             // 
             // frmSociedades
             // 

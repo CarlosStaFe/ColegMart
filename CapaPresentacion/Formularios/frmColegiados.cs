@@ -166,7 +166,7 @@ namespace CapaPresentacion.Formularios
                         row.Cells["Juramento"].Value = dtpJuramento.Value;
                         row.Cells["Tomo"].Value = txtTomo.Text;
                         row.Cells["Folio"].Value = txtFolio.Text;
-                        row.Cells["Categ"].Value = cboCategoria.Text;
+                        row.Cells["Cat"].Value = cboCategoria.Text;
                         row.Cells["Iapos"].Value = cboIAPOS.Text;
                         row.Cells["Email"].Value = txtEmail.Text;
                         row.Cells["Estado"].Value = cboEstado.Text;
@@ -325,7 +325,7 @@ namespace CapaPresentacion.Formularios
                     dtpJuramento.Value = Convert.ToDateTime(dgvColegiados.Rows[indice].Cells["Juramento"].Value.ToString());
                     txtTomo.Text = dgvColegiados.Rows[indice].Cells["Tomo"].Value.ToString();
                     txtFolio.Text = dgvColegiados.Rows[indice].Cells["Folio"].Value.ToString();
-                    cboCategoria.Text = dgvColegiados.Rows[indice].Cells["Categ"].Value.ToString();
+                    cboCategoria.Text = dgvColegiados.Rows[indice].Cells["Cat"].Value.ToString();
                     cboIAPOS.Text = dgvColegiados.Rows[indice].Cells["Iapos"].Value.ToString();
                     txtEmail.Text = dgvColegiados.Rows[indice].Cells["Email"].Value.ToString();
                     cboEstado.Text = dgvColegiados.Rows[indice].Cells["Estado"].Value.ToString();
@@ -467,13 +467,47 @@ namespace CapaPresentacion.Formularios
 
                 if (dateFecha.Date <= DateTime.Now.Date)
                 {
-                    dgvColegiados.Rows[i].Cells["Fianza"].Style.ForeColor = Color.Black;
-                    dgvColegiados.Rows[i].Cells["Fianza"].Style.BackColor = Color.DarkOrange;
+                    dgvColegiados.Rows[i].Cells["Fianza"].Style.ForeColor = Color.Red;
+                    //dgvColegiados.Rows[i].Cells["Fianza"].Style.BackColor = Color.Black;
                 }
                 else
                 {
                     dgvColegiados.Rows[i].Cells["Fianza"].Style.ForeColor = Color.Lime;
-                    dgvColegiados.Rows[i].Cells["Fianza"].Style.BackColor = Color.Black;
+                }
+
+                if (dgvColegiados.Rows[i].Cells["Estado"].Value.ToString().Trim() == "ACTIVO")
+                {
+                    dgvColegiados.Rows[i].Cells["Estado"].Style.ForeColor = Color.Lime;
+                }
+
+                if (dgvColegiados.Rows[i].Cells["Estado"].Value.ToString().Trim() == "BAJA")
+                {
+                    dgvColegiados.Rows[i].Cells["Estado"].Style.ForeColor = Color.White;
+                }
+
+                if (dgvColegiados.Rows[i].Cells["Estado"].Value.ToString().Trim() == "CANCELADO")
+                {
+                    dgvColegiados.Rows[i].Cells["Estado"].Style.ForeColor = Color.Aqua;
+                }
+
+                if (dgvColegiados.Rows[i].Cells["Estado"].Value.ToString().Trim() == "INACTIVO")
+                {
+                    dgvColegiados.Rows[i].Cells["Estado"].Style.ForeColor = Color.DarkOrange;
+                }
+
+                if (dgvColegiados.Rows[i].Cells["Estado"].Value.ToString().Trim() == "SUSPENDIDO")
+                {
+                    dgvColegiados.Rows[i].Cells["Estado"].Style.ForeColor = Color.Yellow;
+                }
+
+                if (dgvColegiados.Rows[i].Cells["Estado"].Value.ToString().Trim() == "SUSP MOROSO")
+                {
+                    dgvColegiados.Rows[i].Cells["Estado"].Style.ForeColor = Color.Red;
+                }
+
+                if (dgvColegiados.Rows[i].Cells["Estado"].Value.ToString().Trim() == "PENDIENTE")
+                {
+                    dgvColegiados.Rows[i].Cells["Estado"].Style.ForeColor = Color.Cyan;
                 }
             }
         }

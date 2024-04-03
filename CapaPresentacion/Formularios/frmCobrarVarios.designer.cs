@@ -55,6 +55,7 @@
             this.TotalCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PagadoCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SaldoCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportCobroVarios = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -95,7 +96,6 @@
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
-            this.reportCobroVarios = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.renglonesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).BeginInit();
             this.pnlTitulo.SuspendLayout();
@@ -300,7 +300,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCobros.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCobros.EnableHeadersVisualStyles = false;
-            this.dgvCobros.GridColor = System.Drawing.Color.White;
+            this.dgvCobros.GridColor = System.Drawing.Color.Gray;
             this.dgvCobros.Location = new System.Drawing.Point(17, 106);
             this.dgvCobros.MultiSelect = false;
             this.dgvCobros.Name = "dgvCobros";
@@ -366,6 +366,18 @@
             this.SaldoCpto.Name = "SaldoCpto";
             this.SaldoCpto.ReadOnly = true;
             this.SaldoCpto.Visible = false;
+            // 
+            // reportCobroVarios
+            // 
+            reportDataSource1.Name = "DS_Renglones";
+            reportDataSource1.Value = this.renglonesBindingSource;
+            this.reportCobroVarios.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportCobroVarios.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rptCicVarios.rdlc";
+            this.reportCobroVarios.Location = new System.Drawing.Point(767, 473);
+            this.reportCobroVarios.Name = "reportCobroVarios";
+            this.reportCobroVarios.ServerReport.BearerToken = null;
+            this.reportCobroVarios.Size = new System.Drawing.Size(366, 93);
+            this.reportCobroVarios.TabIndex = 285;
             // 
             // panel3
             // 
@@ -850,18 +862,6 @@
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // reportCobroVarios
-            // 
-            reportDataSource1.Name = "DS_Renglones";
-            reportDataSource1.Value = this.renglonesBindingSource;
-            this.reportCobroVarios.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportCobroVarios.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rptCicVarios.rdlc";
-            this.reportCobroVarios.Location = new System.Drawing.Point(767, 473);
-            this.reportCobroVarios.Name = "reportCobroVarios";
-            this.reportCobroVarios.ServerReport.BearerToken = null;
-            this.reportCobroVarios.Size = new System.Drawing.Size(366, 93);
-            this.reportCobroVarios.TabIndex = 285;
             // 
             // frmCobrarVarios
             // 

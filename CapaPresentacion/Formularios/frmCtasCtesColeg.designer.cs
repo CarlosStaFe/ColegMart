@@ -64,7 +64,7 @@
             this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subfijo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fk_idDebito = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -243,7 +243,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(661, 605);
+            this.label4.Location = new System.Drawing.Point(680, 605);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 19);
             this.label4.TabIndex = 90;
@@ -255,7 +255,7 @@
             this.txtSaldo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSaldo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldo.ForeColor = System.Drawing.Color.Cyan;
-            this.txtSaldo.Location = new System.Drawing.Point(731, 603);
+            this.txtSaldo.Location = new System.Drawing.Point(750, 603);
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.Size = new System.Drawing.Size(118, 27);
             this.txtSaldo.TabIndex = 91;
@@ -267,9 +267,9 @@
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1068, 90);
+            this.groupBox1.Location = new System.Drawing.Point(1078, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(95, 265);
+            this.groupBox1.Size = new System.Drawing.Size(84, 265);
             this.groupBox1.TabIndex = 131;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controles";
@@ -286,7 +286,7 @@
             this.btnSalir.IconColor = System.Drawing.Color.Aqua;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
-            this.btnSalir.Location = new System.Drawing.Point(11, 189);
+            this.btnSalir.Location = new System.Drawing.Point(8, 189);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(70, 53);
             this.btnSalir.TabIndex = 2;
@@ -307,7 +307,7 @@
             this.btnClear.IconColor = System.Drawing.Color.Aqua;
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClear.IconSize = 30;
-            this.btnClear.Location = new System.Drawing.Point(11, 111);
+            this.btnClear.Location = new System.Drawing.Point(8, 111);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(70, 53);
             this.btnClear.TabIndex = 1;
@@ -328,7 +328,7 @@
             this.btnImprimir.IconColor = System.Drawing.Color.Aqua;
             this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnImprimir.IconSize = 30;
-            this.btnImprimir.Location = new System.Drawing.Point(11, 33);
+            this.btnImprimir.Location = new System.Drawing.Point(8, 33);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(70, 53);
             this.btnImprimir.TabIndex = 0;
@@ -364,7 +364,7 @@
             this.Matricula,
             this.Fecha,
             this.Tipo,
-            this.Prjo,
+            this.Pjo,
             this.Subfijo,
             this.Item,
             this.fk_idDebito,
@@ -388,7 +388,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCtasCtes.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCtasCtes.EnableHeadersVisualStyles = false;
-            this.dgvCtasCtes.GridColor = System.Drawing.Color.White;
+            this.dgvCtasCtes.GridColor = System.Drawing.Color.Gray;
             this.dgvCtasCtes.Location = new System.Drawing.Point(12, 90);
             this.dgvCtasCtes.MultiSelect = false;
             this.dgvCtasCtes.Name = "dgvCtasCtes";
@@ -406,7 +406,7 @@
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gray;
             this.dgvCtasCtes.RowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvCtasCtes.Size = new System.Drawing.Size(1050, 504);
+            this.dgvCtasCtes.Size = new System.Drawing.Size(1059, 504);
             this.dgvCtasCtes.TabIndex = 132;
             // 
             // id
@@ -439,21 +439,21 @@
             this.Tipo.HeaderText = "TIPO";
             this.Tipo.Name = "Tipo";
             this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 40;
+            this.Tipo.Width = 45;
             // 
-            // Prjo
+            // Pjo
             // 
-            this.Prjo.HeaderText = "PRJO";
-            this.Prjo.Name = "Prjo";
-            this.Prjo.ReadOnly = true;
-            this.Prjo.Width = 45;
+            this.Pjo.HeaderText = "PJO";
+            this.Pjo.Name = "Pjo";
+            this.Pjo.ReadOnly = true;
+            this.Pjo.Width = 40;
             // 
             // Subfijo
             // 
             this.Subfijo.HeaderText = "SUBFIJO";
             this.Subfijo.Name = "Subfijo";
             this.Subfijo.ReadOnly = true;
-            this.Subfijo.Width = 75;
+            this.Subfijo.Width = 70;
             // 
             // Item
             // 
@@ -627,7 +627,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prjo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pjo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subfijo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item;
         private System.Windows.Forms.DataGridViewTextBoxColumn fk_idDebito;

@@ -81,7 +81,7 @@
             this.Juramento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tomo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Iapos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -659,7 +659,7 @@
             this.Juramento,
             this.Tomo,
             this.Folio,
-            this.Categ,
+            this.Cat,
             this.Iapos,
             this.Email,
             this.Estado,
@@ -692,7 +692,7 @@
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvColegiados.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvColegiados.EnableHeadersVisualStyles = false;
-            this.dgvColegiados.GridColor = System.Drawing.Color.White;
+            this.dgvColegiados.GridColor = System.Drawing.Color.Gray;
             this.dgvColegiados.Location = new System.Drawing.Point(21, 434);
             this.dgvColegiados.MultiSelect = false;
             this.dgvColegiados.Name = "dgvColegiados";
@@ -810,7 +810,7 @@
             // 
             // Juramento
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle4.Format = "d";
             dataGridViewCellStyle4.NullValue = null;
             this.Juramento.DefaultCellStyle = dataGridViewCellStyle4;
@@ -833,14 +833,14 @@
             this.Folio.ReadOnly = true;
             this.Folio.Visible = false;
             // 
-            // Categ
+            // Cat
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Categ.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Categ.HeaderText = "CATEG";
-            this.Categ.Name = "Categ";
-            this.Categ.ReadOnly = true;
-            this.Categ.Width = 55;
+            this.Cat.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Cat.HeaderText = "CAT";
+            this.Cat.Name = "Cat";
+            this.Cat.ReadOnly = true;
+            this.Cat.Width = 40;
             // 
             // Iapos
             // 
@@ -860,16 +860,16 @@
             // 
             // Estado
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Estado.DefaultCellStyle = dataGridViewCellStyle7;
             this.Estado.HeaderText = "ESTADO";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            this.Estado.Width = 110;
+            this.Estado.Width = 120;
             // 
             // Fecha
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle8.Format = "d";
             dataGridViewCellStyle8.NullValue = null;
             this.Fecha.DefaultCellStyle = dataGridViewCellStyle8;
@@ -978,7 +978,7 @@
             // 
             // Fianza
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle9.Format = "d";
             dataGridViewCellStyle9.NullValue = null;
             this.Fianza.DefaultCellStyle = dataGridViewCellStyle9;
@@ -1457,6 +1457,7 @@
             "ACTIVO",
             "BAJA",
             "CANCELADO",
+            "INACTIVO",
             "SUSPENDIDO",
             "SUSP. MOROSO",
             "PENDIENTE"});
@@ -1984,7 +1985,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Juramento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tomo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Folio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Iapos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;

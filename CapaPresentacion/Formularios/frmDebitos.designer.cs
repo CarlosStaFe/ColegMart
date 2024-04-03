@@ -44,6 +44,8 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.dtpHasta = new Controles.Controles.DatePicker();
+            this.dtpDesde = new Controles.Controles.DatePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -89,8 +91,6 @@
             this.txtDetalle = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.dtpDesde = new Controles.Controles.DatePicker();
-            this.dtpHasta = new Controles.Controles.DatePicker();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -158,6 +158,40 @@
             this.pnlDeck.Name = "pnlDeck";
             this.pnlDeck.Size = new System.Drawing.Size(1099, 593);
             this.pnlDeck.TabIndex = 23;
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.BorderColor = System.Drawing.Color.Gray;
+            this.dtpHasta.BorderSize = 1;
+            this.dtpHasta.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dtpHasta.CalendarTitleBackColor = System.Drawing.Color.Silver;
+            this.dtpHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(835, 80);
+            this.dtpHasta.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(108, 23);
+            this.dtpHasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dtpHasta.TabIndex = 145;
+            this.dtpHasta.TextColor = System.Drawing.Color.White;
+            this.dtpHasta.Visible = false;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.BorderColor = System.Drawing.Color.Gray;
+            this.dtpDesde.BorderSize = 1;
+            this.dtpDesde.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.dtpDesde.CalendarTitleBackColor = System.Drawing.Color.Silver;
+            this.dtpDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(600, 80);
+            this.dtpDesde.MinimumSize = new System.Drawing.Size(4, 23);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(108, 23);
+            this.dtpDesde.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dtpDesde.TabIndex = 144;
+            this.dtpDesde.TextColor = System.Drawing.Color.White;
+            this.dtpDesde.Visible = false;
             // 
             // label13
             // 
@@ -479,7 +513,7 @@
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDebitos.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvDebitos.EnableHeadersVisualStyles = false;
-            this.dgvDebitos.GridColor = System.Drawing.Color.White;
+            this.dgvDebitos.GridColor = System.Drawing.Color.Gray;
             this.dgvDebitos.Location = new System.Drawing.Point(26, 240);
             this.dgvDebitos.MultiSelect = false;
             this.dgvDebitos.Name = "dgvDebitos";
@@ -725,40 +759,6 @@
             this.txtId.TabIndex = 30;
             this.txtId.Text = "0";
             this.txtId.Visible = false;
-            // 
-            // dtpDesde
-            // 
-            this.dtpDesde.BorderColor = System.Drawing.Color.Gray;
-            this.dtpDesde.BorderSize = 1;
-            this.dtpDesde.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpDesde.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.dtpDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(600, 80);
-            this.dtpDesde.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(108, 23);
-            this.dtpDesde.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpDesde.TabIndex = 144;
-            this.dtpDesde.TextColor = System.Drawing.Color.White;
-            this.dtpDesde.Visible = false;
-            // 
-            // dtpHasta
-            // 
-            this.dtpHasta.BorderColor = System.Drawing.Color.Gray;
-            this.dtpHasta.BorderSize = 1;
-            this.dtpHasta.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpHasta.CalendarTitleBackColor = System.Drawing.Color.Silver;
-            this.dtpHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(835, 80);
-            this.dtpHasta.MinimumSize = new System.Drawing.Size(4, 23);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(108, 23);
-            this.dtpHasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dtpHasta.TabIndex = 145;
-            this.dtpHasta.TextColor = System.Drawing.Color.White;
-            this.dtpHasta.Visible = false;
             // 
             // frmDebitos
             // 

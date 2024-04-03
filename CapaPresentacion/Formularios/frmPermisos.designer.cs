@@ -46,17 +46,17 @@
             this.cboBotones = new System.Windows.Forms.ComboBox();
             this.cboUsuarios = new System.Windows.Forms.ComboBox();
             this.dgvPermisos = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.btnClear = new FontAwesome.Sharp.IconButton();
-            this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_Permiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fk_Usuarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fk_Botones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.btnClear = new FontAwesome.Sharp.IconButton();
+            this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).BeginInit();
@@ -233,7 +233,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPermisos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPermisos.EnableHeadersVisualStyles = false;
-            this.dgvPermisos.GridColor = System.Drawing.Color.White;
+            this.dgvPermisos.GridColor = System.Drawing.Color.Gray;
             this.dgvPermisos.Location = new System.Drawing.Point(473, 40);
             this.dgvPermisos.MultiSelect = false;
             this.dgvPermisos.Name = "dgvPermisos";
@@ -255,6 +255,49 @@
             this.dgvPermisos.TabIndex = 53;
             this.dgvPermisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPermisos_CellContentClick);
             this.dgvPermisos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvPermisos_CellPainting);
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
+            this.Seleccionar.Width = 25;
+            // 
+            // id_Permiso
+            // 
+            this.id_Permiso.HeaderText = "id";
+            this.id_Permiso.Name = "id_Permiso";
+            this.id_Permiso.ReadOnly = true;
+            this.id_Permiso.Visible = false;
+            // 
+            // fk_Usuarios
+            // 
+            this.fk_Usuarios.HeaderText = "fk_Usuarios";
+            this.fk_Usuarios.Name = "fk_Usuarios";
+            this.fk_Usuarios.ReadOnly = true;
+            this.fk_Usuarios.Visible = false;
+            this.fk_Usuarios.Width = 150;
+            // 
+            // fk_Botones
+            // 
+            this.fk_Botones.HeaderText = "fk_Botones";
+            this.fk_Botones.Name = "fk_Botones";
+            this.fk_Botones.ReadOnly = true;
+            this.fk_Botones.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "NOMBRE";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 200;
+            // 
+            // Detalle
+            // 
+            this.Detalle.HeaderText = "DETALLE";
+            this.Detalle.Name = "Detalle";
+            this.Detalle.ReadOnly = true;
+            this.Detalle.Width = 200;
             // 
             // groupBox1
             // 
@@ -341,7 +384,7 @@
             this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.Share;
+            this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.MailForward;
             this.btnSalir.IconColor = System.Drawing.Color.Aqua;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
@@ -353,49 +396,6 @@
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
-            this.Seleccionar.Width = 25;
-            // 
-            // id_Permiso
-            // 
-            this.id_Permiso.HeaderText = "id";
-            this.id_Permiso.Name = "id_Permiso";
-            this.id_Permiso.ReadOnly = true;
-            this.id_Permiso.Visible = false;
-            // 
-            // fk_Usuarios
-            // 
-            this.fk_Usuarios.HeaderText = "fk_Usuarios";
-            this.fk_Usuarios.Name = "fk_Usuarios";
-            this.fk_Usuarios.ReadOnly = true;
-            this.fk_Usuarios.Visible = false;
-            this.fk_Usuarios.Width = 150;
-            // 
-            // fk_Botones
-            // 
-            this.fk_Botones.HeaderText = "fk_Botones";
-            this.fk_Botones.Name = "fk_Botones";
-            this.fk_Botones.ReadOnly = true;
-            this.fk_Botones.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "NOMBRE";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 200;
-            // 
-            // Detalle
-            // 
-            this.Detalle.HeaderText = "DETALLE";
-            this.Detalle.Name = "Detalle";
-            this.Detalle.ReadOnly = true;
-            this.Detalle.Width = 200;
             // 
             // frmPermisos
             // 
