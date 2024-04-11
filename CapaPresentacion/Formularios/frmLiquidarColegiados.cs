@@ -236,7 +236,7 @@ namespace CapaPresentacion.Formularios
         //***** CALCULO EL SALDO DEL COLEGIADO EN LA CUENTA CORRIENTE *****
         decimal CalcularSaldo(int idColeg)
         {
-            var saldo = cN_CtasCtesColeg.CalcularSaldo(idColeg);
+            var saldo = cN_CtasCtesColeg.SaldoColeg(idColeg);
 
             return saldo;
         }

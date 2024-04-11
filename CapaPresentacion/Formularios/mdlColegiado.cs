@@ -92,7 +92,8 @@ namespace CapaPresentacion.Formularios
                     if (NameBoton == "btnCobrarPendientes")
                     {
                         frmCobrarPendientes CobrarPendientes = Owner as frmCobrarPendientes;
-                        CobrarPendientes.lblNombre.Text = dgvColegiados.Rows[indice].Cells["Nombres"].Value.ToString();
+                        CobrarPendientes.lblNombre.Text = dgvColegiados.Rows[indice].Cells["Nombres"].Value.ToString() + " - " +
+                                                          dgvColegiados.Rows[indice].Cells["Estado"].Value.ToString();
                         CobrarPendientes.txtMatricula.Text = dgvColegiados.Rows[indice].Cells["Mat"].Value.ToString();
                         CobrarPendientes.txtFk_idColeg.Text = dgvColegiados.Rows[indice].Cells["id_Coleg"].Value.ToString();
                         Close();
@@ -101,7 +102,8 @@ namespace CapaPresentacion.Formularios
                     if (NameBoton == "btnCobrarVarios")
                     {
                         frmCobrarVarios CobrarVarios = Owner as frmCobrarVarios;
-                        CobrarVarios.lblNombre.Text = dgvColegiados.Rows[indice].Cells["Nombres"].Value.ToString();
+                        CobrarVarios.lblNombre.Text = dgvColegiados.Rows[indice].Cells["Nombres"].Value.ToString() + " - " +
+                                                          dgvColegiados.Rows[indice].Cells["Estado"].Value.ToString();
                         CobrarVarios.txtMatricula.Text = dgvColegiados.Rows[indice].Cells["Mat"].Value.ToString();
                         CobrarVarios.txtIdColeg.Text = dgvColegiados.Rows[indice].Cells["id_Coleg"].Value.ToString();
                         Close();

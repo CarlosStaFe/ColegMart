@@ -30,7 +30,7 @@ namespace CapaDatos
         }
 
         //***** METODO PARA CALCULAR EL SALDO ADEUDADO DE LOS COLEGIADOS *****
-        public decimal CalcularSaldo(int matri)
+        public decimal SaldoColeg(int matri)
         {
             decimal saldo = 0;
 

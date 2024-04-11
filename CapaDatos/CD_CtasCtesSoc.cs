@@ -30,7 +30,7 @@ namespace CapaDatos
         }
 
         //***** METODO PARA CALCULAR EL SALDO ADEUDADO DE LAS SOCIEDADES *****
-        public decimal CalcularSaldo(int numerosoc)
+        public decimal SaldoSoc(int numerosoc)
         {
             decimal saldo = 0;
 

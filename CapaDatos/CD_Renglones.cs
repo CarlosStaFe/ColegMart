@@ -20,20 +20,21 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("Codigo", obj.Codigo);
-                        command.Parameters.AddWithValue("Detalle", obj.Detalle);
-                        command.Parameters.AddWithValue("Importe", obj.Importe);
-                        command.Parameters.AddWithValue("Cantidad", obj.Cantidad);
-                        command.Parameters.AddWithValue("Subtotal", obj.Subtotal);
-                        command.Parameters.AddWithValue("Pagado", obj.Pagado);
-                        command.Parameters.AddWithValue("Saldo", obj.Saldo);
-                        command.Parameters.Add("idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.AddWithValue("_Codigo", obj.Codigo);
+                        command.Parameters.AddWithValue("_Matricula", obj.Codigo);
+                        command.Parameters.AddWithValue("_Detalle", obj.Detalle);
+                        command.Parameters.AddWithValue("_Importe", obj.Importe);
+                        command.Parameters.AddWithValue("_Cantidad", obj.Cantidad);
+                        command.Parameters.AddWithValue("_Subtotal", obj.Subtotal);
+                        command.Parameters.AddWithValue("_Pagado", obj.Pagado);
+                        command.Parameters.AddWithValue("_Saldo", obj.Saldo);
+                        command.Parameters.Add("_idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        idRenglon = Convert.ToInt32(command.Parameters["idResultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        idRenglon = Convert.ToInt32(command.Parameters["_idResultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
@@ -86,17 +87,18 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("Codigo", obj.Codigo);
-                        command.Parameters.AddWithValue("Detalle", obj.Detalle);
-                        command.Parameters.AddWithValue("Pagado", obj.Pagado);
-                        command.Parameters.AddWithValue("Saldo", obj.Saldo);
-                        command.Parameters.Add("idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.AddWithValue("_Codigo", obj.Codigo);
+                        command.Parameters.AddWithValue("_Matricula", obj.Codigo);
+                        command.Parameters.AddWithValue("_Detalle", obj.Detalle);
+                        command.Parameters.AddWithValue("_Pagado", obj.Pagado);
+                        command.Parameters.AddWithValue("_Saldo", obj.Saldo);
+                        command.Parameters.Add("_idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        Resultado = Convert.ToBoolean(command.Parameters["Resultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        Resultado = Convert.ToBoolean(command.Parameters["_Resultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {

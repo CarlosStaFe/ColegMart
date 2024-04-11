@@ -13,6 +13,7 @@ namespace CapaPresentacion.Formularios
     public partial class frmCobrarVarios : Form
     {
         CN_CtasCtesColeg cN_CtasCtesColeg = new CN_CtasCtesColeg();
+        CN_CtasCtesSoc cN_CtasCtesSoc = new CN_CtasCtesSoc();
 
         decimal efectivo, transferencia, tarjeta;
         decimal saldo, saldoant, pagado, saldoactual, pagoactual, importe, subtotal, total;
@@ -39,7 +40,8 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO CUENDO SE PRESIONA F1 EN EL CAMPO MATRICULA *****
         private void txtMatricula_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1) Consulta();
+            if (e.KeyCode == Keys.F1) ConsultaCol();
+            if (e.KeyCode == Keys.F2) ConsultaSoc();
         }
 
         //***** PROCEDIMIENTO CUANDO PRESIONA ENTER *****
@@ -47,17 +49,35 @@ namespace CapaPresentacion.Formularios
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                Limpiar();
-                LeerColegiado();
-                txtCodigo.Select();
+                if (Convert.ToInt32(txtMatricula.Text) > 60000 && Convert.ToInt32(txtMatricula.Text) < 70000)
+                {
+                    Limpiar();
+                    LeerSociedad();
+                    txtCodigo.Select();
+                }
+                else
+                {
+                    Limpiar();
+                    LeerColegiado();
+                    txtCodigo.Select();
+                }
             }
         }
 
         //***** PROCEDIMIENTO PARA LLAMAR A LA CONSULTA DE COLEGIADOS *****
-        private void Consulta()
+        private void ConsultaCol()
         {
             Limpiar();
             mdlColegiado CobrarVarios = new mdlColegiado("btnCobrarVarios");
+            AddOwnedForm(CobrarVarios);
+            CobrarVarios.ShowDialog();
+        }
+
+        //***** PROCEDIMIENTO PARA LLAMAR A LA CONSULTA DE SOCIEDADES *****
+        private void ConsultaSoc()
+        {
+            Limpiar();
+            mdlSociedades CobrarVarios = new mdlSociedades("btnCobrarVarios");
             AddOwnedForm(CobrarVarios);
             CobrarVarios.ShowDialog();
         }
@@ -111,19 +131,48 @@ namespace CapaPresentacion.Formularios
                 txtId.Text = Convert.ToString(item.id_Coleg);
                 idColeg = Convert.ToInt32(item.id_Coleg);
                 txtMatricula.Text = Convert.ToString(item.Matricula);
+                matricula = Convert.ToInt32(item.Matricula);
                 lblNombre.Text = item.ApelNombres.ToString().Trim();
                 int anios = CalcularAnios.TraerAnios(Convert.ToDateTime(item.Juramento.ToString()));
                 lblAntiguedad.Text = anios.ToString() + " años";
                 lblVenceFianza.Text = new ProcesarFecha().Proceso(item.FecVenceFianza.ToString());
-                saldoant = CalcularSaldo(idColeg);
+                saldoant = SaldoColeg(idColeg);
+                txtSaldoMat.Text = saldoant.ToString("$##,###,##0.00");
+            }
+        }
+
+        //***** PROCEDIMIENTO PARA LEER LA SOCIEDAD INGRESADA *****
+        private void LeerSociedad()
+        {
+            string mensaje = string.Empty;
+            List<CE_Sociedades> ListaBuscado = new CN_Sociedades().ListaBuscado(txtMatricula.Text, out mensaje);
+
+            foreach (CE_Sociedades item in ListaBuscado)
+            {
+                txtId.Text = Convert.ToString(item.id_Soc);
+                idColeg = Convert.ToInt32(item.id_Soc);
+                txtMatricula.Text = Convert.ToString(item.Numero);
+                matricula = Convert.ToInt32(item.Numero);
+                lblNombre.Text = item.Nombre.ToString().Trim();
+                lblAntiguedad.Text = "-";
+                lblVenceFianza.Text = "-";
+                saldoant = SaldoSoc(idColeg);
                 txtSaldoMat.Text = saldoant.ToString("$##,###,##0.00");
             }
         }
 
         //***** CALCULO EL SALDO DEL COLEGIADO EN LA CUENTA CORRIENTE *****
-        decimal CalcularSaldo(int idColeg)
+        decimal SaldoColeg(int idColeg)
         {
-            var saldo = cN_CtasCtesColeg.CalcularSaldo(idColeg);
+            var saldo = cN_CtasCtesColeg.SaldoColeg(matricula);
+
+            return saldo;
+        }
+
+        //***** CALCULO EL SALDO DE LA SOCIEDAD LA CUENTA CORRIENTE *****
+        decimal SaldoSoc(int idSoc)
+        {
+            var saldo = cN_CtasCtesSoc.SaldoSoc(matricula);
 
             return saldo;
         }
@@ -241,7 +290,7 @@ namespace CapaPresentacion.Formularios
 
             if (idRenglon != 0)
             {
-                dgvCobros.Rows.Add(new object[] { "", txtCodigo.Text, lblDetalle.Text, txtImporte.Text, txtCantidad.Text, txtSubtotal.Text });
+                dgvCobros.Rows.Add(new object[] {txtCodigo.Text, lblDetalle.Text, txtImporte.Text, txtCantidad.Text, txtSubtotal.Text });
                 total = total + subtotal;
                 txtTotal.Text = total.ToString("$##,###,##0.00");
                 txtSaldo.Text = total.ToString("$##,###,##0.00");
@@ -269,6 +318,16 @@ namespace CapaPresentacion.Formularios
             txtTransferencia.Text = new FormatoMoneda().Proceso(txtTransferencia.Text);
             transferencia = Convert.ToDecimal(txtTransferencia.Text);
             ProcesarImportes(transferencia);
+        }
+
+        private void txtTransferencia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                mdlEstratoBco MovBancos = new mdlEstratoBco("btnCobrarVarios");
+                AddOwnedForm(MovBancos);
+                MovBancos.ShowDialog();
+            }
         }
 
         private void txtTarjeta_Leave(object sender, EventArgs e)

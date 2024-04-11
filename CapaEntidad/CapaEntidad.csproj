@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CE_Bancos.cs" />
     <Compile Include="CE_Botones.cs" />
     <Compile Include="CE_Cajas.cs" />
     <Compile Include="CE_CobroBoletas.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="CE_DetalleLiqui.cs" />
     <Compile Include="CE_DeudaLiqui.cs" />
     <Compile Include="CE_Documentos.cs" />
+    <Compile Include="CE_Estratos.cs" />
     <Compile Include="CE_Fianzas.cs" />
     <Compile Include="CE_Liquidacion.cs" />
     <Compile Include="CE_Localidades.cs" />

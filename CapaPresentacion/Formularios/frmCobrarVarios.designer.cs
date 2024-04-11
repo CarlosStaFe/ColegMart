@@ -31,13 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCobrarVarios));
-            this.renglonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetPrincipal = new CapaPresentacion.DataSetPrincipal();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.txtIdColeg = new System.Windows.Forms.TextBox();
             this.txtHasta = new System.Windows.Forms.TextBox();
@@ -48,13 +50,6 @@
             this.txtUserRegistro = new System.Windows.Forms.TextBox();
             this.pnlDeck = new System.Windows.Forms.Panel();
             this.dgvCobros = new System.Windows.Forms.DataGridView();
-            this.CodigoCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DetalleCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImporteCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Canti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PagadoCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SaldoCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportCobroVarios = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Label11 = new System.Windows.Forms.Label();
@@ -96,8 +91,15 @@
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.renglonesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).BeginInit();
+            this.CodigoCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DetalleCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImporteCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Canti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PagadoCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SaldoCpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.renglonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetPrincipal = new CapaPresentacion.DataSetPrincipal();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCobros)).BeginInit();
@@ -105,17 +107,9 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.renglonesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).BeginInit();
             this.SuspendLayout();
-            // 
-            // renglonesBindingSource
-            // 
-            this.renglonesBindingSource.DataMember = "Renglones";
-            this.renglonesBindingSource.DataSource = this.dataSetPrincipal;
-            // 
-            // dataSetPrincipal
-            // 
-            this.dataSetPrincipal.DataSetName = "DataSetPrincipal";
-            this.dataSetPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnlTitulo
             // 
@@ -291,14 +285,14 @@
             this.TotalCpto,
             this.PagadoCpto,
             this.SaldoCpto});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCobros.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCobros.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCobros.EnableHeadersVisualStyles = false;
             this.dgvCobros.GridColor = System.Drawing.Color.Gray;
             this.dgvCobros.Location = new System.Drawing.Point(17, 106);
@@ -306,73 +300,28 @@
             this.dgvCobros.Name = "dgvCobros";
             this.dgvCobros.ReadOnly = true;
             this.dgvCobros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCobros.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvCobros.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCobros.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvCobros.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCobros.Size = new System.Drawing.Size(744, 269);
             this.dgvCobros.TabIndex = 286;
             // 
-            // CodigoCpto
-            // 
-            this.CodigoCpto.HeaderText = "CÓDIGO";
-            this.CodigoCpto.Name = "CodigoCpto";
-            this.CodigoCpto.ReadOnly = true;
-            // 
-            // DetalleCpto
-            // 
-            this.DetalleCpto.HeaderText = "DETALLE";
-            this.DetalleCpto.Name = "DetalleCpto";
-            this.DetalleCpto.ReadOnly = true;
-            this.DetalleCpto.Width = 250;
-            // 
-            // ImporteCpto
-            // 
-            this.ImporteCpto.HeaderText = "IMPORTE";
-            this.ImporteCpto.Name = "ImporteCpto";
-            this.ImporteCpto.ReadOnly = true;
-            // 
-            // Canti
-            // 
-            this.Canti.HeaderText = "CANT.";
-            this.Canti.Name = "Canti";
-            this.Canti.ReadOnly = true;
-            // 
-            // TotalCpto
-            // 
-            this.TotalCpto.HeaderText = "SUBTOTAL";
-            this.TotalCpto.Name = "TotalCpto";
-            this.TotalCpto.ReadOnly = true;
-            // 
-            // PagadoCpto
-            // 
-            this.PagadoCpto.HeaderText = "PagadoCpto";
-            this.PagadoCpto.Name = "PagadoCpto";
-            this.PagadoCpto.ReadOnly = true;
-            this.PagadoCpto.Visible = false;
-            // 
-            // SaldoCpto
-            // 
-            this.SaldoCpto.HeaderText = "SaldoCpto";
-            this.SaldoCpto.Name = "SaldoCpto";
-            this.SaldoCpto.ReadOnly = true;
-            this.SaldoCpto.Visible = false;
-            // 
             // reportCobroVarios
             // 
-            reportDataSource1.Name = "DS_Renglones";
+            reportDataSource1.Name = "DS_Renglon";
             reportDataSource1.Value = this.renglonesBindingSource;
             this.reportCobroVarios.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportCobroVarios.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rptCicVarios.rdlc";
+            this.reportCobroVarios.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.rpt_Cic_Varios.rdlc";
             this.reportCobroVarios.Location = new System.Drawing.Point(767, 473);
             this.reportCobroVarios.Name = "reportCobroVarios";
             this.reportCobroVarios.ServerReport.BearerToken = null;
@@ -477,7 +426,7 @@
             this.btnCargar.IconColor = System.Drawing.Color.Aqua;
             this.btnCargar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCargar.IconSize = 30;
-            this.btnCargar.Location = new System.Drawing.Point(742, 71);
+            this.btnCargar.Location = new System.Drawing.Point(718, 71);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(41, 32);
             this.btnCargar.TabIndex = 6;
@@ -489,7 +438,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Lime;
-            this.label16.Location = new System.Drawing.Point(664, 57);
+            this.label16.Location = new System.Drawing.Point(640, 57);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(62, 17);
             this.label16.TabIndex = 281;
@@ -499,7 +448,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Lime;
-            this.label15.Location = new System.Drawing.Point(556, 57);
+            this.label15.Location = new System.Drawing.Point(532, 57);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(71, 17);
             this.label15.TabIndex = 280;
@@ -509,7 +458,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Lime;
-            this.label14.Location = new System.Drawing.Point(487, 57);
+            this.label14.Location = new System.Drawing.Point(463, 57);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 17);
             this.label14.TabIndex = 279;
@@ -519,7 +468,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.Lime;
-            this.label13.Location = new System.Drawing.Point(133, 57);
+            this.label13.Location = new System.Drawing.Point(105, 57);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(125, 17);
             this.label13.TabIndex = 278;
@@ -529,7 +478,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Lime;
-            this.label8.Location = new System.Drawing.Point(56, 57);
+            this.label8.Location = new System.Drawing.Point(28, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 17);
             this.label8.TabIndex = 277;
@@ -636,6 +585,7 @@
             this.txtTransferencia.Size = new System.Drawing.Size(92, 26);
             this.txtTransferencia.TabIndex = 8;
             this.txtTransferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTransferencia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTransferencia_KeyDown);
             this.txtTransferencia.Leave += new System.EventHandler(this.txtTransferencia_Leave);
             // 
             // label3
@@ -688,7 +638,7 @@
             this.txtSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSubtotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSubtotal.ForeColor = System.Drawing.Color.White;
-            this.txtSubtotal.Location = new System.Drawing.Point(629, 77);
+            this.txtSubtotal.Location = new System.Drawing.Point(605, 77);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(106, 23);
             this.txtSubtotal.TabIndex = 5;
@@ -700,7 +650,7 @@
             this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCantidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCantidad.ForeColor = System.Drawing.Color.White;
-            this.txtCantidad.Location = new System.Drawing.Point(563, 77);
+            this.txtCantidad.Location = new System.Drawing.Point(539, 77);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(54, 23);
             this.txtCantidad.TabIndex = 4;
@@ -713,7 +663,7 @@
             this.txtImporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtImporte.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtImporte.ForeColor = System.Drawing.Color.White;
-            this.txtImporte.Location = new System.Drawing.Point(443, 77);
+            this.txtImporte.Location = new System.Drawing.Point(419, 77);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.Size = new System.Drawing.Size(106, 23);
             this.txtImporte.TabIndex = 3;
@@ -724,7 +674,7 @@
             // 
             this.lblDetalle.AutoSize = true;
             this.lblDetalle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalle.Location = new System.Drawing.Point(118, 80);
+            this.lblDetalle.Location = new System.Drawing.Point(90, 80);
             this.lblDetalle.Name = "lblDetalle";
             this.lblDetalle.Size = new System.Drawing.Size(13, 16);
             this.lblDetalle.TabIndex = 2;
@@ -736,7 +686,7 @@
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigo.ForeColor = System.Drawing.Color.White;
-            this.txtCodigo.Location = new System.Drawing.Point(58, 77);
+            this.txtCodigo.Location = new System.Drawing.Point(30, 77);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(54, 23);
             this.txtCodigo.TabIndex = 1;
@@ -748,7 +698,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFecha.Location = new System.Drawing.Point(626, 14);
+            this.lblFecha.Location = new System.Drawing.Point(682, 14);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(16, 19);
             this.lblFecha.TabIndex = 252;
@@ -863,6 +813,73 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // CodigoCpto
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CodigoCpto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CodigoCpto.HeaderText = "CÓDIGO";
+            this.CodigoCpto.Name = "CodigoCpto";
+            this.CodigoCpto.ReadOnly = true;
+            // 
+            // DetalleCpto
+            // 
+            this.DetalleCpto.HeaderText = "DETALLE";
+            this.DetalleCpto.Name = "DetalleCpto";
+            this.DetalleCpto.ReadOnly = true;
+            this.DetalleCpto.Width = 250;
+            // 
+            // ImporteCpto
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ImporteCpto.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ImporteCpto.HeaderText = "IMPORTE";
+            this.ImporteCpto.Name = "ImporteCpto";
+            this.ImporteCpto.ReadOnly = true;
+            // 
+            // Canti
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Canti.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Canti.HeaderText = "CANT.";
+            this.Canti.Name = "Canti";
+            this.Canti.ReadOnly = true;
+            // 
+            // TotalCpto
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.TotalCpto.DefaultCellStyle = dataGridViewCellStyle6;
+            this.TotalCpto.HeaderText = "SUBTOTAL";
+            this.TotalCpto.Name = "TotalCpto";
+            this.TotalCpto.ReadOnly = true;
+            // 
+            // PagadoCpto
+            // 
+            this.PagadoCpto.HeaderText = "PagadoCpto";
+            this.PagadoCpto.Name = "PagadoCpto";
+            this.PagadoCpto.ReadOnly = true;
+            this.PagadoCpto.Visible = false;
+            // 
+            // SaldoCpto
+            // 
+            this.SaldoCpto.HeaderText = "SaldoCpto";
+            this.SaldoCpto.Name = "SaldoCpto";
+            this.SaldoCpto.ReadOnly = true;
+            this.SaldoCpto.Visible = false;
+            // 
+            // renglonesBindingSource
+            // 
+            this.renglonesBindingSource.DataMember = "Renglones";
+            this.renglonesBindingSource.DataSource = this.dataSetPrincipal;
+            // 
+            // dataSetPrincipal
+            // 
+            this.dataSetPrincipal.DataSetName = "DataSetPrincipal";
+            this.dataSetPrincipal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frmCobrarVarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -878,8 +895,6 @@
             this.Name = "frmCobrarVarios";
             this.Text = "COBRAR CONCEPTOS VARIOS";
             this.Load += new System.EventHandler(this.frmCobrarVarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.renglonesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlDeck.ResumeLayout(false);
@@ -892,6 +907,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.renglonesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -945,11 +962,12 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TextBox txtDesde;
         public System.Windows.Forms.TextBox txtHasta;
-        private System.Windows.Forms.TextBox txtId;
         public System.Windows.Forms.TextBox txtIdColeg;
         private DataSetPrincipal dataSetPrincipal;
         private System.Windows.Forms.BindingSource renglonesBindingSource;
         private System.Windows.Forms.DataGridView dgvCobros;
+        private Microsoft.Reporting.WinForms.ReportViewer reportCobroVarios;
+        public System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoCpto;
         private System.Windows.Forms.DataGridViewTextBoxColumn DetalleCpto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImporteCpto;
@@ -957,6 +975,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalCpto;
         private System.Windows.Forms.DataGridViewTextBoxColumn PagadoCpto;
         private System.Windows.Forms.DataGridViewTextBoxColumn SaldoCpto;
-        private Microsoft.Reporting.WinForms.ReportViewer reportCobroVarios;
     }
 }

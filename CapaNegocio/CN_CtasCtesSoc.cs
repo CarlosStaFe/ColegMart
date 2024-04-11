@@ -15,9 +15,9 @@ namespace CapaNegocio
         }
 
         //***** LLAMO AL METODO PARA CALCULAR EL SALDO DE LAS CUENTAS CORIIENTES *****
-        public int CalcularSaldo(int numerosoc)
+        public int SaldoSoc(int numerosoc)
         {
-            return (int)cD_CtasCtesSoc.CalcularSaldo(numerosoc);
+            return (int)cD_CtasCtesSoc.SaldoSoc(numerosoc);
         }
 
         //***** LLAMO AL METODO PARA LISTAR LAS CUENTAS CORRIENTES *****

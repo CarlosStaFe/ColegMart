@@ -60,7 +60,7 @@
             this.btnCodPostales = new FontAwesome.Sharp.IconButton();
             this.btnBackupRestore = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuTesoreria = new System.Windows.Forms.Panel();
-            this.iconButton31 = new FontAwesome.Sharp.IconButton();
+            this.btnActualizarBcos = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuProveedores = new System.Windows.Forms.Panel();
             this.btnLibroCompras = new FontAwesome.Sharp.IconButton();
             this.btnSaldoPagoProv = new FontAwesome.Sharp.IconButton();
@@ -91,6 +91,7 @@
             this.btnLiquidarCol = new FontAwesome.Sharp.IconButton();
             this.btnActualizarCol = new FontAwesome.Sharp.IconButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnEstratos = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTitulo.SuspendLayout();
@@ -680,35 +681,37 @@
             // pnlSubmenuTesoreria
             // 
             this.pnlSubmenuTesoreria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.pnlSubmenuTesoreria.Controls.Add(this.iconButton31);
+            this.pnlSubmenuTesoreria.Controls.Add(this.btnEstratos);
+            this.pnlSubmenuTesoreria.Controls.Add(this.btnActualizarBcos);
             this.pnlSubmenuTesoreria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.pnlSubmenuTesoreria.Location = new System.Drawing.Point(573, 0);
             this.pnlSubmenuTesoreria.Name = "pnlSubmenuTesoreria";
             this.pnlSubmenuTesoreria.Size = new System.Drawing.Size(160, 283);
             this.pnlSubmenuTesoreria.TabIndex = 17;
             // 
-            // iconButton31
+            // btnActualizarBcos
             // 
-            this.iconButton31.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton31.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton31.FlatAppearance.BorderSize = 0;
-            this.iconButton31.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.iconButton31.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.iconButton31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton31.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.iconButton31.ForeColor = System.Drawing.Color.Aqua;
-            this.iconButton31.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton31.IconColor = System.Drawing.Color.White;
-            this.iconButton31.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton31.IconSize = 15;
-            this.iconButton31.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton31.Location = new System.Drawing.Point(0, 0);
-            this.iconButton31.Name = "iconButton31";
-            this.iconButton31.Size = new System.Drawing.Size(160, 33);
-            this.iconButton31.TabIndex = 0;
-            this.iconButton31.Text = "-";
-            this.iconButton31.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton31.UseVisualStyleBackColor = true;
+            this.btnActualizarBcos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizarBcos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnActualizarBcos.FlatAppearance.BorderSize = 0;
+            this.btnActualizarBcos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnActualizarBcos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnActualizarBcos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarBcos.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnActualizarBcos.ForeColor = System.Drawing.Color.Aqua;
+            this.btnActualizarBcos.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnActualizarBcos.IconColor = System.Drawing.Color.White;
+            this.btnActualizarBcos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizarBcos.IconSize = 15;
+            this.btnActualizarBcos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarBcos.Location = new System.Drawing.Point(0, 0);
+            this.btnActualizarBcos.Name = "btnActualizarBcos";
+            this.btnActualizarBcos.Size = new System.Drawing.Size(160, 33);
+            this.btnActualizarBcos.TabIndex = 0;
+            this.btnActualizarBcos.Text = "Actualizar Bancos";
+            this.btnActualizarBcos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnActualizarBcos.UseVisualStyleBackColor = true;
+            this.btnActualizarBcos.Click += new System.EventHandler(this.btnActualizarBcos_Click);
             // 
             // pnlSubmenuProveedores
             // 
@@ -1353,6 +1356,30 @@
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
+            // btnEstratos
+            // 
+            this.btnEstratos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstratos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstratos.FlatAppearance.BorderSize = 0;
+            this.btnEstratos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnEstratos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEstratos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstratos.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnEstratos.ForeColor = System.Drawing.Color.Aqua;
+            this.btnEstratos.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnEstratos.IconColor = System.Drawing.Color.White;
+            this.btnEstratos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEstratos.IconSize = 15;
+            this.btnEstratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstratos.Location = new System.Drawing.Point(0, 33);
+            this.btnEstratos.Name = "btnEstratos";
+            this.btnEstratos.Size = new System.Drawing.Size(160, 33);
+            this.btnEstratos.TabIndex = 1;
+            this.btnEstratos.Text = "Cargar Estratos";
+            this.btnEstratos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstratos.UseVisualStyleBackColor = true;
+            this.btnEstratos.Click += new System.EventHandler(this.btnEstratos_Click);
+            // 
             // frmMenuPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1430,7 +1457,7 @@
         private System.Windows.Forms.Panel pnlSubmenuProveedores;
         private FontAwesome.Sharp.IconButton btnActualizarProv;
         private System.Windows.Forms.Panel pnlSubmenuTesoreria;
-        private FontAwesome.Sharp.IconButton iconButton31;
+        private FontAwesome.Sharp.IconButton btnActualizarBcos;
         private System.Windows.Forms.Panel pnlSubmenuMantenedor;
         private System.Windows.Forms.Panel pnlSubmenuSistema;
         private FontAwesome.Sharp.IconButton btnUsuarios;
@@ -1455,6 +1482,7 @@
         private FontAwesome.Sharp.IconButton btnCodPostales;
         private FontAwesome.Sharp.IconButton btnBackupRestore;
         private FontAwesome.Sharp.IconButton btnConceptosGastos;
+        private FontAwesome.Sharp.IconButton btnEstratos;
     }
 }
 

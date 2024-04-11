@@ -305,7 +305,7 @@ namespace CapaPresentacion.Formularios
         //***** CALCULO EL SALDO DEL COLEGIADO EN LA CUENTA CORRIENTE *****
         decimal CalcularSaldo(int numerosoc)
         {
-            var saldo = cN_CtasCtesSoc.CalcularSaldo(numerosoc);
+            var saldo = cN_CtasCtesSoc.SaldoSoc(numerosoc);
 
             return saldo;
         }

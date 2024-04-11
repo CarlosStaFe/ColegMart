@@ -100,6 +100,17 @@ namespace CapaPresentacion.Formularios
                         Dispose();
                     }
 
+                    if (NameBoton == "btnCobrarVarios")
+                    {
+                        frmCobrarVarios CobroVar = Owner as frmCobrarVarios;
+                        CobroVar.lblNombre.Text = dgvSociedades.Rows[indice].Cells["Nombre"].Value.ToString() + " - " +
+                                                     dgvSociedades.Rows[indice].Cells["Estado"].Value.ToString();
+                        CobroVar.txtMatricula.Text = dgvSociedades.Rows[indice].Cells["Numero"].Value.ToString();
+                        CobroVar.txtId.Text = dgvSociedades.Rows[indice].Cells["id_Soc"].Value.ToString();
+                        Close();
+                        Dispose();
+                    }
+
                 }
             }
         }

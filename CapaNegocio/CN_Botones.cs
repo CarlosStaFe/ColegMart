@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 namespace CapaNegocio
 {
-    //***** BUSQUEDA DEL BOTÓN DEL USUARIO *****
     public class CN_Botones
     {
         CD_Botones cD_Botones = new CD_Botones();

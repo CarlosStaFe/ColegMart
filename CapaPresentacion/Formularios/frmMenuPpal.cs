@@ -356,6 +356,19 @@ namespace ColegMart
             ActivarBoton(sender);
             MostrarSubmenu(pnlSubmenuTesoreria);
         }
+
+        private void btnActualizarBcos_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmBancos());
+            OcultarSubmenu();
+        }
+
+        private void btnEstratos_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmCargarEstratos());
+            OcultarSubmenu();
+        }
+
         #endregion
 
         //***** MENÚ MANTENEDOR *****
