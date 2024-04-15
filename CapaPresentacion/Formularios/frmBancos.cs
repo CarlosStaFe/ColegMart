@@ -54,6 +54,7 @@ namespace CapaPresentacion.Formularios
                 CE_Bancos cEBancos = new CE_Bancos()
                 {
                     id_Bco = Convert.ToInt32(txtId.Text),
+                    Cuit = txtCuit.Text,
                     Nombre = txtNombre.Text,
                     Activo = chbActivo.Checked,
                     UserRegistro = VarGlobales.NombreUsuario
@@ -66,7 +67,7 @@ namespace CapaPresentacion.Formularios
 
                     if (idBanco != 0)
                     {
-                        dgvBancos.Rows.Add(new object[] { "", idBanco, txtNombre.Text, chbActivo.Checked, txtUserRegistro.Text });
+                        dgvBancos.Rows.Add(new object[] { "", idBanco, txtCuit.Text, txtNombre.Text, chbActivo.Checked, txtUserRegistro.Text });
                         Limpiar();
                     }
                     else

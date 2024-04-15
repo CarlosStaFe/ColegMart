@@ -65,7 +65,7 @@ namespace CapaPresentacion.Formularios
             {
                 btnRestaurar.Enabled = true;
                 nombre = file.FileName.ToString();
-                nombre = Path.GetFileName(nombre);
+                //nombre = Path.GetFileName(nombre);
                 txtCopia.Text = nombre;
             }
         }

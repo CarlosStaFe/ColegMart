@@ -103,7 +103,7 @@ namespace CapaPresentacion.Formularios
             //*****CARGO EL DGV *****
             foreach (CE_Estratos item in ListaEstratos)
             {
-                dgvEstrato.Rows.Add(new object[] { item.id_Estra, item.NroBanco, item.Fecha, item.Referencia, item.Causal, item.Concepto, item.Debito, item.Credito, item.Saldo, item.FechaConci, item.Titular, item.NroCic });
+                dgvEstrato.Rows.Add(new object[] { item.id_Estra, item.NroBanco, item.Fecha, item.Referencia, item.Causal, item.Concepto, item.Debito, item.Credito, item.FechaConci, item.Titular, item.NroCic });
             }
 
             //***** CARGO EL COMBO DE BUSQUEDA *****

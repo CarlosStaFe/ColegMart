@@ -76,7 +76,6 @@ namespace CapaDatos
                                     Concepto = dr["Concepto"].ToString(),
                                     Debito = Convert.ToDecimal(dr["Debito"]),
                                     Credito = Convert.ToDecimal(dr["Credito"]),
-                                    Saldo = Convert.ToDecimal(dr["Saldo"]),
                                     FechaConci = Convert.ToDateTime(dr["FechaConci"]),
                                     Titular = Convert.ToInt32(dr["Titular"]),
                                     NroCic = Convert.ToInt32(dr["NroCic"]),
@@ -114,7 +113,6 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("_Concepto", obj.Concepto);
                         command.Parameters.AddWithValue("_Debito", obj.Debito);
                         command.Parameters.AddWithValue("_Credito", obj.Credito);
-                        command.Parameters.AddWithValue("_Saldo", obj.Saldo);
                         command.Parameters.AddWithValue("_FechaConci", obj.FechaConci);
                         command.Parameters.AddWithValue("_Titular", obj.Titular);
                         command.Parameters.AddWithValue("_NroCic", obj.NroCic);
@@ -159,7 +157,6 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("_Concepto", obj.Concepto);
                         command.Parameters.AddWithValue("_Debito", obj.Debito);
                         command.Parameters.AddWithValue("_Credito", obj.Credito);
-                        command.Parameters.AddWithValue("_Saldo", obj.Saldo);
                         command.Parameters.AddWithValue("_FechaConci", obj.FechaConci);
                         command.Parameters.AddWithValue("_Titular", obj.Titular);
                         command.Parameters.AddWithValue("_NroCic", obj.NroCic);

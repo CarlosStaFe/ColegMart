@@ -12,7 +12,6 @@ namespace CapaEntidad
         public string Concepto { get; set; }
         public decimal Debito { get; set; }
         public decimal Credito { get; set; }
-        public decimal Saldo { get; set; }
         public DateTime FechaConci { get; set; }
         public int Titular { get; set; }
         public int NroCic { get; set; }

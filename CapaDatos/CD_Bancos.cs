@@ -69,7 +69,7 @@ namespace CapaDatos
                             {
                                 lista.Add(new CE_Bancos()
                                 {
-                                    id_Bco = Convert.ToInt32(dr["id_Boton"]),
+                                    id_Bco = Convert.ToInt32(dr["id_Bco"]),
                                     Cuit = dr["Cuit"].ToString(),
                                     Nombre = dr["Nombre"].ToString(),
                                     Activo = Convert.ToBoolean(dr["Activo"]),
@@ -143,38 +143,6 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("_Activo", obj.Activo);
                         command.Parameters.AddWithValue("_UserRegistro", CE_UserLogin.UserRegistro);
                         command.Parameters.AddWithValue("_FechaRegistro", DateTime.Now);
-                        command.Parameters.Add("_Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.ExecuteNonQuery();
-
-                        Resultado = Convert.ToBoolean(command.Parameters["_Resultado"].Value);
-                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        Resultado = false;
-                        Mensaje = ex.Message;
-                    }
-                }
-            }
-            return Resultado;
-        }
-
-        //***** METODO PARA ELIMINAR UN BANCO *****
-        public bool Eliminar(CE_Bancos obj, out string Mensaje)
-        {
-            bool Resultado = false;
-            Mensaje = string.Empty;
-
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                using (var command = new MySqlCommand("spEliminarBanco", connection))
-                {
-                    try
-                    {
-                        command.Parameters.AddWithValue("_id_Bco", obj.id_Bco);
                         command.Parameters.Add("_Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
                         command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;

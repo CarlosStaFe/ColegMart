@@ -43,12 +43,11 @@ namespace CapaPresentacion.Formularios
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.dgvBancos = new System.Windows.Forms.DataGridView();
             this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Boton = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_Bco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -155,7 +154,6 @@ namespace CapaPresentacion.Formularios
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -187,26 +185,6 @@ namespace CapaPresentacion.Formularios
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnEliminar.IconColor = System.Drawing.Color.Aqua;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 30;
-            this.btnEliminar.Location = new System.Drawing.Point(207, 22);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 53);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -219,7 +197,7 @@ namespace CapaPresentacion.Formularios
             this.btnClear.IconColor = System.Drawing.Color.Aqua;
             this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClear.IconSize = 30;
-            this.btnClear.Location = new System.Drawing.Point(400, 22);
+            this.btnClear.Location = new System.Drawing.Point(303, 22);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(70, 53);
             this.btnClear.TabIndex = 2;
@@ -240,7 +218,7 @@ namespace CapaPresentacion.Formularios
             this.btnSalir.IconColor = System.Drawing.Color.Aqua;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
-            this.btnSalir.Location = new System.Drawing.Point(593, 22);
+            this.btnSalir.Location = new System.Drawing.Point(592, 22);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(70, 53);
             this.btnSalir.TabIndex = 3;
@@ -273,7 +251,7 @@ namespace CapaPresentacion.Formularios
             this.dgvBancos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvBancos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar,
-            this.id_Boton,
+            this.id_Bco,
             this.Cuit,
             this.Nombre,
             this.Activo,
@@ -317,12 +295,12 @@ namespace CapaPresentacion.Formularios
             this.Seleccionar.ReadOnly = true;
             this.Seleccionar.Width = 25;
             // 
-            // id_Boton
+            // id_Bco
             // 
-            this.id_Boton.HeaderText = "id";
-            this.id_Boton.Name = "id_Boton";
-            this.id_Boton.ReadOnly = true;
-            this.id_Boton.Visible = false;
+            this.id_Bco.HeaderText = "id_Bco";
+            this.id_Bco.Name = "id_Bco";
+            this.id_Bco.ReadOnly = true;
+            this.id_Bco.Visible = false;
             // 
             // Cuit
             // 
@@ -533,7 +511,6 @@ namespace CapaPresentacion.Formularios
         private System.Windows.Forms.Panel pnlDeck;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnClear;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.DataGridView dgvBancos;
@@ -553,7 +530,7 @@ namespace CapaPresentacion.Formularios
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Boton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Bco;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;

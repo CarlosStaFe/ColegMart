@@ -420,6 +420,9 @@
     <EmbeddedResource Include="Formularios\frmBotones.resx">
       <DependentUpon>frmBotones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCargarEstratos.resx">
+      <DependentUpon>frmCargarEstratos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCobrarPendientes.resx">
       <DependentUpon>frmCobrarPendientes.cs</DependentUpon>
     </EmbeddedResource>

@@ -70,11 +70,5 @@ namespace CapaNegocio
             }
         }
 
-        //***** LLAMO AL METODO PARA ELIMINAR UN BANCO *****
-        public bool Eliminar(CE_Bancos obj, out string mensaje)
-        {
-            return cD_Bancos.Eliminar(obj, out mensaje);
-        }
-
     }
 }
