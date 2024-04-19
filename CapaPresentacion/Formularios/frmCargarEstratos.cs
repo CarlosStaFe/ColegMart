@@ -12,8 +12,9 @@ namespace CapaPresentacion.Formularios
     {
         string nombre, control, causal, detalle, referencia;
         string debito, credito, importe, fecha, dd, mm, yyyy;
-        int contlineas, pos1, pos2, pos3, pos4, pos5, signo;
+        int contlineas, pos1, pos2, pos3, pos4, pos5, signo, largo;
         decimal debe, haber;
+        DateTime fechaestra;
         char[] ToTrim = { ',', '.' };
 
         public frmCargarEstratos()
@@ -29,9 +30,9 @@ namespace CapaPresentacion.Formularios
             List<CE_Bancos> ListaBanco = new CN_Bancos().ListaBancos();
 
             cboBancos.Items.Clear();
-            cboBancos.DataSource = ListaBanco;
-            cboBancos.DisplayMember = "Nombre";
             cboBancos.ValueMember = "id_Bco";
+            cboBancos.DisplayMember = "Nombre";
+            cboBancos.DataSource = ListaBanco;
         }
 
         //***** PROCEDIMIENTO DEL BOTON DE BÚSQUEDA DEL ARCHIVO *****
@@ -60,7 +61,6 @@ namespace CapaPresentacion.Formularios
             Close();
         }
 
-
         //***** PROCEDIMIENTO PARA PROCESAR EL ARCHIVO SELECCIONADO *****
         private void btnProcesar_Click(object sender, EventArgs e)
         {
@@ -85,26 +85,39 @@ namespace CapaPresentacion.Formularios
 
             foreach (string renglon in lineas)
             {
+                pos1 = renglon.IndexOf("$");
+
+                if (pos1 > 0) break;
+
                 debe = 0;
                 haber = 0;
                 detalle = "";
                 contlineas = contlineas + 1;
 
                 fecha = renglon.Substring(11, 10);
+                fechaestra = Convert.ToDateTime(fecha);
                 dd = renglon.Substring(11, 2);
                 mm = renglon.Substring(14, 2);
                 yyyy = renglon.Substring(17, 4);
                 referencia = renglon.Substring(23, 8);
                 detalle = renglon.Substring(32, 30);
-                debito = renglon.Substring(67, 20).Replace(".", "");
+                causal = "";
+                debito = renglon.Substring(67, 20).Replace(".", "").Trim();
                 if (debito.Trim() == "") debito = "0,00";
                 debe = Convert.ToDecimal(debito);
-                credito = renglon.Substring(89, 20).Replace(".", "");
-                if (credito.Trim() == "") debito = "0,00";
-                haber = Convert.ToDecimal(credito);
+                largo = renglon.Length;
+                if (largo > 89)
+                {
+                    credito = renglon.Substring(89, 20).Replace(".", "").Trim();
+                    if (credito.Trim() == "") credito = "0,00";
+                    haber = Convert.ToDecimal(credito);
+                }
+                else
+                {
+                    haber = 0;
+                }
 
                 GrabarEstrato();
-
             }
 
             if (contlineas > 0)
@@ -119,7 +132,7 @@ namespace CapaPresentacion.Formularios
             {
                 string detmsg = string.Empty;
 
-                detmsg += "LOTE SIN REGISTROS...!!!";
+                detmsg += "LOTE NO PERTENECE AL BANCO DE SANTA FE...!!!";
                 frmMsgBox msje = new frmMsgBox(detmsg, "info", 1);
                 _ = msje.ShowDialog();
             }
@@ -141,6 +154,10 @@ namespace CapaPresentacion.Formularios
 
             foreach (string renglon in lineas)
             {
+                pos1 = renglon.IndexOf("$");
+
+                if (pos1 < 0) break;
+
                 debe = 0;
                 haber = 0;
                 detalle = "";
@@ -159,14 +176,13 @@ namespace CapaPresentacion.Formularios
                 referencia = renglon.Substring(pos1 + 1, (pos2 - 1) - pos1);
                 causal = renglon.Substring(pos2 + 1, (pos3 - 1) - pos2);
                 detalle = renglon.Substring(pos3 + 1, (pos4 - 1) - pos3);
-                importe = renglon.Substring(pos4 + 1, (pos5 - 1) - pos4).Replace(".", "");
+                importe = renglon.Substring(pos4 + 1, (pos5 - 1) - pos4).Replace(".", "").Trim();
                 signo = importe.IndexOf("-");
 
                 if (signo == 1) debe = (Convert.ToDecimal(importe)) * -1;
                 if (signo == -1) haber = Convert.ToDecimal(importe);
 
                 GrabarEstrato();
-
             }
 
             if (contlineas > 0)
@@ -181,7 +197,7 @@ namespace CapaPresentacion.Formularios
             {
                 string detmsg = string.Empty;
 
-                detmsg += "LOTE SIN REGISTROS...!!!";
+                detmsg += "LOTE NO PERTENECE AL BANCO MACRO...!!!";
                 frmMsgBox msje = new frmMsgBox(detmsg, "info", 1);
                 _ = msje.ShowDialog();
             }
@@ -198,10 +214,10 @@ namespace CapaPresentacion.Formularios
         {
             string mensaje = string.Empty;
 
-            CE_Estratos cE_Estratos = new CE_Estratos()
+            CE_Estratos cE_Estrato = new CE_Estratos()
             {
-                NroBanco = Convert.ToInt32(cboBancos.ValueMember),
-                Fecha = Convert.ToDateTime(fecha),
+                idBanco = Convert.ToInt32(cboBancos.SelectedValue.ToString()),
+                Fecha = fechaestra,
                 Referencia = referencia,
                 Causal = causal,
                 Concepto = detalle,
@@ -214,8 +230,7 @@ namespace CapaPresentacion.Formularios
                 FechaRegistro = DateTime.Today
             };
 
-            int idEstrato = new CN_Estratos().Registrar(cE_Estratos, out mensaje);
-            
+            int idEstrato = new CN_Estratos().Registrar(cE_Estrato, out mensaje);            
         }
     }
 }

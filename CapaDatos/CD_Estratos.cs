@@ -32,7 +32,7 @@ namespace CapaDatos
                             {
                                 lista.Add(new CE_Estratos()
                                 {
-                                    NroBanco = Convert.ToInt32(dr["NroBanco"].ToString())
+                                    idBanco = Convert.ToInt32(dr["idBanco"].ToString())
                                 });
                             }
                         }
@@ -69,7 +69,7 @@ namespace CapaDatos
                                 lista.Add(new CE_Estratos()
                                 {
                                     id_Estra = Convert.ToInt32(dr["id_Estra"]),
-                                    NroBanco = Convert.ToInt32(dr["NroBanco"]),
+                                    idBanco = Convert.ToInt32(dr["idBanco"]),
                                     Fecha = Convert.ToDateTime(dr["Fecha"]),
                                     Referencia = dr["Referencia"].ToString(),
                                     Causal = dr["Causal"].ToString(),
@@ -106,7 +106,7 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("_NroBanco", obj.NroBanco);
+                        command.Parameters.AddWithValue("_idBanco", obj.idBanco);
                         command.Parameters.AddWithValue("_Fecha", obj.Fecha);
                         command.Parameters.AddWithValue("_Referencia", obj.Referencia);
                         command.Parameters.AddWithValue("_Causal", obj.Causal);
@@ -150,7 +150,7 @@ namespace CapaDatos
                     try
                     {
                         command.Parameters.AddWithValue("_id_Estra", obj.id_Estra);
-                        command.Parameters.AddWithValue("_NroBanco", obj.NroBanco);
+                        command.Parameters.AddWithValue("_idBanco", obj.idBanco);
                         command.Parameters.AddWithValue("_Fecha", obj.Fecha);
                         command.Parameters.AddWithValue("_Referencia", obj.Referencia);
                         command.Parameters.AddWithValue("_Causal", obj.Causal);
