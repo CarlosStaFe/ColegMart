@@ -122,11 +122,6 @@ namespace CapaDatos
                     try
                     {
                         command.Parameters.AddWithValue("_id_Fza", obj.id_Fza);
-                        //command.Parameters.AddWithValue("Matricula", obj.Matricula);
-                        //command.Parameters.AddWithValue("ApelNomMatri", obj.ApelNomMatri);
-                        //command.Parameters.AddWithValue("TelMatri", obj.TelMatri);
-                        //command.Parameters.AddWithValue("FecPagoFza", obj.FecPagoFza);
-                        //command.Parameters.AddWithValue("UserFecPagoFza", obj.UserFecPagoFza);
                         command.Parameters.AddWithValue("_FecFirmaMat", obj.FecFirmaMat);
                         command.Parameters.AddWithValue("_UserFirmaMat", obj.UserFirmaMat);
                         command.Parameters.AddWithValue("_FecFirmaFiador", obj.FecFirmaFiador);
@@ -137,7 +132,6 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("_CalleFiador", obj.CalleFiador);
                         command.Parameters.AddWithValue("_TelFiador", obj.TelFiador);
                         command.Parameters.AddWithValue("_EstadoFza", obj.EstadoFza);
-                        //command.Parameters.AddWithValue("Obs", obj.Obs);
                         command.Parameters.Add("_Resultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
                         command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;

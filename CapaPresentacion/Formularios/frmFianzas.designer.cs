@@ -238,6 +238,7 @@
             this.dtpFecFirmaFiador.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dtpFecFirmaFiador.TabIndex = 146;
             this.dtpFecFirmaFiador.TextColor = System.Drawing.Color.White;
+            this.dtpFecFirmaFiador.ValueChanged += new System.EventHandler(this.dtpFecFirmaFiador_ValueChanged);
             // 
             // dtpFecFirmaMat
             // 
@@ -254,6 +255,7 @@
             this.dtpFecFirmaMat.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dtpFecFirmaMat.TabIndex = 145;
             this.dtpFecFirmaMat.TextColor = System.Drawing.Color.White;
+            this.dtpFecFirmaMat.ValueChanged += new System.EventHandler(this.dtpFecFirmaMat_ValueChanged);
             // 
             // lblEstadoFianza
             // 
@@ -324,6 +326,7 @@
             this.txtDocFiador.Name = "txtDocFiador";
             this.txtDocFiador.Size = new System.Drawing.Size(87, 23);
             this.txtDocFiador.TabIndex = 1;
+            this.txtDocFiador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocFiador_KeyPress);
             // 
             // label4
             // 
@@ -388,6 +391,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 

@@ -94,7 +94,6 @@ namespace CapaDatos
                         command.CommandText = "DELETE FROM PadronColeg";
                         command.CommandType = CommandType.Text;
                         MySqlDataReader dr = command.ExecuteReader();
-
                     }
                     catch (Exception)
                     {

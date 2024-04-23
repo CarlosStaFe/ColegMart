@@ -1,6 +1,7 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
 using System;
+using CapaPresentacion.Utiles;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text.RegularExpressions;
@@ -10,6 +11,8 @@ namespace CapaPresentacion.Formularios
 {
     public partial class frmFianzas : Form
     {
+        SoloNumeros validar = new SoloNumeros();
+
         string estado, respuesta, fecha, usuario;
         int senial;
         DateTime fechavto;
@@ -90,18 +93,6 @@ namespace CapaPresentacion.Formularios
                 }
 
             }
-        }
-
-        //***** PROCEDIMIENTO DEL BOTON SALIR *****
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        //***** PROCEDIMIENTO DEL BOTON CLEAR DE DATOS *****
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            Limpiar();
         }
 
         //***** LIMPIO LOS DATOS DE INGRESO *****
@@ -320,6 +311,54 @@ namespace CapaPresentacion.Formularios
             {
                 row.Visible = true;
             }
+        }
+
+        //***** PROCEDIMIENTO DEL BOTON ELIMINAR LOS DATOS *****
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+
+            mensaje += "DESEA ELIMINAR ESTOS DATOS DE LA FIANZA...???";
+            frmMsgBox msg = new frmMsgBox(mensaje, "question", 2);
+            DialogResult dr = msg.ShowDialog();
+            respuesta = dr.ToString();
+
+            if (respuesta == "OK")
+            {
+                CE_Fianzas cEFianzas = new CE_Fianzas()
+                {
+                    id_Fza = Convert.ToInt32(txtId.Text),
+                };
+
+                bool resultado = new CN_Fianzas().Eliminar(cEFianzas, out mensaje);
+
+                if (resultado)
+                {
+                    dgvFianzas.Rows.RemoveAt(Convert.ToInt32(txtIndice.Text));
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
+        //***** PROCEDIMIENTO DEL BOTON SALIR *****
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        //***** PROCEDIMIENTO DEL BOTON CLEAR DE DATOS *****
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        //***** VALIDO QUE SE INGRESE UN NUMERO EN EL DOCUMENTO *****
+        private void txtDocFiador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Convert.ToChar(validar.Validar(e.KeyChar));
         }
 
         //***** PROCEDIMIENTO DEL INGRESO DE LA FIRMA DEL MATRICULADO *****

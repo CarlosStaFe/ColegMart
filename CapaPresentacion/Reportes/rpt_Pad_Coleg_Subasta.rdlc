@@ -731,7 +731,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1100,7 +1099,7 @@
                     <TextRun>
                       <Value>=Parameters!prmDetalle.Value</Value>
                       <Style>
-                        <FontSize>11pt</FontSize>
+                        <FontSize>9pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1109,10 +1108,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>1.61191cm</Top>
-              <Left>2.5625cm</Left>
+              <Top>1.29441cm</Top>
+              <Left>2.245cm</Left>
               <Height>0.67938cm</Height>
-              <Width>24.14182cm</Width>
+              <Width>24.45932cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>

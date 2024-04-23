@@ -33,5 +33,16 @@ namespace CapaDatos.Properties {
                 return ((string)(this["Valor"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=SERVIDOR;user id=root;persistsecurityinfo=True;password=soporte;database=d" +
+            "bcolegmart")]
+        public string dbcolegmartConnectionString {
+            get {
+                return ((string)(this["dbcolegmartConnectionString"]));
+            }
+        }
     }
 }

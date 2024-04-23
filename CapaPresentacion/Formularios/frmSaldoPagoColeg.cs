@@ -89,15 +89,17 @@ namespace CapaPresentacion.Formularios
         //***** LIMPIO LOS DATOS DE INGRESO *****
         private void Limpiar()
         {
+            dtpDesde.Enabled = true;
+            dtpHasta.Enabled = true;
             rdbSaldos.Checked = true;
+            rdbPagos.Checked = false;
             cboOrden.Text = "MATRICULA";
-            cboEstado.Text = "";
+            cboEstado.Text = "TODOS";
             lblApelNombres.Text = string.Empty;
-            dtpHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            dtpDesde.Text = "1/1/1900";
-            dtpDesde.Enabled = false;
             cboConcepto.Text = "";
             cboConcepto.Enabled = true;
+            dtpDesde.Text = DateTime.Now.ToString("01/01/1900");
+            dtpHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             int idSP = new CN_SaldosPagos().Blanquear();
 
@@ -108,18 +110,19 @@ namespace CapaPresentacion.Formularios
         private void rdbSaldos_CheckedChanged(object sender, EventArgs e)
         {
             dtpDesde.Enabled = false;
+            dtpHasta.Enabled = false;
             cboConcepto.Enabled = true;
-            dtpDesde.Enabled = false;
             dtpDesde.Text = "1/1/1900";
+            dtpHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         //***** SI PRESIONO PAGOS ACTIVO LA FECHA DESDE *****
         private void rdbPagos_CheckedChanged(object sender, EventArgs e)
         {
-            dtpDesde.Enabled = true;
+            dtpDesde.Visible = true;
             cboConcepto.Enabled = false;
             cboConcepto.Text = "";
-            dtpDesde.Enabled = true;
+            dtpHasta.Visible = true;
             dtpDesde.Text = "1/1/1900";
         }
 
@@ -158,7 +161,11 @@ namespace CapaPresentacion.Formularios
                 cmdCtasCtes = cmdCtasCtes + "WHERE Fecha BETWEEN '" + desde + "' AND '" + hasta + "' AND Tipo BETWEEN 'BCO' AND 'CIC' ";
             }
 
-            if (cboEstado.Text != "")
+            if (cboEstado.Text == "TODOS")
+            {
+                detalle = detalle + "Estado: " + cboEstado.Text + " - ";
+            }
+            else
             {
                 detalle = detalle + "Estado: " + cboEstado.Text + " - ";
                 cmdColeg = cmdColeg + "WHERE Estado = '" + cboEstado.Text + "' ";
@@ -202,6 +209,7 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO PARA CREAR LA LISTA DE SALDOS O PAGOS DE COLEGIADOS *****
         private void ArmarListado()
         {
+
             string mensaje = string.Empty;
 
             List<CE_Colegiados> ListaColeg = new CN_Colegiados().ListaPadron(cmdColeg);

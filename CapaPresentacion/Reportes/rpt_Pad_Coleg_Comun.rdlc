@@ -1551,7 +1551,7 @@
                     <TextRun>
                       <Value>=Parameters!prmDetalle.Value</Value>
                       <Style>
-                        <FontSize>11pt</FontSize>
+                        <FontSize>9pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1560,10 +1560,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>1.66457cm</Top>
-              <Left>2.53605cm</Left>
+              <Top>1.34707cm</Top>
+              <Left>2.21855cm</Left>
               <Height>0.67938cm</Height>
-              <Width>24.48371cm</Width>
+              <Width>24.93427cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>

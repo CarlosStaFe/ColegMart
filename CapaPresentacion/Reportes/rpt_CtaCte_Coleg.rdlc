@@ -1765,7 +1765,7 @@
                     <TextRun>
                       <Value>=Parameters!prmDetalle.Value</Value>
                       <Style>
-                        <FontSize>11pt</FontSize>
+                        <FontSize>9pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1774,7 +1774,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>1.71783cm</Top>
+              <Top>1.40033cm</Top>
               <Left>2.14366cm</Left>
               <Height>0.67938cm</Height>
               <Width>25.13439cm</Width>

@@ -20,23 +20,23 @@ namespace CapaDatos
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("Numero", obj.Numero);
-                        command.Parameters.AddWithValue("Nombre", obj.Nombre);
-                        command.Parameters.AddWithValue("Telefono", obj.Telefono);
-                        command.Parameters.AddWithValue("Estado", obj.Estado);
-                        command.Parameters.AddWithValue("Fecha", obj.Fecha);
-                        command.Parameters.AddWithValue("Detalle", obj.Detalle);
-                        command.Parameters.AddWithValue("Periodo", obj.Periodo);
-                        command.Parameters.AddWithValue("Debe", obj.Debe);
-                        command.Parameters.AddWithValue("Haber", obj.Haber);
-                        command.Parameters.AddWithValue("Saldo", obj.Saldo);
-                        command.Parameters.Add("idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
-                        command.Parameters.Add("Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                        command.Parameters.AddWithValue("_Numero", obj.Numero);
+                        command.Parameters.AddWithValue("_Nombre", obj.Nombre);
+                        command.Parameters.AddWithValue("_Telefono", obj.Telefono);
+                        command.Parameters.AddWithValue("_Estado", obj.Estado);
+                        command.Parameters.AddWithValue("_Fecha", obj.Fecha);
+                        command.Parameters.AddWithValue("_Detalle", obj.Detalle);
+                        command.Parameters.AddWithValue("_Periodo", obj.Periodo);
+                        command.Parameters.AddWithValue("_Debe", obj.Debe);
+                        command.Parameters.AddWithValue("_Haber", obj.Haber);
+                        command.Parameters.AddWithValue("_Saldo", obj.Saldo);
+                        command.Parameters.Add("_idResultado", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        command.Parameters.Add("_Mensaje", MySqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                         command.CommandType = CommandType.StoredProcedure;
                         command.ExecuteNonQuery();
 
-                        idSP = Convert.ToInt32(command.Parameters["idResultado"].Value);
-                        Mensaje = command.Parameters["Mensaje"].Value.ToString();
+                        idSP = Convert.ToInt32(command.Parameters["_idResultado"].Value);
+                        Mensaje = command.Parameters["_Mensaje"].Value.ToString();
                     }
                     catch (Exception ex)
                     {
@@ -61,13 +61,11 @@ namespace CapaDatos
                     try
                     {
                         command.Connection = connection;
-                        command.CommandText = "DELETE SaldosPagos";
+                        command.CommandText = "DELETE FROM SaldosPagos";
                         command.CommandType = CommandType.Text;
                         MySqlDataReader dr = command.ExecuteReader();
-
-                        idSP = Convert.ToInt32(command.Parameters["idResultado"].Value);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         idSP = 0;
                     }

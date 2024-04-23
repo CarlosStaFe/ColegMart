@@ -80,7 +80,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.84396cm</Width>
+                  <Width>2.20896cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -314,7 +314,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>4.13979cm</Size>
+                        <Size>3.82229cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox38">
                             <CanGrow>true</CanGrow>
@@ -491,7 +491,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>1.52104cm</Size>
+                                    <Size>1.81207cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox44">
                                         <CanGrow>true</CanGrow>
@@ -550,7 +550,7 @@
                                   <TablixMembers>
                                     <TablixMember>
                                       <TablixHeader>
-                                        <Size>4.00699cm</Size>
+                                        <Size>4.66845cm</Size>
                                         <CellContents>
                                           <Textbox Name="Textbox46">
                                             <CanGrow>true</CanGrow>
@@ -760,7 +760,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>4.13979cm</Size>
+                        <Size>3.82229cm</Size>
                         <CellContents>
                           <Textbox Name="Nombre1">
                             <CanGrow>true</CanGrow>
@@ -954,7 +954,7 @@
                                     </SortExpression>
                                   </SortExpressions>
                                   <TablixHeader>
-                                    <Size>1.52104cm</Size>
+                                    <Size>1.81207cm</Size>
                                     <CellContents>
                                       <Textbox Name="Fecha1">
                                         <CanGrow>true</CanGrow>
@@ -1001,7 +1001,7 @@
                                         </SortExpression>
                                       </SortExpressions>
                                       <TablixHeader>
-                                        <Size>4.00699cm</Size>
+                                        <Size>4.66845cm</Size>
                                         <CellContents>
                                           <Textbox Name="Detalle1">
                                             <CanGrow>true</CanGrow>
@@ -1133,7 +1133,7 @@
                                 </TablixMember>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>6.78449cm</Size>
+                                    <Size>7.73698cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox62">
                                         <CanGrow>true</CanGrow>
@@ -1359,7 +1359,7 @@
                     <TextRun>
                       <Value>=Parameters!prmDetalle.Value</Value>
                       <Style>
-                        <FontSize>11pt</FontSize>
+                        <FontSize>9pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1368,9 +1368,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox48</rd:DefaultName>
-              <Top>1.61844cm</Top>
+              <Top>1.30094cm</Top>
               <Left>2.231cm</Left>
-              <Height>0.67938cm</Height>
+              <Height>0.54709cm</Height>
               <Width>17.34289cm</Width>
               <ZIndex>2</ZIndex>
               <Style>

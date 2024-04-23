@@ -317,7 +317,6 @@
             this.dtpHasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dtpHasta.TabIndex = 145;
             this.dtpHasta.TextColor = System.Drawing.Color.White;
-            this.dtpHasta.Visible = false;
             // 
             // dtpDesde
             // 
@@ -334,7 +333,7 @@
             this.dtpDesde.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dtpDesde.TabIndex = 145;
             this.dtpDesde.TextColor = System.Drawing.Color.White;
-            this.dtpDesde.Visible = false;
+            this.dtpDesde.Value = new System.DateTime(1900, 1, 1, 20, 46, 0, 0);
             // 
             // cboConcepto
             // 
@@ -397,6 +396,7 @@
             this.cboEstado.ForeColor = System.Drawing.Color.White;
             this.cboEstado.FormattingEnabled = true;
             this.cboEstado.Items.AddRange(new object[] {
+            "TODOS",
             "ACTIVO",
             "BAJA",
             "CANCELADO",
