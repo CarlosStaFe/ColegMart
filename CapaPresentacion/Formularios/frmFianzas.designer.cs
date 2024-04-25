@@ -95,6 +95,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.btnImprimir = new FontAwesome.Sharp.IconButton();
+            this.txtVencimiento = new System.Windows.Forms.TextBox();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -106,6 +109,8 @@
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTitulo.Controls.Add(this.txtVencimiento);
+            this.pnlTitulo.Controls.Add(this.txtMatricula);
             this.pnlTitulo.Controls.Add(this.txtUserFirmaFiador);
             this.pnlTitulo.Controls.Add(this.txtUserFirmaMat);
             this.pnlTitulo.Controls.Add(this.label1);
@@ -193,6 +198,7 @@
             // pnlDeck
             // 
             this.pnlDeck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.pnlDeck.Controls.Add(this.btnImprimir);
             this.pnlDeck.Controls.Add(this.dtpFecFirmaFiador);
             this.pnlDeck.Controls.Add(this.dtpFecFirmaMat);
             this.pnlDeck.Controls.Add(this.lblEstadoFianza);
@@ -231,7 +237,7 @@
             this.dtpFecFirmaFiador.CalendarTitleBackColor = System.Drawing.Color.Silver;
             this.dtpFecFirmaFiador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.dtpFecFirmaFiador.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecFirmaFiador.Location = new System.Drawing.Point(886, 105);
+            this.dtpFecFirmaFiador.Location = new System.Drawing.Point(808, 105);
             this.dtpFecFirmaFiador.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpFecFirmaFiador.Name = "dtpFecFirmaFiador";
             this.dtpFecFirmaFiador.Size = new System.Drawing.Size(108, 23);
@@ -248,7 +254,7 @@
             this.dtpFecFirmaMat.CalendarTitleBackColor = System.Drawing.Color.Silver;
             this.dtpFecFirmaMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.dtpFecFirmaMat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecFirmaMat.Location = new System.Drawing.Point(565, 105);
+            this.dtpFecFirmaMat.Location = new System.Drawing.Point(519, 105);
             this.dtpFecFirmaMat.MinimumSize = new System.Drawing.Size(4, 23);
             this.dtpFecFirmaMat.Name = "dtpFecFirmaMat";
             this.dtpFecFirmaMat.Size = new System.Drawing.Size(108, 23);
@@ -283,7 +289,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(746, 110);
+            this.label12.Location = new System.Drawing.Point(668, 110);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(134, 17);
             this.label12.TabIndex = 64;
@@ -292,7 +298,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(436, 110);
+            this.label11.Location = new System.Drawing.Point(390, 110);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(123, 17);
             this.label11.TabIndex = 63;
@@ -808,6 +814,52 @@
             this.label34.TabIndex = 139;
             this.label34.Text = "Lista de Fianzas";
             // 
+            // txtMatricula
+            // 
+            this.txtMatricula.BackColor = System.Drawing.Color.Black;
+            this.txtMatricula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMatricula.Enabled = false;
+            this.txtMatricula.ForeColor = System.Drawing.Color.White;
+            this.txtMatricula.Location = new System.Drawing.Point(934, 11);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(65, 16);
+            this.txtMatricula.TabIndex = 53;
+            this.txtMatricula.Visible = false;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnImprimir.IconColor = System.Drawing.Color.Aqua;
+            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImprimir.IconSize = 25;
+            this.btnImprimir.Location = new System.Drawing.Point(1051, 17);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(122, 28);
+            this.btnImprimir.TabIndex = 147;
+            this.btnImprimir.Text = "Credencial";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // txtVencimiento
+            // 
+            this.txtVencimiento.BackColor = System.Drawing.Color.Black;
+            this.txtVencimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVencimiento.Enabled = false;
+            this.txtVencimiento.ForeColor = System.Drawing.Color.White;
+            this.txtVencimiento.Location = new System.Drawing.Point(1005, 11);
+            this.txtVencimiento.Name = "txtVencimiento";
+            this.txtVencimiento.Size = new System.Drawing.Size(65, 16);
+            this.txtVencimiento.TabIndex = 54;
+            this.txtVencimiento.Visible = false;
+            // 
             // frmFianzas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -893,5 +945,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ApelFiador;
         private System.Windows.Forms.DataGridViewTextBoxColumn CalleFiador;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelFiador;
+        private System.Windows.Forms.TextBox txtMatricula;
+        private FontAwesome.Sharp.IconButton btnImprimir;
+        private System.Windows.Forms.TextBox txtVencimiento;
     }
 }

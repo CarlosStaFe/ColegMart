@@ -196,7 +196,6 @@ namespace CapaPresentacion.Formularios
             ArmarListado();
 
             //***** IMPRIMO SEGÚN EL TIPO DE LISTADO QUE SE ELIGIÓ *****
-
             mdlSaldoPago Mostrar = new mdlSaldoPago();
             Mostrar.detalle = detalle;
             Mostrar.user = txtUserRegistro.Text;

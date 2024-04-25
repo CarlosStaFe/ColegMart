@@ -336,9 +336,17 @@ namespace CapaDatos
                                     id_Coleg = Convert.ToInt32(dr["id_Coleg"]),
                                     Matricula = Convert.ToInt32(dr["Matricula"]),
                                     ApelNombres = dr["ApelNombres"].ToString(),
+                                    NumeroDoc = Convert.ToInt32(dr["NumeroDoc"]),
                                     Estado = dr["Estado"].ToString(),
+                                    Tomo = dr["Tomo"].ToString(),
+                                    Folio = dr["Folio"].ToString(),
+                                    DomParti = dr["DomParti"].ToString(),
+                                    DomLabor = dr["DomLabor"].ToString(),
+                                    Juramento = Convert.ToDateTime(dr["Juramento"]),
                                     FecVenceFianza = Convert.ToDateTime(dr["FecVenceFianza"]),
-                                    Juramento = Convert.ToDateTime(dr["Juramento"])
+                                    idCodPosParti = Convert.ToInt32(dr["idCodPosParti"]),
+                                    idCodPosLabor = Convert.ToInt32(dr["idCodPosLabor"]),
+                                    Foto = dr["Foto"].ToString()
                                 });
                             }
                         }
@@ -537,5 +545,43 @@ namespace CapaDatos
             }
             return lista;
         }
+
+        //***** METODO PARA EDITAR LA FECHA DE VTO DE FIANZA *****
+        public bool ActualizarFianza(string matri, string estado, string fecha)
+        {
+            bool respuesta = true;
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand())
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@Matricula", matri);
+                        command.Parameters.AddWithValue("@Estado", estado);
+                        command.Parameters.AddWithValue("@FechaFianza", Convert.ToDateTime(fecha));
+                        command.Parameters.AddWithValue("@FecEstado", DateTime.Now);
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE Colegiados SET FecVenceFianza = @FechaFianza, Estado = @Estado, FecEstado = @FecEstado WHERE Matricula = @Matricula";
+                        command.CommandType = CommandType.Text;
+
+                        using (MySqlDataReader dr = command.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                //FotoByte = (byte[])dr["Foto"];
+                            }
+                        };
+                    }
+                    catch (Exception)
+                    {
+                        respuesta = false;
+                    }
+                    return respuesta;
+                }
+            }
+        }
+
     }
 }

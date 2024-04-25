@@ -196,5 +196,11 @@ namespace CapaNegocio
             return cD_Colegiados.LiquidaColeg(desde, hasta);
         }
 
+        //***** ACTUALIZO LA FIANZA DE LOS COLEGIADOS *****
+        public bool ActualizarFianza(string matri, string estado, string fecha)
+        {
+            return cD_Colegiados.ActualizarFianza(matri, estado, fecha);
+        }
+
     }
 }

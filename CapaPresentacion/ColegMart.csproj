@@ -348,6 +348,12 @@
     <Compile Include="Formularios\mdlColegiado.designer.cs">
       <DependentUpon>mdlColegiado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\mdlCredencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\mdlCredencial.Designer.cs">
+      <DependentUpon>mdlCredencial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\mdlDebitos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -488,6 +494,9 @@
     <EmbeddedResource Include="Formularios\mdlColegiado.resx">
       <DependentUpon>mdlColegiado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\mdlCredencial.resx">
+      <DependentUpon>mdlCredencial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\mdlDebitos.resx">
       <DependentUpon>mdlDebitos.cs</DependentUpon>
     </EmbeddedResource>
@@ -525,6 +534,7 @@
     <EmbeddedResource Include="Reportes\rptCicVarios.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Cic_Boletas.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Cic_Varios.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_Credencial.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_CtaCte_Coleg.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Liquidacion_Coleg.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Liquidacion_Soc.rdlc" />

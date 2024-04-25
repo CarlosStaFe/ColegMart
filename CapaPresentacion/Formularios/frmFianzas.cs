@@ -99,6 +99,7 @@ namespace CapaPresentacion.Formularios
         private void Limpiar()
         {
             txtId.Text = "0";
+            txtMatricula.Text = "";
             lblNombre.Text = "-";
             lblEstadoFianza.Text = "-";
             txtDocFiador.Text = string.Empty;
@@ -146,7 +147,9 @@ namespace CapaPresentacion.Formularios
                 {
                     txtIndice.Text = indice.ToString();
                     txtId.Text = dgvFianzas.Rows[indice].Cells["id_Fza"].Value.ToString();
+                    txtMatricula.Text = dgvFianzas.Rows[indice].Cells["Mat"].Value.ToString();
                     lblNombre.Text = dgvFianzas.Rows[indice].Cells["Mat"].Value.ToString();
+                    txtVencimiento.Text = dgvFianzas.Rows[indice].Cells["FecVtoFianza"].Value.ToString();
                     lblNombre.Text = lblNombre.Text + " - " + dgvFianzas.Rows[indice].Cells["Apellido"].Value.ToString().Trim();
                     lblNombre.Text = lblNombre.Text + " - Tel.: " + dgvFianzas.Rows[indice].Cells["Telefono"].Value.ToString();
 
@@ -270,6 +273,21 @@ namespace CapaPresentacion.Formularios
                     }
 
                     if (estado != "COMPLETA")
+                    {
+                        row.Cells["FecVtoFianza"].Value = "";
+                    }
+
+                    if (row.Cells["FecFirmaMat"].Value.ToString() == "1/1/1900 00:00:00")
+                    {
+                        row.Cells["FecFirmaMat"].Value = "";
+                    }
+
+                    if (row.Cells["FecFirmaFiador"].Value.ToString() == "1/1/1900 00:00:00")
+                    {
+                        row.Cells["FecFirmaFiador"].Value = "";
+                    }
+
+                    if (row.Cells["FecVtoFianza"].Value.ToString() == "1/1/1900 00:00:00")
                     {
                         row.Cells["FecVtoFianza"].Value = "";
                     }
@@ -454,12 +472,53 @@ namespace CapaPresentacion.Formularios
                     usuario = txtUserRegistro.Text;
                     estado = "COMPLETA";
                 }
+
+                fecha = Convert.ToString(fechavto);
+                bool resultado = new CN_Colegiados().ActualizarFianza(txtMatricula.Text, "ACTIVO", fecha);
             }
             else
             {
                 fechavto = Convert.ToDateTime("1/1/1900 00:00:00");
+                estado = "INCOMPLETA";
             }
         }
 
+        //***** PROCEDIMIENTO PARA IMPRIMIR LA CREDENCIAL *****
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            senial = 0;
+
+            if (estado == "INCOMPLETA")
+            {
+                string mensaje = string.Empty;
+
+                mensaje += "LA CREDENCIAL NO ESTÁ COMPLETA, VERIFIQUE...!!!";
+                frmMsgBox msg = new frmMsgBox(mensaje, "info", 1);
+                DialogResult dr = msg.ShowDialog();
+                respuesta = dr.ToString();
+                senial = senial + 1;
+            }
+
+            if (Convert.ToDateTime(txtVencimiento.Text) < DateTime.Now.Date)
+            {
+                string mensaje = string.Empty;
+
+                mensaje += "LA CREDENCIAL ESTÁ VENCIDA, VERIFIQUE...!!!";
+                frmMsgBox msg = new frmMsgBox(mensaje, "info", 1);
+                DialogResult dr = msg.ShowDialog();
+                respuesta = dr.ToString();
+                senial = senial + 1;
+            }
+
+            if (senial == 0)
+            {
+                mdlCredencial Credencial = new mdlCredencial(txtMatricula.Text);
+                Credencial.ShowDialog();
+                txtMatricula.Text = string.Empty;
+                Limpiar();
+            }
+
+            senial = 0;
+        }
     }
 }
