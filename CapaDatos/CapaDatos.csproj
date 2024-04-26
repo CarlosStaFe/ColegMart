@@ -111,6 +111,7 @@
     <Compile Include="CD_Localidades.cs" />
     <Compile Include="CD_LoteBanco.cs" />
     <Compile Include="CD_PadronColeg.cs" />
+    <Compile Include="CD_PadronSoc.cs" />
     <Compile Include="CD_Permisos.cs" />
     <Compile Include="CD_Provincias.cs" />
     <Compile Include="CD_Renglones.cs" />

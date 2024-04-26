@@ -356,5 +356,65 @@ namespace CapaDatos
             }
         }
 
+        //***** METODO PARA LISTAR LAS SOCIEDADES *****
+        public List<CE_Sociedades> ListaPadron(string comando)
+        {
+            List<CE_Sociedades> lista = new List<CE_Sociedades>();
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand())
+                {
+                    try
+                    {
+                        command.Connection = connection;
+                        command.CommandText = comando;
+                        command.CommandType = CommandType.Text;
+                        MySqlDataReader dr = command.ExecuteReader();
+
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                lista.Add(new CE_Sociedades()
+                                {
+                                    id_Soc = Convert.ToInt32(dr["id_Soc"]),
+                                    Numero = Convert.ToInt32(dr["Numero"]),
+                                    Nombre = dr["Nombre"].ToString(),
+                                    TipoDoc = dr["TipoDoc"].ToString(),
+                                    Cuit = dr["Cuit"].ToString(),
+                                    Domicilio = dr["Domicilio"].ToString(),
+                                    idCodPostal = Convert.ToInt32(dr["idCodPostal"] is DBNull ? 164 : dr["idCodPostal"]),
+                                    idLocal = Convert.ToInt32(dr["idLocal"] is DBNull ? 164 : dr["idLocal"]),
+                                    idDepto = Convert.ToInt32(dr["idDepto"] is DBNull ? 1 : dr["idDepto"]),
+                                    idProv = Convert.ToInt32(dr["idProv"] is DBNull ? 1 : dr["idProv"]),
+                                    Telefono = dr["Telefono"].ToString(),
+                                    Email = dr["Email"].ToString(),
+                                    Tipo = dr["Tipo"].ToString(),
+                                    Estado = dr["Estado"].ToString(),
+                                    FechaEstado = Convert.ToDateTime(dr["FechaEstado"]),
+                                    Inscripcion = Convert.ToInt32(dr["Inscripcion"]),
+                                    Semestral = Convert.ToInt32(dr["Semestral"]),
+                                    Martillero1 = Convert.ToInt32(dr["Martillero1"]),
+                                    Martillero2 = Convert.ToInt32(dr["Martillero2"]),
+                                    Martillero3 = Convert.ToInt32(dr["Martillero3"]),
+                                    Martillero4 = Convert.ToInt32(dr["Martillero4"]),
+                                    Obs = dr["Obs"].ToString(),
+                                    UserRegistro = dr["UserRegistro"].ToString(),
+                                    FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"])
+                                });
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        lista = new List<CE_Sociedades>();
+                    }
+                }
+            }
+            return lista;
+        }
+
     }
 }

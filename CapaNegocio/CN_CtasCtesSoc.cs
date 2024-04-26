@@ -47,5 +47,11 @@ namespace CapaNegocio
             }
         }
 
+        //***** LLAMO AL METODO PARA LISTAR LOS SALDOS Y PADOS *****
+        public List<CE_CtasCtesSoc> ListarSaldoPago(string comando)
+        {
+            return cD_CtasCtesSoc.ListarSaldoPago(comando);
+        }
+
     }
 }

@@ -382,7 +382,6 @@ namespace CapaPresentacion.Formularios
 
             List<CE_Colegiados> ListaPadron = new CN_Colegiados().ListaPadron(comando);
 
-
             foreach (CE_Colegiados item in ListaPadron)
             {
                 contador = contador + 1;

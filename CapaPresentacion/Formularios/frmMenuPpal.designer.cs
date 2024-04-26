@@ -60,6 +60,7 @@
             this.btnCodPostales = new FontAwesome.Sharp.IconButton();
             this.btnBackupRestore = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuTesoreria = new System.Windows.Forms.Panel();
+            this.btnEstratos = new FontAwesome.Sharp.IconButton();
             this.btnActualizarBcos = new FontAwesome.Sharp.IconButton();
             this.pnlSubmenuProveedores = new System.Windows.Forms.Panel();
             this.btnLibroCompras = new FontAwesome.Sharp.IconButton();
@@ -91,7 +92,6 @@
             this.btnLiquidarCol = new FontAwesome.Sharp.IconButton();
             this.btnActualizarCol = new FontAwesome.Sharp.IconButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnEstratos = new FontAwesome.Sharp.IconButton();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTitulo.SuspendLayout();
@@ -689,6 +689,30 @@
             this.pnlSubmenuTesoreria.Size = new System.Drawing.Size(160, 283);
             this.pnlSubmenuTesoreria.TabIndex = 17;
             // 
+            // btnEstratos
+            // 
+            this.btnEstratos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstratos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstratos.FlatAppearance.BorderSize = 0;
+            this.btnEstratos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnEstratos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnEstratos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstratos.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnEstratos.ForeColor = System.Drawing.Color.Aqua;
+            this.btnEstratos.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnEstratos.IconColor = System.Drawing.Color.White;
+            this.btnEstratos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEstratos.IconSize = 15;
+            this.btnEstratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstratos.Location = new System.Drawing.Point(0, 33);
+            this.btnEstratos.Name = "btnEstratos";
+            this.btnEstratos.Size = new System.Drawing.Size(160, 33);
+            this.btnEstratos.TabIndex = 1;
+            this.btnEstratos.Text = "Cargar Estratos";
+            this.btnEstratos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstratos.UseVisualStyleBackColor = true;
+            this.btnEstratos.Click += new System.EventHandler(this.btnEstratos_Click);
+            // 
             // btnActualizarBcos
             // 
             this.btnActualizarBcos.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1066,6 +1090,7 @@
             this.btnSaldoPagoSoc.Text = "Listar Saldos/Pagos";
             this.btnSaldoPagoSoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaldoPagoSoc.UseVisualStyleBackColor = true;
+            this.btnSaldoPagoSoc.Click += new System.EventHandler(this.btnSaldoPagoSoc_Click);
             // 
             // btnPadronSoc
             // 
@@ -1089,6 +1114,7 @@
             this.btnPadronSoc.Text = "Listar Padrón";
             this.btnPadronSoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPadronSoc.UseVisualStyleBackColor = true;
+            this.btnPadronSoc.Click += new System.EventHandler(this.btnPadronSoc_Click);
             // 
             // btnCtasCtesSoc
             // 
@@ -1355,30 +1381,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
-            // 
-            // btnEstratos
-            // 
-            this.btnEstratos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstratos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEstratos.FlatAppearance.BorderSize = 0;
-            this.btnEstratos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnEstratos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnEstratos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstratos.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnEstratos.ForeColor = System.Drawing.Color.Aqua;
-            this.btnEstratos.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnEstratos.IconColor = System.Drawing.Color.White;
-            this.btnEstratos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEstratos.IconSize = 15;
-            this.btnEstratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstratos.Location = new System.Drawing.Point(0, 33);
-            this.btnEstratos.Name = "btnEstratos";
-            this.btnEstratos.Size = new System.Drawing.Size(160, 33);
-            this.btnEstratos.TabIndex = 1;
-            this.btnEstratos.Text = "Cargar Estratos";
-            this.btnEstratos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEstratos.UseVisualStyleBackColor = true;
-            this.btnEstratos.Click += new System.EventHandler(this.btnEstratos_Click);
             // 
             // frmMenuPpal
             // 

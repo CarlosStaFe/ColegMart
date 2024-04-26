@@ -2,21 +2,21 @@
 using System;
 using System.Windows.Forms;
 
-namespace CapaPresentacion.Formularios
+namespace CapaPresentacion
 {
-    public partial class mdlPadColegComun : Form
+    public partial class mdlPadronSocie : Form
     {
         public string detalle { get; set; }
         public string user { get; set; }
 
-        public mdlPadColegComun()
+        public mdlPadronSocie()
         {
             InitializeComponent();
         }
 
-        private void mdlPadColegComun_Load(object sender, EventArgs e)
+        private void mdlPadronSocie_Load(object sender, EventArgs e)
         {
-            spListaPadronColegTableAdapter.Fill(dataSetPrincipal.spListaPadronColeg);
+            spListaPadronSocTableAdapter.Fill(DataSetPrincipal.spListaPadronSoc);
 
             ReportParameter[] parametros = new ReportParameter[2];
             parametros[0] = new ReportParameter("prmDetalle", detalle);

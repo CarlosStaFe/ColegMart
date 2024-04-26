@@ -168,7 +168,7 @@ namespace CapaPresentacion.Formularios
             txtNumero.Select();
         }
 
-        //***** PROCEDIMIENTO PARA LEER EL COLEGIADO INGRESADO *****
+        //***** PROCEDIMIENTO PARA LEER LA SOCIEDAD INGRESADA *****
         private void LeerSociedad()
         {
             string mensaje = string.Empty;
@@ -200,8 +200,8 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO PARA EL BOTON IMPRIMIR *****
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            mdlRptCtaCteColeg Mostrar = new mdlRptCtaCteColeg();
-            Mostrar.matri = Convert.ToInt32(txtNumero.Text);
+            mdlRptCtaCteSoc Mostrar = new mdlRptCtaCteSoc();
+            Mostrar.numero = Convert.ToInt32(txtNumero.Text);
             Mostrar.detalle = "Listado de cuenta corriente de " + txtNumero.Text + " - " + sociedad + " - Estado: " + estadoSoc;
             Mostrar.user = txtUserRegistro.Text;
             Mostrar.ShowDialog();

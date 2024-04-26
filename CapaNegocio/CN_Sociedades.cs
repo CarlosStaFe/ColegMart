@@ -148,5 +148,11 @@ namespace CapaNegocio
             return cD_Sociedades.ActualizarEstado(nro, estado);
         }
 
+        //***** LLAMO AL METODO PARA LISTAR EL PADRON DE LAS SOCIEDADES *****
+        public List<CE_Sociedades> ListaPadron(string comando)
+        {
+            return cD_Sociedades.ListaPadron(comando);
+        }
+
     }
 }

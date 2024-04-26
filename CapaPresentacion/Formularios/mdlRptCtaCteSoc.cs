@@ -4,19 +4,20 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Formularios
 {
-    public partial class mdlPadColegComun : Form
+    public partial class mdlRptCtaCteSoc : Form
     {
+        public int numero { get; set; }
         public string detalle { get; set; }
         public string user { get; set; }
 
-        public mdlPadColegComun()
+        public mdlRptCtaCteSoc()
         {
             InitializeComponent();
         }
 
-        private void mdlPadColegComun_Load(object sender, EventArgs e)
+        private void mdlCtaCteSoc_Load(object sender, EventArgs e)
         {
-            spListaPadronColegTableAdapter.Fill(dataSetPrincipal.spListaPadronColeg);
+            spCtaCteSocTableAdapter.Fill(dataSetPrincipal.spCtaCteSoc, numero);
 
             ReportParameter[] parametros = new ReportParameter[2];
             parametros[0] = new ReportParameter("prmDetalle", detalle);

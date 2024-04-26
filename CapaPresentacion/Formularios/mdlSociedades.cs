@@ -10,8 +10,6 @@ namespace CapaPresentacion.Formularios
 {
     public partial class mdlSociedades : Form
     {
-        CN_Sociedades cN_Sociedades = new CN_Sociedades();
-
         string NameBoton;
 
         public mdlSociedades(string NombreBoton)
@@ -107,6 +105,17 @@ namespace CapaPresentacion.Formularios
                                                      dgvSociedades.Rows[indice].Cells["Estado"].Value.ToString();
                         CobroVar.txtMatricula.Text = dgvSociedades.Rows[indice].Cells["Numero"].Value.ToString();
                         CobroVar.txtId.Text = dgvSociedades.Rows[indice].Cells["id_Soc"].Value.ToString();
+                        Close();
+                        Dispose();
+                    }
+
+                    if (NameBoton == "btnSaldoPago")
+                    {
+                        frmSaldoPagoSoc SaldoPago = Owner as frmSaldoPagoSoc;
+                        SaldoPago.lblNombre.Text = dgvSociedades.Rows[indice].Cells["Nombre"].Value.ToString() + " - " +
+                                                     dgvSociedades.Rows[indice].Cells["Estado"].Value.ToString();
+                        SaldoPago.txtNumero.Text = dgvSociedades.Rows[indice].Cells["Numero"].Value.ToString();
+                        SaldoPago.txtId.Text = dgvSociedades.Rows[indice].Cells["id_Soc"].Value.ToString();
                         Close();
                         Dispose();
                     }

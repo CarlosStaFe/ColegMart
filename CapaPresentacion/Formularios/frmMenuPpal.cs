@@ -309,6 +309,18 @@ namespace ColegMart
             OcultarSubmenu();
         }
 
+        private void btnPadronSoc_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmPadronSocie());
+            OcultarSubmenu();
+        }
+
+        private void btnSaldoPagoSoc_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmSaldoPagoSoc());
+            OcultarSubmenu();
+        }
+
         #endregion
 
         //***** MENÚ CAJA DIARIA *****

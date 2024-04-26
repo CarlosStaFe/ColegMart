@@ -7,82 +7,70 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Formularios
 {
-    public partial class frmSaldoPagoColeg : Form
+    public partial class frmSaldoPagoSoc : Form
     {
-        string detalle,dd,mm,yyyy,desde,hasta, fecha;
-        string cmdColeg, cmdCtasCtes, cmd;
-        int matri, pos1;
+        string detalle, dd, mm, yyyy, desde, hasta, fecha;
+        string cmdSocie, cmdCtasCtes, cmd;
+        int numero, pos1;
         decimal importe;
 
-        public frmSaldoPagoColeg()
+        public frmSaldoPagoSoc()
         {
             InitializeComponent();
         }
 
-        private void frmSaldoPagoColeg_Load(object sender, EventArgs e)
+        private void frmSaldoPagoSoc_Load(object sender, EventArgs e)
         {
             txtUserRegistro.Text = CE_UserLogin.Usuario;
-            CargarCombo();
             Limpiar();
-        }
-
-        //***** CARGO EL COMBO DE CONCEPTOS *****
-        private void CargarCombo()
-        {
-            List<CE_Debitos> ListaDebitosBol = new CN_Debitos().ListaDebitoBol();
-
-            cboConcepto.Items.Clear();
-            cboConcepto.DataSource = ListaDebitosBol;
-            cboConcepto.DisplayMember = "Detalle";
-            cboConcepto.ValueMember = "id_Debito";
         }
 
         //***** PROCEDIMIENTO DEL BOTON CLEAR DE DATOS *****
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
-        //***** PROCEDIMIENTO DEL BOTON SALIR *****
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //***** PROCEDIMIENTO DEL BOTON SALIR *****
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        //***** PROCEDIMIENTO CUANDO PRESIONA ENTER *****
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                LeerSociedad();
+            }
+        }
+
         //***** PROCEDIMIENTO CUANDO SE PRESIONA F1 EN EL CAMPO MATRICULA *****
-        private void txtMatricula_KeyDown(object sender, KeyEventArgs e)
+        private void txtNumero_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1) Consulta();
         }
 
-        //***** PROCEDIMIENTO CUANDO PRESIONA ENTER *****
-        private void txtMatricula_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                LeerColegiado();
-            }
-        }
-
-        //***** PROCEDIMIENTO PARA LLAMAR A LA CONSULTA DE COLEGIADOS *****
+        //***** PROCEDIMIENTO PARA LLAMAR A LA CONSULTA DE SOCIEDADES *****
         private void Consulta()
         {
-            mdlColegiado SaldoPagoColeg = new mdlColegiado("btnSaldoPago");
-            AddOwnedForm(SaldoPagoColeg);
-            SaldoPagoColeg.ShowDialog();
+            mdlSociedades SaldoPagoSoc = new mdlSociedades("btnSaldoPago");
+            AddOwnedForm(SaldoPagoSoc);
+            SaldoPagoSoc.ShowDialog();
         }
 
-        //***** PROCEDIMIENTO PARA LEER EL COLEGIADO INGRESADO *****
-        private void LeerColegiado()
+        //***** PROCEDIMIENTO PARA LEER LA SOCIEDFAD INGRESADA *****
+        private void LeerSociedad()
         {
             string mensaje = string.Empty;
-            List<CE_Colegiados> ListaBuscado = new CN_Colegiados().ListaBuscado(txtMatricula.Text, out mensaje);
+            List<CE_Sociedades> ListaBuscado = new CN_Sociedades().ListaBuscado(txtNumero.Text, out mensaje);
 
-            foreach (CE_Colegiados item in ListaBuscado)
+            foreach (CE_Sociedades item in ListaBuscado)
             {
-                txtId.Text = Convert.ToString(item.id_Coleg);
-                txtMatricula.Text = Convert.ToString(item.Matricula);
-                lblApelNombres.Text = item.ApelNombres.ToString().Trim();
+                txtId.Text = Convert.ToString(item.id_Soc);
+                txtNumero.Text = Convert.ToString(item.Numero);
+                lblNombre.Text = item.Nombre.ToString().Trim();
             }
         }
 
@@ -95,9 +83,7 @@ namespace CapaPresentacion.Formularios
             rdbPagos.Checked = false;
             cboOrden.Text = "MATRICULA";
             cboEstado.Text = "TODOS";
-            lblApelNombres.Text = string.Empty;
-            cboConcepto.Text = "";
-            cboConcepto.Enabled = true;
+            lblNombre.Text = string.Empty;
             dtpDesde.Text = DateTime.Now.ToString("01/01/1900");
             dtpHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
@@ -111,7 +97,6 @@ namespace CapaPresentacion.Formularios
         {
             dtpDesde.Enabled = false;
             dtpHasta.Enabled = false;
-            cboConcepto.Enabled = true;
             dtpDesde.Text = "1/1/1900";
             dtpHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
@@ -120,8 +105,6 @@ namespace CapaPresentacion.Formularios
         private void rdbPagos_CheckedChanged(object sender, EventArgs e)
         {
             dtpDesde.Visible = true;
-            cboConcepto.Enabled = false;
-            cboConcepto.Text = "";
             dtpHasta.Visible = true;
             dtpDesde.Text = "1/1/1900";
         }
@@ -143,17 +126,13 @@ namespace CapaPresentacion.Formularios
 
             detalle = "Listado de ";
 
-            cmdColeg = "SELECT * FROM Colegiados ";
-            cmdCtasCtes = "SELECT * FROM CtasCtesColeg ";
+            cmdSocie = "SELECT * FROM Sociedades ";
+            cmdCtasCtes = "SELECT * FROM CtasCtesSoc ";
 
             if (rdbSaldos.Checked)
             {
                 detalle = detalle + "Saldos ";
                 cmdCtasCtes = cmdCtasCtes + "WHERE Saldo != 0 ";
-                if (cboConcepto.Text != "")
-                {
-                    cmdCtasCtes = cmdCtasCtes + "AND Detalle = '" + cboConcepto.Text + "' ";
-                }
             }
             else
             {
@@ -168,26 +147,26 @@ namespace CapaPresentacion.Formularios
             else
             {
                 detalle = detalle + "Estado: " + cboEstado.Text + " - ";
-                cmdColeg = cmdColeg + "WHERE Estado = '" + cboEstado.Text + "' ";
+                cmdSocie = cmdSocie + "WHERE Estado = '" + cboEstado.Text + "' ";
             }
 
-            if (txtMatricula.Text != "")
+            if (txtNumero.Text != "")
             {
-                detalle = detalle + "Mat.: " + txtMatricula.Text + " - " + lblApelNombres.Text;
-                cmdColeg = cmdColeg + "WHERE Matricula = '" + txtMatricula.Text + "' ";
+                detalle = detalle + "Mat.: " + txtNumero.Text + " - " + lblNombre.Text;
+                cmdSocie = cmdSocie + "WHERE Numero = '" + txtNumero.Text + "' ";
             }
             else
             {
                 //***** ORDENADOS POR *****
-                if (cboOrden.Text == "APELLIDO")
+                if (cboOrden.Text == "NOMBRE")
                 {
                     detalle = detalle + "Ordenado por " + cboOrden.Text + " * ";
-                    cmdColeg = cmdColeg + "ORDER BY ApelNombres ";
+                    cmdSocie = cmdSocie + "ORDER BY Nombre ";
                 }
                 else
                 {
                     detalle = detalle + "Ordenado por " + cboOrden.Text + " * ";
-                    cmdColeg = cmdColeg + "ORDER BY Matricula ";
+                    cmdSocie = cmdSocie + "ORDER BY Numero ";
                 }
             }
 
@@ -200,27 +179,25 @@ namespace CapaPresentacion.Formularios
             Mostrar.detalle = detalle;
             Mostrar.user = txtUserRegistro.Text;
             Mostrar.ShowDialog();
-            txtMatricula.Text = string.Empty;
+            txtNumero.Text = string.Empty;
             Limpiar();
-
         }
 
-        //***** PROCEDIMIENTO PARA CREAR LA LISTA DE SALDOS O PAGOS DE COLEGIADOS *****
+        //***** PROCEDIMIENTO PARA CREAR LA LISTA DE SALDOS O PAGOS DE SOCIEDADES *****
         private void ArmarListado()
         {
-
             string mensaje = string.Empty;
 
-            List<CE_Colegiados> ListaColeg = new CN_Colegiados().ListaPadron(cmdColeg);
+            List<CE_Sociedades> ListaSocie = new CN_Sociedades().ListaPadron(cmdSocie);
 
-            foreach (CE_Colegiados item1 in ListaColeg)
+            foreach (CE_Sociedades item1 in ListaSocie)
             {
-                matri = item1.Matricula;
-                cmd = cmdCtasCtes + "AND Matricula = '" + matri + "' ";
+                numero = item1.Numero;
+                cmd = cmdCtasCtes + "AND Numero = '" + numero + "' ";
 
-                List<CE_CtasCtesColeg> Listado = new CN_CtasCtesColeg().ListarSaldoPago(cmd);
+                List<CE_CtasCtesSoc> Listado = new CN_CtasCtesSoc().ListarSaldoPago(cmd);
 
-                foreach (CE_CtasCtesColeg item2 in Listado)
+                foreach (CE_CtasCtesSoc item2 in Listado)
                 {
                     if (rdbSaldos.Checked)
                     {
@@ -233,9 +210,9 @@ namespace CapaPresentacion.Formularios
 
                     CE_SaldosPagos cESaldosPagos = new CE_SaldosPagos()
                     {
-                        Numero = item1.Matricula,
-                        Nombre = item1.ApelNombres,
-                        Telefono = item1.FijoParti,
+                        Numero = item1.Numero,
+                        Nombre = item1.Nombre,
+                        Telefono = item1.Telefono,
                         Estado = item1.Estado,
                         Fecha = item2.Fecha,
                         Detalle = item2.Detalle,
@@ -249,5 +226,9 @@ namespace CapaPresentacion.Formularios
                 }
             }
         }
+
     }
+
+
 }
+

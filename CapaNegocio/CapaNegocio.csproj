@@ -106,6 +106,7 @@
     <Compile Include="CN_Localidades.cs" />
     <Compile Include="CN_LoteBanco.cs" />
     <Compile Include="CN_PadronColeg.cs" />
+    <Compile Include="CN_PadronSoc.cs" />
     <Compile Include="CN_Permisos.cs" />
     <Compile Include="CN_Provincias.cs" />
     <Compile Include="CN_Renglones.cs" />
