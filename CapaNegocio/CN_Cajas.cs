@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaEntidad;
+using System.Collections.Generic;
 
 namespace CapaNegocio
 {
@@ -21,6 +22,13 @@ namespace CapaNegocio
                 return cD_Cajas.Registrar(obj, out mensaje);
             }
         }
+
+        //***** LLAMO AL METODO PARA LISTAR LAS CAJAS *****
+        public List<CE_Cajas> ListaCaja()
+        {
+            return cD_Cajas.ListaCaja();
+        }
+
 
     }
 }

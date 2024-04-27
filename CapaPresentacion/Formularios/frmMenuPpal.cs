@@ -330,6 +330,11 @@ namespace ColegMart
             ActivarBoton(sender);
             MostrarSubmenu(pnlSubmenuCajaDiaria);
         }
+        private void btnMovimientosCaja_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmMovimCaja());
+            OcultarSubmenu();
+        }
         private void btnCobrarPendientes_Click_1(object sender, System.EventArgs e)
         {
             AbrirFormHijo(new frmCobrarPendientes());

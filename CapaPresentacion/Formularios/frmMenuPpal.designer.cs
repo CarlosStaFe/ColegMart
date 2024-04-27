@@ -1053,6 +1053,7 @@
             this.btnMovimientosCaja.Text = "Movimientos Caja";
             this.btnMovimientosCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMovimientosCaja.UseVisualStyleBackColor = true;
+            this.btnMovimientosCaja.Click += new System.EventHandler(this.btnMovimientosCaja_Click);
             // 
             // pnlSubmenuSociedades
             // 

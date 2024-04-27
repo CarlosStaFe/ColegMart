@@ -48,7 +48,7 @@ namespace CapaDatos
                             }
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         lista = new List<CE_Debitos>();
                     }

@@ -303,6 +303,12 @@
     <Compile Include="Formularios\frmMenuPpal.designer.cs">
       <DependentUpon>frmMenuPpal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmMovimCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmMovimCaja.Designer.cs">
+      <DependentUpon>frmMovimCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmMsgBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -496,6 +502,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMenuPpal.resx">
       <DependentUpon>frmMenuPpal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmMovimCaja.resx">
+      <DependentUpon>frmMovimCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMsgBox.resx">
       <DependentUpon>frmMsgBox.cs</DependentUpon>
