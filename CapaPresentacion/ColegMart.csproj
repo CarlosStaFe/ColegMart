@@ -333,6 +333,12 @@
     <Compile Include="Formularios\frmPermisos.designer.cs">
       <DependentUpon>frmPermisos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmPrintCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmPrintCaja.Designer.cs">
+      <DependentUpon>frmPrintCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmSaldoPagoColeg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,6 +524,9 @@
     <EmbeddedResource Include="Formularios\frmPermisos.resx">
       <DependentUpon>frmPermisos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPrintCaja.resx">
+      <DependentUpon>frmPrintCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSaldoPagoColeg.resx">
       <DependentUpon>frmSaldoPagoColeg.cs</DependentUpon>
     </EmbeddedResource>
@@ -580,6 +589,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\rptCicVarios.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_Caja.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Cic_Boletas.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Cic_Varios.rdlc" />
     <EmbeddedResource Include="Reportes\rpt_Credencial.rdlc" />

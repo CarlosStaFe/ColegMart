@@ -69,7 +69,7 @@ namespace CapaDatos
                     try
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT * FROM Cajas WHERE Estado = 'ABIERTA' ORDER BY Prefijo, Subfijo";
+                        command.CommandText = "SELECT * FROM Cajas WHERE Estado = 'ABIERTA' ORDER BY id_Caja";
                         command.CommandType = CommandType.Text;
                         MySqlDataReader dr = command.ExecuteReader();
 

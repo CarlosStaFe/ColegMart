@@ -1,10 +1,9 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
-using System;
 using CapaPresentacion.Utiles;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace CapaPresentacion.Formularios
@@ -13,11 +12,8 @@ namespace CapaPresentacion.Formularios
     {
         SoloNumeros validar = new SoloNumeros();
 
-        string estado, respuesta, fecha, usuario, tipo;
-        int senial;
-        decimal importe, importe1, importe2, importe3;
-
-        DateTime fechavto;
+        string respuesta, tipomov, pref, nombre;
+        decimal importe, importe1, importe2, importe3, total1, total2, total3;
 
         public frmMovimCaja()
         {
@@ -34,8 +30,8 @@ namespace CapaPresentacion.Formularios
             //***** CARGO EL DGV *****
             foreach (CE_Cajas item in Lista)
             {
-                dgvCaja.Rows.Add(new object[] { "", item.id_Caja, item.Fecha, item.Tipo, item.Prefijo, item.Subfijo, item.Item,item.Numero, item.Nombre, item.Detalle,
-                                                item.Periodo, item.Efectivo, item.Transferencia,item.Tarjeta, item.Estado, item.FechaCierre, item.Obs });
+                dgvCaja.Rows.Add(new object[] { item.id_Caja, item.Fecha, item.Tipo, item.Prefijo, item.Subfijo, item.Item,item.Numero, item.Nombre, item.Detalle,
+                                                item.Periodo, item.Efectivo, item.Transferencia,item.Tarjeta, item.Estado, item.FechaCierre, item.Obs, item.UserRegistro });
             }
 
             Colorear();
@@ -47,23 +43,38 @@ namespace CapaPresentacion.Formularios
         //***** COLOREO LA CELDA SI LA CAJA SEGÚN INGRESO O EGRESO *****
         private void Colorear()
         {
+            total1 = 0;
+            total2 = 0;
+            total3 = 0;
+
             for (int i = 0; i < dgvCaja.Rows.Count; i++)
             {
-                tipo = dgvCaja.Rows[i].Cells["Tipo"].Value.ToString().Trim();
+                tipomov = dgvCaja.Rows[i].Cells["Tip"].Value.ToString().Trim();
+                importe1 = Convert.ToDecimal(dgvCaja.Rows[i].Cells["Efectivo"].Value.ToString().Trim());
+                importe2 = Convert.ToDecimal(dgvCaja.Rows[i].Cells["Transf"].Value.ToString().Trim());
+                importe3 = Convert.ToDecimal(dgvCaja.Rows[i].Cells["Tarjeta"].Value.ToString().Trim());
 
-                if (tipo == "INGRESO")
+                total1 = total1 + importe1;
+                total2 = total2 + importe2;
+                total3 = total3 + importe3;
+
+                if (tipomov == "INGRESO")
                 {
-                    dgvCaja.Rows[i].DefaultCellStyle.ForeColor = Color.Green;
+                    dgvCaja.Rows[i].DefaultCellStyle.ForeColor = Color.Lime;
                 }
-                if (tipo == "EGRESO")
+                if (tipomov == "EGRESO")
                 {
-                    dgvCaja.Rows[i].DefaultCellStyle.ForeColor = Color.Red;
+                    dgvCaja.Rows[i].DefaultCellStyle.ForeColor = Color.Orange;
                 }
-                if (tipo == "DEPOSITO")
+                if (tipomov == "DEPOSITO")
                 {
-                    dgvCaja.Rows[i].DefaultCellStyle.ForeColor = Color.Blue;
+                    dgvCaja.Rows[i].DefaultCellStyle.ForeColor = Color.Aqua;
                 }
             }
+
+            txtEfectivo.Text = Convert.ToString(total1);
+            txtTransf.Text = Convert.ToString(total2);
+            txtTarjeta.Text = Convert.ToString(total3);
         }
 
         //***** LIMPIO LOS DATOS DE INGRESO *****
@@ -113,10 +124,26 @@ namespace CapaPresentacion.Formularios
 
             if (respuesta == "OK")
             {
-                if (cboTipo.Text != "INGRESO")
+                if (cboTipo.Text == "INGRESO")
+                {
+                    importe = Convert.ToDecimal(txtImporte.Text);
+                    pref = "INGR";
+                    nombre = "-";
+                }
+                if (cboTipo.Text == "EGRESO")
                 {
                     importe = Convert.ToDecimal(txtImporte.Text) * -1;
+                    pref = "EGRE";
+                    nombre = "-";
                 }
+                if (cboTipo.Text == "DEPOSITO")
+                {
+                    importe = Convert.ToDecimal(txtImporte.Text) * -1;
+                    pref = "DEPO";
+                    nombre = "BANCO";
+                    txtDetalle.Text = txtDeposito.Text;
+                }
+
                 if (cboForma.Text == "EFECTIVO")
                 {
                     importe1 = importe;
@@ -141,11 +168,11 @@ namespace CapaPresentacion.Formularios
                     id_Caja = Convert.ToInt32(txtId.Text),
                     Fecha = DateTime.Now.Date,
                     Tipo = cboTipo.Text,
-                    Prefijo = "INGR.",
+                    Prefijo = pref,
                     Subfijo = "MANUAL",
                     Item = 1,
                     Numero = 1,
-                    Nombre = "INGRESO MANUAL",
+                    Nombre = nombre,
                     Detalle = txtDetalle.Text,
                     Periodo = "-",
                     Efectivo = importe1,
@@ -154,6 +181,7 @@ namespace CapaPresentacion.Formularios
                     Estado = "ABIERTA",
                     FechaCierre = Convert.ToDateTime("01-01-1900"),
                     Obs = txtObs.Text,
+                    UserRegistro = txtUserRegistro.Text
                 };
 
                 //***** SI EL ID DE LA CAJA = 0 REGISTRA, SINO EDITA *****
@@ -161,37 +189,12 @@ namespace CapaPresentacion.Formularios
 
                 if (idCaja != 0)
                 {
-                    DataGridViewRow row = dgvCaja.Rows[Convert.ToInt32(txtIndice.Text)];
-                    row.Cells["id_Caja"].Value = txtId.Text;
-                    row.Cells["Fecha"].Value = DateTime.Now.Date;
-                    row.Cells["Tipo"].Value = cboTipo.Text;
-                    row.Cells["Pjo"].Value = "INGR.";
-                    row.Cells["Subfijo"].Value = "MANUAL";
-                    row.Cells["It"].Value = 1;
-                    row.Cells["Numero"].Value = 1;
-                    row.Cells["Nombre"].Value = "INGRESO MANUAL";
-                    row.Cells["Detalle"].Value = txtDetalle.Text;
-                    row.Cells["Pdo"].Value = "-";
-                    row.Cells["Efectivo"].Value = importe1;
-                    row.Cells["Transf"].Value = importe2;
-                    row.Cells["Tarjeta"].Value = importe3;
-                    row.Cells["FecCierre"].Value = "";
-                    row.Cells["Obs"].Value = txtObs.Text;
-                    row.Cells["UserRegistro"].Value = txtUserRegistro.Text;
+                    dgvCaja.Rows.Add(new object[] {id_Caja,DateTime.Now.Date,cboTipo.Text,pref,"MANUAL",1,1,nombre,txtDetalle.Text,"-",importe1,importe2,importe3,
+                                                  "ABIERTA",Convert.ToDateTime("01-01-1900"),txtObs.Text,txtUserRegistro.Text});
+                }
 
-                    if (row.Cells["FecCierre"].Value.ToString() == "1/1/1900 00:00:00")
-                    {
-                        row.Cells["FecCierre"].Value = "";
-                    }
-                    Colorear();
-                    Limpiar();
-                }
-                else
-                {
-                    mensaje += ". VERIFIQUE...!!!";
-                    frmMsgBox msg1 = new frmMsgBox(mensaje, "info", 1);
-                    msg1.ShowDialog();
-                }
+                Colorear();
+                Limpiar();
             }
         }
 
@@ -207,6 +210,12 @@ namespace CapaPresentacion.Formularios
             e.KeyChar = Convert.ToChar(validar.Validar(e.KeyChar));
         }
 
+        //***** VALIDO EL IMPORTE PARA PASARLO A IMPORTE *****
+        private void txtImporte_Leave(object sender, EventArgs e)
+        {
+
+        }
+
         //***** PROCEDIMIENTO PARA ACTIVAR DEPÓSITO *****
         private void cboTipo_TextChanged(object sender, EventArgs e)
         {
@@ -218,6 +227,7 @@ namespace CapaPresentacion.Formularios
                 txtDeposito.Text = string.Empty;
                 txtDeposito.Visible = true;
                 lblDeposito.Visible = true;
+                cboForma.Text = "EFECTIVO";
                 txtDeposito.Select();
             }
             else
@@ -230,9 +240,34 @@ namespace CapaPresentacion.Formularios
                 lblDeposito.Visible = false;
                 txtDetalle.Select();
             }
-
         }
 
+        //***** PROCEDIMIENTO PARA CERRAR LA CAJA DEL DÍA *****
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+
+            bool valor = new Backup().RealizarCopia();
+
+            if (valor)
+            {
+                mensaje += "COPIA DE SEGURIDAD REALIZADA CON ÉXITO...!!!";
+                frmMsgBox msgb = new frmMsgBox(mensaje, "ok", 1);
+                DialogResult drb = msgb.ShowDialog();
+            }
+            else
+            {
+                mensaje += "NO SE PUEDO REALIZAR LA COPIA DE SEGURIDAD...VERIFIQUE...!!!";
+                frmMsgBox msgb = new frmMsgBox(mensaje, "info", 1);
+                DialogResult drb = msgb.ShowDialog();
+            }
+
+            if (valor)
+            {
+                frmPrintCaja Caja = new frmPrintCaja();
+                Caja.ShowDialog();
+            }
+        }
 
     }
 }

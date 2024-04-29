@@ -31,18 +31,22 @@ namespace CapaPresentacion.Formularios
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMovimCaja));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDeck = new System.Windows.Forms.Panel();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.lblDeposito = new System.Windows.Forms.Label();
             this.txtDeposito = new System.Windows.Forms.TextBox();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
@@ -54,28 +58,13 @@ namespace CapaPresentacion.Formularios
             this.cboForma = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTarjeta = new System.Windows.Forms.TextBox();
+            this.txtTransf = new System.Windows.Forms.TextBox();
+            this.txtEfectivo = new System.Windows.Forms.TextBox();
             this.txtIndice = new System.Windows.Forms.TextBox();
             this.txtUserRegistro = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvCaja = new System.Windows.Forms.DataGridView();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subfijo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.It = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pdo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Efectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Transf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tarjeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FecCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -83,7 +72,23 @@ namespace CapaPresentacion.Formularios
             this.txtImporte = new System.Windows.Forms.TextBox();
             this.txtDetalle = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.lblFecha = new System.Windows.Forms.Label();
+            this.id_Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pjo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subfijo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.It = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pdo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Efectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Transf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tarjeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FecCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.pnlDeck.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -144,13 +149,24 @@ namespace CapaPresentacion.Formularios
             this.pnlDeck.Size = new System.Drawing.Size(1099, 548);
             this.pnlDeck.TabIndex = 24;
             // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.Yellow;
+            this.lblFecha.Location = new System.Drawing.Point(879, 13);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(16, 19);
+            this.lblFecha.TabIndex = 82;
+            this.lblFecha.Text = "-";
+            // 
             // lblDeposito
             // 
             this.lblDeposito.AutoSize = true;
             this.lblDeposito.Location = new System.Drawing.Point(243, 45);
             this.lblDeposito.Name = "lblDeposito";
             this.lblDeposito.Size = new System.Drawing.Size(97, 17);
-            this.lblDeposito.TabIndex = 34;
+            this.lblDeposito.TabIndex = 3;
             this.lblDeposito.Text = "Nro.Depósito:";
             // 
             // txtDeposito
@@ -162,7 +178,7 @@ namespace CapaPresentacion.Formularios
             this.txtDeposito.Location = new System.Drawing.Point(346, 43);
             this.txtDeposito.Name = "txtDeposito";
             this.txtDeposito.Size = new System.Drawing.Size(142, 23);
-            this.txtDeposito.TabIndex = 0;
+            this.txtDeposito.TabIndex = 1;
             this.txtDeposito.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDeposito.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeposito_KeyPress);
             // 
@@ -178,10 +194,10 @@ namespace CapaPresentacion.Formularios
             this.btnSalir.IconColor = System.Drawing.Color.Aqua;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 30;
-            this.btnSalir.Location = new System.Drawing.Point(989, 468);
+            this.btnSalir.Location = new System.Drawing.Point(530, 468);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(70, 53);
-            this.btnSalir.TabIndex = 2;
+            this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -202,10 +218,11 @@ namespace CapaPresentacion.Formularios
             this.btnCerrar.Location = new System.Drawing.Point(32, 468);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(70, 53);
-            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabIndex = 10;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnLimpiar
             // 
@@ -222,7 +239,7 @@ namespace CapaPresentacion.Formularios
             this.btnLimpiar.Location = new System.Drawing.Point(899, 74);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(99, 34);
-            this.btnLimpiar.TabIndex = 149;
+            this.btnLimpiar.TabIndex = 8;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -244,7 +261,7 @@ namespace CapaPresentacion.Formularios
             this.btnAgregar.Location = new System.Drawing.Point(733, 74);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(99, 34);
-            this.btnAgregar.TabIndex = 148;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -269,7 +286,7 @@ namespace CapaPresentacion.Formularios
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(581, 23);
-            this.txtObs.TabIndex = 9;
+            this.txtObs.TabIndex = 6;
             // 
             // cboForma
             // 
@@ -298,52 +315,52 @@ namespace CapaPresentacion.Formularios
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtTarjeta);
+            this.groupBox1.Controls.Add(this.txtTransf);
+            this.groupBox1.Controls.Add(this.txtEfectivo);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(564, 461);
+            this.groupBox1.Location = new System.Drawing.Point(709, 461);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(367, 64);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TOTALES DE CAJA";
             // 
-            // textBox3
+            // txtTarjeta
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(256, 25);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(91, 23);
-            this.textBox3.TabIndex = 152;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtTarjeta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtTarjeta.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTarjeta.ForeColor = System.Drawing.Color.White;
+            this.txtTarjeta.Location = new System.Drawing.Point(244, 25);
+            this.txtTarjeta.Name = "txtTarjeta";
+            this.txtTarjeta.Size = new System.Drawing.Size(103, 26);
+            this.txtTarjeta.TabIndex = 152;
+            this.txtTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox2
+            // txtTransf
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(147, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(91, 23);
-            this.textBox2.TabIndex = 151;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTransf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtTransf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtTransf.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTransf.ForeColor = System.Drawing.Color.White;
+            this.txtTransf.Location = new System.Drawing.Point(133, 25);
+            this.txtTransf.Name = "txtTransf";
+            this.txtTransf.Size = new System.Drawing.Size(103, 26);
+            this.txtTransf.TabIndex = 151;
+            this.txtTransf.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox1
+            // txtEfectivo
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(33, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 23);
-            this.textBox1.TabIndex = 150;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEfectivo.BackColor = System.Drawing.Color.Red;
+            this.txtEfectivo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEfectivo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEfectivo.ForeColor = System.Drawing.Color.White;
+            this.txtEfectivo.Location = new System.Drawing.Point(22, 25);
+            this.txtEfectivo.Name = "txtEfectivo";
+            this.txtEfectivo.Size = new System.Drawing.Size(103, 26);
+            this.txtEfectivo.TabIndex = 150;
+            this.txtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtIndice
             // 
@@ -403,29 +420,31 @@ namespace CapaPresentacion.Formularios
             this.dgvCaja.ColumnHeadersHeight = 30;
             this.dgvCaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCaja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Seleccionar,
             this.id_Caja,
+            this.fecha,
+            this.Tip,
             this.Pjo,
             this.Subfijo,
             this.It,
-            this.Numero,
-            this.Nombre,
-            this.Pdo,
+            this.Nro,
+            this.Titular,
             this.Detalle,
+            this.Pdo,
             this.Efectivo,
             this.Transf,
             this.Tarjeta,
+            this.estado,
             this.FecCierre,
             this.Obs,
             this.UserRegistro});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCaja.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCaja.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvCaja.EnableHeadersVisualStyles = false;
             this.dgvCaja.GridColor = System.Drawing.Color.Gray;
             this.dgvCaja.Location = new System.Drawing.Point(26, 114);
@@ -433,140 +452,20 @@ namespace CapaPresentacion.Formularios
             this.dgvCaja.Name = "dgvCaja";
             this.dgvCaja.ReadOnly = true;
             this.dgvCaja.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCaja.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvCaja.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCaja.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvCaja.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvCaja.Size = new System.Drawing.Size(1046, 341);
             this.dgvCaja.TabIndex = 46;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
-            this.Seleccionar.Width = 25;
-            // 
-            // id_Caja
-            // 
-            this.id_Caja.HeaderText = "id";
-            this.id_Caja.Name = "id_Caja";
-            this.id_Caja.ReadOnly = true;
-            this.id_Caja.Visible = false;
-            // 
-            // Pjo
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Pjo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Pjo.HeaderText = "PJO";
-            this.Pjo.Name = "Pjo";
-            this.Pjo.ReadOnly = true;
-            this.Pjo.Width = 50;
-            // 
-            // Subfijo
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Subfijo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Subfijo.HeaderText = "SUBFIJO";
-            this.Subfijo.Name = "Subfijo";
-            this.Subfijo.ReadOnly = true;
-            // 
-            // It
-            // 
-            this.It.HeaderText = "IT";
-            this.It.Name = "It";
-            this.It.ReadOnly = true;
-            this.It.Width = 20;
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "NUMERO";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.Visible = false;
-            this.Numero.Width = 50;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "NOMBRE";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Pdo
-            // 
-            this.Pdo.HeaderText = "PDO";
-            this.Pdo.Name = "Pdo";
-            this.Pdo.ReadOnly = true;
-            this.Pdo.Width = 50;
-            // 
-            // Detalle
-            // 
-            this.Detalle.HeaderText = "DETALLE";
-            this.Detalle.Name = "Detalle";
-            this.Detalle.ReadOnly = true;
-            this.Detalle.Width = 250;
-            // 
-            // Efectivo
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Efectivo.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Efectivo.HeaderText = "EFECTIVO";
-            this.Efectivo.Name = "Efectivo";
-            this.Efectivo.ReadOnly = true;
-            this.Efectivo.Width = 80;
-            // 
-            // Transf
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.Transf.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Transf.HeaderText = "TRANSF";
-            this.Transf.Name = "Transf";
-            this.Transf.ReadOnly = true;
-            this.Transf.Width = 80;
-            // 
-            // Tarjeta
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            this.Tarjeta.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Tarjeta.HeaderText = "TARJETA";
-            this.Tarjeta.Name = "Tarjeta";
-            this.Tarjeta.ReadOnly = true;
-            this.Tarjeta.Width = 80;
-            // 
-            // FecCierre
-            // 
-            this.FecCierre.HeaderText = "FecCierre";
-            this.FecCierre.Name = "FecCierre";
-            this.FecCierre.ReadOnly = true;
-            this.FecCierre.Visible = false;
-            // 
-            // Obs
-            // 
-            this.Obs.HeaderText = "OBS";
-            this.Obs.Name = "Obs";
-            this.Obs.ReadOnly = true;
-            this.Obs.Width = 150;
-            // 
-            // UserRegistro
-            // 
-            this.UserRegistro.HeaderText = "UserRegistro";
-            this.UserRegistro.Name = "UserRegistro";
-            this.UserRegistro.ReadOnly = true;
-            this.UserRegistro.Visible = false;
             // 
             // cboTipo
             // 
@@ -582,7 +481,7 @@ namespace CapaPresentacion.Formularios
             this.cboTipo.Location = new System.Drawing.Point(67, 42);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(107, 25);
-            this.cboTipo.TabIndex = 4;
+            this.cboTipo.TabIndex = 0;
             this.cboTipo.TextChanged += new System.EventHandler(this.cboTipo_TextChanged);
             // 
             // label6
@@ -621,9 +520,10 @@ namespace CapaPresentacion.Formularios
             this.txtImporte.Location = new System.Drawing.Point(779, 43);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.Size = new System.Drawing.Size(91, 23);
-            this.txtImporte.TabIndex = 2;
+            this.txtImporte.TabIndex = 4;
             this.txtImporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtImporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImporte_KeyPress);
+            this.txtImporte.Leave += new System.EventHandler(this.txtImporte_Leave);
             // 
             // txtDetalle
             // 
@@ -634,7 +534,7 @@ namespace CapaPresentacion.Formularios
             this.txtDetalle.Location = new System.Drawing.Point(247, 43);
             this.txtDetalle.Name = "txtDetalle";
             this.txtDetalle.Size = new System.Drawing.Size(457, 23);
-            this.txtDetalle.TabIndex = 1;
+            this.txtDetalle.TabIndex = 2;
             // 
             // txtId
             // 
@@ -649,16 +549,147 @@ namespace CapaPresentacion.Formularios
             this.txtId.Text = "0";
             this.txtId.Visible = false;
             // 
-            // lblFecha
+            // id_Caja
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFecha.Location = new System.Drawing.Point(937, 11);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(16, 19);
-            this.lblFecha.TabIndex = 82;
-            this.lblFecha.Text = "-";
+            this.id_Caja.HeaderText = "id";
+            this.id_Caja.Name = "id_Caja";
+            this.id_Caja.ReadOnly = true;
+            this.id_Caja.Visible = false;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            this.fecha.Visible = false;
+            // 
+            // Tip
+            // 
+            this.Tip.HeaderText = "TIP";
+            this.Tip.Name = "Tip";
+            this.Tip.ReadOnly = true;
+            this.Tip.Visible = false;
+            // 
+            // Pjo
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Pjo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Pjo.HeaderText = "PJO";
+            this.Pjo.Name = "Pjo";
+            this.Pjo.ReadOnly = true;
+            this.Pjo.Width = 50;
+            // 
+            // Subfijo
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Subfijo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Subfijo.HeaderText = "SUBFIJO";
+            this.Subfijo.Name = "Subfijo";
+            this.Subfijo.ReadOnly = true;
+            this.Subfijo.Width = 80;
+            // 
+            // It
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.It.DefaultCellStyle = dataGridViewCellStyle5;
+            this.It.HeaderText = "IT";
+            this.It.Name = "It";
+            this.It.ReadOnly = true;
+            this.It.Width = 30;
+            // 
+            // Nro
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Nro.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Nro.HeaderText = "NRO";
+            this.Nro.Name = "Nro";
+            this.Nro.ReadOnly = true;
+            this.Nro.Width = 50;
+            // 
+            // Titular
+            // 
+            this.Titular.HeaderText = "TITULAR";
+            this.Titular.Name = "Titular";
+            this.Titular.ReadOnly = true;
+            this.Titular.Width = 150;
+            // 
+            // Detalle
+            // 
+            this.Detalle.HeaderText = "DETALLE";
+            this.Detalle.Name = "Detalle";
+            this.Detalle.ReadOnly = true;
+            this.Detalle.Width = 250;
+            // 
+            // Pdo
+            // 
+            this.Pdo.HeaderText = "PDO";
+            this.Pdo.Name = "Pdo";
+            this.Pdo.ReadOnly = true;
+            this.Pdo.Width = 50;
+            // 
+            // Efectivo
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.Efectivo.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Efectivo.HeaderText = "EFECTIVO";
+            this.Efectivo.Name = "Efectivo";
+            this.Efectivo.ReadOnly = true;
+            this.Efectivo.Width = 110;
+            // 
+            // Transf
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Transf.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Transf.HeaderText = "TRANSF";
+            this.Transf.Name = "Transf";
+            this.Transf.ReadOnly = true;
+            this.Transf.Width = 110;
+            // 
+            // Tarjeta
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Tarjeta.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Tarjeta.HeaderText = "TARJETA";
+            this.Tarjeta.Name = "Tarjeta";
+            this.Tarjeta.ReadOnly = true;
+            this.Tarjeta.Width = 110;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
+            // 
+            // FecCierre
+            // 
+            dataGridViewCellStyle10.Format = "d";
+            dataGridViewCellStyle10.NullValue = null;
+            this.FecCierre.DefaultCellStyle = dataGridViewCellStyle10;
+            this.FecCierre.HeaderText = "FecCierre";
+            this.FecCierre.Name = "FecCierre";
+            this.FecCierre.ReadOnly = true;
+            this.FecCierre.Visible = false;
+            // 
+            // Obs
+            // 
+            this.Obs.HeaderText = "OBS";
+            this.Obs.Name = "Obs";
+            this.Obs.ReadOnly = true;
+            this.Obs.Width = 150;
+            // 
+            // UserRegistro
+            // 
+            this.UserRegistro.HeaderText = "UserRegistro";
+            this.UserRegistro.Name = "UserRegistro";
+            this.UserRegistro.ReadOnly = true;
+            this.UserRegistro.Visible = false;
             // 
             // frmMovimCaja
             // 
@@ -714,24 +745,26 @@ namespace CapaPresentacion.Formularios
         private System.Windows.Forms.ComboBox cboTipo;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private FontAwesome.Sharp.IconButton btnLimpiar;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
+        private System.Windows.Forms.TextBox txtTarjeta;
+        private System.Windows.Forms.TextBox txtTransf;
+        private System.Windows.Forms.TextBox txtEfectivo;
+        public System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Caja;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tip;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pjo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subfijo;
         private System.Windows.Forms.DataGridViewTextBoxColumn It;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pdo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titular;
         private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pdo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Efectivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Transf;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tarjeta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn FecCierre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserRegistro;
-        public System.Windows.Forms.Label lblFecha;
     }
 }
