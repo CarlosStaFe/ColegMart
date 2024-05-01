@@ -120,6 +120,17 @@ namespace CapaPresentacion
                         Close();
                         Dispose();
                     }
+                    if (NombreBoton == "btnLocalProv")
+                    {
+                        frmProveedores LocalProv = Owner as frmProveedores;
+                        LocalProv.lblLocalidad.Text = txtCodigo.Text + " - " + txtLocalidad.Text + " - " + txtDepartamento.Text + " - " + txtProvincia.Text;
+                        LocalProv.txtCodPos.Text = txtIdCodPos.Text;
+                        LocalProv.txtLocal.Text = txtFkLocal.Text;
+                        LocalProv.txtDepto.Text = txtFkDepto.Text;
+                        LocalProv.txtProv.Text = txtFkProv.Text;
+                        Close();
+                        Dispose();
+                    }
 
                 }
             }

@@ -820,6 +820,7 @@
             this.btnCtasCtesProv.Text = "Cuentas Corrientes";
             this.btnCtasCtesProv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCtasCtesProv.UseVisualStyleBackColor = true;
+            this.btnCtasCtesProv.Click += new System.EventHandler(this.btnCtasCtesProv_Click);
             // 
             // btnPagarProveedores
             // 
@@ -889,6 +890,7 @@
             this.btnActualizarProv.Text = "Actualizar";
             this.btnActualizarProv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActualizarProv.UseVisualStyleBackColor = true;
+            this.btnActualizarProv.Click += new System.EventHandler(this.btnActualizarProv_Click);
             // 
             // pnlSubmenuMesaEntradas
             // 

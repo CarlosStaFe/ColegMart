@@ -99,6 +99,7 @@
     <Compile Include="CD_Colegiados.cs" />
     <Compile Include="CD_Comprobantes.cs" />
     <Compile Include="CD_CtasCtesColeg.cs" />
+    <Compile Include="CD_CtasCtesProv.cs" />
     <Compile Include="CD_CtasCtesSoc.cs" />
     <Compile Include="CD_Debitos.cs" />
     <Compile Include="CD_Departamentos.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="CD_PadronColeg.cs" />
     <Compile Include="CD_PadronSoc.cs" />
     <Compile Include="CD_Permisos.cs" />
+    <Compile Include="CD_Proveedores.cs" />
     <Compile Include="CD_Provincias.cs" />
     <Compile Include="CD_Renglones.cs" />
     <Compile Include="CD_SaldosPagos.cs" />

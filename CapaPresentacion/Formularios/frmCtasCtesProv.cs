@@ -8,21 +8,20 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Formularios
 {
-    public partial class frmCtasCtesSoc : Form
+    public partial class frmCtasCtesProv : Form
     {
         string dgvtipo = string.Empty;
         string dgvestado = string.Empty;
         string dgvitem = string.Empty;
         decimal saldoTot = 0;
-        string sociedad = string.Empty;
-        string estadoSoc = string.Empty;
+        string proveedor = string.Empty;
 
-        public frmCtasCtesSoc()
+        public frmCtasCtesProv()
         {
             InitializeComponent();
         }
 
-        private void frmCtasCtesSoc_Load(object sender, System.EventArgs e)
+        private void frmCtasCtesProv_Load(object sender, EventArgs e)
         {
             txtUserRegistro.Text = CE_UserLogin.Usuario;
 
@@ -35,18 +34,18 @@ namespace CapaPresentacion.Formularios
             if (e.KeyCode == Keys.F1) Consulta();
         }
 
-        //***** PROCEDIMIENTO PARA PROCESO DEL BOTÓN DE LA SOCIEDAD *****
+        //***** PROCEDIMIENTO PARA PROCESO DEL BOTÓN DE LOS PROVEEDORES *****
         private void btnCtasCtes_Click(object sender, EventArgs e)
         {
             Consulta();
         }
 
-        //***** PROCEDIMIENTO PARA LLAMAR A LA CONSULTA DE SOCIEDADES *****
+        //***** PROCEDIMIENTO PARA LLAMAR A LA CONSULTA DE PROVEEDORES *****
         private void Consulta()
         {
-            mdlSociedades CtasCtesSoc = new mdlSociedades("btnCtasCtes");
-            AddOwnedForm(CtasCtesSoc);
-            CtasCtesSoc.ShowDialog();
+            mdlProveedores CtasCtesProv = new mdlProveedores("btnCtasCtes");
+            AddOwnedForm(CtasCtesProv);
+            CtasCtesProv.ShowDialog();
 
             CargarDGV();
         }
@@ -56,15 +55,14 @@ namespace CapaPresentacion.Formularios
         {
             int nro = Convert.ToInt32(txtNumero.Text);
 
-            List<CE_CtasCtesSoc> ListaCtaCte = new CN_CtasCtesSoc().ListaCtaCte(nro);
+            List<CE_CtasCtesProv> ListaCtaCte = new CN_CtasCtesProv().ListaCtaCte(nro);
 
             if (ListaCtaCte.Count > 0)
             {
-                foreach (CE_CtasCtesSoc item in ListaCtaCte)
+                foreach (CE_CtasCtesProv item in ListaCtaCte)
                 {
-                    dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.Numero, item.Fecha, item.Tipo, item.Prefijo, item.Subfijo, item.Item, item.fk_idDebito,
-                                                item.Detalle, item.Periodo, item.Debe, item.Pagado, item.Saldo, item.FechaPago, item.Estado, item.Obs,
-                                                item.UserRegistro, item.FechaRegistro });
+                    dgvCtasCtes.Rows.Add(new object[] { item.id_CtaCte, item.idCpra, item.NroProv, item.Fecha, item.Tipo, item.Prefijo, item.Subfijo, item.Item, item.Detalle,
+                                                item.Haber, item.Pagado, item.Saldo, item.FechaPago, item.Estado, item.Obs, item.UserRegistro, item.FechaRegistro });
                 }
                 PintarDGV();
             }
@@ -153,7 +151,7 @@ namespace CapaPresentacion.Formularios
             if (e.KeyChar == (char)Keys.Enter)
             {
                 Limpiar();
-                LeerSociedad();
+                LeerProveedor();
                 CargarDGV();
             }
         }
@@ -161,26 +159,25 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO PARA LIMPIAR LOS DATOS *****
         private void Limpiar()
         {
-            lblSociedad.Text = "-";
+            lblProveedor.Text = "-";
             txtSaldo.Text = string.Empty;
             dgvCtasCtes.Rows.Clear();
             saldoTot = 0;
             txtNumero.Select();
         }
 
-        //***** PROCEDIMIENTO PARA LEER LA SOCIEDAD INGRESADA *****
-        private void LeerSociedad()
+        //***** PROCEDIMIENTO PARA LEER EL PROVEEDOR INGRESADO *****
+        private void LeerProveedor()
         {
             string mensaje = string.Empty;
-            List<CE_Sociedades> ListaBuscado = new CN_Sociedades().ListaBuscado(txtNumero.Text, out mensaje);
+            List<CE_Proveedores> ListaBuscado = new CN_Proveedores().ListaBuscado(txtNumero.Text, out mensaje);
 
-            foreach (CE_Sociedades item in ListaBuscado)
+            foreach (CE_Proveedores item in ListaBuscado)
             {
-                txtId.Text = Convert.ToString(item.id_Soc);
+                txtId.Text = Convert.ToString(item.id_Prov);
                 txtNumero.Text = Convert.ToString(item.Numero);
-                sociedad = item.Nombre.ToString().Trim();
-                estadoSoc = item.Estado.ToString().Trim();
-                lblSociedad.Text = sociedad + " - Estado: " + estadoSoc;
+                proveedor = item.RazonSocial.ToString().Trim();
+                lblProveedor.Text = proveedor;
             }
         }
 
@@ -193,7 +190,6 @@ namespace CapaPresentacion.Formularios
         //***** PROCEDIMIENTO PARA EL BOTON LIMPIAR *****
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtNumero.Text = string.Empty;
             Limpiar();
         }
 
@@ -202,7 +198,7 @@ namespace CapaPresentacion.Formularios
         {
             mdlRptCtaCteSoc Mostrar = new mdlRptCtaCteSoc();
             Mostrar.numero = Convert.ToInt32(txtNumero.Text);
-            Mostrar.detalle = "Listado de cuenta corriente de " + txtNumero.Text + " - " + sociedad + " - Estado: " + estadoSoc;
+            Mostrar.detalle = "Listado de cuenta corriente de " + txtNumero.Text + " - " + proveedor;
             Mostrar.user = txtUserRegistro.Text;
             Mostrar.ShowDialog();
             txtNumero.Text = string.Empty;

@@ -14,7 +14,7 @@ namespace CapaNegocio
             return cD_CtasCtesSoc.ContarDeuda(numerosoc);
         }
 
-        //***** LLAMO AL METODO PARA CALCULAR EL SALDO DE LAS CUENTAS CORIIENTES *****
+        //***** LLAMO AL METODO PARA CALCULAR EL SALDO DE LAS CUENTAS CORRIENTES *****
         public int SaldoSoc(int numerosoc)
         {
             return (int)cD_CtasCtesSoc.SaldoSoc(numerosoc);

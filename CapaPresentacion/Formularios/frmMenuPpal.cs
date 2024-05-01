@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion;
 using CapaPresentacion.Formularios;
 using FontAwesome.Sharp;
 using System.Collections.Generic;
@@ -364,6 +365,19 @@ namespace ColegMart
             ActivarBoton(sender);
             MostrarSubmenu(pnlSubmenuProveedores);
         }
+
+        private void btnActualizarProv_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmProveedores());
+            OcultarSubmenu();
+        }
+
+        private void btnCtasCtesProv_Click(object sender, System.EventArgs e)
+        {
+            AbrirFormHijo(new frmCtasCtesProv());
+            OcultarSubmenu();
+        }
+
         #endregion
 
         //***** MENÚ TESORERÍA *****

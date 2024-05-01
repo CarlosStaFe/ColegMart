@@ -139,7 +139,6 @@ namespace CapaPresentacion.Formularios
                         row.Visible = false;
                 }
             }
-
         }
 
         //***** PROCEDIMIENTO DEL BOTÓN LIMPIAR *****
@@ -151,7 +150,6 @@ namespace CapaPresentacion.Formularios
             {
                 row.Visible = true;
             }
-
         }
     }
 }

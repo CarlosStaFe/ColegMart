@@ -175,7 +175,8 @@ namespace CapaPresentacion.Formularios
                 }
             }
         }
-            //***** LIMPIO LOS DATOS DE INGRESO *****
+        
+        //***** LIMPIO LOS DATOS DE INGRESO *****
         private void Limpiar()
         {
             txtId.Text = "0";
